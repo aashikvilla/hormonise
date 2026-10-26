@@ -1,2 +1,41 @@
-# hormonise
-AI-Powered Human Connection for Struggles People Are Afraid to Share
+# Beyond Silence
+
+An early concept prototype for finding peer support by understanding the context behind a private story. The intended demo follows a fictional Arjun from sharing a story through a simulated peer connection.
+
+## Run locally
+
+Requirements: Node.js 20.9 or later and npm.
+
+```bash
+npm ci
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000), then choose **Experience the 3-minute demo**. The guided flow lives at `/demo`.
+
+Useful checks:
+
+```bash
+npm run lint
+npm run typecheck
+npm test
+npm run build
+```
+
+Browser tests use Playwright and the config at `tests/playwright.config.ts`:
+
+```bash
+npm run test:e2e
+```
+
+Install the browser once with `npx playwright install chromium` if the environment does not already have it.
+
+## What is simulated
+
+This is a local, frontend-only concept demo. The story interpretation, circle ranking, member counts, peer messages, suggested drafts, and community topic are fixed fictional fixtures. No model calls, API routes, accounts, database, real peer communication, or external runtime integrations are used. The default interpretation is designed for the sample Arjun story; editing the story does not produce a new analysis. A pseudonym does not guarantee anonymity, and this prototype is not therapy, legal advice, or crisis care.
+
+## Future Meta model integration
+
+The current `storyInsights` fixture and `rankCircles` helper in `src/lib/demo.ts` define the mock understanding and discovery boundary. A later, explicitly scoped integration could replace those fixture-backed functions with consented Muse Spark inference and evaluated retrieval over opted-in circle profiles, while retaining user correction, allowlisted disclosure, and clear model-status labeling. No such integration is present or required to run this prototype.
+
+Read [PLAN.md](PLAN.md) for milestone status, acceptance criteria, verification notes, and continuation guidance. The supplied specifications are preserved in [`docs/`](docs/).
