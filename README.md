@@ -13,6 +13,8 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000), then choose **Experience the 3-minute demo**. The guided flow lives at `/demo`.
 
+For a concise recording, spend about 20 seconds on the landing, 25 seconds on Share, 27 seconds on the simulated interpretation, 28 seconds comparing discovery and previewing quiet reading, 23 seconds reviewing disclosure, and 27 seconds on the simulated conversation and editable draft. Use the remaining 30 seconds to show the unposted host topic and close by stating that no model calls or real peer outcomes are part of this prototype.
+
 Useful checks:
 
 ```bash
@@ -29,6 +31,8 @@ npm run test:e2e
 ```
 
 Install the browser once with `npx playwright install chromium` if the environment does not already have it.
+
+The final verification passed lint, typecheck, four unit tests, production build, and 12 Playwright browser cases across desktop and mobile sizes. The browser checks also confirmed that the prototype makes no runtime requests to external origins. See [PLAN.md](PLAN.md) for the detailed verification log and cloud setup draft status.
 
 ## What is simulated
 
