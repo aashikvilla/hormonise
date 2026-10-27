@@ -36,11 +36,11 @@ export default function Home() {
 
     <section className="hero wrap">
       <div className="hero-copy">
-        <div className="eyebrow"><span className="eyebrow-line" /> HUMAN CONNECTION, AT YOUR PACE</div>
-        <h1>You don’t have to<br /><em>carry it alone.</em></h1>
-        <p className="hero-lede">Some experiences are too personal to post, and too nuanced for a search box. Find peer circles that understand the context behind your story.</p>
-        <div className="hero-actions"><Link href="/demo" className="button button-primary button-large">Experience the 3-minute demo <Arrow /></Link><a className="text-link" href="#how-it-works">How it works <Arrow direction="down" /></a></div>
-        <div className="hero-note"><span className="note-check" aria-hidden="true" /> Start with a private story. Choose what you share.</div>
+        <div className="eyebrow"><span className="eyebrow-line" /> HUMAN PERSPECTIVES, AT YOUR PACE</div>
+        <h1>Some things are<br /><em>too personal to post.</em></h1>
+        <p className="hero-lede">Find the words, learn from fictional human perspectives, and choose your next step. At your pace.</p>
+        <div className="hero-actions"><Link href="/demo" className="button button-primary button-large">Explore Arjun&apos;s story <Arrow /></Link><a className="text-link" href="#how-it-works">How it works <Arrow direction="down" /></a></div>
+        <div className="hero-note"><span className="note-check" aria-hidden="true" /> Interactive concept · Fictional stories and peers · Simulated AI · No real messages sent</div>
       </div>
       <div className="hero-art" aria-label="Illustration showing a private story becoming a thoughtful insight and a peer circle">
         <div className="art-orbit orbit-one" /><div className="art-orbit orbit-two" />
@@ -49,15 +49,15 @@ export default function Home() {
         <div className="flow-connector connector-a"><span/><Arrow /></div>
         <div className="flow-card insight-card"><div className="flow-label"><span className="flow-icon icon-insight"><Sparkle /></span><span>WHAT MATTERS</span></div><p>Family expectations<br />Privacy<br />A listener, not advice</p><div className="insight-foot"><span>YOUR WORDS, REFLECTED</span><span className="mini-check" /></div></div>
         <div className="flow-connector connector-b"><span/><Arrow /></div>
-        <div className="flow-card circle-card-art"><div className="flow-label"><span className="flow-icon icon-circle"><CircleIcon /></span><span>A CIRCLE THAT GETS IT</span></div><div className="avatar-stack"><span>M</span><span>S</span><span>+</span></div><div className="art-circle-title">Shared experience,<br />without the pressure.</div><div className="circle-foot"><span className="tiny-online" /> Small, thoughtful circles</div></div>
+        <div className="flow-card circle-card-art"><div className="flow-label"><span className="flow-icon icon-circle"><CircleIcon /></span><span>A HUMAN PERSPECTIVE</span></div><div className="avatar-stack"><span>R</span><span>N</span><span>+</span></div><div className="art-circle-title">Learn from experience,<br />choose your next step.</div><div className="circle-foot"><span className="tiny-online" /> Connection by choice</div></div>
         <div className="art-stamp"><Sparkle/><br />YOU<br />CHOOSE<br />THE PACE</div>
         <div className="art-bottom-note"><span>“</span> Context can make all the difference.</div>
       </div>
     </section>
 
     <section className="how-section" id="how-it-works"><div className="wrap">
-      <div className="section-heading"><div><div className="eyebrow"><span className="eyebrow-line" /> A SMALLER FIRST STEP</div><h2>From “I don’t know where to start”<br /><em>to “they understand.”</em></h2></div><p>A guided experience built around what you need, what you want to keep private, and how you’d like to participate.</p></div>
-      <div className="steps-row"><article className="landing-step"><span className="step-number">01</span><span className="step-icon"><StoryIcon/></span><h3>Put it in your own words</h3><p>Begin with what’s on your mind. No labels or categories to figure out first.</p></article><div className="step-divider" /><article className="landing-step"><span className="step-number">02</span><span className="step-icon"><Sparkle/></span><h3>Shape what feels right</h3><p>Review an example interpretation, correct it, and choose the kind of support you want.</p></article><div className="step-divider" /><article className="landing-step"><span className="step-number">03</span><span className="step-icon"><CircleIcon/></span><h3>Choose your next step</h3><p>Explore relevant circles. Read quietly or introduce yourself with only what you approve.</p></article></div>
+      <div className="section-heading"><div><div className="eyebrow"><span className="eyebrow-line" /> A SMALLER FIRST STEP</div><h2>From “I don’t know how to say it”<br /><em>to “I know what I need.”</em></h2></div><p>A guided experience built around understanding, firsthand perspectives, privacy, and a next step chosen by the person themselves.</p></div>
+      <div className="steps-row"><article className="landing-step"><span className="step-number">01</span><span className="step-icon"><StoryIcon/></span><h3>Start privately</h3><p>Begin with a vague thought. Sample answers help you continue without typing.</p></article><div className="step-divider" /><article className="landing-step"><span className="step-number">02</span><span className="step-icon"><Sparkle/></span><h3>Confirm what matters</h3><p>Review a tentative interpretation and correct it in your own words.</p></article><div className="step-divider" /><article className="landing-step"><span className="step-number">03</span><span className="step-icon"><CircleIcon/></span><h3>Learn and choose</h3><p>Read fictional lived experiences, ask one question by choice, or finish privately.</p></article></div>
     </div></section>
 
     <section className="stories-section wrap"><div className="stories-intro"><div className="eyebrow"><span className="eyebrow-line" /> DIFFERENT NEEDS, DIFFERENT FIRST STEPS</div><h2>Connection doesn’t<br />look the same for everyone.</h2><p>These fictional scenarios show how the idea could extend beyond the primary demo.</p></div><div className="story-grid">{stories.map((story) => <article className={`persona-card ${story.tone}`} key={story.name}><div className="persona-top"><span className="persona-mark">{story.mark}</span><span>ILLUSTRATIVE CONCEPT</span></div><h3>{story.title}</h3><p>{story.copy}</p><div className="persona-person"><span className="persona-avatar">{story.name[0]}</span><span><strong>{story.name}, {story.age}</strong><small>Fictional persona</small></span><span className="persona-arrow"><Arrow direction="up-right" /></span></div></article>)}</div></section>

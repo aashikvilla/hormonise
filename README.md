@@ -1,45 +1,45 @@
-# Beyond Silence
+# Beyond Silence 2.0
 
-An early concept prototype for finding peer support by understanding the context behind a private story. The intended demo follows a fictional Arjun from sharing a story through a simulated peer connection.
+An interactive concept prototype for a person moving from a private, hard-to-explain concern to confirmed needs, fictional lived-experience perspectives, an optional consented question, and a chosen next step.
 
 ## Run locally
 
-Requirements: Node.js 20.9 or later and npm.
+Requirements: Node.js 20.9+ and npm.
 
-```bash
-npm ci
-npm run dev
-```
+    npm ci
+    npm run dev
 
-Open [http://localhost:3000](http://localhost:3000), then choose **Experience the 3-minute demo**. The guided flow lives at `/demo`.
+Open http://localhost:3000 and select **Explore Arjun’s story**. The guided experience is at /demo.
 
-For a concise recording, spend about 20 seconds on the landing, 25 seconds on Share, 27 seconds on the simulated interpretation, 28 seconds comparing discovery and previewing quiet reading, 23 seconds reviewing disclosure, and 27 seconds on the simulated conversation and editable draft. Use the remaining 30 seconds to show the unposted host topic and close by stating that no model calls or real peer outcomes are part of this prototype.
+## Three-minute click rehearsal
 
-Useful checks:
+Use the seeded choices to rehearse without typing:
 
-```bash
-npm run lint
-npm run typecheck
-npm test
-npm run build
-```
+1. Open **Explore Arjun’s story**.
+2. Select **Things in my relationship**.
+3. Select **Hear how other people navigated this**.
+4. Review the tentative mirror, then select **Yes, that is it · Confirm and explore**.
+5. Open Ravi’s story and point out what he tried, what he reported as helpful, and what differed. Return to the story list.
+6. Switch to **Topic-only example**, then back to **Context-first** to show the illustrative ordering.
+7. Open Nisha’s story and show that her situation differed and that questions are unavailable. Return and open Ravi.
+8. Select **Ask Ravi anonymously**, review the pseudonym and exact recipient preview, check consent, and select **Send demo question**.
+9. Read the clearly labeled simulated human reply, select **Continue privately**, choose a next step, and select **Yes**, **Somewhat**, **No**, or **Skip**.
+10. Close with the flywheel and prototype disclosure. Restart to show the flow resets.
 
-Browser tests use Playwright and the config at `tests/playwright.config.ts`:
+For the quiet branch, restart and select **I would rather not share details**. Browse the neutral fictional stories, open one, return to the list, then select **Finish privately**. This route never requests an alias or sends a question.
 
-```bash
-npm run test:e2e
-```
+## Checks
 
-Install the browser once with `npx playwright install chromium` if the environment does not already have it.
+    npm run lint
+    npm run typecheck
+    npm test
+    npm run build
+    npm run test:e2e
 
-The final verification passed lint, typecheck, four unit tests, production build, and 12 Playwright browser cases across desktop and mobile sizes. The browser checks also confirmed that the prototype makes no runtime requests to external origins. See [PLAN.md](PLAN.md) for the detailed verification log and cloud setup draft status.
+Playwright browser tests use the checked-in configuration at tests/playwright.config.ts.
 
-## What is simulated
+## Mock limitations
 
-This is a local, frontend-only concept demo. The story interpretation, circle ranking, member counts, peer messages, suggested drafts, and community topic are fixed fictional fixtures. No model calls, API routes, accounts, database, real peer communication, or external runtime integrations are used. The default interpretation is designed for the sample Arjun story; editing the story does not produce a new analysis. A pseudonym does not guarantee anonymity, and this prototype is not therapy, legal advice, or crisis care.
+This is a frontend-only rehearsal. Conversation prompts, interpretations, story records, rankings, and the contributor reply are deterministic local fixtures. No Meta AI or other model runs; the app makes no application API calls and stores no persistent user data. The named contributors are fictional and their stories are not testimonials. Topic/context order is an illustrative comparison, not measured model performance. The recipient preview contains only the editable pseudonym and question, and submission requires explicit approval before showing one fixture response. This prototype does not diagnose, prescribe, send real messages, verify support services, or claim an outcome. It is not therapy, legal advice, or crisis care.
 
-## Future Meta model integration
-
-The current `storyInsights` fixture and `rankCircles` helper in `src/lib/demo.ts` define the mock understanding and discovery boundary. A later, explicitly scoped integration could replace those fixture-backed functions with consented Muse Spark inference and evaluated retrieval over opted-in circle profiles, while retaining user correction, allowlisted disclosure, and clear model-status labeling. No such integration is present or required to run this prototype.
-
-Read [PLAN.md](PLAN.md) for milestone status, acceptance criteria, verification notes, and continuation guidance. The supplied specifications are preserved in [`docs/`](docs/).
+The prior V1 walkthrough in demo-walkthrough.mp4 records the old circle-joining flow; the updated V2 app is the current product direction.

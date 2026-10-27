@@ -1,195 +1,182 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useReducer, useState } from "react";
 import Link from "next/link";
 import {
-  STEPS, type DemoStep, type DiscoveryMode, type ChatMessage, type ShareChoices,
-  sampleStory, storyInsights, insightOptions, rankCircles, composeIntroduction,
-  isAliasValid, seedMessages, suggestedDrafts, weeklyTopic,
+  ARJUN_CONTEXT, CONTEXT_CLAIMS, EXPERIENCES, SAMPLE_FIRST_ANSWER,
+  SAMPLE_QUESTION, ALTERNATE_QUESTION, composeRecipientPreview, composeTakeaway, mockContributorService, mockExperienceService,
+  demoReducer, initialDemoState,
 } from "@/lib/demo";
 
-const stepLabels: Record<DemoStep, string> = {
-  share: "Share", understand: "Understand", discover: "Discover", join: "Join", connect: "Connect",
-};
+const stages = ["conversation", "mirror", "experiences", "connect", "takeaway"] as const;
+const stageNames = ["Private conversation", "Confirm understanding", "Explore experiences", "Optional question", "Your takeaway"];
+const intents = [
+  { id: "experience", label: "Hear how other people navigated this" },
+  { id: "reflect", label: "Understand what I want first" },
+  { id: "listener", label: "Find someone who will listen" },
+  { id: "uncertain", label: "I am not sure yet" },
+] as const;
+const nextSteps = [
+  "Write down what I want from a conversation",
+  "Continue reading quietly",
+  "Explore talking to a trained listener",
+  "Explore professional support resources",
+  "Nothing for now",
+];
 
-function BrandMark() { return <span className="brand-mark" aria-hidden="true">b</span>; }
-function LockIcon() { return <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="4" y="8" width="12" height="9" rx="2" stroke="currentColor" strokeWidth="1.5"/><path d="M6.5 8V5.7a3.5 3.5 0 0 1 7 0V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>; }
-function ArrowIcon({ direction = "right" }: { direction?: "right" | "left" | "up" }) {
-  const path = direction === "left" ? "M19 12H5m6 6-6-6 6-6" : direction === "up" ? "M12 19V5m-6 6 6-6 6 6" : "M5 12h14m-6-6 6 6-6 6";
-  return <svg className={`arrow-icon arrow-${direction}`} viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d={path} stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>;
-}
-function CircleIcon() { return <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="7.5" stroke="currentColor" strokeWidth="1.5"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>; }
-function SparkleIcon() { return <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.7 14.3 9.7 21.3 12l-7 2.3-2.3 7-2.3-7-7-2.3 7-2.3L12 2.7Z" stroke="currentColor" strokeWidth="1.45" strokeLinejoin="round"/></svg>; }
-function CloseIcon() { return <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>; }
+function BrandMark() { return <span className="brand-mark">b</span>; }
+function Arrow({ left = false }: { left?: boolean }) { return <svg className="arrow-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d={left ? "M19 12H5m6 6-6-6 6-6" : "M5 12h14m-6-6 6 6-6 6"} stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>; }
 
 export default function DemoExperience() {
-  const [step, setStep] = useState<DemoStep>("share");
-  const [story, setStory] = useState(sampleStory);
-  const [storyError, setStoryError] = useState("");
-  const [keys, setKeys] = useState(storyInsights.selectedKeys);
-  const [mode, setMode] = useState<DiscoveryMode>("context");
-  const [selectedCircleId, setSelectedCircleId] = useState("family-expectations");
-  const [previewCircleId, setPreviewCircleId] = useState<string | null>(null);
-  const [choices, setChoices] = useState<ShareChoices>({ relationshipContext: true, seekLivedExperience: true, ageAndCity: false, alias: "QuietRiver29", consented: false });
-  const [messages, setMessages] = useState<ChatMessage[]>([]);
-  const [messageText, setMessageText] = useState("");
-  const [replySent, setReplySent] = useState(false);
-  const [aboutOpen, setAboutOpen] = useState(false);
-  const [joinError, setJoinError] = useState("");
-  const aboutTrigger = useRef<HTMLButtonElement>(null);
-  const dialogRef = useRef<HTMLDivElement>(null);
-  const firstFocusRef = useRef<HTMLButtonElement>(null);
-  const composerRef = useRef<HTMLTextAreaElement>(null);
+  const [state, dispatch] = useReducer(demoReducer, initialDemoState);
+  const [whyOpen, setWhyOpen] = useState(false);
+  const [editing, setEditing] = useState(false);
+  const [keepTalking, setKeepTalking] = useState(false);
+  const [extraThought, setExtraThought] = useState("");
+  const [copied, setCopied] = useState(false);
+  const index = stages.indexOf(state.stage);
+  const story = useMemo(() => EXPERIENCES.find((item) => item.id === state.selectedExperienceId) ?? null, [state.selectedExperienceId]);
+  const stories = useMemo(() => mockExperienceService.findRelevant(state.selectedClaims, state.discoveryMode), [state.selectedClaims, state.discoveryMode]);
+  const contributorReply = mockContributorService.getReply("story-pressure-listener");
+  const preview = composeRecipientPreview({ alias: state.pseudonym, question: state.questionDraft });
+  const validAlias = /^[A-Za-z0-9_]{3,24}$/.test(state.pseudonym);
+  const validQuestion = state.questionDraft.trim().length >= 12;
+  const summary = composeTakeaway(state);
+  const confirmedWords = [...state.transcript].reverse().find((turn) => turn.role === "user")?.text ?? ARJUN_CONTEXT;
+  const firstAnswer = state.transcript.find((turn, turnIndex) => turnIndex > 0 && turn.role === "user")?.text ?? "";
+  const tentativeTension = firstAnswer.includes("relationship")
+    ? "Uncertainty about the relationship + concern about how family may react."
+    : firstAnswer.includes("family")
+      ? "Family expectations may be making it harder to talk openly."
+      : "You want room to talk without labels before deciding what anything means.";
 
-  const selectedCircle = useMemo(() => rankCircles(mode).find((circle) => circle.id === selectedCircleId) ?? rankCircles("context")[0], [mode, selectedCircleId]);
-  const previewCircle = useMemo(() => rankCircles(mode).find((circle) => circle.id === previewCircleId) ?? rankCircles("context").find((circle) => circle.id === previewCircleId) ?? null, [mode, previewCircleId]);
-  const introduction = composeIntroduction(choices) || "I'd like to read and listen first.";
-  const storyIsSample = story.trim() === sampleStory;
-  const aliasValid = isAliasValid(choices.alias);
-  const hasDialog = aboutOpen;
+  function intent(id: typeof intents[number]["id"], label: string) {
+    dispatch({ type: "SELECT_INTENT", intent: id, label });
+  }
+  function quiet() { dispatch({ type: "CHOOSE_ENGAGEMENT", mode: "quiet" }); }
+  function submitQuestion() {
+    if (validAlias && validQuestion && state.previewApproved) dispatch({ type: "SEND_QUESTION" });
+  }
+  function restart() { dispatch({ type: "RESTART" }); setWhyOpen(false); setEditing(false); setCopied(false); }
 
-  const closeDialog = useCallback(() => {
-    setAboutOpen(false);
-    window.setTimeout(() => aboutTrigger.current?.focus(), 0);
-  }, []);
-
-  useEffect(() => {
-    if (!hasDialog) return;
-    firstFocusRef.current?.focus();
-    const handleKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") closeDialog();
-      if (event.key === "Tab" && dialogRef.current) {
-        const nodes = Array.from(dialogRef.current.querySelectorAll<HTMLElement>("button, a[href], input, textarea, [tabindex]:not([tabindex='-1'])")).filter((node) => !node.hasAttribute("disabled"));
-        if (nodes.length < 1) return;
-        const first = nodes[0]; const last = nodes[nodes.length - 1];
-        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
-        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
-      }
-    };
-    document.addEventListener("keydown", handleKey);
-    return () => document.removeEventListener("keydown", handleKey);
-  }, [hasDialog, closeDialog]);
-  function go(next: DemoStep) { setStep(next); setPreviewCircleId(null); window.scrollTo({ top: 0, behavior: "smooth" }); }
-  function restart() {
-    setStep("share"); setStory(sampleStory); setStoryError(""); setKeys(storyInsights.selectedKeys);
-    setMode("context"); setSelectedCircleId("family-expectations"); setPreviewCircleId(null);
-    setChoices({ relationshipContext: true, seekLivedExperience: true, ageAndCity: false, alias: "QuietRiver29", consented: false });
-    setMessages([]); setMessageText(""); setReplySent(false); setJoinError(""); setAboutOpen(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-  function continueFromStory() {
-    if (!story.trim()) { setStoryError("Add a few words, or choose the sample story to continue."); return; }
-    setStoryError(""); go("understand");
-  }
-  function joinCircle(circleId: string) {
-    setSelectedCircleId(circleId); setPreviewCircleId(null); setJoinError(""); go("join");
-  }
-  function joinWithIntroduction() {
-    if (!aliasValid) { setJoinError("Use 3–24 letters, numbers, or underscores for your alias."); return; }
-    if (!choices.consented) { setJoinError("Review and confirm the introduction before joining this simulated circle."); return; }
-    const introMessage: ChatMessage = { id: "user-intro", senderId: "quietriver", senderDisplayName: choices.alias, text: introduction, kind: "user-intro", simulated: true };
-    setMessages([...seedMessages, introMessage]); setReplySent(false); setJoinError(""); go("connect");
-  }
-  function sendMessage() {
-    const text = messageText.trim(); if (!text) return;
-    const userMessage: ChatMessage = { id: `user-${Date.now()}`, senderId: "quietriver", senderDisplayName: choices.alias, text, kind: "user", simulated: true };
-    const next = [...messages, userMessage];
-    if (!replySent) {
-      next.push({ id: "mock-reply", senderId: "maya-r", senderDisplayName: "Maya_R", text: "Thanks for sharing. Would you prefer someone to listen, or to share what helped them?", kind: "mock-reply", simulated: true });
-      setReplySent(true);
-    }
-    setMessages(next); setMessageText("");
-  }
-  function chooseDraft(draft: string) { setMessageText(draft); composerRef.current?.focus(); }
-
-  return <main className="demo-page">
-    <header className="demo-top"><div className="demo-top-inner">
-      <div className="demo-brand-group"><Link href="/" className="brand demo-brand"><BrandMark/><span>Beyond Silence</span></Link><span className="demo-divider"/><span className="demo-context">A guided concept experience</span></div>
-      <div className="demo-top-actions"><span className="concept-pill small"><i/> Concept demo · fictional scenario</span><button className="quiet-button" onClick={restart}>Restart demo</button></div>
+  return <main className="v2-app">
+    <header className="v2-header"><div className="v2-header-inner">
+      <Link href="/" className="brand"><BrandMark/><span>Beyond Silence</span></Link>
+      <span className="v2-header-note"><i/> Concept · fictional accounts · simulated AI</span>
+      <button className="quiet-button" onClick={restart}>Restart demo</button>
     </div></header>
-    <nav className="progress-wrap" aria-label="Demo progress">
-      {STEPS.map((item, index) => <span key={item} className={`progress-step ${step === item ? "active" : index < STEPS.indexOf(step) ? "done" : ""}`} aria-current={step === item ? "step" : undefined}>
-        <span className="progress-dot">{index < STEPS.indexOf(step) ? "✓" : index + 1}</span><span>{stepLabels[item]}</span>
-        {index < STEPS.length - 1 && <i className="progress-link" aria-hidden="true"/>}
-      </span>)}
-    </nav>
+    <nav className="v2-progress" aria-label="Demo progress">{stages.map((stage, i) => <div key={stage} className={"v2-progress-item " + (i === index ? "current" : i < index ? "done" : "")}><span>{i < index ? "✓" : i + 1}</span><small>{stageNames[i]}</small></div>)}</nav>
 
-    <section className="demo-main">
-      {previewCircle ? <>
-        <div className="preview-back"><button className="link-button" onClick={() => setPreviewCircleId(null)}><ArrowIcon direction="left"/> Back to results</button></div>
-        <div className="demo-kicker"><span className="kicker-line"/> QUIET READING PREVIEW · NO MEMBERSHIP CREATED</div>
-        <div className="demo-panel panel-pad">
-          <div className="preview-header"><div><div className="box-label">VISITOR PREVIEW · FICTIONAL CONTENT</div><h2>{previewCircle.title}</h2><p>{previewCircle.format} · {previewCircle.memberCount} demo members</p></div><span className="reader-badge"><CircleIcon/> Reading quietly</span></div>
-          <div className="preview-content"><div>{previewCircle.previewPosts.map((post, index) => <article className="preview-post" key={`${post.author}-${index}`}><div className="preview-post-header"><span>{post.author}</span><span>Example conversation</span></div><h3>A little space to be heard</h3><p>{post.text}</p></article>)}</div><aside className="preview-aside"><h3>Just looking is a valid choice.</h3><p>You are viewing illustrative posts in this browser demo. No alias or introduction is shown to the circle. Reading quietly here does not create a membership. A real service would need to explain its device and privacy limits clearly.</p><div className="sim-note">Fictional posts · no real community</div></aside></div>
-          <div className="preview-actions"><button className="button button-secondary button-small" onClick={() => setPreviewCircleId(null)}>Back to results</button><button className="button button-primary button-small" onClick={() => joinCircle(previewCircle.id)}>Continue to join <ArrowIcon/></button></div>
-        </div>
-      </> : <>
-        <div className="demo-kicker"><span className="kicker-line"/> {step === "share" ? "A PRIVATE FIRST STEP" : step === "understand" ? "REFLECT, THEN CORRECT" : step === "discover" ? "FIND YOUR KIND OF SUPPORT" : step === "join" ? "CHOOSE WHAT TO SHARE" : "A CONNECTION, AT YOUR PACE"}</div>
-        {step === "share" && <>
-          <h1 className="demo-heading">What’s been weighing on you?</h1><p className="demo-subheading">Share only what you’re comfortable with. You can edit or remove any detail.</p>
-          <div className="demo-panel panel-pad">
-            <label htmlFor="story" className="form-label">Your story <span className="help-copy">· Fictional sample, ready to edit</span></label>
-            <textarea id="story" className="story-input" value={story} onChange={(event) => { setStory(event.target.value); if (event.target.value.trim()) setStoryError(""); }} aria-describedby={storyError ? "story-error story-help" : "story-help"}/>
-            <div className="share-meta"><span id="story-help" className="privacy-inline"><LockIcon/> Your story stays in this browser demo; no account or server submission.</span><span className="help-copy">{story.length} characters</span></div>
-            {storyError && <p id="story-error" className="form-error" role="alert">{storyError}</p>}
-            <div className="share-actions"><div className="action-cluster"><button className="button button-secondary button-small" onClick={() => { setStory(sampleStory); setStoryError(""); }}>Use sample story</button><button className="button button-secondary button-small" onClick={() => { setStory(""); setStoryError(""); }}>Clear</button></div><button className="button button-primary button-small button-wide" onClick={continueFromStory}>Continue <ArrowIcon/></button></div>
-          </div>
-        </>}
-        {step === "understand" && <>
-          <h1 className="demo-heading">Here’s what we understood.<br/>Does this feel right?</h1><p className="demo-subheading">A sample interpretation to review and adjust. Your choices shape what we look for.</p>
-          {!storyIsSample && <div className="edited-note" role="note">This preview uses a fixed example interpretation; live AI analysis is not connected yet.</div>}
-          <div className="story-two-col"><div className="quote-box"><span className="box-label">IN YOUR WORDS</span><p className="quote-text">“{story.trim().slice(0, 150)}{story.trim().length > 150 ? "…" : ""}”</p></div><div className="interpret-box"><span className="box-label">SAMPLE REFLECTION</span><p className="interpret-text">{storyInsights.mainChallenge}</p><p className="interpret-small">It sounds like you want a listener who understands the family context, without deciding for you.</p></div></div>
-          <div className="demo-panel panel-pad">
-            <div className="insight-layout"><div className="insight-main"><div className="insight-title">What matters to you?</div><div className="insight-chips">{insightOptions.map((option) => <label className="insight-chip" key={option.key}><input type="checkbox" checked={keys[option.key]} onChange={(event) => setKeys({ ...keys, [option.key]: event.target.checked })}/>{option.label}</label>)}</div>{keys.legalAdvice && <p className="legal-note">This demo focuses on peer support, not professional legal guidance.</p>}</div><aside className="insight-side"><div className="detail-row"><strong>What makes it difficult</strong><span>{storyInsights.barriers.join(" · ")}</span></div><div className="detail-row"><strong>Preferred support</strong><span>{storyInsights.supportPreference}</span></div><div className="detail-row"><strong>Intention</strong><span>{storyInsights.intent}</span></div><div className="detail-row"><strong>Privacy</strong><span>{storyInsights.privacyPreference}</span></div></aside></div>
-            <div className="sim-note">Illustrative AI understanding, simulated for this prototype</div>
-            <div className="step-actions"><button className="button button-secondary button-small" onClick={() => go("share")}><ArrowIcon direction="left"/> Edit my story</button><button className="button button-primary button-small button-wide" onClick={() => go("discover")}>Yes, find relevant support <ArrowIcon/></button></div>
-          </div>
-        </>}
-        {step === "discover" && <>
-          <h1 className="demo-heading">People who understand the part<br className="desktop-break"/> that’s hardest to explain.</h1><p className="demo-subheading">See how context can change which circles appear first.</p>
-          <div className="discover-toolbar"><div className="mode-toggle" role="group" aria-label="Illustrative matching approach"><button type="button" aria-pressed={mode === "context"} onClick={() => setMode("context")}>Context-aware</button><button type="button" aria-pressed={mode === "keyword"} onClick={() => setMode("keyword")}>Topic-only</button></div><span className="illustrative-label">Illustrative comparison, not a measured evaluation.</span></div>
-          <div className="circle-grid">{rankCircles(mode).map((circle, index) => <article className={`circle-result ${mode === "context" && index === 0 ? "featured" : ""}`} key={circle.id}>
-            {mode === "context" && index === 0 && <span className="circle-rec">RECOMMENDED EXAMPLE</span>}<div className="circle-small-label">PEER CIRCLE · DEMO FIXTURE</div><h2>{circle.title}</h2><p>{circle.description}</p><div className="circle-meta"><CircleIcon/>{circle.format}<span>·</span>{circle.memberCount} demo members</div><div className="circle-tags">{circle.tags.slice(0, 3).map((tag) => <span key={tag}>{tag}</span>)}</div><div className="circle-reason"><strong>Why this match?</strong>{mode === "context" ? circle.whyContext : circle.whyKeyword}</div><div className="circle-actions"><button className="link-button" onClick={() => setPreviewCircleId(circle.id)}>Read circle preview</button><button className="button button-secondary button-small" onClick={() => joinCircle(circle.id)}>Choose circle</button></div>
-          </article>)}</div>
-          <div className="results-insight"><span className="insight-spark"><SparkleIcon/></span><p>{mode === "context" ? "Context-aware discovery considers family pressure, privacy and the kind of support you asked for—not only the topic word." : "Topic-only discovery ranks by direct overlap with “divorce”. It can miss your need for discretion and family-pressure context."}</p></div>
-          <div className="quiet-preview-banner"><div><h3>Prefer to read first?</h3><p>Open a visitor preview of approved example posts. You can stay a reader, with no public alias or introduction.</p></div><button className="button button-secondary button-small" onClick={() => setPreviewCircleId((rankCircles(mode)[0]?.id) ?? "family-expectations")}>Read quietly <ArrowIcon/></button></div>
-          <div className="step-actions"><button className="button button-secondary button-small" onClick={() => go("understand")}><ArrowIcon direction="left"/> Back</button><span className="help-copy">Choose any circle to see its sharing preview.</span></div>
-        </>}
-        {step === "join" && <>
-          <h1 className="demo-heading">You decide what others see.</h1><p className="demo-subheading">Review an exact introduction before joining this simulated circle.</p>
-          <div className="join-layout"><aside className="join-circle-card"><span className="box-label">YOUR SELECTED CIRCLE</span><h2>{selectedCircle.title}</h2><p>{selectedCircle.description}</p><div className="circle-meta" style={{marginTop:14}}><CircleIcon/>{selectedCircle.format} · {selectedCircle.memberCount} demo members</div><div className="alias-block"><label htmlFor="alias" className="form-label">Your circle alias</label><input id="alias" className="field-input" value={choices.alias} maxLength={24} onChange={(event) => setChoices({ ...choices, alias: event.target.value })} aria-invalid={!aliasValid}/><div className={aliasValid ? "field-foot" : "alias-error"}>{aliasValid ? "Fictional alias · not a guarantee of anonymity" : "Use 3–24 letters, numbers, or underscores."}</div></div></aside>
-            <section className="disclosure-card"><h2>Choose your introduction</h2><p className="disclosure-intro">Only checked details will be included. Your original story is never posted.</p>
-              <div className="choice-row"><input id="choice-context" type="checkbox" checked={choices.relationshipContext} onChange={(event) => setChoices({ ...choices, relationshipContext: event.target.checked })}/><label htmlFor="choice-context">I’m dealing with family expectations around a personal relationship</label></div>
-              <div className="choice-row"><input id="choice-experience" type="checkbox" checked={choices.seekLivedExperience} onChange={(event) => setChoices({ ...choices, seekLivedExperience: event.target.checked })}/><label htmlFor="choice-experience">I’d appreciate hearing from people with similar experiences</label></div>
-              <div className="choice-row"><input id="choice-age" type="checkbox" checked={choices.ageAndCity} onChange={(event) => setChoices({ ...choices, ageAndCity: event.target.checked })}/><label htmlFor="choice-age">My age and city</label></div>
-              <div className="intro-preview"><span className="box-label">EXACT INTRODUCTION · SHARED AS {choices.alias || "YOUR ALIAS"}</span><p>{introduction}</p></div>
-              <div className="private-box"><strong>Will remain private</strong><p>Original narrative · marriage duration · real name · contacts · family details</p></div>
-              <label className="consent-row"><input type="checkbox" checked={choices.consented} onChange={(event) => { setChoices({ ...choices, consented: event.target.checked }); setJoinError(""); }}/><span>I reviewed what will be shared in this simulated circle.</span></label>
-            </section></div>
-          {joinError && <p className="form-error" role="alert">{joinError}</p>}
-          <div className="join-bottom"><button className="button button-secondary button-small" onClick={() => go("discover")}><ArrowIcon direction="left"/> Back to matches</button><button className={`button button-primary button-small button-wide ${(!choices.consented || !aliasValid) ? "button-disabled" : ""}`} onClick={joinWithIntroduction}>Join circle with this introduction <ArrowIcon/></button></div>
-        </>}
-        {step === "connect" && <>
-          <h1 className="demo-heading">A place to begin, at your pace.</h1><p className="demo-subheading">Read quietly, share a little, or simply leave and return when you choose.</p>
-          <div className="connect-layout"><aside className="connect-sidebar"><section className="context-card"><span className="box-label">YOUR CIRCLE</span><h2>{selectedCircle.title}</h2><p>{selectedCircle.description}</p><div className="control-points"><span><i aria-hidden="true"/> You control your introduction</span><span><i aria-hidden="true"/> Participation is optional</span></div></section><section className="success-card"><strong>From a private story to a relevant human connection.</strong><p>In a real product, a peer would need to opt in before connecting. This conversation is simulated.</p></section><section className="host-card"><span className="host-label">KEEP THIS CIRCLE GOING · SAMPLE HOST VIEW</span><h3>Suggested weekly topic</h3><blockquote>“{weeklyTopic.title}”</blockquote><p>{weeklyTopic.note}</p></section></aside>
-            <section className="conversation" aria-label="Simulated circle conversation"><div className="conversation-head"><div className="convo-title"><span className="convo-avatar"><CircleIcon/></span><span><strong>{selectedCircle.title}</strong><small>Fictional peer conversation · no real users</small></span></div><span className="chat-label">SIMULATED</span></div>
-              <div className="message-list" aria-live="polite">{messages.map((message) => { const mine = message.senderId === "quietriver"; return <article key={message.id} className={`message ${mine ? "mine" : ""}`}><span className="message-avatar">{mine ? choices.alias[0]?.toUpperCase() ?? "Q" : message.senderDisplayName[0]}</span><div className="message-body"><div className="message-name">{message.kind === "user-intro" ? `${message.senderDisplayName} · Your shared introduction` : message.senderDisplayName}</div><div className="message-bubble">{message.text}</div>{message.kind === "mock-reply" && <div className="message-note">Simulated peer response · not live AI</div>}</div></article>; })}</div>
-              <div className="composer-area"><div className="draft-area"><div className="draft-caption">SAMPLE DRAFT, NOT LIVE AI · SELECT TO EDIT BEFORE SENDING</div><div className="drafts">{suggestedDrafts.map((draft, index) => <button type="button" key={draft} onClick={() => chooseDraft(draft)} aria-label={`Fill composer with sample draft ${index + 1}`}>{index === 0 ? "Listening before advice" : "Read quietly for now"}</button>)}</div></div>
-                <div className="composer-row"><textarea ref={composerRef} className="composer" aria-label="Write a message" placeholder="Write only what you’re comfortable sharing…" value={messageText} onChange={(event) => setMessageText(event.target.value)} onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); sendMessage(); } }}/><button className="button button-primary button-small send-button" onClick={sendMessage} disabled={!messageText.trim()}>Send <ArrowIcon direction="up"/></button></div><div className="composer-hint"><span>Only messages you send appear in this mock conversation.</span><span>Enter to send · Shift + Enter for a new line</span></div>
-              </div><div className="connect-actions"><button className="link-button" onClick={() => go("understand")}>See what AI changed</button><div className="action-cluster"><button className="quiet-button" onClick={() => go("discover")}>Compare discovery approaches</button><button className="quiet-button" ref={aboutTrigger} onClick={() => setAboutOpen(true)}>About this prototype</button></div></div>
-            </section></div>
-        </>}
+    <div className="v2-shell"><section className="v2-content" aria-live="polite">
+      <div className="v2-sim">Concept prototype · simulated interpretation · fictional perspectives</div>
+
+      {state.stage === "conversation" && <>
+        <div className="v2-eyebrow">A PRIVATE FIRST STEP</div><h1>Some things are hard to explain.</h1>
+        <p className="v2-lede">Start with as little as you like. You do not need a label or a decision.</p>
+        <div className="v2-conversation-grid"><section className="v2-card v2-dialogue">
+          <label className="v2-label" htmlFor="opening">YOUR OPENING · EDITABLE</label>
+          <textarea id="opening" value={state.initialWords} onChange={(e) => dispatch({ type: "EDIT_INITIAL", text: e.target.value })} rows={2}/>
+          <p className="v2-local-note">This stays in the browser demo. Edited text is not analyzed live.</p>
+          {state.turnIndex === 0 ? <>
+            <div className="v2-assistant-prompt">You do not need to name the problem yet. Which part has been hardest lately?</div>
+            <div className="v2-answer-list">
+              <button onClick={() => dispatch({ type: "SELECT_FIRST", answer: SAMPLE_FIRST_ANSWER })}>Things in my relationship <Arrow/></button>
+              <button onClick={() => dispatch({ type: "SELECT_FIRST", answer: "What my family expects of me feels hardest to talk about." })}>What my family expects of me <Arrow/></button>
+              <button onClick={() => dispatch({ type: "SELECT_FIRST", answer: "I just want to talk without labels." })}>I just want to talk without labels <Arrow/></button>
+            </div>
+            <button className="v2-sample-link" onClick={() => dispatch({ type: "SELECT_FIRST", answer: SAMPLE_FIRST_ANSWER })}>Use example answer</button>
+          </> : <>
+            {state.transcript.slice(1).filter((turn) => !(state.turnIndex === 1 && turn.role === "assistant")).map((turn) => <div key={turn.id} className={turn.role === "user" ? "v2-user-bubble" : "v2-assistant-prompt"}>{turn.text}</div>)}
+            {state.turnIndex === 1 && <div className="v2-turn"><p className="v2-question">It sounds like both the relationship and fear of judgment may be weighing on you. What would be most useful right now?</p>
+              <div className="v2-answer-list">{intents.map((item) => <button key={item.id} onClick={() => intent(item.id, item.label)}>{item.label}<Arrow/></button>)}</div>
+              <button className="v2-sample-link" onClick={() => intent("experience", "Hear how other people navigated this")}>Use example answer</button>
+            </div>}
+            {state.turnIndex === 2 && <button className="button button-primary" onClick={() => dispatch({ type: "OPEN_MIRROR" })}>Review my understanding <Arrow/></button>}
+          </>}
+          <div className="v2-dialogue-foot">{state.turnIndex > 0 && <button className="v2-text-button" onClick={() => dispatch({ type: "BACK" })}><Arrow left/> Back</button>}<button className="v2-text-button" onClick={quiet}>I would rather not share details</button></div>
+        </section><aside className="v2-card v2-control-rail"><span className="v2-icon">✳</span><h2>You stay in control</h2><p>Answer with a sample or your own words. You can stop and read privately at any point.</p><div className="v2-rule"/><p className="v2-small">No account · No public profile · No message sent</p></aside></div>
       </>}
-    </section>
-    <footer className="demo-footer"><span className="footer-sim"><i/>Fictional scenario · Simulated AI · No external requests</span><span>Peer support concept · Not therapy or crisis care</span></footer>
 
-    {hasDialog && <div className="modal-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) closeDialog(); }}><div className="modal" role="dialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-description" ref={dialogRef}>
-      <button className="modal-close" ref={firstFocusRef} aria-label="Close dialog" onClick={closeDialog}><CloseIcon/></button>
-      <div className="demo-kicker"><span className="kicker-line"/> A CLEAR NOTE</div>
-      <h2 id="dialog-title">About this prototype</h2>
-      <p id="dialog-description">All people, circle activity, AI-style interpretation, ranking, and replies in this walkthrough are simulated. No real users are connected, and no model inference or server submission takes place.</p>
-      <div className="modal-note">This concept is for non-clinical peer connection. It is not therapy, professional advice, or crisis care.</div>
-      <div className="modal-actions"><button className="button button-primary button-small" onClick={closeDialog}>Got it</button></div>
-    </div></div>}
+      {state.stage === "mirror" && <>
+        <div className="v2-eyebrow">A TENTATIVE REFLECTION</div><h1>Does this sound right?</h1>
+        <p className="v2-lede">The interpretation is a starting point. Keep what fits; change what does not.</p>
+        {state.initialWords.trim() !== initialDemoState.initialWords && <p className="v2-info" role="note">This is a scripted example, not live analysis of edited words.</p>}
+        <div className="v2-assistant-prompt">I may be hearing this: {tentativeTension} You are looking for “{state.intentLabel}”. Is that accurate?</div>
+        <div className="v2-mirror-grid">
+          <article className="v2-card"><div className="v2-label">IN YOUR WORDS</div><p className="v2-quote">“{confirmedWords}”</p><small>Paraphrased from your guided answer</small></article>
+          <article className="v2-card v2-tentative"><div className="v2-label">POSSIBLE TENSION · PLEASE CONFIRM</div><p>{tentativeTension}</p><small>Simulated interpretation, not a diagnosis</small></article>
+          <article className="v2-card"><label className="v2-label" htmlFor="support-need">WHAT WOULD HELP NOW?</label><input id="support-need" value={state.intentLabel} onChange={(e) => dispatch({ type: "EDIT_INTENT", text: e.target.value })}/><small>Your selected answer · editable</small></article>
+        </div>
+        <section className="v2-card v2-confirm-card"><div className="v2-label">WHAT MATTERS MOST TO YOU?</div>
+          <div className="v2-pill-options">{[["Perspective from others","experience"],["A private space to reflect","reflect"],["A nonjudgmental listener","listener"]].map(([text,id]) => <button key={id} aria-pressed={state.supportIntent === id} onClick={() => intent(id as typeof state.supportIntent,text)}>{text}</button>)}</div>
+          <div className="v2-label v2-sub-label">KEEP OR CHANGE THESE IDEAS</div>
+          <div className="v2-claim-list">{CONTEXT_CLAIMS.map((claim) => <label key={claim.id}><input type="checkbox" checked={Boolean(state.selectedClaims[claim.id])} onChange={() => dispatch({ type: "TOGGLE_CLAIM", id: claim.id })}/>{claim.text}</label>)}</div>
+          {editing && <div className="v2-correction">Edit the need above and change selected ideas. Your choices guide this demo.</div>}
+          {keepTalking && <div className="v2-keep-talking"><label className="v2-label" htmlFor="extra-thought">ANYTHING ELSE YOU WOULD LIKE INCLUDED?</label><textarea id="extra-thought" value={extraThought} onChange={(e) => setExtraThought(e.target.value)} rows={2} placeholder="Add a thought in your own words"/><button className="v2-sample-link" onClick={() => { dispatch({ type: "EDIT_INTENT", text: extraThought.trim() || state.intentLabel }); setKeepTalking(false); }}>Add this thought to my reflection</button></div>}
+          <div className="v2-actions"><button className="button button-secondary" onClick={() => setEditing(!editing)}>{editing ? "Done editing" : "That is not right — change what you understood"}</button><button className="button button-secondary" onClick={() => setKeepTalking(!keepTalking)}>Keep talking</button><button className="button button-primary" onClick={() => dispatch({ type: "CONFIRM_CONTEXT" })}>Confirm and explore experiences <Arrow/></button></div>
+        </section>
+      </>}
+
+      {state.stage === "experiences" && <>
+        <div className="v2-eyebrow">{state.engagementMode === "quiet" ? "QUIET READING · NOT PERSONALIZED" : "HUMAN PERSPECTIVES · FICTIONAL FIXTURES"}</div><h1>Experiences are perspectives, not instructions.</h1>
+        <p className="v2-lede">{state.engagementMode === "quiet" ? "Browse neutral example stories without sharing details. No personalized match is being made." : "See what was similar, what differed, and decide whether another person's experience is useful."}</p>
+        {state.engagementMode !== "quiet" && <><div className="v2-relevance">Confirmed focus {CONTEXT_CLAIMS.filter((claim) => state.selectedClaims[claim.id]).map((claim) => <span key={claim.id}>{claim.id === "family" ? "family pressure" : claim.id === "privacy" ? "privacy" : claim.id === "verdict" ? "wants a verdict" : "lived experience"}</span>)}</div>
+        <div className="v2-toolbar"><div className="mode-toggle" role="group" aria-label="Story ordering"><button aria-pressed={state.discoveryMode === "context"} onClick={() => dispatch({ type: "SET_DISCOVERY_MODE", mode: "context" })}>Context-first</button><button aria-pressed={state.discoveryMode === "topic"} onClick={() => dispatch({ type: "SET_DISCOVERY_MODE", mode: "topic" })}>Topic-only example</button></div><span>Illustrative fixture ranking. Not measured model performance.</span></div></>}
+        {story ? <article className="v2-card v2-story-detail">
+          <button className="v2-text-button" onClick={() => dispatch({ type: "BACK_TO_EXPERIENCES" })}><Arrow left/> Back to experiences</button>
+          <div className="v2-story-heading"><div><span className="v2-fiction-tag">FICTIONAL DEMO ACCOUNT</span><h2>{story.alias}</h2></div><span className="v2-fiction">Not a real testimonial</span></div>
+          <div className="v2-story-fields"><StoryField title="What happened" value={story.situation}/><StoryField title="What they wanted" value={story.wanted}/><StoryField title="What they tried" values={story.tried}/><StoryField title="What they say helped" values={story.helpful}/><StoryField title="What did not help" values={story.unhelpful}/><StoryField title="Their perspective" value={story.perspective}/><StoryField title="Where this differs" values={story.differences}/></div>
+          <div className="v2-questions"><strong>What questions does this raise for me?</strong><p>What feels relevant to my situation, and what is different? Their experience does not decide what I should do.</p></div>
+          {whyOpen && <div className="v2-evidence"><strong>Why this surfaced</strong><p>Based on this story&apos;s stated situation, wanted support, and differences. No live model ranking is running.</p><div>Overlap: {story.overlaps.join(" · ")}</div><div>Differences: {story.differences.join(" · ")}</div></div>}
+          <button className="v2-sample-link" onClick={() => setWhyOpen(!whyOpen)}>{whyOpen ? "Hide evidence" : "Why this surfaced"}</button>
+          <div className="v2-actions"><button className="button button-secondary" onClick={() => dispatch({ type: "BACK_TO_EXPERIENCES" })}>Keep reading privately</button>{state.engagementMode !== "quiet" && story.contributorAllowsQuestions && <button className="button button-primary" onClick={() => { dispatch({ type: "CHOOSE_ENGAGEMENT", mode: "question" }); setWhyOpen(false); }}>Ask Ravi anonymously <Arrow/></button>}</div>
+        </article> : <div className="v2-story-grid">{(state.engagementMode === "quiet" ? EXPERIENCES : stories).map((item, i) => <article key={item.id} className={"v2-card v2-story-card " + (state.engagementMode !== "quiet" && state.discoveryMode === "context" && i === 0 ? "v2-story-featured" : "")}>
+          <div className="v2-story-card-top"><span className="v2-fiction-tag">FICTIONAL DEMO ACCOUNT</span><span>{i + 1}</span></div><h2>{item.alias}</h2><p>{item.situation}</p><div className="v2-story-preview"><strong>Wanted:</strong> {item.wanted}</div><div className="v2-story-differences"><strong>Important difference</strong><p>{item.differences[0]}</p></div><button className="button button-secondary" onClick={() => dispatch({ type: "OPEN_EXPERIENCE", id: item.id })}>Open story <Arrow/></button>
+        </article>)}</div>}
+        {!story && state.engagementMode !== "quiet" && <details className="v2-baseline"><summary>Why does ordering change?</summary><p>{state.discoveryMode === "context" ? "Context-first places Ravi first because his story names family pressure, uncertainty and wanting a listener. Nisha follows; the legal-process example is less aligned." : "Topic-only example places the process story first because it shares a broad topic. It may miss privacy and a need for perspective without a verdict."}</p><small>Illustrative mock comparison only.</small></details>}
+        {!story && <div className="v2-bottom-choice"><div><strong>{state.engagementMode === "quiet" ? "Read and leave when you are ready." : "Reading only is a complete choice."}</strong><p>No account, alias, join or message is needed.</p></div><button className="button button-secondary" onClick={() => state.engagementMode === "quiet" ? dispatch({ type: "FINISH_QUIET" }) : quiet()}>{state.engagementMode === "quiet" ? "Finish privately" : "Keep reading privately"} <Arrow/></button></div>}
+        {story && <div className="v2-bottom-choice"><div><strong>Want another kind of support?</strong><p>Choose a next step without joining or sending a message.</p></div><button className="button button-secondary" onClick={() => dispatch({ type: "CHOOSE_ENGAGEMENT", mode: "alternatives" })}>See other ways to get support <Arrow/></button></div>}
+      </>}
+
+      {state.stage === "connect" && <>
+        <div className="v2-eyebrow">OPTIONAL · ONE ANONYMOUS QUESTION</div><h1>{state.questionSentInDemo ? "A perspective, shared by choice." : "Ask Ravi without sharing your whole story."}</h1>
+        <p className="v2-lede">{state.questionSentInDemo ? "This is fixture text from a fictional contributor." : "Ravi’s fictional account accepts one question. Nothing leaves this browser demo."}</p>
+        <article className="v2-card v2-contributor"><span className="v2-fiction-tag">FICTIONAL CONTRIBUTOR</span><h2>Ravi, 34</h2><p>Faced family expectations and relationship uncertainty. Accepts one anonymous question in this concept demo.</p></article>
+        {!state.questionSentInDemo ? <div className="v2-connect-grid">
+          <section className="v2-card v2-question-form">
+            <label className="v2-label" htmlFor="pseudonym">Pseudonym</label><input id="pseudonym" value={state.pseudonym} onChange={(e) => dispatch({ type: "SET_ALIAS", value: e.target.value })} aria-invalid={!validAlias}/><span className="v2-help">{validAlias ? "Shown only in this fictional recipient preview." : "Use 3–24 letters, numbers, or underscores."}</span>
+            <div className="v2-draft-picks"><span className="v2-label">SUGGESTED QUESTION · EDITABLE</span><div><button onClick={() => dispatch({ type: "SET_QUESTION", value: SAMPLE_QUESTION })}>Use suggested question</button><button onClick={() => dispatch({ type: "SET_QUESTION", value: ALTERNATE_QUESTION })}>Use another example</button></div></div>
+            <label className="v2-label" htmlFor="question">Your question</label><textarea id="question" value={state.questionDraft} onChange={(e) => dispatch({ type: "SET_QUESTION", value: e.target.value })} rows={4} maxLength={500}/><span className="v2-help">{state.questionDraft.length}/500 characters · Not auto-sent.</span>
+            {validAlias && validQuestion && <div className="v2-recipient"><div className="v2-label">EXACT RECIPIENT PREVIEW</div><strong>{preview.alias}</strong><p>{preview.question}</p><span>Only this alias and text appear in the simulated exchange.</span></div>}
+            <label className="v2-consent"><input type="checkbox" checked={state.previewApproved} onChange={(e) => dispatch({ type: "SET_APPROVAL", approved: e.target.checked })}/><span>I reviewed the text I&apos;m sharing in this simulated exchange.</span></label>
+            <div className="v2-actions"><button className="button button-secondary" onClick={() => dispatch({ type: "BACK_TO_EXPERIENCES" })}>Back to stories</button><button className="button button-primary" onClick={submitQuestion} disabled={!validAlias || !validQuestion || !state.previewApproved}>Send demo question</button></div>
+            {(!validAlias || !validQuestion) && <p className="v2-help">Enter a valid pseudonym and a question of at least 12 characters.</p>}
+            <p className="v2-privacy-line">Original story, age, city, family details and context claims are never included.</p>
+          </section><aside className="v2-card v2-private-rail"><h2>Review before sharing</h2><p>The fictional contributor receives no original story or inferred context.</p><div className="v2-rule"/><p className="v2-small">No real person receives a message.</p></aside>
+        </div> : <section className="v2-card v2-reply-card"><div className="v2-label">YOUR DEMO QUESTION · {state.pseudonym}</div><blockquote>{state.questionDraft}</blockquote><div className="v2-sim-reply"><span className="v2-fiction-tag">SIMULATED HUMAN REPLY · NOT LIVE AI OR SENT TO A PERSON</span><h2>Ravi, 34 · fictional contributor</h2><p>{contributorReply}</p></div><div className="v2-actions"><button className="button button-secondary" onClick={() => dispatch({ type: "SET_USEFULNESS", value: "somewhat" })}>This perspective helped</button><button className="button button-secondary" onClick={() => dispatch({ type: "SET_USEFULNESS", value: "no" })}>Not relevant to me</button><button className="button button-primary" onClick={() => dispatch({ type: "CONTINUE_TO_TAKEAWAY" })}>Continue privately <Arrow/></button></div><p className="v2-help">Your reaction stays in this demo page&apos;s local state.</p></section>}
+      </>}
+
+      {state.stage === "takeaway" && <>
+        <div className="v2-eyebrow">A USEFUL NEXT STEP, AT YOUR PACE</div><h1>You chose what to take with you.</h1><p className="v2-lede">This is a reflection, not a score or a claim that everything is resolved.</p>
+        {state.engagementMode === "alternatives" && <section className="v2-card v2-alternatives"><h2>Other ways to seek support</h2><p>You could speak with a trained listener or explore professional support resources. This demo does not book or verify a service.</p></section>}
+        <div className="v2-takeaway-grid"><Takeaway label="WHAT YOU CAME IN WITH" text={summary.original}/><Takeaway label="WHAT YOU CONFIRMED YOU NEED" text={summary.need}/><Takeaway label="HUMAN PERSPECTIVES YOU EXPLORED" text={summary.perspectives.length ? state.chosenExperienceIds.map((id) => { const viewed = EXPERIENCES.find((item) => item.id === id); return viewed ? viewed.alias + " reported: " + viewed.helpful[0] + " Different context: " + viewed.differences[0] + "." : ""; }).filter(Boolean).join(" ") + (state.questionSentInDemo ? " Fictional reply viewed." : "") : "You chose to continue privately without opening a story."}/></div>
+        <section className="v2-card v2-next-step"><div className="v2-label">WHAT NEXT? · CHOOSE ONE, OR NOTHING</div><div className="v2-next-options">{nextSteps.map((option) => <label key={option}><input type="radio" name="next-step" checked={state.nextStep === option} onChange={() => dispatch({ type: "SET_NEXT_STEP", value: option })}/>{option}</label>)}</div><p className="v2-local-note">This stays on the page. No reminders or saved memory.</p></section>
+        <section className="v2-card v2-feedback"><div className="v2-label">WAS THIS USEFUL FOR YOU TODAY?</div><div className="v2-feedback-options">{[["Yes","yes"],["Somewhat","somewhat"],["No","no"],["Skip","skip"]].map(([text,value]) => <button key={value} aria-pressed={state.usefulness === value} onClick={() => dispatch({ type: "SET_USEFULNESS", value: value as "yes"|"somewhat"|"no"|"skip" })}>{text}</button>)}</div>{state.usefulness === "no" && <><div className="v2-gentle-no">Thanks for saying so. This may not have fit what you needed. You can revisit the stories or leave when you are ready; no response is treated as success.</div><button className="v2-sample-link" onClick={() => dispatch({ type: "REVISIT_EXPERIENCES" })}>Revisit experiences</button></>}</section>
+        <div className="v2-flywheel">Understand privately <span>→</span> Learn from people <span>→</span> Connect by choice <span>→</span> Reflect <span>→</span> Help someone else, optionally</div>
+        <div className="v2-actions v2-finish-actions"><button className="button button-secondary" onClick={() => dispatch({ type: "BACK" })}>Back</button><button className="button button-secondary" onClick={async () => { const text = "A private concern that was difficult to explain.\nWhat I need: " + summary.need + "\nNext step: " + (summary.nextStep ?? "Nothing for now"); try { await navigator.clipboard.writeText(text); setCopied(true); } catch { setCopied(false); } }}>Copy my summary</button><button className="button button-primary" onClick={restart}>Restart demo</button></div>
+        {copied && <p className="v2-help" role="status">Sanitized summary copied.</p>}
+      </>}
+
+      {(state.stage === "mirror" || (state.stage === "experiences" && !story)) && <div className="v2-navigation"><button className="v2-text-button" onClick={() => dispatch({ type: "BACK" })}><Arrow left/> Back a step</button></div>}
+    </section>
+    <aside className="v2-side-note"><div className="v2-label">THE POINT IS YOUR CHOICE</div><p>Understanding is tentative. Other people&apos;s experiences are perspectives, not instructions.</p><div className="v2-rule"/><p className="v2-small">Every account and reply is fictional. No AI inference, external request, or real message is used.</p></aside></div>
+    <footer className="v2-footer"><span>Beyond Silence · Concept prototype</span><span>Not therapy, legal advice, or crisis care</span></footer>
   </main>;
+}
+
+function StoryField({ title, value, values }: { title: string; value?: string; values?: string[] }) {
+  return <section><h3>{title}</h3>{value ? <p>{value}</p> : <ul>{values?.map((item) => <li key={item}>{item}</li>)}</ul>}</section>;
+}
+function Takeaway({ label, text }: { label: string; text: string }) {
+  return <article className="v2-card"><div className="v2-label">{label}</div><p>{text}</p></article>;
 }
