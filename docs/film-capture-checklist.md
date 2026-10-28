@@ -1,6 +1,6 @@
 # Three-minute film capture checklist
 
-**Status:** the Harmonise Deep Human Journey v3 film was browser-captured and verified on 2026-10-28. Runtime is **174.417 seconds (2:54.4)**, under the 180-second limit. It has a two-second opening card and a silent, live-interaction screen capture with burned-in narration captions.
+**Status:** the Harmonise Deep Human Journey v3 film was browser-captured and verified on 2026-10-28. Runtime is **173.500 seconds (2:53.5)**, under the 180-second limit. It has a two-second opening card and a silent, live-interaction screen capture with burned-in narration captions.
 
 ## Capture and review
 
@@ -28,15 +28,15 @@ Times below are approximate film timestamps from the captured browser interactio
 | Contrasting human perspectives | 1:26–1:50 | Nisha, Mira, and Ravi are explored as fictional, distinct lived-experience examples; Ravi's differences and unknowns remain visible. |
 | Exact share and consent | 1:50–2:10 | Ravi's recipient, alias, and question are reviewed; consent is explicit; a prepared fictional response follows. |
 | User-owned takeaway | 2:10–2:38 | Arjun edits and keeps a thought privately and chooses a next step. |
-| New chapter and continuity | 2:38–2:54 | A new city chapter starts separately; the journey shows both chapters and the context boundary. |
+| New chapter and continuity | 2:38–2:53.5 | A new city chapter starts separately; the journey shows both chapters and the context boundary. |
 
 ## Final artifacts
 
 - Video: [`demo/harmonise-deep-human-journey-v3.mp4`](../demo/harmonise-deep-human-journey-v3.mp4)
 - English caption sidecar: [`demo/harmonise-deep-human-journey-v3.en.srt`](../demo/harmonise-deep-human-journey-v3.en.srt)
 - Narration-ready script: [`demo/harmonise-deep-human-journey-v3.voiceover.md`](../demo/harmonise-deep-human-journey-v3.voiceover.md)
-- Encoding: MP4, H.264, 1920×1080, 24 fps, yuv420p; 3,032,916 bytes; no audio stream
-- Duration: **174.416667 seconds**
-- Capture source: two-second title card plus 1,725 Chromium frames sampled at 10 fps while actual browser controls drove the journey
+- Encoding: MP4, H.264, 1920×1080, 24 fps, yuv420p; 3,001,654 bytes; no audio stream
+- Duration: **173.500000 seconds**
+- Capture source: two-second title card plus 1,715 Chromium frames sampled at 10 fps while actual browser controls drove the journey
 
 The SRT text is burned into the MP4 and also provided as a sidecar. No synthetic narrator or voice actor was available; the separate script is ready for a narrator to record. All characters, community content, story rankings, responses, and questions are local fictional fixtures. No Meta model call, Muse transcription, actual human message, database write, live community activity, or moderation action occurred. Do not present this film as evidence of Meta inference.

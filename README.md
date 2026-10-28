@@ -15,7 +15,7 @@ Open <http://localhost:3000>. Start with **Follow Arjun's illustrative story** f
 
 ## Final demo video
 
-[Watch or download the v3 film](demo/harmonise-deep-human-journey-v3.mp4) · [English SRT sidecar](demo/harmonise-deep-human-journey-v3.en.srt) · [Narration-ready script](demo/harmonise-deep-human-journey-v3.voiceover.md). It runs 2:54.4 at 1920×1080 H.264. The MP4 is intentionally silent; narration text is burned in as captions, and the SRT is supplied separately for accessibility and recording.
+[Watch or download the v3 film](demo/harmonise-deep-human-journey-v3.mp4) · [English SRT sidecar](demo/harmonise-deep-human-journey-v3.en.srt) · [Narration-ready script](demo/harmonise-deep-human-journey-v3.voiceover.md). It runs 2:53.5 at 1920×1080 H.264. The MP4 is intentionally silent; narration text is burned in as captions, and the SRT is supplied separately for accessibility and recording.
 
 ## Deploy to GitHub Pages
 
@@ -23,7 +23,7 @@ For the one-time repository setup, open **Settings → Pages** and set **Build a
 
 ## Three-minute rehearsal
 
-This measured browser walkthrough is 2:54.4. Keep the fictional-participant disclosure visible and use the timed SRT when recording narration.
+This measured browser walkthrough is 2:53.5. Keep the fictional-participant disclosure visible and use the timed SRT when recording narration.
 
 1. **0:00–0:14 — Hesitate and revise.** Let the opening title card play. In the conversation composer, type `Everything is fine...`, pause, then revise to `I don't know... things at home feel weird lately.`
 2. **0:14–0:38 — Build context in conversation.** Send the opening, choose **With someone**, then send `Maybe my wife. We aren't always arguing. I can talk with her.` Let the fixture response ask what feels hard without requesting details.
@@ -32,7 +32,7 @@ This measured browser walkthrough is 2:54.4. Keep the fictional-participant disc
 5. **1:26–1:50 — Read contrasting stories.** Open the family community and read Nisha, Mira, then Ravi. Highlight what Ravi tried and reported helpful, what did not help, and that he had a trusted friend Arjun has not reported.
 6. **1:50–2:10 — Review and consent.** Choose **Ask Ravi**. Review Ravi, alias `QuietRiver`, and the exact question. Check consent and continue to the clearly labeled prepared fictional reply; no real person receives a message.
 7. **2:10–2:38 — Choose a takeaway.** Continue to reflection, select **A new perspective**, edit the note to `I want to hear myself think before I ask others for answers.`, choose an optional next step, and click **Keep privately** then **View my journey**.
-8. **2:38–2:54 — Start a new chapter separately.** Show the journey recap and choose **Start separately**. Return to **My journey** to show both chapters and that the previous relationship context did not carry forward.
+8. **2:38–2:53.5 — Start a new chapter separately.** Show the journey recap and choose **Start separately**. Return to **My journey** to show both chapters and that the previous relationship context did not carry forward.
 
 The capture has no recorded or synthetic narration. The narration-ready text is in the linked script; all voice, Meta, and fictional-content limits are stated there and in the closing captions.
 

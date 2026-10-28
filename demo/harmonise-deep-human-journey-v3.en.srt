@@ -47,5 +47,5 @@ He edits a takeaway in his own words; the relationship question remains unresolv
 Later, he starts a new-city chapter fresh; relationship context does not follow.
 
 13
-00:02:50,000 --> 00:02:54,000
+00:02:50,000 --> 00:02:53,300
 No Meta inference, transcription, or real human messaging occurred in this build.
