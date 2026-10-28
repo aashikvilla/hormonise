@@ -30,6 +30,7 @@ export type CommunityTab = "experiences" | "discussions" | "people" | "guideline
 export type Helpfulness = "perspective" | "understood" | "action" | "not-helpful" | "skip" | null;
 
 export type DemoFixtures = {
+  executionProvenance: { source: "local-fixture"; model: string | null };
   notice: string;
   leadPersona: {
     id: string;
@@ -43,9 +44,10 @@ export type DemoFixtures = {
       confirmedThemes: string[];
       supportIntent: string;
       explicitBoundary: string;
+      reaction: string;
     };
   };
-  chapters: { id: string; title: string; confirmedGoal: string; status: string }[];
+  chapters: { id: string; title: string; confirmedGoal: string; status: string; futureNote?: string }[];
   contributors: {
     id: string;
     alias: string;
@@ -81,12 +83,13 @@ export type DemoFixtures = {
     topicIds: string[];
     experienceIds: string[];
     discussionIds: string[];
+    evidenceIds: string[];
     roleLabels: string[];
     activityLabel: string;
     joiningIsOptional: boolean;
   }[];
-  discussions: { id: string; authorAlias: string; prompt: string; preview: string }[];
-  topicOnlyBaseline: { id: string; name: string; explanation: string };
+  discussions: { id: string; authorAlias: string; prompt: string; preview: string; reply: string | null; sourceId: string }[];
+  topicOnlyBaseline: { id: string; name: string; explanation: string; sourceIds: string[] };
   peerQuestionDemo: {
     recipientId: string;
     alias: string;
@@ -122,6 +125,19 @@ export interface PeerQuestionPayload {
   questionText: string;
 }
 
+export interface PriorChapterSnapshot {
+  opening: string;
+  confirmedNeed: string;
+  confirmedThemes: ThemeId[];
+  rejectedThemes: ThemeId[];
+  openedExperienceIds: string[];
+  questionPayload: PeerQuestionPayload | null;
+  usefulness: Helpfulness;
+  nextStep: string;
+  insightDraft: string;
+  insightApproved: boolean;
+}
+
 export interface HarmoniseState {
   screen: Screen;
   history: Screen[];
@@ -135,6 +151,7 @@ export interface HarmoniseState {
   mockTextNotice: boolean;
   proposedThemes: ThemeId[];
   confirmedThemes: ThemeId[];
+  rejectedThemes: ThemeId[];
   supportNeed: SupportNeed;
   confirmedNeed: string;
   selectedCommunityId: string;
@@ -153,6 +170,9 @@ export interface HarmoniseState {
   insightDraft: string;
   insightApproved: boolean;
   futureChapterStarted: boolean;
+  priorChapter: PriorChapterSnapshot | null;
+  carryPreviousContext: boolean;
+  carriedTakeaway: string;
   contributorDraft: string;
   contributorSummary: string;
   contributorPreviewOpen: boolean;
@@ -174,8 +194,9 @@ export const initialHarmoniseState: HarmoniseState = {
   turns: [],
   questionStep: 0,
   mockTextNotice: false,
-  proposedThemes: ["relationship-uncertainty", "family-expectations"],
-  confirmedThemes: ["relationship-uncertainty", "family-expectations"],
+  proposedThemes: [],
+  confirmedThemes: [],
+  rejectedThemes: [],
   supportNeed: "not-sure",
   confirmedNeed: "",
   selectedCommunityId: "community.family-expectations",
@@ -194,6 +215,9 @@ export const initialHarmoniseState: HarmoniseState = {
   insightDraft: fixtures.sampleApprovedInsight,
   insightApproved: false,
   futureChapterStarted: false,
+  priorChapter: null,
+  carryPreviousContext: false,
+  carriedTakeaway: "",
   contributorDraft: "I felt unsure and heard many different opinions. I wrote down my questions and asked a trusted friend to listen before offering advice.",
   contributorSummary: fixtures.contributors[0].approvedSummary,
   contributorPreviewOpen: false,
@@ -242,7 +266,7 @@ export type HarmoniseAction =
   | { type: "SET_INSIGHT_DRAFT"; value: string }
   | { type: "APPROVE_INSIGHT" }
   | { type: "OPEN_JOURNEY" }
-  | { type: "START_FUTURE_CHAPTER" }
+  | { type: "START_FUTURE_CHAPTER"; carryContext: boolean }
   | { type: "OPEN_CONTRIBUTE" }
   | { type: "SET_CONTRIBUTOR_DRAFT"; value: string }
   | { type: "SET_CONTRIBUTOR_SUMMARY"; value: string }
@@ -316,33 +340,65 @@ export function harmoniseReducer(state: HarmoniseState, action: HarmoniseAction)
   switch (action.type) {
     case "START_PATH": {
       const screen: Screen = action.path === "talk" || action.path === "unsure" ? "conversation" : action.path === "quiet" ? "discovery" : "contribute";
-      return go({ ...state, entryPath: action.path, quietReader: action.path === "quiet", confirmedThemes: action.path === "quiet" ? [] : state.confirmedThemes, isArjunDemo: false, error: "" }, screen);
+      return go({ ...initialHarmoniseState, entryPath: action.path, quietReader: action.path === "quiet", proposedThemes: [], confirmedThemes: [], rejectedThemes: [], isArjunDemo: false }, screen);
     }
     case "START_ARJUN":
-      return go({ ...state, entryPath: "talk", isArjunDemo: true, quietReader: false, opening: fixtures.leadPersona.private.opening, turns: [{ id: "u1", speaker: "arjun", text: fixtures.leadPersona.private.opening }], questionStep: 0, confirmedThemes: [], supportNeed: "not-sure", confirmedNeed: "", error: "" }, "conversation");
+      return go({ ...initialHarmoniseState, entryPath: "talk", isArjunDemo: true, quietReader: false, opening: fixtures.leadPersona.private.opening, turns: [{ id: "u1", speaker: "arjun", text: fixtures.leadPersona.private.opening }], questionStep: 0, proposedThemes: ["relationship-uncertainty"], confirmedThemes: [], rejectedThemes: [] }, "conversation");
     case "EDIT_OPENING":
-      return { ...state, opening: action.value, mockTextNotice: action.value.trim() !== fixtures.leadPersona.private.opening && action.value.trim() !== "", turns: [{ id: "u1", speaker: "arjun", text: action.value }] };
-    case "ANSWER_FIRST": {
-      const themes = answerThemes(action.value, action.source);
-      const turns: ConversationTurn[] = [
-        { id: "u1", speaker: "arjun", text: state.opening || action.value },
-        { id: "u2", speaker: "guide", text: "Would you rather talk about what's happening at home, or how it has been affecting you?" },
-        { id: "u3", speaker: "arjun", text: action.value },
-        { id: "u4", speaker: "guide", text: "What would feel useful right now: hearing experiences, talking it through, or just reading quietly?" },
-      ];
-      return { ...state, turns, questionStep: 1, proposedThemes: action.source === "typed" ? [] : themes.length ? themes : state.proposedThemes, confirmedThemes: themes, mockTextNotice: action.source === "typed", error: "" };
-    }
-    case "ANSWER_SECOND": {
-      const themes = answerThemes(action.value, action.source);
       return {
         ...state,
-        turns: [...state.turns, { id: "u5", speaker: "arjun", text: action.value }],
+        opening: action.value,
+        mockTextNotice: action.value.trim() !== fixtures.leadPersona.private.opening,
+        turns: [{ id: "u1", speaker: "arjun", text: action.value }],
+        questionStep: 0,
+        proposedThemes: [],
+        confirmedThemes: [],
+        rejectedThemes: [],
+        supportNeed: "not-sure",
+        confirmedNeed: "",
+      };
+    case "ANSWER_FIRST": {
+      const preserveUninterpreted = state.mockTextNotice || action.source === "typed";
+      const themes = preserveUninterpreted ? [] : answerThemes(action.value, action.source);
+      const isArjunCorrection = !preserveUninterpreted && state.isArjunDemo && action.source === "sample" && action.value.toLowerCase().includes("not quite");
+      const turns: ConversationTurn[] = isArjunCorrection
+        ? [
+            { id: "u1", speaker: "arjun", text: state.opening || fixtures.leadPersona.private.opening },
+            { id: "g1", speaker: "guide", text: "It sounds like your relationship is feeling difficult. Is that what you most want to talk through?" },
+            { id: "u2", speaker: "arjun", text: fixtures.leadPersona.private.utterances[1].text },
+            { id: "g2", speaker: "guide", text: "Thanks for clarifying. The pressure to have an answer may be harder right now than the relationship question itself. Does that fit?" },
+          ]
+        : [
+            { id: "u1", speaker: "arjun", text: state.opening || action.value },
+            { id: "g1", speaker: "guide", text: "I might be missing something. What feels hardest right now?" },
+            { id: "u2", speaker: "arjun", text: action.value },
+            { id: "g2", speaker: "guide", text: "What would feel useful right now: hearing experiences, talking it through, or just reading quietly?" },
+          ];
+      return {
+        ...state,
+        turns,
+        questionStep: 1,
+        proposedThemes: preserveUninterpreted ? [] : isArjunCorrection ? ["relationship-uncertainty", "family-expectations"] : themes.length ? themes : state.proposedThemes,
+        confirmedThemes: preserveUninterpreted ? [] : isArjunCorrection ? ["family-expectations"] : themes,
+        rejectedThemes: preserveUninterpreted ? [] : isArjunCorrection ? ["relationship-uncertainty"] : [],
+        mockTextNotice: preserveUninterpreted,
+        error: "",
+      };
+    }
+    case "ANSWER_SECOND": {
+      const preserveUninterpreted = state.mockTextNotice || action.source === "typed";
+      const themes = preserveUninterpreted ? [] : answerThemes(action.value, action.source);
+      const isConfirmedArjunExample = state.isArjunDemo && !state.mockTextNotice && action.source === "sample" && state.turns.some((turn) => turn.speaker === "arjun" && turn.text.toLowerCase().includes("not quite"));
+      return {
+        ...state,
+        turns: [...state.turns, { id: "u3", speaker: "arjun", text: isConfirmedArjunExample ? fixtures.leadPersona.private.utterances[2].text : action.value }],
         questionStep: 2,
-        proposedThemes: action.source === "typed" ? [] : themes.length ? themes : state.proposedThemes,
-        confirmedThemes: action.source === "typed" ? [] : themes.length ? themes : state.confirmedThemes,
+        proposedThemes: preserveUninterpreted ? [] : isConfirmedArjunExample ? ["relationship-uncertainty", "family-expectations", "personal-autonomy"] : themes.length ? themes : state.proposedThemes,
+        confirmedThemes: preserveUninterpreted ? [] : isConfirmedArjunExample ? ["family-expectations", "personal-autonomy"] : themes.length ? themes : state.confirmedThemes,
+        rejectedThemes: preserveUninterpreted ? [] : isConfirmedArjunExample ? ["relationship-uncertainty"] : state.rejectedThemes,
         supportNeed: action.value.toLowerCase().includes("read") ? "quiet-reading" : action.value.toLowerCase().includes("activity") ? "shared-activity" : "human-perspective",
-        confirmedNeed: action.value,
-        mockTextNotice: state.mockTextNotice || action.source === "typed",
+        confirmedNeed: isConfirmedArjunExample ? "Perspectives on family expectations, without pressure to choose a relationship outcome." : action.value,
+        mockTextNotice: preserveUninterpreted,
         error: "",
       };
     }
@@ -352,7 +408,7 @@ export function harmoniseReducer(state: HarmoniseState, action: HarmoniseAction)
     case "TOGGLE_THEME": {
       const has = state.confirmedThemes.includes(action.theme);
       const confirmedThemes = has ? state.confirmedThemes.filter((theme) => theme !== action.theme) : [...state.confirmedThemes, action.theme];
-      return { ...state, confirmedThemes, error: "" };
+      return { ...state, confirmedThemes, rejectedThemes: has ? [...state.rejectedThemes, action.theme] : state.rejectedThemes.filter((theme) => theme !== action.theme), error: "" };
     }
     case "SET_SUPPORT_NEED": return { ...state, supportNeed: action.need, confirmedNeed: action.label };
     case "CONFIRM_UNDERSTANDING": return go({ ...state, noMatch: false, selectedCommunityId: "", quietReader: state.supportNeed === "quiet-reading" }, "discovery");
@@ -391,22 +447,54 @@ export function harmoniseReducer(state: HarmoniseState, action: HarmoniseAction)
     }
     case "SET_NEXT_STEP": return { ...state, nextStep: action.value };
     case "SET_INSIGHT_DRAFT": return { ...state, insightDraft: action.value, insightApproved: false };
-    case "APPROVE_INSIGHT": return { ...state, insightApproved: true };
+    case "APPROVE_INSIGHT": return { ...state, insightApproved: state.insightDraft.trim().length > 0 };
     case "OPEN_JOURNEY": return go(state, "journey");
-    case "START_FUTURE_CHAPTER": return go({
-      ...state,
-      chapter: "belonging",
-      futureChapterStarted: true,
-      isArjunDemo: true,
-      quietReader: true,
-      opening: "I've moved cities and barely meet people outside work.",
-      proposedThemes: ["relocation", "belonging", "hobbies"],
-      confirmedThemes: ["relocation", "belonging", "hobbies"],
-      confirmedNeed: "Find belonging through shared interests",
-      supportNeed: "shared-activity",
-      selectedCommunityId: "community.moving-friends",
-      noMatch: false,
-    }, "discovery");
+    case "START_FUTURE_CHAPTER": {
+      const priorChapter: PriorChapterSnapshot = state.priorChapter ?? {
+        opening: state.opening || fixtures.leadPersona.private.opening,
+        confirmedNeed: state.confirmedNeed,
+        confirmedThemes: [...state.confirmedThemes],
+        rejectedThemes: [...state.rejectedThemes],
+        openedExperienceIds: [...state.openedExperienceIds],
+        questionPayload: state.questionPayload ? { ...state.questionPayload } : null,
+        usefulness: state.usefulness,
+        nextStep: state.nextStep,
+        insightDraft: state.insightDraft,
+        insightApproved: state.insightApproved,
+      };
+      const canCarryApprovedTakeaway = action.carryContext && state.insightApproved;
+      return go({
+        ...state,
+        chapter: "belonging",
+        futureChapterStarted: true,
+        priorChapter,
+        carryPreviousContext: canCarryApprovedTakeaway,
+        carriedTakeaway: canCarryApprovedTakeaway ? state.insightDraft : "",
+        isArjunDemo: true,
+        quietReader: true,
+        opening: "Work is okay, but after moving to Hyderabad I've felt disconnected. I don't really have people to meet outside the office.",
+        turns: [],
+        questionStep: 0,
+        mockTextNotice: false,
+        proposedThemes: ["relocation", "belonging", "hobbies"],
+        confirmedThemes: ["relocation", "belonging", "hobbies"],
+        rejectedThemes: [],
+        confirmedNeed: "Wants regular social connection, not additional marriage advice.",
+        supportNeed: "shared-activity",
+        selectedCommunityId: "community.moving-friends",
+        selectedExperienceId: null,
+        openedExperienceIds: [],
+        noMatch: false,
+        questionText: fixtures.peerQuestionDemo.questionText,
+        questionConsent: false,
+        questionPayload: null,
+        usefulness: null,
+        nextStep: "",
+        insightDraft: "",
+        insightApproved: false,
+        reportShown: false,
+      }, "discovery");
+    }
     case "OPEN_CONTRIBUTE": return go(state, "contribute");
     case "SET_CONTRIBUTOR_DRAFT": return { ...state, contributorDraft: action.value };
     case "SET_CONTRIBUTOR_SUMMARY": return { ...state, contributorSummary: action.value, contributorApproved: false };

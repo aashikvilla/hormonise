@@ -1,6 +1,6 @@
 # Harmonise
 
-An incremental upgrade of the existing Beyond Silence Next.js prototype. Harmonise helps a person explore what they want, read relevant community experiences, and decide what—if anything—they want to share. Communities and people provide the human value; the prototype's AI-like interpretation is deterministic demo behavior.
+An incremental upgrade of the existing Beyond Silence Next.js application. Harmonise helps a person explore what they want, read relevant community experiences, and decide what—if anything—they want to share. Communities and people provide the human value; interpretation and ranking in this build use local, deterministic fixtures.
 
 ## Run locally
 
@@ -11,7 +11,11 @@ npm ci
 npm run dev
 ```
 
-Open <http://localhost:3000>. Start with **Explore Arjun's fictional example** for the guided demonstration, or choose any of the four entry paths. `/demo` opens the in-app entry chooser; `?path=quiet`, `?path=support`, and `?help=safety` open specific paths.
+Open <http://localhost:3000>. Start with **Follow Arjun's illustrative story** for the guided walkthrough, or choose any of the four entry paths. `/demo` opens the in-app entry chooser; `?path=quiet`, `?path=support`, and `?help=safety` open specific paths.
+
+## Final demo video
+
+[Watch or download the final film](demo/harmonise-final-film-rehearsal.mp4) · [English SRT sidecar](demo/harmonise-final-film-rehearsal.en.srt). The video is 2:58.4, 1920×1080 H.264, silent, with English captions burned in.
 
 ## Deploy to GitHub Pages
 
@@ -19,21 +23,21 @@ For the one-time repository setup, open **Settings → Pages** and set **Build a
 
 ## Three-minute rehearsal
 
-Use the sample answers so nothing needs to be typed:
+The complete flow uses selectable sample answers; no typing is required. Target 176–179 seconds and keep the fictional-content disclosure visible at the beginning and end.
 
-1. **0:00–0:12 — Start with a choice.** On the landing page, select **Explore Arjun's fictional example**. Say: “Some experiences feel too personal to explain, and search terms can miss what matters.”
-2. **0:12–0:32 — Explore without an intake.** Choose **Relationship and family expectations**, then **Hear experiences without advice**. The guided conversation asks two questions; it does not diagnose.
-3. **0:32–0:48 — Confirm or correct.** Select **Review understanding**. Point out the separate source words, suggested themes and user choice. Optionally remove one theme or add **Work pressure** to show the recommendation changes.
-4. **0:48–1:14 — Visit the community.** Choose **Use this to explore communities**, open **Family Expectations & Personal Choices**, and briefly show Experiences, Discussions and People. Community content is fictional and no activity is live.
-5. **1:14–1:43 — Compare lived experience.** Open Ravi's story. Show all three milestones, the difference that Ravi had a trusted friend, and what the demo does not know about his outcome.
-6. **1:43–2:18 — Review a human question.** Select **Ask Ravi anonymously**. Read the exact recipient preview, check consent and show the clearly fictional reply. No private conversation history is included.
-7. **2:18–2:37 — Choose what was useful.** Select **A new perspective**, choose an optional next step, and explicitly keep or skip the private note.
-8. **2:37–2:50 — Show continuity.** Open **My journey**, then **Start a new chapter**. The later “Belonging after moving” example opens a different community without linking the concerns.
-9. **2:50–3:00 — Close honestly.** Briefly show **Contribute** and state that this is a fictional, frontend-only demo. No Meta inference ran.
+1. **0:00–0:12 — Start with care.** Choose **Follow Arjun's illustrative story**. Frame the need: “When something feels personal, a person may not yet know what to search for.”
+2. **0:12–0:35 — Let Arjun correct the first read.** Select **Not quite — the pressure is from my family**, then **Hear how others handled that pressure, without advice**. The screen preserves Arjun's exact words and the assistant's tentative wording.
+3. **0:35–0:53 — Confirm the map.** Choose **Review understanding**. Show the three layers—his words, possible interpretation, and the support he wants. Point out that family expectations and personal autonomy are confirmed while relationship uncertainty is set aside. Continue with **Find human perspectives**.
+4. **0:53–1:13 — Show why context matters.** Explain C0, **Separation paperwork and settlement basics**, and C1, the family-expectations community. These are source-labeled illustrative fixtures, not a live AI result or a match score. Open **Family Expectations & Personal Choices**.
+5. **1:13–1:33 — Visit the human space.** In Experiences, briefly show Nisha's T1 and Ravi's T2 posts with replies, then open Ravi's story. The **R1–R3** timeline separates what he tried, what he reported as helpful, and what remained unresolved. Mention that Ravi had a trusted friend; Arjun has not said he does.
+6. **1:33–2:02 — Make connection optional and consentful.** Select **Ask Ravi**. Review the exact alias and recipient, edit the prepared question if desired, check the consent box, and choose **Continue to prepared response**. Identify the response as prepared and illustrative; no person is contacted.
+7. **2:02–2:28 — Keep only what Arjun chooses.** Continue to reflection. Select **A new perspective**, choose an optional next step, and keep the editable takeaway privately. Say that this remains local to the current session.
+8. **2:28–2:49 — Preserve a boundary across chapters.** Choose **View my journey**. Show his opening words, confirmed need, explored perspectives, and selected takeaway. Choose **Start separately** for the New City chapter to demonstrate that relationship context is not carried over.
+9. **2:49–3:00 — Close honestly.** State that participants and content are fictional and that no Meta model inference, real messaging, or moderation ran. Meta inference is a planned integration, not part of this build.
 
 ### 120-second fallback
 
-Choose Arjun's example → select the two sample answers → review the suggested themes → open the family community → open Ravi and point out the difference → preview and consent to the sample question → show the fictional reply → choose **A new perspective** → close on **My journey**. Skip the comparison drawer, other tabs, and contributor view.
+Choose **Follow Arjun's illustrative story** → select the family-pressure correction and the no-advice preference → review and confirm the understanding map → show the C0/C1 comparison → open the family community and Ravi's story → review the exact question and consent → show the prepared illustrative reply → keep the takeaway → start the new-city chapter separately. Skip the comparison drawer, other tabs, and contributor view.
 
 ## Verification
 
@@ -45,7 +49,7 @@ npm run build
 npm run test:e2e -- --workers=1
 ```
 
-Playwright covers desktop at 1920×1080 and mobile at 390×844. Browser screenshots are written to `/tmp/harmonise-*.png`. See [the migration map](docs/harmonise-migration-map.md) and [UX/accessibility review](docs/harmonise-quality-review.md) for implementation and review evidence.
+Playwright covers desktop at 1920×1080 and mobile at 390×844 (plus a 320px overflow check). Browser screenshots are written to `/tmp/harmonise-*.png`. See [the migration map](docs/harmonise-migration-map.md) and [UX/accessibility review](docs/harmonise-quality-review.md) for implementation and review evidence.
 
 ## Prototype boundaries
 
@@ -55,4 +59,4 @@ Playwright covers desktop at 1920×1080 and mobile at 390×844. Browser screensh
 - State is in memory only and resets on refresh. There is no login, database, external messaging, real moderation, provider directory, booking, persistence or safety monitoring.
 - A pseudonym does not guarantee anonymity. Leaving the page does not erase browser history. This demo is not therapy, legal advice, emergency support or clinical care.
 
-The earlier Beyond Silence video files record a previous prototype direction; do not use them as a walkthrough of the current Harmonise interface.
+The earlier Beyond Silence video files record a previous product direction; use this rehearsal sequence for the current Harmonise interface.

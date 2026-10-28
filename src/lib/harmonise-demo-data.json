@@ -1,6 +1,7 @@
 {
   "version": "harmonise-3.0-hackathon",
   "kind": "fictional-demo-fixtures",
+  "executionProvenance": {"source": "local-fixture", "model": null},
   "notice": "All people, communities, events and human responses are fictional demo examples. No actual AI inference, messaging, community moderation, or clinical services occur in mock mode.",
   "leadPersona": {
     "id": "person.arjun",
@@ -10,16 +11,17 @@
     "private": {
       "age": 29,
       "location": "Hyderabad",
-      "opening": "Everything seems normal at home, but I feel stuck.",
+      "opening": "I think something is wrong with my marriage. Things look normal, but I feel trapped whenever everyone asks me what comes next.",
       "utterances": [
-        {"id": "u1", "text": "Everything seems normal at home, but I feel stuck."},
-        {"id": "u2", "text": "It's my marriage, but I'm worried about how my parents would react."},
-        {"id": "u3", "text": "I don't want anyone deciding whether I should stay or leave. I want to hear how others handled family expectations."}
+        {"id": "u1", "text": "I think something is wrong with my marriage. Things look normal, but I feel trapped whenever everyone asks me what comes next."},
+        {"id": "u2", "text": "Not quite. My partner and I are still talking. It's my parents and relatives. Everyone expects me to give them an answer, and I don't even know what I want yet."},
+        {"id": "u3", "text": "Yes. Please don't tell me whether I should stay or leave. I want to know how others handled that pressure without making things worse."}
       ],
-      "proposedThemes": ["relationship-uncertainty", "family-expectations"],
-      "confirmedThemes": ["family-expectations", "relationship-uncertainty"],
+      "proposedThemes": ["relationship-uncertainty", "family-expectations", "personal-autonomy"],
+      "confirmedThemes": ["family-expectations", "personal-autonomy"],
       "supportIntent": "human-perspective-without-verdict",
-      "explicitBoundary": "Do not tell me whether to stay married or leave.",
+      "explicitBoundary": "Do not tell me whether I should stay or leave.",
+      "reaction": "I thought I needed the right answer before speaking to anyone. Maybe what I need first is permission to think.",
       "savePermission": false,
       "privateReflections": []
     },
@@ -37,7 +39,7 @@
     },
     {
       "id": "chapter.arjun-belonging",
-      "title": "Belonging after moving",
+      "title": "New City, New Connections",
       "status": "not-started",
       "isFictional": true,
       "futureNote": "I've moved cities and barely meet people outside work.",
@@ -54,7 +56,7 @@
       "credentials": null,
       "scope": {"discoverable": true, "anonymousQuestions": true, "privateMessages": false, "rawNotes": false},
       "privateExcludedFields": ["realName", "email", "phone", "location", "familyNames", "employer", "rawJournal"],
-      "approvedSummary": "I felt uncertain about my marriage and anxious about family expectations. I eventually learned that I needed space for my own questions before hearing more opinions. This is my experience, not a recommendation for anyone else's situation."
+      "approvedSummary": "At first I asked everyone what I should do about my relationship. I got completely different answers. Some were kind, some felt like instructions. I stopped asking for a verdict and asked one trusted friend to listen while I worked out what mattered to me. I was still uncertain afterward, but I could hear my own thinking again."
     },
     {
       "id": "contributor.nisha",
@@ -63,7 +65,7 @@
       "role": "lived-experience-contributor",
       "credentials": null,
       "scope": {"discoverable": true, "anonymousQuestions": false, "privateMessages": false, "rawNotes": false},
-      "approvedSummary": "Family pressure made it hard to talk about my relationship. I tried setting boundaries with a relative, but the conversation was complicated when people began taking sides."
+      "approvedSummary": "I love my parents, but every call became a question about what I was going to do. I started avoiding them, which made me feel worse. Eventually I told my sister I could talk about how I was doing, but I wasn't ready for everyone to vote on my decision. It didn't solve everything. It made our conversations less exhausting."
     }
   ],
   "experiences": [
@@ -72,30 +74,30 @@
       "contributorId": "contributor.ravi",
       "communityId": "community.family-expectations",
       "isFictional": true,
-      "attributionLabel": "Fictional contributor account — demonstration",
+      "attributionLabel": "Illustrative experience · Ravi",
       "approvedForDiscovery": true,
       "themeIds": ["family-expectations", "relationship-uncertainty", "personal-autonomy"],
       "milestones": [
         {
-          "id": "ravi-week0", "relativeTime": "Week 0", "title": "Too many opinions",
-          "whatHappened": "I was uncertain about my marriage and worried about my family's reaction.",
-          "whatIActuallyTried": "Read several discussions and asked broadly for opinions.",
+          "id": "R1", "relativeTime": "What felt hard", "title": "Every question felt like a demand for an answer",
+          "whatHappened": "When everyone asked me what I'd decided, I felt that I owed them an immediate answer.",
+          "whatIActuallyTried": "I spent a lot of time asking other people what I should do.",
           "whatHelped": null,
-          "whatDidNotHelp": "Conflicting advice left me more confused."
+          "whatDidNotHelp": "I also tried reading many anonymous opinions, but I found that overwhelming."
         },
         {
-          "id": "ravi-week3", "relativeTime": "Week 3", "title": "A different kind of conversation",
-          "whatHappened": "I realized I wanted space to think before another person offered a verdict.",
-          "whatIActuallyTried": "Wrote down my questions and asked a trusted friend to listen first.",
-          "whatHelped": "The conversation helped me explain what mattered to me.",
+          "id": "R2", "relativeTime": "What I tried", "title": "Separating my worries from other people's expectations",
+          "whatHappened": "I wanted space to think before another person offered a verdict.",
+          "whatIActuallyTried": "I wrote down which worries were mine and which came from other people's expectations. I asked a trusted friend for a conversation without advice.",
+          "whatHelped": "My friend listened without deciding for me.",
           "whatDidNotHelp": null
         },
         {
-          "id": "ravi-week8", "relativeTime": "Week 8", "title": "More clarity, still uncertainty",
-          "whatHappened": "My circumstances were still complicated.",
-          "whatIActuallyTried": "Continued reflecting and considered qualified support.",
-          "whatHelped": "I could describe my priorities more clearly, according to my own reflection.",
-          "whatDidNotHelp": "There was no quick answer."
+          "id": "R3", "relativeTime": "What changed · still unresolved", "title": "Clearer about what I needed, not the relationship outcome",
+          "whatHappened": "I became clearer about what to ask for: time to think and someone who would listen.",
+          "whatIActuallyTried": "I kept reflecting on what mattered to me.",
+          "whatHelped": "I could hear my own thinking again.",
+          "whatDidNotHelp": "I did not suddenly know what to do about the relationship."
         }
       ],
       "importantDifferencesFromArjun": ["Ravi had an existing trusted friend, which Arjun has not said he has."],
@@ -104,7 +106,7 @@
     {
       "id": "experience.nisha",
       "contributorId": "contributor.nisha",
-      "communityId": "community.relationship-uncertainty",
+      "communityId": "community.family-expectations",
       "isFictional": true,
       "approvedForDiscovery": true,
       "themeIds": ["family-expectations", "relationship-uncertainty"],
@@ -117,8 +119,8 @@
           "whatDidNotHelp": "Some relatives took sides, which was difficult."
         }
       ],
-      "importantDifferencesFromArjun": ["Nisha chose a conversation with a relative; Arjun has expressed discomfort involving family."],
-      "unknowns": ["Whether talking to a relative would be appropriate for Arjun"]
+      "importantDifferencesFromArjun": ["Nisha had a sister she could involve; Arjun hasn't reported having a trusted person."],
+      "unknowns": ["Whether involving a relative would feel right for Arjun"]
     }
   ],
   "communities": [
@@ -128,8 +130,9 @@
       "isFictional": true,
       "purpose": "Human experiences about navigating family pressure and personal autonomy.",
       "topicIds": ["family-expectations", "personal-autonomy", "relationship-uncertainty"],
-      "experienceIds": ["experience.ravi"],
-      "discussionIds": ["discussion.listening-first", "discussion.conflicting-advice"],
+      "experienceIds": ["experience.ravi", "experience.nisha"],
+      "discussionIds": ["discussion.nisha-family-call", "discussion.ravi-opinions"],
+      "evidenceIds": ["T1", "T2", "R1", "R2", "R3"],
       "roleLabels": ["peer contributor", "moderator (fictional role)"],
       "activityLabel": "Example community — no real activity or live coverage",
       "joiningIsOptional": true
@@ -141,7 +144,8 @@
       "purpose": "Explore lived experiences without pressure to stay in or leave a relationship.",
       "topicIds": ["relationship-uncertainty", "family-expectations"],
       "experienceIds": ["experience.nisha"],
-      "discussionIds": ["discussion.conflicting-advice"],
+      "discussionIds": ["discussion.ravi-opinions"],
+      "evidenceIds": ["T2", "R1", "R2", "R3"],
       "roleLabels": ["peer contributor"],
       "activityLabel": "Example community — no real activity or live coverage",
       "joiningIsOptional": true
@@ -153,19 +157,21 @@
       "purpose": "Human experiences about communicating needs and boundaries respectfully.",
       "topicIds": ["communication", "personal-autonomy"],
       "experienceIds": [],
-      "discussionIds": ["discussion.listening-first"],
+      "discussionIds": ["discussion.nisha-family-call"],
+      "evidenceIds": ["T1"],
       "roleLabels": ["community host (fictional)"],
       "activityLabel": "Example community — no real activity or live coverage",
       "joiningIsOptional": true
     },
     {
       "id": "community.moving-friends",
-      "name": "Moving & Finding Friends",
+      "name": "New City, New Connections",
       "isFictional": true,
       "purpose": "Find belonging through recurring interests such as walks, games and shared activities.",
       "topicIds": ["relocation", "belonging", "hobbies"],
       "experienceIds": [],
       "discussionIds": ["discussion.new-city"],
+      "evidenceIds": ["C3"],
       "roleLabels": ["community host (fictional)"],
       "activityLabel": "Example community — no real sessions or bookings",
       "joiningIsOptional": true
@@ -178,6 +184,7 @@
       "topicIds": ["work-pressure", "career", "boundaries"],
       "experienceIds": [],
       "discussionIds": [],
+      "evidenceIds": [],
       "roleLabels": ["community moderator (fictional)"],
       "activityLabel": "Example community — no real activity or live coverage",
       "joiningIsOptional": true
@@ -185,18 +192,31 @@
   ],
   "discussions": [
     {
-      "id": "discussion.listening-first",
+      "id": "discussion.nisha-family-call",
       "isFictional": true,
-      "authorAlias": "Mira_R",
-      "prompt": "How have you asked a friend to listen before offering advice?",
-      "preview": "I found it helpful to say what kind of conversation I wanted before beginning."
+      "authorAlias": "Nisha · illustrative",
+      "prompt": "When every family call turns into a decision I haven't made",
+      "preview": "I love my parents, but every call became a question about what I was going to do. I started avoiding them, which made me feel worse. Eventually I told my sister I could talk about how I was doing, but I wasn't ready for everyone to vote on my decision. It didn't solve everything. It made our conversations less exhausting.",
+      "reply": "The part about people voting on your decision really resonates. My cousin kept asking for updates when I hadn't figured anything out myself.",
+      "sourceId": "T1"
     },
     {
-      "id": "discussion.conflicting-advice",
+      "id": "discussion.ravi-opinions",
       "isFictional": true,
-      "authorAlias": "OnlyMyPerspective",
-      "prompt": "When did hearing more opinions stop being useful?",
-      "preview": "Sometimes the hardest part was separating other people's views from my own questions."
+      "authorAlias": "Ravi · illustrative",
+      "prompt": "What actually helped when everyone had an opinion?",
+      "preview": "At first I asked everyone what I should do about my relationship. I got completely different answers. Some were kind, some felt like instructions. I stopped asking for a verdict and asked one trusted friend to listen while I worked out what mattered to me. I was still uncertain afterward, but I could hear my own thinking again.",
+      "reply": "I wish I'd asked for listening rather than a decision sooner. It was hard to say that out loud.",
+      "sourceId": "T2"
+    },
+    {
+      "id": "discussion.separation-logistics",
+      "isFictional": true,
+      "authorAlias": "Community resource · illustrative",
+      "prompt": "Separation paperwork and settlement basics",
+      "preview": "A topic guide about legal process. It contains marriage and family keywords, but does not address Arjun's stated wish for firsthand perspectives without pressure.",
+      "reply": null,
+      "sourceId": "C0"
     },
     {
       "id": "discussion.new-city",
@@ -208,24 +228,25 @@
   ],
   "topicOnlyBaseline": {
     "id": "topic.legal-process",
-    "name": "Separation legal information",
+    "name": "Separation paperwork and settlement basics",
     "type": "topic-information-result",
     "isFictional": true,
-    "explanation": "Shares some relationship keywords but is not the primary match for Arjun's confirmed need for non-prescriptive human perspective."
+    "explanation": "This topic includes marriage and family keywords, but it is about legal logistics. Arjun explicitly asked for firsthand perspectives on family expectations without pressure to decide.",
+    "sourceIds": ["C0"]
   },
   "peerQuestionDemo": {
-    "id": "question.arjun-to-ravi",
+      "id": "question.arjun-to-ravi",
     "recipientId": "contributor.ravi",
     "alias": "QuietRiver29",
-    "questionText": "How did you find space to understand what you wanted when your family had strong opinions?",
+      "questionText": "When everyone wanted an answer from you, how did you ask for space without turning it into another argument?",
     "isFictional": true,
     "consentDefault": false,
     "allowedOutboundFields": ["recipientId", "alias", "questionText"],
     "response": {
       "id": "reply.ravi-1",
       "isFictional": true,
-      "label": "Fictional contributor reply — demo simulation",
-      "text": "I didn't find an immediate answer. I started by writing down what was important to me, then asked one trusted friend to listen without deciding for me. That was my experience; it might not fit yours. I hope you find a space where you can work out what matters to you."
+      "label": "Prepared illustrative reply",
+      "text": "I used to answer every question like I had to defend myself. That only made the conversations longer. What helped was saying something smaller: “I care about your concern, but I'm not ready to discuss a decision yet.” I said I could talk about how I was doing, just not ask people to decide for me. It wasn't perfect. I still had difficult calls. But it gave me room to think."
     }
   },
   "reflectionOptions": [
@@ -235,7 +256,7 @@
     {"id": "not-helpful", "label": "Not especially helpful"},
     {"id": "skip", "label": "I'd rather skip"}
   ],
-  "sampleApprovedInsight": "I think I want a conversation where someone listens before suggesting what I should do.",
+  "sampleApprovedInsight": "I want a conversation where someone listens while I work out my priorities.",
   "reportingExample": {
     "isFictional": true,
     "label": "Illustrative moderation queue; no live safety coverage",

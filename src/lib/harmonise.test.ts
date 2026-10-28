@@ -52,6 +52,92 @@ describe("Harmonise guided demo state and fictional fixtures", () => {
     expect(state.proposedThemes).toEqual([]);
   });
 
+  it("keeps Arjun's exact words, tentative interpretation, correction, and confirmation distinct", () => {
+    let state = harmoniseReducer(initialHarmoniseState, { type: "START_ARJUN" });
+    expect(state.turns).toEqual([{ id: "u1", speaker: "arjun", text: fixtures.leadPersona.private.utterances[0].text }]);
+    expect(state.turns[0].text).toBe("I think something is wrong with my marriage. Things look normal, but I feel trapped whenever everyone asks me what comes next.");
+
+    state = harmoniseReducer(state, { type: "ANSWER_FIRST", source: "sample", value: fixtures.leadPersona.private.utterances[1].text });
+    expect(state.turns.find((turn) => turn.id === "u2")?.text).toBe("Not quite. My partner and I are still talking. It's my parents and relatives. Everyone expects me to give them an answer, and I don't even know what I want yet.");
+    expect(state.proposedThemes).toEqual(["relationship-uncertainty", "family-expectations"]);
+    expect(state.confirmedThemes).toEqual(["family-expectations"]);
+    expect(state.rejectedThemes).toEqual(["relationship-uncertainty"]);
+
+    state = harmoniseReducer(state, { type: "ANSWER_SECOND", source: "sample", value: fixtures.leadPersona.private.utterances[2].text });
+    expect(state.turns.find((turn) => turn.id === "u3")?.text).toBe("Yes. Please don't tell me whether I should stay or leave. I want to know how others handled that pressure without making things worse.");
+    expect(state.confirmedThemes).toEqual(["family-expectations", "personal-autonomy"]);
+    expect(state.rejectedThemes).toEqual(["relationship-uncertainty"]);
+    expect(state.confirmedNeed).toBe("Perspectives on family expectations, without pressure to choose a relationship outcome.");
+  });
+
+  it("keeps an edited opening uninterpreted through later sample answers", () => {
+    let state = harmoniseReducer(initialHarmoniseState, { type: "START_ARJUN" });
+    state = harmoniseReducer(state, { type: "EDIT_OPENING", value: "I feel unsure about a different part of my life." });
+    expect(state.mockTextNotice).toBe(true);
+    expect(state.proposedThemes).toEqual([]);
+    expect(state.confirmedThemes).toEqual([]);
+
+    state = harmoniseReducer(state, { type: "ANSWER_FIRST", source: "sample", value: fixtures.leadPersona.private.utterances[1].text });
+    expect(state.mockTextNotice).toBe(true);
+    expect(state.proposedThemes).toEqual([]);
+    expect(state.confirmedThemes).toEqual([]);
+    expect(state.turns.find((turn) => turn.id === "g1")?.text).toBe("I might be missing something. What feels hardest right now?");
+
+    state = harmoniseReducer(state, { type: "ANSWER_SECOND", source: "sample", value: fixtures.leadPersona.private.utterances[2].text });
+    expect(state.mockTextNotice).toBe(true);
+    expect(state.proposedThemes).toEqual([]);
+    expect(state.confirmedThemes).toEqual([]);
+    expect(state.rejectedThemes).toEqual([]);
+  });
+
+  it("starts a fresh entry path without old conversation, question, reflection, or journey state", () => {
+    let state = harmoniseReducer(initialHarmoniseState, { type: "START_ARJUN" });
+    state = harmoniseReducer(state, { type: "ANSWER_FIRST", source: "sample", value: fixtures.leadPersona.private.utterances[1].text });
+    state = harmoniseReducer(state, { type: "ANSWER_SECOND", source: "sample", value: fixtures.leadPersona.private.utterances[2].text });
+    state = harmoniseReducer(state, { type: "OPEN_EXPERIENCE", experienceId: "experience.ravi" });
+    state = harmoniseReducer(state, { type: "OPEN_QUESTION" });
+    state = harmoniseReducer(state, { type: "SET_QUESTION_CONSENT", value: true });
+    state = harmoniseReducer(state, { type: "SEND_QUESTION" });
+    state = harmoniseReducer(state, { type: "CONTINUE_AFTER_REPLY" });
+    state = harmoniseReducer(state, { type: "SET_USEFULNESS", value: "perspective" });
+    state = harmoniseReducer(state, { type: "SET_NEXT_STEP", value: "Talk with someone I trust" });
+    state = harmoniseReducer(state, { type: "SET_INSIGHT_DRAFT", value: "A note from the previous chapter" });
+    state = harmoniseReducer(state, { type: "APPROVE_INSIGHT" });
+
+    const fresh = harmoniseReducer(state, { type: "START_PATH", path: "talk" });
+    expect(fresh.screen).toBe("conversation");
+    expect(fresh.history).toEqual(["entry"]);
+    expect(fresh.entryPath).toBe("talk");
+    expect(fresh.isArjunDemo).toBe(false);
+    expect(fresh.opening).toBe("");
+    expect(fresh.turns).toEqual([]);
+    expect(fresh.questionStep).toBe(0);
+    expect(fresh.mockTextNotice).toBe(false);
+    expect(fresh.proposedThemes).toEqual([]);
+    expect(fresh.confirmedThemes).toEqual([]);
+    expect(fresh.rejectedThemes).toEqual([]);
+    expect(fresh.questionConsent).toBe(false);
+    expect(fresh.questionPayload).toBeNull();
+    expect(fresh.usefulness).toBeNull();
+    expect(fresh.nextStep).toBe("");
+    expect(fresh.insightApproved).toBe(false);
+    expect(fresh.insightDraft).toBe(fixtures.sampleApprovedInsight);
+    expect(fresh.openedExperienceIds).toEqual([]);
+    expect(fresh.contributorSummary).toBe(initialHarmoniseState.contributorSummary);
+    expect(fresh.contributorPublished).toBe(initialHarmoniseState.contributorPublished);
+    expect(fresh.contributorAllowsQuestions).toBe(initialHarmoniseState.contributorAllowsQuestions);
+  });
+
+  it("keeps C0 and C1 grounded in source IDs and ranks the confirmed family context first", () => {
+    const state = harmoniseReducer(harmoniseReducer(initialHarmoniseState, { type: "START_ARJUN" }), { type: "ANSWER_FIRST", source: "sample", value: fixtures.leadPersona.private.utterances[1].text });
+    const confirmed = harmoniseReducer(state, { type: "ANSWER_SECOND", source: "sample", value: fixtures.leadPersona.private.utterances[2].text });
+    expect(fixtures.topicOnlyBaseline.name).toBe("Separation paperwork and settlement basics");
+    expect(fixtures.topicOnlyBaseline.sourceIds).toEqual(["C0"]);
+    const family = fixtures.communities.find((community) => community.id === "community.family-expectations");
+    expect(family?.evidenceIds).toEqual(["T1", "T2", "R1", "R2", "R3"]);
+    expect(getRecommendedCommunities(confirmed)[0]?.id).toBe("community.family-expectations");
+  });
+
   it("keeps the community fixture human-centered and clearly labeled", () => {
     expect(fixtures.communities.map((community) => community.name)).toContain("Family Expectations & Personal Choices");
     const ravi = fixtures.experiences.find((experience) => experience.id === "experience.ravi");
@@ -59,6 +145,17 @@ describe("Harmonise guided demo state and fictional fixtures", () => {
     expect(ravi?.milestones.every((milestone) => milestone.whatIActuallyTried)).toBe(true);
     expect(ravi?.importantDifferencesFromArjun.length).toBeGreaterThan(0);
     expect(fixtures.contributors.every((contributor) => contributor.isFictional)).toBe(true);
+    expect(fixtures.discussions.find((post) => post.sourceId === "T1")?.prompt).toBe("When every family call turns into a decision I haven't made");
+    expect(fixtures.discussions.find((post) => post.sourceId === "T1")?.reply).toContain("people voting on your decision");
+    expect(fixtures.discussions.find((post) => post.sourceId === "T2")?.prompt).toBe("What actually helped when everyone had an opinion?");
+    expect(fixtures.discussions.find((post) => post.sourceId === "T2")?.reply).toContain("listening rather than a decision");
+    expect(ravi?.milestones.map((milestone) => milestone.id)).toEqual(["R1", "R2", "R3"]);
+    expect(ravi?.milestones[0]?.whatDidNotHelp).toContain("anonymous opinions");
+    expect(ravi?.milestones[1]?.whatHelped).toBe("My friend listened without deciding for me.");
+    expect(ravi?.milestones[2]?.whatDidNotHelp).toContain("did not suddenly know");
+    expect(fixtures.peerQuestionDemo.questionText).toBe("When everyone wanted an answer from you, how did you ask for space without turning it into another argument?");
+    expect(fixtures.peerQuestionDemo.response.label).toBe("Prepared illustrative reply");
+    expect(fixtures.peerQuestionDemo.response.text).toContain("I care about your concern, but I'm not ready to discuss a decision yet.");
   });
 
   it("does not allow questions to the read-only Nisha fixture", () => {
@@ -112,10 +209,65 @@ describe("Harmonise guided demo state and fictional fixtures", () => {
   });
 
   it("starts a separate later chapter with a different community", () => {
-    const state = harmoniseReducer(initialHarmoniseState, { type: "START_FUTURE_CHAPTER" });
-    expect(state.chapter).toBe("belonging");
-    expect(state.confirmedNeed).toContain("shared interests");
-    expect(getRecommendedCommunities(state).map((community) => community.id)).toEqual(["community.moving-friends"]);
+    let state = harmoniseReducer(initialHarmoniseState, { type: "START_ARJUN" });
+    state = harmoniseReducer(state, { type: "ANSWER_FIRST", source: "sample", value: fixtures.leadPersona.private.utterances[1].text });
+    state = harmoniseReducer(state, { type: "ANSWER_SECOND", source: "sample", value: fixtures.leadPersona.private.utterances[2].text });
+    state = harmoniseReducer(state, { type: "OPEN_EXPERIENCE", experienceId: "experience.ravi" });
+    state = harmoniseReducer(state, { type: "OPEN_QUESTION" });
+    state = harmoniseReducer(state, { type: "SET_QUESTION_CONSENT", value: true });
+    state = harmoniseReducer(state, { type: "SEND_QUESTION" });
+    state = harmoniseReducer(state, { type: "CONTINUE_AFTER_REPLY" });
+    state = harmoniseReducer(state, { type: "SET_USEFULNESS", value: "perspective" });
+    state = harmoniseReducer(state, { type: "SET_NEXT_STEP", value: "Talk with someone I trust" });
+    state = harmoniseReducer(state, { type: "SET_INSIGHT_DRAFT", value: "I want someone to listen while I work out my priorities." });
+    state = harmoniseReducer(state, { type: "APPROVE_INSIGHT" });
+    state = harmoniseReducer(state, { type: "OPEN_JOURNEY" });
+    const priorOpening = state.opening;
+    const priorNeed = state.confirmedNeed;
+    const priorQuestion = state.questionPayload;
+    const future = harmoniseReducer(state, { type: "START_FUTURE_CHAPTER", carryContext: false });
+    expect(future.chapter).toBe("belonging");
+    expect(future.opening).toContain("after moving to Hyderabad");
+    expect(future.confirmedNeed).toContain("regular social connection");
+    expect(future.priorChapter?.opening).toBe(priorOpening);
+    expect(future.priorChapter?.confirmedNeed).toBe(priorNeed);
+    expect(future.priorChapter?.confirmedThemes).toEqual(["family-expectations", "personal-autonomy"]);
+    expect(future.priorChapter?.openedExperienceIds).toContain("experience.ravi");
+    expect(future.priorChapter?.questionPayload).toEqual(priorQuestion);
+    expect(future.priorChapter?.usefulness).toBe("perspective");
+    expect(future.priorChapter?.nextStep).toBe("Talk with someone I trust");
+    expect(future.priorChapter?.insightApproved).toBe(true);
+    expect(future.carryPreviousContext).toBe(false);
+    expect(future.carriedTakeaway).toBe("");
+    expect(future.nextStep).toBe("");
+    expect(future.usefulness).toBeNull();
+    expect(future.questionPayload).toBeNull();
+    expect(getRecommendedCommunities(future).map((community) => community.id)).toEqual(["community.moving-friends"]);
+  });
+
+  it("carries only an explicitly approved takeaway into a later chapter", () => {
+    let state = harmoniseReducer(initialHarmoniseState, { type: "SET_INSIGHT_DRAFT", value: "I want someone to listen while I work out my priorities." });
+    state = harmoniseReducer(state, { type: "APPROVE_INSIGHT" });
+    const carried = harmoniseReducer(state, { type: "START_FUTURE_CHAPTER", carryContext: true });
+    expect(carried.carryPreviousContext).toBe(true);
+    expect(carried.carriedTakeaway).toBe("I want someone to listen while I work out my priorities.");
+    expect(carried.priorChapter?.insightDraft).toBe(carried.carriedTakeaway);
+    expect(carried.priorChapter?.insightApproved).toBe(true);
+    expect(carried.opening).toContain("after moving to Hyderabad");
+
+    const separate = harmoniseReducer(state, { type: "START_FUTURE_CHAPTER", carryContext: false });
+    expect(separate.carryPreviousContext).toBe(false);
+    expect(separate.carriedTakeaway).toBe("");
+  });
+
+  it("does not carry an unapproved draft even when carry is requested", () => {
+    const unapprovedDraft = harmoniseReducer(initialHarmoniseState, { type: "SET_INSIGHT_DRAFT", value: "A note that has not been approved." });
+    expect(unapprovedDraft.insightApproved).toBe(false);
+    const future = harmoniseReducer(unapprovedDraft, { type: "START_FUTURE_CHAPTER", carryContext: true });
+    expect(future.carryPreviousContext).toBe(false);
+    expect(future.carriedTakeaway).toBe("");
+    expect(future.priorChapter?.insightDraft).toBe("A note that has not been approved.");
+    expect(future.priorChapter?.insightApproved).toBe(false);
   });
 
   it("records only explicitly approved insights and respects negative or skipped feedback", () => {
@@ -141,6 +293,6 @@ describe("Harmonise guided demo state and fictional fixtures", () => {
     const alternative = harmoniseReducer(viewed, { type: "EXPLORE_DIFFERENT_PERSPECTIVE" });
     expect(alternative.screen).toBe("discovery");
     expect(alternative.usefulness).toBe("not-helpful");
-    expect(getRecommendedCommunities(alternative).map((community) => community.id)).toEqual(["community.relationship-uncertainty"]);
+    expect(getRecommendedCommunities(alternative).map((community) => community.id)).toEqual(["community.family-expectations", "community.relationship-uncertainty"]);
   });
 });
