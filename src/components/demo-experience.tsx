@@ -15,6 +15,7 @@ import {
   type HarmoniseState,
   type ThemeId,
 } from "@/lib/harmonise";
+import { hasFamilyContext, replyForUserMessage } from "@/lib/conversation";
 
 const navItems = [
   { label: "Explore", screen: "conversation" as const },
@@ -29,13 +30,6 @@ const communityTabs: { id: CommunityTab; label: string }[] = [
   { id: "discussions", label: "Discussions" },
   { id: "people", label: "People" },
   { id: "guidelines", label: "Guidelines" },
-];
-
-const sampleAnswers = [
-  { label: "Not quite — the pressure is from my family", text: fixtures.leadPersona.private.utterances[1].text, themes: ["family-expectations", "personal-autonomy"] as ThemeId[] },
-  { label: "I'm most worried about the relationship itself", text: "I think the uncertainty in my relationship is the part I want to talk about.", themes: ["relationship-uncertainty"] as ThemeId[] },
-  { label: "Work pressure", text: "Work has felt difficult, and I am not sure how to talk about it.", themes: ["work-pressure"] as ThemeId[] },
-  { label: "Feeling disconnected", text: "I have felt disconnected and would like to find people with shared interests.", themes: ["relocation", "belonging", "hobbies"] as ThemeId[] },
 ];
 
 function Brand() {
@@ -69,7 +63,7 @@ function activeExperience(state: HarmoniseState) {
 function appHeading(state: HarmoniseState) {
   const headings: Record<HarmoniseState["screen"], string> = {
     entry: "A place to begin, at your pace",
-    conversation: "What's been on your mind?",
+    conversation: "Some things are hard to say out loud.",
     understanding: "Have I understood what matters?",
     discovery: state.chapter === "belonging" ? "Find a way to feel more connected" : "Explore communities and experiences",
     community: activeCommunity(state)?.name ?? "Community example",
@@ -86,8 +80,17 @@ function appHeading(state: HarmoniseState) {
 
 export default function DemoExperience({ initialPath }: { initialPath?: Exclude<EntryPath, null> | "arjun" | "help" }) {
   const [state, dispatch] = useReducer(harmoniseReducer, initialPath, stateForEntry);
-  const [freeAnswer, setFreeAnswer] = useState("");
+  const [chatTurns, setChatTurns] = useState<{ id: string; role: "you" | "harmonise"; text: string }[]>([]);
+  const [composer, setComposer] = useState(initialPath === "arjun" ? "I don't know... things at home feel weird lately." : "");
+  const [understandingConfirmed, setUnderstandingConfirmed] = useState(false);
+  const [recordingState, setRecordingState] = useState<"idle" | "recording" | "review">("idle");
+  const [recordingError, setRecordingError] = useState("");
+  const [transcriptDraft, setTranscriptDraft] = useState("");
+  const recorderRef = useRef<MediaRecorder | null>(null);
+  const mediaStreamRef = useRef<MediaStream | null>(null);
+  const chatEndRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
+  const previousScreenRef = useRef(state.screen);
   const community = activeCommunity(state);
   const experience = activeExperience(state);
   const recommended = getRecommendedCommunities(state);
@@ -103,19 +106,17 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
   const stateDispatch = dispatch as (action: HarmoniseAction) => void;
 
   useEffect(() => {
-    headingRef.current?.focus();
+    if (previousScreenRef.current !== state.screen) headingRef.current?.focus();
+    previousScreenRef.current = state.screen;
   }, [state.screen]);
 
-  function chooseSample(text: string, step: 1 | 2) {
-    stateDispatch({ type: step === 1 ? "ANSWER_FIRST" : "ANSWER_SECOND", value: text, source: "sample" });
-    setFreeAnswer("");
-  }
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ block: "nearest" });
+  }, [chatTurns.length]);
 
-  function submitTyped(step: 1 | 2) {
-    if (!freeAnswer.trim()) return;
-    stateDispatch({ type: step === 1 ? "ANSWER_FIRST" : "ANSWER_SECOND", value: freeAnswer.trim(), source: "typed" });
-    setFreeAnswer("");
-  }
+  useEffect(() => () => {
+    mediaStreamRef.current?.getTracks().forEach((track) => track.stop());
+  }, []);
 
   function navigate(screen: (typeof navItems)[number]["screen"]) {
     if (screen === "conversation") stateDispatch({ type: "START_PATH", path: "talk" });
@@ -125,47 +126,101 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
     if (screen === "help") stateDispatch({ type: "OPEN_HELP" });
   }
 
+  function restartJourney() {
+    stateDispatch({ type: "RESTART" });
+    stateDispatch({ type: "START_PATH", path: "talk" });
+    setChatTurns([]);
+    setComposer("");
+    setUnderstandingConfirmed(false);
+    setRecordingError("");
+    setRecordingState("idle");
+    setTranscriptDraft("");
+  }
+
   function renderConversation() {
-    const promptIndex = state.questionStep;
+    function sendChat(text = composer) {
+      const clean = text.trim();
+      if (!clean) return;
+      const turnNo = chatTurns.filter((turn) => turn.role === "you").length + 1;
+      const next = [
+        ...chatTurns,
+        { id: `you-${turnNo}`, role: "you" as const, text: clean },
+        { id: `guide-${turnNo}`, role: "harmonise" as const, text: replyForUserMessage(clean, turnNo, chatTurns.filter((turn) => turn.role === "you").map((turn) => turn.text)) },
+      ];
+      setChatTurns(next);
+      setComposer("");
+      setUnderstandingConfirmed(false);
+    }
+
+    async function startRecording() {
+      setRecordingError("");
+      if (!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) {
+        setRecordingError("Voice recording isn’t available in this browser. You can keep typing here.");
+        return;
+      }
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        mediaStreamRef.current = stream;
+        const recorder = new MediaRecorder(stream);
+        recorderRef.current = recorder;
+        recorder.start();
+        setRecordingState("recording");
+      } catch {
+        setRecordingError("Microphone access wasn’t granted. You can continue by typing, or try again.");
+      }
+    }
+
+    function stopRecording() {
+      recorderRef.current?.stop();
+      mediaStreamRef.current?.getTracks().forEach((track) => track.stop());
+      mediaStreamRef.current = null;
+      recorderRef.current = null;
+      setTranscriptDraft("");
+      setRecordingState("review");
+    }
+
+    function cancelRecording() {
+      if (recorderRef.current?.state === "recording") recorderRef.current.stop();
+      mediaStreamRef.current?.getTracks().forEach((track) => track.stop());
+      mediaStreamRef.current = null;
+      recorderRef.current = null;
+      setRecordingState("idle");
+      setTranscriptDraft("");
+    }
+
+    function exploreExperiences() {
+      const family = hasFamilyContext(chatTurns);
+      const mappedTurns = chatTurns.map((turn) => ({ id: turn.id, speaker: turn.role === "you" ? "arjun" as const : "guide" as const, text: turn.text }));
+      stateDispatch({ type: "SYNC_CHAT_CONTEXT", turns: mappedTurns, themes: family ? ["family-expectations", "personal-autonomy"] : [], need: family ? "Perspectives on family expectations, without pressure to choose a relationship outcome." : "Explore without personal context" });
+      setUnderstandingConfirmed(true);
+      stateDispatch({ type: "OPEN_DISCOVERY" });
+    }
+
     return <>
-      <p className="lede">Start with what feels hardest. You can change direction, use your own words, or read quietly.</p>
-      <section className="panel conversation-panel" aria-label="Private conversation">
-        <label className="field-label" htmlFor="opening">What would you like to talk about?</label>
-        <textarea id="opening" rows={2} value={state.opening} onChange={(event) => stateDispatch({ type: "EDIT_OPENING", value: event.target.value })} placeholder="You can start anywhere, or leave this blank." />
-        {state.mockTextNotice && <Notice>Your own words are kept here, but this example doesn&apos;t interpret them. You can choose a starting point below or browse without personal context.</Notice>}
-        {state.turns.length > 1 && <div className="conversation-transcript" aria-label="Conversation so far">{state.turns.filter((turn) => turn.id !== "u1").map((turn) => <article className={`conversation-turn turn-${turn.speaker}`} key={turn.id}><span>{turn.speaker === "arjun" ? "You" : "Harmonise"}</span><p>{turn.text}</p></article>)}</div>}
-        {promptIndex === 0 && <div className="prompt-block" aria-live="polite" aria-atomic="true">
-          <h2>{state.isArjunDemo ? "It sounds like your relationship is feeling difficult. Is that what you most want to talk through?" : "What feels hardest right now?"}</h2>
-          <div className="choice-list">
-            {sampleAnswers.map((answer) => <button className="choice-button" key={answer.label} onClick={() => chooseSample(answer.text, 1)}>{answer.label}<span aria-hidden="true">→</span></button>)}
-          </div>
-          <label className="field-label" htmlFor="free-answer">Or write a short answer</label>
-          <textarea id="free-answer" rows={2} value={freeAnswer} onChange={(event) => setFreeAnswer(event.target.value)} placeholder="Only if you want to." />
-          <PrimaryButton onClick={() => submitTyped(1)} disabled={!freeAnswer.trim()}>Use my answer</PrimaryButton>
-        </div>}
-        {promptIndex === 1 && <div className="prompt-block" aria-live="polite" aria-atomic="true">
-          <h2>Choose what fits, or tell me in your own words.</h2>
-          <div className="choice-list">
-            <button className="choice-button" onClick={() => chooseSample(fixtures.leadPersona.private.utterances[2].text, 2)}>Hear how others handled that pressure, without advice<span aria-hidden="true">→</span></button>
-            <button className="choice-button" onClick={() => chooseSample("I would rather read quietly for now.", 2)}>Read quietly for now<span aria-hidden="true">→</span></button>
-            <button className="choice-button" onClick={() => chooseSample("I want to talk through what matters to me first.", 2)}>Talk it through first<span aria-hidden="true">→</span></button>
-          </div>
-          <label className="field-label" htmlFor="free-answer">Or use your own words</label>
-          <textarea id="free-answer" rows={2} value={freeAnswer} onChange={(event) => setFreeAnswer(event.target.value)} placeholder="No need to explain everything." />
-          <PrimaryButton onClick={() => submitTyped(2)} disabled={!freeAnswer.trim()}>Use my answer</PrimaryButton>
-        </div>}
-        {promptIndex >= 2 && <div className="turn-summary" aria-live="polite">
-          <h2>Your answers are ready to review</h2>
-          <p>Possible links are only suggestions. You decide what belongs in the next step.</p>
-          <PrimaryButton onClick={() => stateDispatch({ type: "OPEN_UNDERSTANDING" })}>Review understanding</PrimaryButton>
-        </div>}
+      <p className="lede">Start wherever you are. You can keep it broad, change direction, or simply read quietly.</p>
+      <section className="panel conversation-panel organic-chat" aria-label="Conversation">
+        <div className="chat-provenance">A local illustrative conversation · no AI service is connected</div>
+        <div className="chat-log" aria-live="polite" aria-relevant="additions text">
+          {chatTurns.length === 0 && <article className="conversation-turn turn-guide"><span>Harmonise</span><p>Some things are hard to say out loud. You can start wherever you are. What’s on your mind?</p></article>}
+          {chatTurns.map((turn) => <article className={`conversation-turn ${turn.role === "you" ? "turn-arjun" : "turn-guide"}`} key={turn.id}><span>{turn.role === "you" ? "You" : "Harmonise · example reply"}</span><p>{turn.text}</p></article>)}
+          <div ref={chatEndRef}/>
+        </div>
+        {chatTurns.filter((turn) => turn.role === "you").length === 1 && <div className="inline-chat-choices" aria-label="Optional response"><span>Only if it helps:</span>{["With someone", "How I feel", "Not sure"].map((choice) => <button key={choice} type="button" onClick={() => sendChat(choice)}>{choice}</button>)}</div>}
+        {chatTurns.filter((turn) => turn.role === "you").length >= 3 && <section className="inline-understanding" aria-labelledby="understanding-inline-title">
+          <div><span className="context-eyebrow">A THOUGHT TO CHECK</span><h2 id="understanding-inline-title">Have I got this right?</h2><p><strong>What you said:</strong> “{chatTurns.filter((turn) => turn.role === "you").at(-1)?.text}”</p><p><strong>Might matter:</strong> {hasFamilyContext(chatTurns) ? "family expectations and making your own choices. This is only a possible reading." : "I don’t have enough context to name a theme yet."}</p><p><strong>What you want now:</strong> {understandingConfirmed ? `${hasFamilyContext(chatTurns) ? "Hear lived experiences without a verdict" : "Explore without personal context"} · confirmed by you` : "Not confirmed yet"}</p></div>
+          <div className="inline-chat-choices"><button type="button" onClick={() => setUnderstandingConfirmed(true)}>Yes, that’s closer</button><button type="button" onClick={() => setUnderstandingConfirmed(false)}>Not quite</button><button type="button" onClick={() => setComposer("I don't want someone to tell me to stay or leave.")}>Edit in my words</button></div>
+          {understandingConfirmed && <div className="inline-chat-choices"><button type="button" onClick={exploreExperiences}>Hear experiences</button><button type="button" onClick={() => setComposer("")}>Keep talking</button></div>}
+        </section>}
+        {recordingState === "recording" && <div className="voice-review" role="status"><strong>Listening</strong><span>Recording stays in this browser and is not sent anywhere.</span><div className="inline-actions"><SecondaryButton onClick={stopRecording}>Stop and review</SecondaryButton><button className="text-button" onClick={cancelRecording}>Cancel recording</button></div></div>}
+        {recordingState === "review" && <div className="voice-review"><strong>Review before sending</strong><p>Voice transcription is not connected here. Type or edit the words you want to send; no audio will be shared.</p><label className="field-label" htmlFor="voice-transcript">Your transcript</label><textarea id="voice-transcript" rows={3} value={transcriptDraft} onChange={(event) => setTranscriptDraft(event.target.value)} placeholder="Type what you said, or cancel and use the composer."/><div className="inline-actions"><PrimaryButton onClick={() => { sendChat(transcriptDraft); setRecordingState("idle"); setTranscriptDraft(""); }} disabled={!transcriptDraft.trim()}>Send this text</PrimaryButton><SecondaryButton onClick={cancelRecording}>Cancel</SecondaryButton></div></div>}
+        {recordingError && <Notice>{recordingError}</Notice>}
+        <form className="chat-composer" onSubmit={(event) => { event.preventDefault(); sendChat(); }}>
+          <label className="sr-only" htmlFor="chat-input">Your message</label>
+          <textarea id="chat-input" rows={2} value={composer} onChange={(event) => setComposer(event.target.value)} onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); sendChat(); } }} placeholder="Write a message…" />
+          <div className="composer-actions"><span>Enter to send · Shift+Enter for a new line</span><div><SecondaryButton onClick={startRecording}>Use voice</SecondaryButton><PrimaryButton type="submit" disabled={!composer.trim()}>Send</PrimaryButton></div></div>
+        </form>
       </section>
-      <div className="inline-actions">
-        <SecondaryButton onClick={() => stateDispatch({ type: "SKIP_QUESTION" })}>Skip this question</SecondaryButton>
-        <SecondaryButton onClick={() => stateDispatch({ type: "STOP_ASKING" })}>Stop asking · browse quietly</SecondaryButton>
-        <button className="text-button" onClick={() => stateDispatch({ type: "BACK" })}>Back</button>
-      </div>
-      <p className="small-note">No account. No outside request. Your choices stay only in this session; refresh to start again.</p>
+      <div className="inline-actions"><SecondaryButton onClick={() => stateDispatch({ type: "OPEN_DISCOVERY" })}>Explore quietly</SecondaryButton><button className="text-button" onClick={() => stateDispatch({ type: "OPEN_HELP" })}>How information is used</button><button className="text-button" onClick={() => { setChatTurns([]); setComposer(""); setUnderstandingConfirmed(false); }}>Start a fresh conversation</button></div>
     </>;
   }
 
@@ -207,15 +262,15 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
   }
 
   function renderDiscovery() {
-    const compare = state.isArjunDemo && state.chapter === "relationships" && state.confirmedThemes.includes("family-expectations");
+    const compare = state.chapter === "relationships" && state.confirmedThemes.includes("family-expectations");
     const contextualCommunity = fixtures.communities.find((item) => item.id === "community.family-expectations");
     return <>
       <p className="lede">Read a conversation, explore a story, or leave without joining.</p>
-      {state.chapter === "belonging" && <section className="new-chapter-banner"><span className="context-eyebrow">A FEW WEEKS LATER · ILLUSTRATIVE</span><h2>New City, New Connections</h2><p>{state.opening}</p><p>{state.carryPreviousContext && state.carriedTakeaway ? `You chose to bring this note: “${state.carriedTakeaway}”` : "You chose to start this chapter separately. Nothing from the earlier relationship conversation is used to shape these results."}</p><p className="small-note">This topic is about social connection, not an assumed cause or diagnosis.</p></section>}
+      {state.chapter === "belonging" && <section className="new-chapter-banner"><span className="context-eyebrow">A FEW WEEKS LATER · ILLUSTRATIVE</span><h2>New City, Feeling Lonely After Work</h2><p>{state.opening}</p><p>{state.carryPreviousContext && state.carriedTakeaway ? `You chose to bring this note: “${state.carriedTakeaway}”` : "You chose to start this chapter separately. Nothing from the earlier relationship conversation is used to shape these results."}</p><p className="small-note">This topic is about social connection, not an assumed cause or diagnosis.</p></section>}
       {state.quietReader && <Notice tone="private">Quiet reading · no alias, question or membership is needed to continue.</Notice>}
       {state.mockTextNotice && <Notice>Your new words weren&apos;t interpreted. These suggestions use only what you selected.</Notice>}
       {state.usefulness === "not-helpful" && <Notice>Thanks for saying so. You can choose a different kind of support, read another perspective, or stop here.</Notice>}
-      {compare && contextualCommunity && <section className="relevance-compare" aria-labelledby="relevance-title"><div className="relevance-heading"><span className="context-eyebrow">WHY THIS COMMUNITY</span><h2 id="relevance-title">Not just similar words. Similar situations.</h2><p>No match scores—just the reasons behind this illustrative comparison.</p></div><div className="relevance-rail"><article className="relevance-result relevance-keyword" id="source-C0"><span className="relevance-label">C0 · Keyword topic</span><h3>{fixtures.topicOnlyBaseline.name}</h3><p>{fixtures.topicOnlyBaseline.explanation}</p><small>Source {fixtures.topicOnlyBaseline.sourceIds.map((source) => <a className="source-link" href={`#source-${source}`} key={source}>{source}</a>)}</small></article><span className="relevance-arrow" aria-hidden="true">→</span><article className="relevance-result relevance-context" id="source-C1"><span className="relevance-label">C1 · Your confirmed context</span><h3>{contextualCommunity.name}</h3><p>You said the pressure comes from family and asked for firsthand perspectives without a verdict.</p><small>Grounded in <a className="source-link" href="#source-C1">C1 · {contextualCommunity.evidenceIds.join(" · ")}</a></small></article></div></section>}
+      {compare && contextualCommunity && <section className="relevance-compare" aria-labelledby="relevance-title"><div className="relevance-heading"><span className="context-eyebrow">WHY THIS COMMUNITY</span><h2 id="relevance-title">Not just similar words. Similar situations.</h2><p>No match scores—just the reasons behind this illustrative comparison.</p></div><div className="relevance-rail">{!state.rejectedBaseline && <><article className="relevance-result relevance-keyword" id="source-C0"><span className="relevance-label">C0 · Broad topic result</span><h3>{fixtures.topicOnlyBaseline.name}</h3><p>{fixtures.topicOnlyBaseline.explanation}</p><small>Source {fixtures.topicOnlyBaseline.sourceIds.map((source) => <a className="source-link" href={`#source-${source}`} key={source}>{source}</a>)}</small><button className="text-button" onClick={() => stateDispatch({ type: "REJECT_BASELINE" })}>Not for me · change these results</button></article><span className="relevance-arrow" aria-hidden="true">→</span></>}<article className="relevance-result relevance-context" id="source-C1"><span className="relevance-label">C1 · Your confirmed context</span><h3>{contextualCommunity.name}</h3><p>You said the pressure comes from family and asked for firsthand perspectives without a verdict.</p><small>Grounded in <a className="source-link" href="#source-C1">C1 · {contextualCommunity.evidenceIds.join(" · ")}</a></small></article></div>{state.rejectedBaseline && <Notice>Feedback noted. Broad legal-topic suggestions are set aside; family-pressure experiences are shown first.</Notice>}</section>}
       {state.noMatch || recommended.length === 0 ? <section className="panel no-match"><h2>There isn&apos;t a close fit in these communities.</h2><p>You can browse the available stories or return to change what matters. No people or activity will be invented.</p><div className="inline-actions"><SecondaryButton onClick={() => stateDispatch({ type: "SET_NO_MATCH", value: false })}>Browse all communities</SecondaryButton><SecondaryButton onClick={() => stateDispatch({ type: "BACK" })}>Change what you selected</SecondaryButton></div></section> : <div className="community-grid">
         {recommended.map((item) => <article className="community-card" key={item.id}>
           <div className="card-kicker">COMMUNITY</div><h2>{item.name}</h2><p>{item.purpose}</p>
@@ -232,6 +287,7 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
     if (!community) return <section className="panel"><h2>Choose a community to explore</h2><PrimaryButton onClick={() => stateDispatch({ type: "OPEN_DISCOVERY" })}>Back to communities</PrimaryButton></section>;
     return <>
       <div className="community-intro panel"><div><span className="tag tag-human">COMMUNITY PERSPECTIVES</span><h2>{community.name}</h2><p>{community.purpose}</p></div><div className="community-status"><span className="status-dot"/> Reading available<br/>No live activity</div></div>
+      {community.id === "community.family-expectations" && <Notice tone="human"><strong>Example facilitator note · fictional role.</strong> People can disagree. Please speak from experience and avoid telling anyone what relationship decision to make. This example has no live moderator.</Notice>}
       <div className="why-panel"><strong>Why this community surfaced</strong><p>{state.confirmedThemes.length ? `You confirmed ${state.confirmedThemes.map((theme) => themeLabels[theme]).join(" and ")}. Related posts are grounded in ${community.evidenceIds.join(", ") || "the selected topics"}.` : "You chose to browse without sharing a personal topic."}</p></div>
       <div className="tab-list" role="tablist" aria-label={`${community.name} sections`} onKeyDown={(event) => {
         if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
@@ -258,7 +314,7 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
           <span className="tag tag-human">ILLUSTRATIVE POSTS</span><h2>Questions people might explore</h2>
           {discussions.length ? discussions.map((discussion) => <article className="discussion-card" key={discussion.id}><p className="discussion-author">{discussion.authorAlias} · {discussion.sourceId}</p><h3>{discussion.prompt}</h3><p>{discussion.preview}</p>{discussion.reply && <blockquote className="post-reply"><span>Another perspective · illustrative</span>{discussion.reply}</blockquote>}</article>) : <p>No posts are included for this community yet. You can explore a different topic.</p>}
         </>}
-        {state.communityTab === "people" && <><span className="tag tag-human">CONTRIBUTOR ROLES</span><h2>Who contributes here?</h2><div className="role-grid"><article><h3>Peer contributor</h3><p>Shares a personal account. Not a trained listener or a professional.</p></article><article><h3>Moderator</h3><p>A human role that would review reports in a real service. No moderation happens here.</p></article><article><h3>Qualified professional</h3><p>A separate support pathway. This service does not verify providers or offer appointments.</p></article></div><p className="small-note">No people are shown as online or available.</p></>}
+        {state.communityTab === "people" && <><span className="tag tag-human">CONTRIBUTOR ROLES</span><h2>Who contributes here?</h2><div className="role-grid"><article><h3>Peer contributor</h3><p>Shares a personal account. Not a trained listener or a professional.</p></article><article><h3>Example facilitator · fictional role</h3><p>This prepared guidance is not live moderation. Reports are not sent or reviewed here.</p></article><article><h3>Qualified professional</h3><p>A separate support pathway. This service does not verify providers or offer appointments.</p></article></div><p className="small-note">No people are shown as online or available.</p></>}
         {state.communityTab === "guidelines" && <><span className="tag tag-private">COMMUNITY GUIDELINES · EXAMPLE</span><h2>Keep participation respectful</h2><ul className="guideline-list"><li>Experiences are perspectives, not instructions for someone else&apos;s choice.</li><li>Do not request private contact details or pressure someone to disclose.</li><li>Respect different decisions and leave when you want.</li><li>Use reporting for a human review process; no moderator is notified here.</li></ul><SecondaryButton onClick={() => stateDispatch({ type: "REPORT_EXAMPLE" })}>Report this example content</SecondaryButton>{state.reportShown && <Notice>Report example recorded in this browser only. No moderator was notified.</Notice>}</>}
       </section>
       <div className="action-row"><SecondaryButton onClick={() => stateDispatch({ type: "OPEN_DISCOVERY" })}>Back to communities</SecondaryButton><button className="text-button" onClick={() => stateDispatch({ type: "OPEN_JOURNEY" })}>Open my journey</button></div>
@@ -272,7 +328,7 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
     return <>
       <div className="story-detail-header panel"><span className="tag tag-human">{experience.attributionLabel}</span><h2>{person?.alias ?? "Contributor"}</h2><p>{isRavi ? state.contributorSummary : person?.approvedSummary}</p><p className="small-note">One person&apos;s account, not a recommendation for your decision.</p></div>
       <section className="panel timeline-panel"><h2>What {person?.alias ?? "this contributor"} reported</h2><ol className="timeline">{experience.milestones.map((milestone) => <li key={milestone.id} id={`source-${milestone.id}`}><span className="timeline-time">{milestone.relativeTime}</span><h3>{milestone.title}</h3><p><strong>What happened:</strong> {milestone.whatHappened}</p><p><strong>What he tried:</strong> {milestone.whatIActuallyTried}</p>{milestone.whatHelped && <p><strong>He said helped:</strong> {milestone.whatHelped}</p>}{milestone.whatDidNotHelp && <p><strong>He said did not help:</strong> {milestone.whatDidNotHelp}</p>}<p className="source-id">Source: {milestone.id}</p></li>)}</ol></section>
-      <div className="two-columns"><section className="panel story-overlap"><span className="tag tag-suggestion">WHERE YOUR EXPERIENCES MEET</span><h2>Space to think before others decide</h2><p><strong>Arjun said:</strong> “{fixtures.leadPersona.private.utterances[2].text}”</p><p><strong>Ravi wrote:</strong> “{experience.milestones[1]?.whatIActuallyTried}”</p><p className="source-id">Grounded in Arjun u3 and Ravi {experience.milestones.map((milestone) => milestone.id).join(", ")}</p></section><section className="panel difference-panel"><span className="tag tag-private">WHERE YOUR LIVES DIFFER</span><h2>What may not carry over</h2><ul>{experience.importantDifferencesFromArjun.map((difference) => <li key={difference}>{difference}</li>)}</ul>{experience.unknowns.map((unknown) => <p key={unknown}><strong>Still unknown:</strong> {unknown}</p>)}</section></div>
+      <div className="two-columns"><section className="panel story-overlap"><span className="tag tag-suggestion">{isRavi ? "WHERE YOUR EXPERIENCES MEET" : "WHAT THIS ACCOUNT COVERS"}</span><h2>{isRavi ? "Space to think before others decide" : experience.milestones[0]?.title}</h2>{isRavi ? <><p><strong>Arjun said:</strong> “{fixtures.leadPersona.private.utterances[2].text}”</p><p><strong>Ravi wrote:</strong> “{experience.milestones[1]?.whatIActuallyTried}”</p><p className="source-id">Grounded in Arjun u3 and Ravi {experience.milestones.map((milestone) => milestone.id).join(", ")}</p></> : <><p>{experience.milestones[0]?.whatHappened}</p><p><strong>{person?.alias} tried:</strong> {experience.milestones[0]?.whatIActuallyTried}</p><p className="source-id">Source: {experience.milestones.map((milestone) => milestone.id).join(", ")}</p></>}</section><section className="panel difference-panel"><span className="tag tag-private">WHERE YOUR LIVES DIFFER</span><h2>What may not carry over</h2><ul>{experience.importantDifferencesFromArjun.map((difference) => <li key={difference}>{difference}</li>)}</ul>{experience.unknowns.map((unknown) => <p key={unknown}><strong>Still unknown:</strong> {unknown}</p>)}</section></div>
       {isRavi && !state.quietReader && (!state.contributorAllowsQuestions || !state.contributorPublished) && <section className="no-recipient"><h2>Ravi isn&apos;t available for questions here</h2><p>You can still read, choose Nisha&apos;s read-only perspective, or continue without contacting anyone.</p><div className="inline-actions"><SecondaryButton onClick={() => stateDispatch({ type: "OPEN_EXPERIENCE", experienceId: "experience.nisha" })}>Read Nisha&apos;s story</SecondaryButton><SecondaryButton onClick={() => stateDispatch({ type: "CLOSE_EXPERIENCE" })}>Keep reading quietly</SecondaryButton></div></section>}
       <div className="action-row"><SecondaryButton onClick={() => stateDispatch({ type: "CLOSE_EXPERIENCE" })}>Back to community</SecondaryButton>{isRavi && !state.quietReader && state.contributorAllowsQuestions && state.contributorPublished && <PrimaryButton onClick={() => stateDispatch({ type: "OPEN_QUESTION" })}>Ask Ravi</PrimaryButton>}<button className="text-button" onClick={() => stateDispatch({ type: "EXPLORE_DIFFERENT_PERSPECTIVE" })}>Not relevant to me</button></div>
     </>;
@@ -285,7 +341,7 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
         <label className="field-label" htmlFor="alias">Your alias</label><input id="alias" value={state.alias} onChange={(event) => stateDispatch({ type: "SET_ALIAS", value: event.target.value })} aria-invalid={state.alias.trim().length > 0 && !aliasValid} aria-describedby="alias-help alias-error" autoComplete="off"/><p id="alias-help" className="small-note">3–24 letters, numbers or underscores. An alias does not guarantee anonymity in a real service.</p>{state.alias.trim().length > 0 && !aliasValid && <p id="alias-error" className="field-error">Use 3–24 letters, numbers or underscores.</p>}
         <label className="field-label" htmlFor="question">Your question</label><textarea id="question" rows={4} maxLength={400} value={state.questionText} onChange={(event) => stateDispatch({ type: "SET_QUESTION_TEXT", value: event.target.value })} aria-invalid={state.questionText.trim().length > 0 && !questionValid} aria-describedby="question-help question-error"/><p id="question-help" className="small-note">Keep it to what you want Ravi to see. {state.questionText.length}/400</p>{state.questionText.trim().length > 0 && !questionValid && <p id="question-error" className="field-error">Add at least 12 characters, or cancel and keep reading.</p>}
         <label className="consent-row"><input type="checkbox" checked={state.questionConsent} onChange={(event) => stateDispatch({ type: "SET_QUESTION_CONSENT", value: event.target.checked })}/><span>I reviewed the exact alias and question below. In this prepared scenario, nothing is sent to a person.</span></label>
-      </section><aside className="panel recipient-preview"><span className="tag tag-private">EXACT RECIPIENT PREVIEW</span><h2>What would be shared</h2><dl><dt>Recipient</dt><dd>Ravi · contributor.ravi</dd><dt>Alias</dt><dd>{state.alias.trim() || "Not entered"}</dd><dt>Question</dt><dd>{state.questionText.trim() || "No question entered"}</dd></dl><p className="small-note">Not included: your original words, themes, age, location or other profile details.</p></aside></div>
+      </section><aside className="panel recipient-preview"><span className="tag tag-private">EXACT RECIPIENT PREVIEW</span><h2>What would be shared</h2><dl><dt>Recipient</dt><dd>Ravi · contributor.ravi</dd><dt>Alias</dt><dd>{state.alias.trim() || "Not entered"}</dd><dt>Question</dt><dd>{state.questionText.trim() || "No question entered"}</dd></dl><p className="small-note">Your private conversation and journey are not included.</p></aside></div>
       {state.error && <p className="error-message" role="alert">{state.error}</p>}
       <div className="action-row"><SecondaryButton onClick={() => stateDispatch({ type: "BACK" })}>Cancel · keep my draft</SecondaryButton><PrimaryButton onClick={() => stateDispatch({ type: "SEND_QUESTION" })} disabled={!aliasValid || !questionValid || !state.questionConsent}>Continue to prepared response</PrimaryButton></div><p className="small-note">This is an illustrative response flow. It does not send a message or contact Ravi.</p>
     </>;
@@ -334,7 +390,7 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
       <p className="lede">Only the words and choices you kept appear here. Nothing is saved beyond this session.</p>
       <div className="journey-grid">
         <section className="panel"><span className="tag tag-private">CHAPTER 1 · RELATIONSHIPS</span><h2>Relationships and family expectations</h2><h3>What you first said</h3><p>“{chapterOne.opening}”</p><h3>What you confirmed</h3><p>{chapterOne.confirmedNeed || "No support need confirmed yet."}</p>{chapterOne.confirmedThemes.length > 0 && <p><strong>Confirmed themes:</strong> {chapterOne.confirmedThemes.map(textForTheme).join(" · ")}</p>}{chapterOne.rejectedThemes.length > 0 && <p><strong>Set aside:</strong> {chapterOne.rejectedThemes.map(textForTheme).join(" · ")}</p>}<h3>Perspectives you explored</h3>{chapterOne.openedExperienceIds.length ? <ul>{chapterOne.openedExperienceIds.map((id) => <li key={id}>{fixtures.experiences.find((item) => item.id === id)?.attributionLabel ?? "Illustrative experience"}</li>)}</ul> : <p>No story opened in this session.</p>}{chapterOne.questionPayload && <p>You reviewed a prepared response after choosing the exact alias and question.</p>}{chapterOne.insightApproved && <div className="approved-note"><strong>Your private takeaway</strong><p>{chapterOne.insightDraft}</p></div>}{chapterOne.nextStep && <p><strong>Next step you chose:</strong> {chapterOne.nextStep}</p>}{chapterOne.usefulness && <p><strong>Your reflection:</strong> {feedbackLabel(chapterOne.usefulness)}</p>}</section>
-        {laterChapterActive ? <section className="panel return-panel"><span className="tag tag-private">CHAPTER 2 · NEW CITY</span><h2>New City, New Connections</h2><h3>What you shared</h3><p>“{state.opening}”</p><h3>What you want now</h3><p>{state.confirmedNeed}</p><p><strong>Topics you chose:</strong> {state.confirmedThemes.map(textForTheme).join(" · ")}</p>{state.carryPreviousContext && state.carriedTakeaway ? <div className="approved-note"><strong>You chose to carry this note forward</strong><p>{state.carriedTakeaway}</p></div> : <p>You started this chapter separately. The relationship conversation did not shape these topics.</p>}<SecondaryButton onClick={() => stateDispatch({ type: "OPEN_COMMUNITY", communityId: "community.moving-friends" })}>Explore New City, New Connections</SecondaryButton></section> : <section className="panel return-panel"><span className="context-eyebrow">A FEW WEEKS LATER · ILLUSTRATIVE</span><h2>A different chapter begins</h2><p>“{fixtures.chapters.find((chapter) => chapter.id === "chapter.arjun-belonging")?.futureNote}”</p><p>Do you want to start separately, or bring a note you chose to keep?</p><div className="chapter-choice-actions"><PrimaryButton onClick={() => stateDispatch({ type: "START_FUTURE_CHAPTER", carryContext: false })}>Start separately</PrimaryButton><SecondaryButton onClick={() => stateDispatch({ type: "START_FUTURE_CHAPTER", carryContext: true })} disabled={!chapterOne.insightApproved}>Bring my selected takeaway</SecondaryButton></div>{!chapterOne.insightApproved && <p className="small-note">To bring context, first choose to keep a takeaway privately.</p>}</section>}
+        {laterChapterActive ? <section className="panel return-panel"><span className="tag tag-private">CHAPTER 2 · NEW CITY</span><h2>New City, Feeling Lonely After Work</h2><h3>What you shared</h3><p>“{state.opening}”</p><h3>What you want now</h3><p>{state.confirmedNeed}</p><p><strong>Topics you chose:</strong> {state.confirmedThemes.map(textForTheme).join(" · ")}</p>{state.carryPreviousContext && state.carriedTakeaway ? <div className="approved-note"><strong>You chose to carry this note forward</strong><p>{state.carriedTakeaway}</p></div> : <p>You started this chapter separately. The relationship conversation did not shape these topics.</p>}<SecondaryButton onClick={() => stateDispatch({ type: "OPEN_COMMUNITY", communityId: "community.moving-friends" })}>Explore New City, New Connections</SecondaryButton></section> : <section className="panel return-panel"><span className="context-eyebrow">A FEW WEEKS LATER · ILLUSTRATIVE</span><h2>A different chapter begins</h2><p>“{fixtures.chapters.find((chapter) => chapter.id === "chapter.arjun-belonging")?.futureNote}”</p><p>Do you want to start separately, or bring a note you chose to keep?</p><div className="chapter-choice-actions"><PrimaryButton onClick={() => stateDispatch({ type: "START_FUTURE_CHAPTER", carryContext: false })}>Start separately</PrimaryButton><SecondaryButton onClick={() => stateDispatch({ type: "START_FUTURE_CHAPTER", carryContext: true })} disabled={!chapterOne.insightApproved}>Bring my selected takeaway</SecondaryButton></div>{!chapterOne.insightApproved && <p className="small-note">To bring context, first choose to keep a takeaway privately.</p>}</section>}
       </div>
       {!laterChapterActive && <section className="panel chapter-summary"><h2>Your selected next step</h2><p>{chapterOne.nextStep || "No next step selected."}</p>{chapterOne.usefulness && <p>Usefulness: {chapterOne.usefulness === "not-helpful" ? "Not helpful" : chapterOne.usefulness === "skip" ? "Skipped" : feedbackLabel(chapterOne.usefulness)}</p>}</section>}
       {laterChapterActive && <section className="panel chapter-summary"><h2>Chapter 2 next step</h2><p>{state.nextStep || "No next step selected in this chapter yet."}</p></section>}
@@ -387,10 +443,10 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
 
   return <main className="harmonise-app">
     <a className="skip-link" href="#main-content">Skip to content</a>
-    <header className="app-header"><div className="header-inner"><Brand/><div className="header-status">Illustrative scenario · fictional participants</div><div className="header-actions"><button className="text-button" onClick={() => stateDispatch({ type: "RESTART" })}>Restart</button><Link className="leave-link" href="/">Leave page</Link></div></div></header>
+    <header className="app-header"><div className="header-inner"><Brand/><div className="header-status">Illustrative scenario · fictional participants</div><div className="header-actions"><button className="text-button" onClick={restartJourney}>Restart</button><Link className="leave-link" href="/">Leave page</Link></div></div></header>
     {state.screen !== "entry" && <nav className="primary-nav" aria-label="Main navigation">{navItems.map((item) => <button key={item.screen} className={state.screen === item.screen || (item.screen === "discovery" && ["community", "experience", "question", "reply", "reflection"].includes(state.screen)) ? "nav-item active" : "nav-item"} aria-current={state.screen === item.screen ? "page" : undefined} onClick={() => navigate(item.screen)}>{item.label}</button>)}</nav>}
     <section id="main-content" className="app-main" aria-labelledby="page-title">
-      <div className="page-topline"><div><span className="page-kicker">HARMONISE</span><h1 id="page-title" ref={headingRef} tabIndex={-1}>{appHeading(state)}</h1></div>{state.screen !== "entry" && <button className="text-button back-action" onClick={() => stateDispatch({ type: "BACK" })}>← Back</button>}</div>
+      <div className="page-topline"><div><span className="page-kicker">HARMONISE</span><h1 id="page-title" ref={headingRef} tabIndex={-1}>{appHeading(state)}</h1></div>{state.screen !== "entry" && state.screen !== "conversation" && <button className="text-button back-action" onClick={() => stateDispatch({ type: "BACK" })}>← Back</button>}</div>
       <div className="screen-content">{renderCurrentScreen()}</div>
       {state.error && state.screen !== "question" && state.screen !== "contribute" && <p className="error-message" role="alert">{state.error}</p>}
     </section>

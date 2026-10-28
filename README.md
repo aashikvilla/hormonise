@@ -15,7 +15,7 @@ Open <http://localhost:3000>. Start with **Follow Arjun's illustrative story** f
 
 ## Final demo video
 
-[Watch or download the final film](demo/harmonise-final-film-rehearsal.mp4) · [English SRT sidecar](demo/harmonise-final-film-rehearsal.en.srt). The video is 2:58.4, 1920×1080 H.264, silent, with English captions burned in.
+[Watch or download the v3 film](demo/harmonise-deep-human-journey-v3.mp4) · [English SRT sidecar](demo/harmonise-deep-human-journey-v3.en.srt) · [Narration-ready script](demo/harmonise-deep-human-journey-v3.voiceover.md). It runs 2:54.4 at 1920×1080 H.264. The MP4 is intentionally silent; narration text is burned in as captions, and the SRT is supplied separately for accessibility and recording.
 
 ## Deploy to GitHub Pages
 
@@ -23,21 +23,18 @@ For the one-time repository setup, open **Settings → Pages** and set **Build a
 
 ## Three-minute rehearsal
 
-The complete flow uses selectable sample answers; no typing is required. Target 176–179 seconds and keep the fictional-content disclosure visible at the beginning and end.
+This measured browser walkthrough is 2:54.4. Keep the fictional-participant disclosure visible and use the timed SRT when recording narration.
 
-1. **0:00–0:12 — Start with care.** Choose **Follow Arjun's illustrative story**. Frame the need: “When something feels personal, a person may not yet know what to search for.”
-2. **0:12–0:35 — Let Arjun correct the first read.** Select **Not quite — the pressure is from my family**, then **Hear how others handled that pressure, without advice**. The screen preserves Arjun's exact words and the assistant's tentative wording.
-3. **0:35–0:53 — Confirm the map.** Choose **Review understanding**. Show the three layers—his words, possible interpretation, and the support he wants. Point out that family expectations and personal autonomy are confirmed while relationship uncertainty is set aside. Continue with **Find human perspectives**.
-4. **0:53–1:13 — Show why context matters.** Explain C0, **Separation paperwork and settlement basics**, and C1, the family-expectations community. These are source-labeled illustrative fixtures, not a live AI result or a match score. Open **Family Expectations & Personal Choices**.
-5. **1:13–1:33 — Visit the human space.** In Experiences, briefly show Nisha's T1 and Ravi's T2 posts with replies, then open Ravi's story. The **R1–R3** timeline separates what he tried, what he reported as helpful, and what remained unresolved. Mention that Ravi had a trusted friend; Arjun has not said he does.
-6. **1:33–2:02 — Make connection optional and consentful.** Select **Ask Ravi**. Review the exact alias and recipient, edit the prepared question if desired, check the consent box, and choose **Continue to prepared response**. Identify the response as prepared and illustrative; no person is contacted.
-7. **2:02–2:28 — Keep only what Arjun chooses.** Continue to reflection. Select **A new perspective**, choose an optional next step, and keep the editable takeaway privately. Say that this remains local to the current session.
-8. **2:28–2:49 — Preserve a boundary across chapters.** Choose **View my journey**. Show his opening words, confirmed need, explored perspectives, and selected takeaway. Choose **Start separately** for the New City chapter to demonstrate that relationship context is not carried over.
-9. **2:49–3:00 — Close honestly.** State that participants and content are fictional and that no Meta model inference, real messaging, or moderation ran. Meta inference is a planned integration, not part of this build.
+1. **0:00–0:14 — Hesitate and revise.** Let the opening title card play. In the conversation composer, type `Everything is fine...`, pause, then revise to `I don't know... things at home feel weird lately.`
+2. **0:14–0:38 — Build context in conversation.** Send the opening, choose **With someone**, then send `Maybe my wife. We aren't always arguing. I can talk with her.` Let the fixture response ask what feels hard without requesting details.
+3. **0:38–1:02 — Try voice, review, and correct.** Choose **Use voice**, record briefly, then **Stop and review**. Since transcription is not connected in this build, type the words into the editable transcript and send them. When the tentative understanding appears, choose **Not quite** → **Edit in my words**, send `I don't want someone telling me to stay or leave.`, then choose **Yes, that’s closer** and **Hear experiences**.
+4. **1:02–1:26 — Reject a poor fit.** Show the contextual family-pressure result. Choose **Not for me · change these results** on the broad legal-topic result and note that the displayed discovery changes. This is a deterministic illustrative comparison, not a Meta result.
+5. **1:26–1:50 — Read contrasting stories.** Open the family community and read Nisha, Mira, then Ravi. Highlight what Ravi tried and reported helpful, what did not help, and that he had a trusted friend Arjun has not reported.
+6. **1:50–2:10 — Review and consent.** Choose **Ask Ravi**. Review Ravi, alias `QuietRiver`, and the exact question. Check consent and continue to the clearly labeled prepared fictional reply; no real person receives a message.
+7. **2:10–2:38 — Choose a takeaway.** Continue to reflection, select **A new perspective**, edit the note to `I want to hear myself think before I ask others for answers.`, choose an optional next step, and click **Keep privately** then **View my journey**.
+8. **2:38–2:54 — Start a new chapter separately.** Show the journey recap and choose **Start separately**. Return to **My journey** to show both chapters and that the previous relationship context did not carry forward.
 
-### 120-second fallback
-
-Choose **Follow Arjun's illustrative story** → select the family-pressure correction and the no-advice preference → review and confirm the understanding map → show the C0/C1 comparison → open the family community and Ravi's story → review the exact question and consent → show the prepared illustrative reply → keep the takeaway → start the new-city chapter separately. Skip the comparison drawer, other tabs, and contributor view.
+The capture has no recorded or synthetic narration. The narration-ready text is in the linked script; all voice, Meta, and fictional-content limits are stated there and in the closing captions.
 
 ## Verification
 

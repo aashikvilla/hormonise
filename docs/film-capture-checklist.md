@@ -1,42 +1,42 @@
 # Three-minute film capture checklist
 
-**Status:** rehearsal captured and verified on 2026-10-28. The final film is 178.417 seconds (2:58.4), under the 180-second limit. It opens with a two-second editorial title card before the captured app landing screen. It is a silent screen capture with burned-in narration captions; the English `.srt` sidecar contains the timed narration text.
+**Status:** the Harmonise Deep Human Journey v3 film was browser-captured and verified on 2026-10-28. Runtime is **174.417 seconds (2:54.4)**, under the 180-second limit. It has a two-second opening card and a silent, live-interaction screen capture with burned-in narration captions.
 
-## Capture setup and observed behavior
+## Capture and review
 
-- [x] Ran the flow in the existing local Next.js app in Chromium at a 1920×1080 viewport. A fresh browser context provided the reset state.
-- [x] Confirmed the persistent `Illustrative scenario · fictional participants` disclosure is visible.
-- [x] Used actual app buttons to complete the scenario: Arjun's correction, support preference, understanding map, C0/C1 comparison, T1/T2 discussions, Nisha read-only story, Ravi's R1–R3 experience, exact recipient/alias/question preview, explicit consent, prepared response, selected private takeaway, separate New City chapter, and the two-chapter journey recap.
-- [x] Confirmed the consent checkbox was selected before proceeding. The reply remains labeled **Prepared illustrative reply** and identifies Ravi as fictional.
-- [x] Captured no external requests and no browser page errors during the recorded walkthrough.
-- [x] Captions and selected output frames were reviewed at 960×540. The film has no audio stream; no synthetic voice was added.
+- [x] Captured the existing Next.js app in Chromium at 1920×1080 with a fresh browser context.
+- [x] Used the actual composer to show a hesitant draft, revision, send, contextual selectable answer, further messages, and correction of a tentative interpretation.
+- [x] Demonstrated recording permission, stop, transcript review/edit, and explicit send. The app clearly says transcription is not connected; the text was typed by the user in the review field.
+- [x] Confirmed the user-selected family-pressure context and choice to explore human perspectives.
+- [x] Rejected the broad legal-topic result and captured the changed discovery view. This context comparison and reranking are deterministic illustrative fixtures, not model output.
+- [x] Opened the relevant fictional community and read contrasting fictional accounts from Nisha, Mira, and Ravi without joining.
+- [x] Reviewed the exact recipient, `QuietRiver` alias, and question before explicit consent. The prepared response is labeled fictional and no message was sent.
+- [x] Edited and kept a personal takeaway, chose a next step, and opened a later life chapter separately without carrying the relationship context.
+- [x] Captured no outbound requests or browser page errors.
+- [x] Reviewed the opening, discovery, share-preview, and closing frames at full 1920×1080 resolution.
+- [x] Verified the final H.264 video with `ffprobe` and decoded the entire file with FFmpeg.
 
-## Measured scene timestamps
+## Measured sequence
 
-Times are relative to the first captured frame and rounded to the nearest tenth of a second. Individual milestone times come from the Playwright-driven session; the video was encoded from 1,764 actual 1920×1080 Chromium viewport captures sampled at 10 fps.
+Times below are approximate film timestamps from the captured browser interaction events, including the two-second title card.
 
-| Beat | Measured window | Observed interaction / content |
+| Beat | Film time | Evidence shown |
 |---|---:|---|
-| Editorial cold open and landing screen | 0:00–0:13.3 | Two-second cream title card with “Advice is everywhere. Feeling understood isn't.”, Harmonise, and fictional-participant credit; the captured app landing screen follows at 0:02.0 |
-| Private conversation and correction | 0:13.3–0:37.5 | Conversation opens at 0:13.3; Arjun corrects the tentative interpretation at 0:20.5; names the perspective he wants at 0:27.5 |
-| Confirmable understanding map | 0:37.5–0:58.5 | His words, possible interpretation, and selected support remain distinct |
-| C0/C1 comparison and community | 0:58.5–1:16.5 | Topic-only/context-aware comparison at 0:58.5; community and T1/T2 discussion view at 1:06.5 |
-| Human perspectives | 1:16.5–1:43.5 | Nisha's read-only story at 1:16.5; Ravi's structured experience at 1:22.5, including differences and unknowns |
-| Exact question, consent, prepared reply | 1:43.5–2:09.5 | Recipient preview at 1:43.5; consent checked at 1:50.5; prepared illustrative reply at 1:52.5 |
-| Reflection and chosen takeaway | 2:09.5–2:29.5 | Arjun selects “A new perspective,” keeps a note privately, and chooses a next step |
-| New chapter and continuity | 2:29.5–2:44.5 | Chapter 1 recap at 2:29.5; starts separately at 2:29.6; both chapters verified in Journey at 2:38.5; New City community at 2:38.6; Journey returns at 2:44.5 |
-| Honest close | 2:44.5–2:58.4 | Journey keeps both chapters visible; closing captions state fictional provenance and that no Meta model call or real message occurred |
+| Opening and hesitant draft | 0:00–0:14 | Harmonise title and fictional-participant credit, then Arjun revises an unsent thought in the conversation composer. |
+| Conversation, voice review, and correction | 0:14–1:02 | Multiple user turns and example replies; voice recording and manual transcript review; Arjun says he does not want a relationship verdict. |
+| Confirmed need and contextual discovery | 1:02–1:26 | Arjun confirms what he wants; rejects the broad legal topic and sees the family-pressure context result move forward. |
+| Contrasting human perspectives | 1:26–1:50 | Nisha, Mira, and Ravi are explored as fictional, distinct lived-experience examples; Ravi's differences and unknowns remain visible. |
+| Exact share and consent | 1:50–2:10 | Ravi's recipient, alias, and question are reviewed; consent is explicit; a prepared fictional response follows. |
+| User-owned takeaway | 2:10–2:38 | Arjun edits and keeps a thought privately and chooses a next step. |
+| New chapter and continuity | 2:38–2:54 | A new city chapter starts separately; the journey shows both chapters and the context boundary. |
 
-## Final artifact
+## Final artifacts
 
-- Video: [`demo/harmonise-final-film-rehearsal.mp4`](../demo/harmonise-final-film-rehearsal.mp4)
-- Caption sidecar: [`demo/harmonise-final-film-rehearsal.en.srt`](../demo/harmonise-final-film-rehearsal.en.srt)
-- Container/video: MP4, H.264, 1920×1080, 24 fps, yuv420p
-- Duration: 178.416667 seconds (2:58.4), including no audio track
-- File size: 3,722,879 bytes
-- Source capture: two-second editorial title card followed by 1,764 Chromium frames at 1920×1080, sampled at 10 fps while real clicks drove the app
-- Validation: full video decode succeeded; sample frames were extracted and reviewed at 960×540
+- Video: [`demo/harmonise-deep-human-journey-v3.mp4`](../demo/harmonise-deep-human-journey-v3.mp4)
+- English caption sidecar: [`demo/harmonise-deep-human-journey-v3.en.srt`](../demo/harmonise-deep-human-journey-v3.en.srt)
+- Narration-ready script: [`demo/harmonise-deep-human-journey-v3.voiceover.md`](../demo/harmonise-deep-human-journey-v3.voiceover.md)
+- Encoding: MP4, H.264, 1920×1080, 24 fps, yuv420p; 3,032,916 bytes; no audio stream
+- Duration: **174.416667 seconds**
+- Capture source: two-second title card plus 1,725 Chromium frames sampled at 10 fps while actual browser controls drove the journey
 
-## Demo narration and boundaries
-
-The burned-in captions are the narration script. The film is intentionally silent; it does not contain a generated or participant voice. All participants, posts, stories, rankings, question routing, and the prepared reply are local fictional fixtures. No Meta model call, real message, database write, user account, live community activity, moderation action, or provider appointment occurs. The C0/C1 ranking is an illustrative mock comparison, not evidence of live model behavior. Meta-model inference remains a future integration and must be separately verified before a later film presents it as live.
+The SRT text is burned into the MP4 and also provided as a sidecar. No synthetic narrator or voice actor was available; the separate script is ready for a narrator to record. All characters, community content, story rankings, responses, and questions are local fictional fixtures. No Meta model call, Muse transcription, actual human message, database write, live community activity, or moderation action occurred. Do not present this film as evidence of Meta inference.

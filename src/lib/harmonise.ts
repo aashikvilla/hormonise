@@ -159,6 +159,7 @@ export interface HarmoniseState {
   selectedExperienceId: string | null;
   openedExperienceIds: string[];
   topicComparisonOpen: boolean;
+  rejectedBaseline: boolean;
   noMatch: boolean;
   alias: string;
   questionText: string;
@@ -204,8 +205,9 @@ export const initialHarmoniseState: HarmoniseState = {
   selectedExperienceId: null,
   openedExperienceIds: [],
   topicComparisonOpen: false,
+  rejectedBaseline: false,
   noMatch: false,
-  alias: fixtures.peerQuestionDemo.alias,
+  alias: "QuietRiver",
   questionText: fixtures.peerQuestionDemo.questionText,
   questionConsent: false,
   questionPayload: null,
@@ -239,6 +241,8 @@ export type HarmoniseAction =
   | { type: "START_PATH"; path: Exclude<EntryPath, null> }
   | { type: "START_ARJUN" }
   | { type: "EDIT_OPENING"; value: string }
+  | { type: "SYNC_CHAT_CONTEXT"; turns: ConversationTurn[]; themes: ThemeId[]; need: string }
+  | { type: "REJECT_BASELINE" }
   | { type: "ANSWER_FIRST"; value: string; source: "sample" | "typed" }
   | { type: "ANSWER_SECOND"; value: string; source: "sample" | "typed" }
   | { type: "SKIP_QUESTION" }
@@ -357,6 +361,23 @@ export function harmoniseReducer(state: HarmoniseState, action: HarmoniseAction)
         supportNeed: "not-sure",
         confirmedNeed: "",
       };
+    case "SYNC_CHAT_CONTEXT": {
+      const firstUserTurn = action.turns.find((turn) => turn.speaker === "arjun");
+      return {
+        ...state,
+        opening: firstUserTurn?.text ?? "",
+        turns: action.turns,
+        proposedThemes: [...action.themes],
+        confirmedThemes: [...action.themes],
+        rejectedThemes: [],
+        confirmedNeed: action.need,
+        supportNeed: "human-perspective",
+        mockTextNotice: false,
+        rejectedBaseline: false,
+        error: "",
+      };
+    }
+    case "REJECT_BASELINE": return { ...state, rejectedBaseline: true };
     case "ANSWER_FIRST": {
       const preserveUninterpreted = state.mockTextNotice || action.source === "typed";
       const themes = preserveUninterpreted ? [] : answerThemes(action.value, action.source);
@@ -472,7 +493,7 @@ export function harmoniseReducer(state: HarmoniseState, action: HarmoniseAction)
         carriedTakeaway: canCarryApprovedTakeaway ? state.insightDraft : "",
         isArjunDemo: true,
         quietReader: true,
-        opening: "Work is okay, but after moving to Hyderabad I've felt disconnected. I don't really have people to meet outside the office.",
+        opening: fixtures.chapters.find((chapter) => chapter.id === "chapter.arjun-belonging")?.futureNote ?? "I moved cities recently. I feel lonely after work.",
         turns: [],
         questionStep: 0,
         mockTextNotice: false,

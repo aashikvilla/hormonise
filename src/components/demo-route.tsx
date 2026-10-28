@@ -10,10 +10,11 @@ export default function DemoRoute() {
   const params = useSearchParams();
   const requestedPath = params.get("path");
   const requestedExample = params.get("example");
+  const requestedScenario = params.get("scenario");
   const requestedHelp = params.get("help");
   const initialPath = requestedHelp === "safety"
     ? "help"
-    : requestedExample === "arjun"
+    : requestedExample === "arjun" || requestedScenario === "arjun"
       ? "arjun"
       : validPaths.includes(requestedPath as Exclude<EntryPath, null>)
         ? requestedPath as Exclude<EntryPath, null>

@@ -5,7 +5,7 @@
   "notice": "All people, communities, events and human responses are fictional demo examples. No actual AI inference, messaging, community moderation, or clinical services occur in mock mode.",
   "leadPersona": {
     "id": "person.arjun",
-    "alias": "QuietRiver29",
+    "alias": "QuietRiver",
     "displayName": "Arjun",
     "isFictional": true,
     "private": {
@@ -25,7 +25,7 @@
       "savePermission": false,
       "privateReflections": []
     },
-    "public": {"alias": "QuietRiver29"}
+    "public": {"alias": "QuietRiver"}
   },
   "chapters": [
     {
@@ -39,10 +39,10 @@
     },
     {
       "id": "chapter.arjun-belonging",
-      "title": "New City, New Connections",
+      "title": "New City, Feeling Lonely After Work",
       "status": "not-started",
       "isFictional": true,
-      "futureNote": "I've moved cities and barely meet people outside work.",
+      "futureNote": "I moved cities recently. I feel lonely after work.",
       "confirmedGoal": "Find regular companionship through shared interests.",
       "visibility": "private"
     }
@@ -66,6 +66,15 @@
       "credentials": null,
       "scope": {"discoverable": true, "anonymousQuestions": false, "privateMessages": false, "rawNotes": false},
       "approvedSummary": "I love my parents, but every call became a question about what I was going to do. I started avoiding them, which made me feel worse. Eventually I told my sister I could talk about how I was doing, but I wasn't ready for everyone to vote on my decision. It didn't solve everything. It made our conversations less exhausting."
+    },
+    {
+      "id": "contributor.mira",
+      "alias": "Mira",
+      "isFictional": true,
+      "role": "lived-experience-contributor",
+      "credentials": null,
+      "scope": {"discoverable": true, "anonymousQuestions": false, "privateMessages": false, "rawNotes": false},
+      "approvedSummary": "For me, boundaries weren't enough on their own. Distance and professional support mattered more. Nobody else's timeline fit mine."
     }
   ],
   "experiences": [
@@ -121,6 +130,25 @@
       ],
       "importantDifferencesFromArjun": ["Nisha had a sister she could involve; Arjun hasn't reported having a trusted person."],
       "unknowns": ["Whether involving a relative would feel right for Arjun"]
+    },
+    {
+      "id": "experience.mira",
+      "contributorId": "contributor.mira",
+      "communityId": "community.family-expectations",
+      "isFictional": true,
+      "approvedForDiscovery": true,
+      "themeIds": ["family-expectations", "personal-autonomy"],
+      "milestones": [
+        {
+          "id": "mira-boundaries", "relativeTime": "A different path", "title": "A boundary was not enough for me",
+          "whatHappened": "Family expectations kept shaping my day even after I tried to set limits.",
+          "whatIActuallyTried": "I created more distance and sought professional support.",
+          "whatHelped": "Having support outside the family mattered to me.",
+          "whatDidNotHelp": "I could not use another person's timeline as my own."
+        }
+      ],
+      "importantDifferencesFromArjun": ["Mira chose distance and professional support; Arjun has not said what kind of support feels right."],
+      "unknowns": ["Whether this approach would fit Arjun's circumstances"]
     }
   ],
   "communities": [
@@ -130,10 +158,10 @@
       "isFictional": true,
       "purpose": "Human experiences about navigating family pressure and personal autonomy.",
       "topicIds": ["family-expectations", "personal-autonomy", "relationship-uncertainty"],
-      "experienceIds": ["experience.ravi", "experience.nisha"],
+      "experienceIds": ["experience.ravi", "experience.nisha", "experience.mira"],
       "discussionIds": ["discussion.nisha-family-call", "discussion.ravi-opinions"],
       "evidenceIds": ["T1", "T2", "R1", "R2", "R3"],
-      "roleLabels": ["peer contributor", "moderator (fictional role)"],
+      "roleLabels": ["peer contributor", "facilitator (fictional role)"],
       "activityLabel": "Example community — no real activity or live coverage",
       "joiningIsOptional": true
     },
@@ -237,8 +265,8 @@
   "peerQuestionDemo": {
       "id": "question.arjun-to-ravi",
     "recipientId": "contributor.ravi",
-    "alias": "QuietRiver29",
-      "questionText": "When everyone wanted an answer from you, how did you ask for space without turning it into another argument?",
+    "alias": "QuietRiver",
+      "questionText": "When you didn't want to disappoint your family, how did you figure out what you wanted before listening to everyone else's opinions?",
     "isFictional": true,
     "consentDefault": false,
     "allowedOutboundFields": ["recipientId", "alias", "questionText"],
@@ -246,7 +274,7 @@
       "id": "reply.ravi-1",
       "isFictional": true,
       "label": "Prepared illustrative reply",
-      "text": "I used to answer every question like I had to defend myself. That only made the conversations longer. What helped was saying something smaller: “I care about your concern, but I'm not ready to discuss a decision yet.” I said I could talk about how I was doing, just not ask people to decide for me. It wasn't perfect. I still had difficult calls. But it gave me room to think."
+      "text": "I didn't know at first. I kept asking people what they'd do, and their answers made me more unsure. What helped was writing down the one question I wanted to answer for myself, then asking a friend to listen without giving me a verdict. I still had a hard conversation with my family afterward. It wasn't a quick fix."
     }
   },
   "reflectionOptions": [
@@ -256,7 +284,7 @@
     {"id": "not-helpful", "label": "Not especially helpful"},
     {"id": "skip", "label": "I'd rather skip"}
   ],
-  "sampleApprovedInsight": "I want a conversation where someone listens while I work out my priorities.",
+  "sampleApprovedInsight": "I want to figure out what matters to me before asking others for answers.",
   "reportingExample": {
     "isFictional": true,
     "label": "Illustrative moderation queue; no live safety coverage",

@@ -145,6 +145,11 @@ describe("Harmonise guided demo state and fictional fixtures", () => {
     expect(ravi?.milestones.every((milestone) => milestone.whatIActuallyTried)).toBe(true);
     expect(ravi?.importantDifferencesFromArjun.length).toBeGreaterThan(0);
     expect(fixtures.contributors.every((contributor) => contributor.isFictional)).toBe(true);
+    const mira = fixtures.experiences.find((experience) => experience.id === "experience.mira");
+    expect(mira?.isFictional).toBe(true);
+    expect(mira?.milestones[0]?.whatIActuallyTried).toContain("professional support");
+    expect(fixtures.communities.find((community) => community.id === "community.family-expectations")?.experienceIds).toContain("experience.mira");
+    expect(fixtures.communities.find((community) => community.id === "community.family-expectations")?.roleLabels).toContain("facilitator (fictional role)");
     expect(fixtures.discussions.find((post) => post.sourceId === "T1")?.prompt).toBe("When every family call turns into a decision I haven't made");
     expect(fixtures.discussions.find((post) => post.sourceId === "T1")?.reply).toContain("people voting on your decision");
     expect(fixtures.discussions.find((post) => post.sourceId === "T2")?.prompt).toBe("What actually helped when everyone had an opinion?");
@@ -153,9 +158,11 @@ describe("Harmonise guided demo state and fictional fixtures", () => {
     expect(ravi?.milestones[0]?.whatDidNotHelp).toContain("anonymous opinions");
     expect(ravi?.milestones[1]?.whatHelped).toBe("My friend listened without deciding for me.");
     expect(ravi?.milestones[2]?.whatDidNotHelp).toContain("did not suddenly know");
-    expect(fixtures.peerQuestionDemo.questionText).toBe("When everyone wanted an answer from you, how did you ask for space without turning it into another argument?");
+    expect(fixtures.peerQuestionDemo.alias).toBe("QuietRiver");
+    expect(fixtures.leadPersona.alias).toBe("QuietRiver");
+    expect(fixtures.peerQuestionDemo.questionText).toBe("When you didn't want to disappoint your family, how did you figure out what you wanted before listening to everyone else's opinions?");
     expect(fixtures.peerQuestionDemo.response.label).toBe("Prepared illustrative reply");
-    expect(fixtures.peerQuestionDemo.response.text).toContain("I care about your concern, but I'm not ready to discuss a decision yet.");
+    expect(fixtures.peerQuestionDemo.response.text).toBe("I didn't know at first. I kept asking people what they'd do, and their answers made me more unsure. What helped was writing down the one question I wanted to answer for myself, then asking a friend to listen without giving me a verdict. I still had a hard conversation with my family afterward. It wasn't a quick fix.");
   });
 
   it("does not allow questions to the read-only Nisha fixture", () => {
@@ -168,6 +175,8 @@ describe("Harmonise guided demo state and fictional fixtures", () => {
 
   it("requires consent and returns only the approved recipient, alias and question", () => {
     let state = stateForEntry("arjun");
+    expect(initialHarmoniseState.alias).toBe("QuietRiver");
+    expect(state.questionText).toBe(fixtures.peerQuestionDemo.questionText);
     state = harmoniseReducer(state, { type: "OPEN_EXPERIENCE", experienceId: "experience.ravi" });
     state = harmoniseReducer(state, { type: "OPEN_QUESTION" });
     state = harmoniseReducer(state, { type: "SET_QUESTION_TEXT", value: "How did you make room for your own choices?" });
@@ -178,7 +187,7 @@ describe("Harmonise guided demo state and fictional fixtures", () => {
     expect(state.screen).toBe("reply");
     expect(state.questionPayload).toEqual({
       recipientId: "contributor.ravi",
-      alias: "QuietRiver29",
+      alias: "QuietRiver",
       questionText: "How did you make room for your own choices?",
     });
     expect(Object.keys(state.questionPayload ?? {}).sort()).toEqual(["alias", "questionText", "recipientId"]);
@@ -227,7 +236,7 @@ describe("Harmonise guided demo state and fictional fixtures", () => {
     const priorQuestion = state.questionPayload;
     const future = harmoniseReducer(state, { type: "START_FUTURE_CHAPTER", carryContext: false });
     expect(future.chapter).toBe("belonging");
-    expect(future.opening).toContain("after moving to Hyderabad");
+    expect(future.opening).toBe("I moved cities recently. I feel lonely after work.");
     expect(future.confirmedNeed).toContain("regular social connection");
     expect(future.priorChapter?.opening).toBe(priorOpening);
     expect(future.priorChapter?.confirmedNeed).toBe(priorNeed);
@@ -253,7 +262,7 @@ describe("Harmonise guided demo state and fictional fixtures", () => {
     expect(carried.carriedTakeaway).toBe("I want someone to listen while I work out my priorities.");
     expect(carried.priorChapter?.insightDraft).toBe(carried.carriedTakeaway);
     expect(carried.priorChapter?.insightApproved).toBe(true);
-    expect(carried.opening).toContain("after moving to Hyderabad");
+    expect(carried.opening).toBe("I moved cities recently. I feel lonely after work.");
 
     const separate = harmoniseReducer(state, { type: "START_FUTURE_CHAPTER", carryContext: false });
     expect(separate.carryPreviousContext).toBe(false);
