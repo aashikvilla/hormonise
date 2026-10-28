@@ -15,7 +15,7 @@ Open <http://localhost:3000>. Start with **Explore Arjun's fictional example** f
 
 ## Deploy to GitHub Pages
 
-For the one-time repository setup, open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**. After that, pushes to the `work` branch run the workflow in `.github/workflows/deploy-pages.yml`, which checks the app, builds its static export, and deploys it. The expected project site URL is <https://aashikvilla.github.io/hormonise/>.
+For the one-time repository setup, open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**. After that, pushes to the `main` branch run the workflow in `.github/workflows/deploy-pages.yml`, which checks the app, builds its static export, and deploys it. The expected project site URL is <https://aashikvilla.github.io/hormonise/>.
 
 ## Three-minute rehearsal
 
