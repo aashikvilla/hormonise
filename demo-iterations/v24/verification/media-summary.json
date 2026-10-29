@@ -1,0 +1,10 @@
+{
+  "source": "demo-iterations/v24/capture/video/v24-full-session.webm",
+  "videoDuration": 88.6,
+  "pictureDuration": 87.5,
+  "beatCount": 22,
+  "captionCount": 22,
+  "narration": "FFmpeg Flite kal synthetic voice",
+  "resolution": "1920x1080",
+  "fps": 30
+}

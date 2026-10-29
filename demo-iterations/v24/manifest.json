@@ -1,0 +1,97 @@
+{
+  "version": "v24",
+  "status": "candidate",
+  "render": "demo.mp4",
+  "durationSeconds": 87.5,
+  "sourceCodeCommit": "5fd3c7062b4287af3eebd65b7a24cd0304613f08",
+  "picture": {
+    "width": 1920,
+    "height": 1080,
+    "frameRate": "30/1",
+    "codec": "h264",
+    "durationSeconds": 87.5
+  },
+  "audio": {
+    "codec": "aac",
+    "sampleRateHz": 48000,
+    "channels": 2,
+    "durationSeconds": 87.314,
+    "source": "FFmpeg Flite kal synthetic narration",
+    "classification": "synthetic narration; not human performance or model output",
+    "cueCount": 22,
+    "peakDbfs": -4.2,
+    "music": false
+  },
+  "captions": {
+    "file": "capture/captions.srt",
+    "burnedIn": true,
+    "cueCount": 22,
+    "textFiles": "capture/caption-text/01.txt through 22.txt",
+    "matchedToNarration": true
+  },
+  "narration": {
+    "script": "capture/narration.txt",
+    "segmentText": "capture/narration-01.txt through capture/narration-22.txt",
+    "segmentAudio": "capture/narration-01.wav through capture/narration-22.wav",
+    "voice": "FFmpeg Flite kal synthetic voice"
+  },
+  "interactionCapture": {
+    "script": "capture/capture-v24.mjs",
+    "renderScript": "capture/render-v24.py",
+    "video": "capture/video/v24-full-session.webm",
+    "pictureSource": "capture/captioned-picture.mp4",
+    "checkpoints": "capture/capture-marks.json",
+    "actualAssertions": 22,
+    "actualBeatCount": 22,
+    "lastMarkedBeatSeconds": 88.003,
+    "checks": {
+      "reflectionCorrected": true,
+      "broadResultRejected": true,
+      "fictionalPeerProvenanceVisible": true,
+      "exactGroupQuestionPreview": "Could I take time to decide before answering?",
+      "consentUnchecked": true,
+      "continueDisabled": true,
+      "maybeLaterSelected": true,
+      "privateTakeawaySelected": true
+    }
+  },
+  "verification": {
+    "mediaSummary": "verification/media-summary.json",
+    "releaseReport": "verification/release/report.md",
+    "coldReviewReport": "cold-review/report.md",
+    "coldReviewJson": "cold-review/review.json",
+    "reviewMode": "video picture and captions; audio stream inaccessible to reviewer",
+    "coldReview": {
+      "fixedWeightedScore": 73,
+      "filmPersuasionScore": 74,
+      "decision": "maybe",
+      "confidence": "medium; visual evidence is clear, audio inaccessible",
+      "dimensions": {
+        "clarity": 21,
+        "journey": 19,
+        "roleValue": 19,
+        "craft": 15
+      }
+    },
+    "independentReleaseCheck": {
+      "runtimeSeconds": 87.5,
+      "video": "H.264 1920x1080 30 fps",
+      "audio": "AAC stereo 48 kHz",
+      "peakDbfs": -4.2,
+      "silenceOverOneSecond": false,
+      "captionReadability": "legible at half-size in sampled opening, middle, and ending; smaller body text is less readable",
+      "longFreezeOrBlackGap": false,
+      "ending": "ends on interface with caption still shown; slightly abrupt, not a blocker"
+    }
+  },
+  "knownWeaknesses": [
+    "The reviewer could not access the audio stream, so narration audibility and synchronization were not assessed by the cold review.",
+    "Smaller body text on dense community screens is less readable at half-size.",
+    "The ending is slightly abrupt and retains its caption on the interface.",
+    "The prototype uses prepared content and deterministic local behavior; it does not demonstrate connected model execution, live participants, or a real outcome."
+  ],
+  "sha256": {
+    "demo.mp4": "586b370389792cde6747230a5d5abf7dd09d749facecde799dd2de0dff900aea"
+  },
+  "commit_sha": "PENDING"
+}

@@ -1,0 +1,39 @@
+{
+  "marks": {
+    "beat-01-entry": 4.002,
+    "beat-02-private-start": 8.003,
+    "beat-03-opening-typed": 12.002,
+    "beat-04-prepared-reply": 16.002,
+    "beat-05-reflection-layers": 20.01,
+    "beat-06-reject-possibility": 24.01,
+    "beat-07-correction-typed": 28.002,
+    "beat-08-reflection-changed": 32.013,
+    "beat-09-confirm-reflection": 36.03,
+    "beat-10-discovery-context": 40.005,
+    "beat-11-baseline-set-aside": 44.012,
+    "beat-12-community-selected": 48.011,
+    "beat-13-ravi-opened": 52.006,
+    "beat-14-shared-point": 56.008,
+    "beat-15-difference-and-unknown": 60.009,
+    "beat-16-group-question": 64.002,
+    "beat-17-question-edited": 68.003,
+    "beat-18-audience-and-consent": 72.001,
+    "beat-19-cancel-keeps-draft": 76.001,
+    "beat-20-maybe-later": 80,
+    "beat-21-private-takeaway": 84.002,
+    "beat-22-private-ending": 88.003
+  },
+  "checks": {
+    "changedReflection": "You want time to decide what you want, without someone choosing stay or leave for you.",
+    "contextComparison": "WHY THIS COMMUNITY\nNot just similar words. Similar situations.\n\nNo match scores—just the reasons behind this illustrative comparison.\n\nC0 · BROAD TOPIC RESULT\nSeparation paperwork and settlement basics\n\nThis topic includes marriage and family keywords, but it is about legal logistics. Arjun explicitly asked for firsthand perspectives on family expectations without pressure to decide.\n\nSource C0Not for me · change these results\n→\nC1 · YOUR CONFIRMED CONTEXT\nFamily Expectations & Personal Choices\n\nYou said the pressure comes from family and asked for firsthand perspectives without a verdict.\n\nGrounded in C1 · T1 · T2 · R1 · R2 · R3",
+    "rejectedBaseline": true,
+    "raviProvenance": "Illustrative experience · Ravi\nRavi\n\nAt first I asked everyone what I should do about my relationship. I got completely different answers. Some were kind, some felt like instructions. I stopped asking for a verdict and asked one trusted friend to listen while I worked out what mattered to me. I was still uncertain afterward, but I could hear my own thinking again.\n\nOne person's account, not a recommendation for your decision.",
+    "questionPreview": "Could I take time to decide before answering?",
+    "questionConsentUnchecked": true,
+    "continueDisabled": true,
+    "maybeLater": "ARJUN'S OPTIONAL NEXT STEP · FICTIONAL SAMPLE\n\n“I can ask for time before deciding.”\n\nKeep this takeaway privately\nOffer one thing that helped\nMaybe later\n\nMaybe later selected. The private reflection stays private.",
+    "takeaway": "Arjun chose this in the preview session only: “I can ask for time before deciding.”"
+  },
+  "actualBeatCount": 22,
+  "captureCursor": "Fixed dot follows actual DOM mousemove events during Playwright mouse actions."
+}
