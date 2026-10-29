@@ -1,0 +1,58 @@
+{
+  "version": "v11",
+  "candidate": "demo-iterations/v11/demo.mp4",
+  "candidate_commit_sha": null,
+  "candidate_sha256": "d33b54da90c48b2c1ec7c54ef19b5924e651abbeb05e7846943903477edb3836",
+  "based_on": {
+    "v10_manifest_commit": "f1fda912bacd52040b5cabc1a38e9c6c221a75fb",
+    "v10_candidate_commit": "7f4233648f63618d083d69a93fcbdd0ca9bc39f6",
+    "v10_candidate": "demo-iterations/v10/demo.mp4",
+    "v10_candidate_sha256": "1a2cffd3268c741d37779b00e4dc3afeae8e1a94f220d4a17f5f346187de73fe"
+  },
+  "captions": "demo-iterations/v11/captions.srt",
+  "captions_sha256": "b6f31ce24bcd61d52939356bb938e5b90ce86c330cf12d3be90aa9372cde466d",
+  "narration_transcript": "demo-iterations/v11/narration.txt",
+  "source_react_capture": {
+    "recording": "demo-iterations/v11/capture/react-capture.webm",
+    "sha256": "9723ad1883e3a7989d5a759b3b60a5355bc5a0f339cec9b7b25f0f2ca47a6c45",
+    "duration_seconds": 177.16,
+    "resolution": "1600x900",
+    "frame_rate": 25,
+    "actual_react_interactions": true,
+    "capture_timeline": "demo-iterations/v11/capture/timeline.json",
+    "smoke_recording": "demo-iterations/v11/capture/smoke/react-capture.webm",
+    "smoke_sha256": "918abfd6fa5bee35741fc55bddc7f7e0f359eb769ec2dc9ec6e66051ef117387"
+  },
+  "media": {
+    "container_duration_seconds": 178.013,
+    "video_stream_duration_seconds": 177.966667,
+    "audio_stream_duration_seconds": 178.013,
+    "audio_video_delta_seconds": 0.046333,
+    "video_frames": 5339,
+    "resolution": "1920x1080",
+    "frame_rate": 30,
+    "video_codec": "H.264",
+    "audio_codec": "AAC mono 48 kHz",
+    "narration": "Synthetic offline Flite narration only; no model generated in-app content.",
+    "audio_mean_dbfs": -19.4,
+    "audio_peak_dbfs": -3.8,
+    "last_speech_ends_seconds": 176.772,
+    "end_silence_seconds": 1.254,
+    "srt_cues": 39,
+    "last_caption_ends_seconds": 177.388
+  },
+  "verification": {
+    "full_decode": "passed: FFmpeg full decode exits 0",
+    "captions": "passed: 39 sequential non-overlapping burned-in and sidecar cues",
+    "visuals": "1920x1080 and 960x540 key frames extracted and inspected",
+    "application_tests": "passed: lint, typecheck, Vitest 27/27, Playwright 32/32 desktop+mobile, production build",
+    "capture_smoke": "passed: all 18 actual React scene transitions, consent off and post disabled"
+  },
+  "limitations": [
+    "All participants, posts, replies, host and moderation examples are fictional prepared content; there is no live community or human moderator.",
+    "No live Meta/API/model, voice transcription, provider verification, authentication, database, or message sending is connected.",
+    "No provider is verified or bookable; the support screen is a caveat and return path.",
+    "The optional Dev contribution remains a local draft; consent is unchecked, posting is disabled, and nothing is sent."
+  ],
+  "review": "Builder did not assign a score. Cold judge and release verifier are separate."
+}
