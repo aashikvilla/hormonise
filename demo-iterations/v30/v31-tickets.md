@@ -1,0 +1,11 @@
+# Prioritized v31 tickets
+
+1. **Restore the opening and role clarity.** Recover the v29-level 23/25 first-15-second clarity and 21/25 differentiation/role-value result. Within 15 seconds, state the adult family-pressure audience, private reflection and correction promise, and the specific planned Muse Spark role: suggest a theme for the person to accept, edit, or reject. Keep “planned, not connected” explicit. **Acceptance:** a cold viewer can name the audience, product promise, and proposed model role by 0:15; no wording implies live model execution.
+
+2. **Make the real correction easy to see.** Keep the continuous recorded correction from “Not quite” through typing to the updated reflection. Crop or punch in to the relevant controls and text while keeping the click/selection, caret, entered words, and changed reflection visible together. **Acceptance:** one uninterrupted shot shows the action and result, with no transition masking the click, caret, or updated reflection.
+
+3. **Clarify and enlarge the consent choice.** Present the exact audience, alias, question, exclusion/private-conversation note, unchecked consent field, and “Cancel · keep my draft” in a clearly labeled editorial close-up. **Acceptance:** all fields and cancel action are legible simultaneously, the unchecked state is unambiguous, and the editorial label distinguishes the crop from a new product state. Do not solve small text by merely extending the full-screen hold.
+
+4. **Reduce static coverage while preserving inspection time.** Replace repetitive static UI coverage with guided focus across the relevant controls and details. Preserve 9.5 seconds total for consent inspection, split across those focused views so viewers can follow the exact scope and cancellation path. **Acceptance:** consent details remain inspectable for 9.5 seconds total, while other repeated static holds are shortened or replaced with purposeful framing.
+
+5. **Improve the ending.** Give the final private choice a clearer narrative close that connects the corrected reflection to a believable next step, without implying the family conflict is resolved or that a message was sent. **Acceptance:** the ending feels conclusive as a product journey, preserves the private outcome, and makes no unsupported outcome claim.

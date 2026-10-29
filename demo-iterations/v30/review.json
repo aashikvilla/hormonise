@@ -1,0 +1,119 @@
+{
+  "review_evidence_mode": "video_picture_audio_inaccessible",
+  "independent_of_previous_rounds": true,
+  "technical_evidence_type": "film_visible_prototype_evidence",
+  "confidence": "medium",
+  "audio_limitation": "AAC audio stream is present, but audio could not be heard; no narration, music, or sound-mix claims are made.",
+  "scores": {
+    "impact": {
+      "score": 22,
+      "max": 30,
+      "evidence": [
+        "0–5: specific family-pressure dilemma",
+        "40–43 and 97–105: user-owned correction and private takeaway",
+        "44–57 and 84–96: proposed community context is explicitly illustrative"
+      ]
+    },
+    "meta_use": {
+      "score": 20,
+      "max": 25,
+      "evidence": [
+        "24–30: Muse Spark described as planned, not connected",
+        "30–43: visible review, correction, and changed reflection",
+        "Repeated fictional/prepared/no-model labels"
+      ]
+    },
+    "demo": {
+      "score": 19,
+      "max": 25,
+      "evidence": [
+        "0–15: hook and promise",
+        "30–43 and 67–78: legible core interactions, though full-page text is small",
+        "97–105: quiet payoff; captions visible; audio inaccessible"
+      ]
+    },
+    "technical_depth": {
+      "score": 18,
+      "max": 20,
+      "evidence": [
+        "15–43, 44–57, 67–83: credible prototype path",
+        "67–83: exact audience preview, unchecked consent, cancellation",
+        "30–43: film-visible interaction evidence"
+      ]
+    }
+  },
+  "total": 79,
+  "film_persuasion_score": 75,
+  "film_persuasion_dimensions": {
+    "first_15_second_clarity": {
+      "score": 19,
+      "max": 25,
+      "evidence": [
+        "0–5: opening dilemma",
+        "7–14: audience and promise caption"
+      ]
+    },
+    "human_journey_and_payoff": {
+      "score": 20,
+      "max": 25,
+      "evidence": [
+        "30–43: user rejects and corrects framing",
+        "67–83 and 97–105: can cancel and preserve a private takeaway"
+      ]
+    },
+    "differentiation_and_role_value": {
+      "score": 19,
+      "max": 25,
+      "evidence": [
+        "24–30: proposed Muse Spark role",
+        "40–43 and 44–57: user agency contrasted with illustrative peer context"
+      ]
+    },
+    "cinematic_and_narrative_craft": {
+      "score": 17,
+      "max": 25,
+      "evidence": [
+        "0–15: quiet opening and captions",
+        "15–96: long screen-capture sections; 97–105: clear final beat"
+      ]
+    }
+  },
+  "decision": "Maybe",
+  "fix_tickets": [
+    {
+      "timestamp": "0–15",
+      "issue": "Audience and differentiation appear in a caption over a full page.",
+      "replacement": "Hold a concise, high-contrast audience and promise card for at least three seconds.",
+      "expected_result": "First-time viewers can identify audience and promise immediately.",
+      "verification": "Show the unobstructed card for the full hold in the final export."
+    },
+    {
+      "timestamp": "30–43",
+      "issue": "The typed correction is visible but small and competes with subtitles.",
+      "replacement": "Show the Not quite selection, caret, full typed correction, and changed reflection in one uninterrupted close shot.",
+      "expected_result": "The correction reads as the user’s own action.",
+      "verification": "Continuous recording with no transition between selection, typing, and updated card."
+    },
+    {
+      "timestamp": "67–78",
+      "issue": "All consent details are together but small at full-page scale.",
+      "replacement": "Hold a tighter view that simultaneously shows audience, alias, question, exclusion note, unchecked consent, and cancel for at least four seconds.",
+      "expected_result": "The viewer can inspect scope and decline without pausing.",
+      "verification": "One shot retains the unchanged unchecked state and cancel label throughout."
+    },
+    {
+      "timestamp": "24–30; 44–57",
+      "issue": "Prepared and planned status disclosures compete with interface content.",
+      "replacement": "Use clear Planned / not connected and Illustrative example / no live activity labels.",
+      "expected_result": "Proposed roles stay distinct from demonstrated functionality.",
+      "verification": "Labels remain legible in the 1080p export."
+    },
+    {
+      "timestamp": "0–105",
+      "issue": "Audio was inaccessible for this review; captions carry the dependable case.",
+      "replacement": "Provide complete captions and a clean voice mix that does not compete with interface text.",
+      "expected_result": "The pitch works with sound off and narration is usable with sound on.",
+      "verification": "Check captions against the complete spoken track and play the exported AAC."
+    }
+  ]
+}

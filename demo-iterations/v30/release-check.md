@@ -1,0 +1,12 @@
+# Release check: candidate.mp4
+
+Inspected only `/tmp/harmonise-v30-blind/candidate.mp4`.
+
+- **Duration and format:** 105.021 s container duration (1:45.021), within the 180 s limit. MP4 contains H.264 High, progressive, yuv420p video at 1920×1080, 16:9, and AAC-LC mono audio at 48 kHz.
+- **Frame rate and decode:** ffprobe reports 25 fps nominal (2626 encoded frames; average 2626/105 ≈ 25.01 fps). Decoded presentation frames run from 0.000 s through 104.960 s at exact 40 ms spacing (2625 frames). Full FFmpeg decode to null completed with no errors.
+- **Stream timing:** Both streams start at 0.000 s. Video ends at 105.000 s; audio runs to 105.021 s, a 21 ms tail difference. No material start offset or timestamp gap was observed.
+- **Audio:** AAC stream decodes throughout. EBU R128/loudnorm measurement: integrated loudness −18.02 LUFS, true peak −2.00 dBTP, LRA 4.80 LU. Sample peak is −2.0 dBFS and mean volume −18.3 dBFS. A −50 dB silence scan detects eight pauses of 1.65–4.75 s; this indicates quiet gaps in the audio track, not a missing audio stream. No clipping is indicated by the measured peaks.
+- **Freeze scan:** FFmpeg `freezedetect` at −50 dB with a 1 s minimum reports 24 fixed-image intervals. They are spread through the clip; examples include 0.48–5.92 s, 17.68–23.64 s, 48.16–53.24 s, 61.28–67.92 s (longest, 6.64 s), and 95.64–100.52 s. These detections mean the image is static at the detector threshold. Samples at 10 s intervals show changing application pages/states and changing subtitle text over the runtime, consistent with held UI screens during a narrated product walkthrough. The detector alone cannot distinguish such intentional holds from a playback stall; no decode/timestamp discontinuity accompanies them.
+- **Legibility at 960×540:** Reviewed frames downscaled to 960×540 at 10 s intervals from 0 through 100 s. Main headings, controls, and the large white-on-dark captions are readable. Fine body copy and small labels are dense and require close viewing at this size. Captions are high-contrast and remain legible, though their bottom-positioned boxes cover some lower-page UI content in several screens.
+
+**Assessment:** Meets the runtime and file/decode checks. Audio is present at a moderate measured level with headroom and pauses. The video has many detector-reported static holds; sampled content suggests intentional screen holds, but verify they are expected for the intended presentation. Captions are readable at 960×540; smaller UI text is less comfortable.

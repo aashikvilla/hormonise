@@ -1,0 +1,70 @@
+{
+  "iteration": "v30",
+  "status": "release checks passed; independent blind review complete; Maybe; fixed target not met",
+  "candidate": "demo-iterations/v30/demo.mp4",
+  "candidate_sha256": "8d8042d7e509af64dda52582f6ec3aa6219dd27faf65940e000131e89c3eaf71",
+  "duration_seconds": 105.021,
+  "target_duration_seconds": 105,
+  "source_code_changes": false,
+  "source_capture": {
+    "path": "demo-iterations/v27/capture/video/v27-real-product-session.webm",
+    "sha256": "121b23bfd9124b9c97a10ba70dedd80051b0d71c27cf9cf809b5be64a94d23ff",
+    "correction_interval_seconds": [
+      25.011,
+      48.517
+    ],
+    "consent_preview_seconds": 9.5,
+    "consent_hold_frame_source_seconds": 116.5
+  },
+  "edit": {
+    "render_script": "demo-iterations/v30/capture/render-v30.py",
+    "render_script_sha256": "f3a0324ce132d1c4fd48a3ef7fe6d7bdb95ff473758a72b2a9ef80f624d63eca",
+    "edit_map": "demo-iterations/v30/capture/edit-map.json",
+    "edit_map_sha256": "6c77548abe7ab83c58bdb1a7b5af0d9d30b1dfe543ec71dc7ac0071eb720fc09",
+    "captions": "demo-iterations/v30/capture/captions.srt",
+    "captions_sha256": "859fadc490bdad76eba34799b4e921a282678abf090d55040d4c995a527baade",
+    "narration_text": "demo-iterations/v30/capture/narration.txt",
+    "narration_sha256": "cff89bd2c2495ecbba4a6d0e95ab4cc1b140f5a021511c5048dce1db983d101a",
+    "narration_voice": "Synthetic Flite; captions reproduce narration, with opening fiction qualifier."
+  },
+  "checks": {
+    "full_decode": "passed; full FFmpeg decode completed with no errors",
+    "stream_format": "H.264 High progressive 1920x1080 video plus AAC-LC mono 48kHz audio",
+    "audio_video_sync": "both streams start at 0.000s; audio ends 0.021s after video",
+    "integrated_loudness_lufs": -18.02,
+    "loudness_range_lu": 4.8,
+    "true_peak_dbtp": -2.0,
+    "960x540_readability": "11 frames sampled at 10-second intervals from 0 through 100s; main headings, controls, and captions readable; fine body copy and small labels dense; captions cover some lower-page UI",
+    "still_intervals": {
+      "count": 24,
+      "longest_seconds": 6.64,
+      "assessment": "static UI holds; no decode or timestamp discontinuity observed"
+    },
+    "release_check_file": "demo-iterations/v30/release-check.md"
+  },
+  "truth_boundary": {
+    "fictional_prepared_demo": true,
+    "model_connected": false,
+    "live_community": false,
+    "muse_spark": "planned, not connected",
+    "peer_content": "prepared and fictional",
+    "message_sent": false
+  },
+  "review": {
+    "status": "independent blind review complete; Maybe",
+    "decision": "maybe",
+    "confidence": "medium",
+    "review_evidence_mode": "video with captions; AAC inaccessible to one judge",
+    "fixed_weighted_score": 79,
+    "film_persuasion_score": 75,
+    "film_persuasion_is_separate": true,
+    "target_score": 85,
+    "target_met": false,
+    "lower_score_preserved": 75,
+    "review_file": "demo-iterations/v30/review.json",
+    "cold_review_file": "demo-iterations/v30/cold-review.md",
+    "release_check_file": "demo-iterations/v30/release-check.md",
+    "next_iteration_tickets": "demo-iterations/v30/v31-tickets.md"
+  },
+  "release_check_file": "demo-iterations/v30/verification/release/release-check.md"
+}

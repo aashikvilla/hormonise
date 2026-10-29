@@ -1,0 +1,278 @@
+{
+  "iteration": "v30",
+  "targetRuntimeSeconds": 105,
+  "actualRuntimeSeconds": 105.021,
+  "source": "demo-iterations/v27/capture/video/v27-real-product-session.webm",
+  "sourceSha256": "121b23bfd9124b9c97a10ba70dedd80051b0d71c27cf9cf809b5be64a94d23ff",
+  "sourceRevision": "61b6674a1190384ef15453d4cca04fd6aa5249b1",
+  "shots": [
+    {
+      "name": "opening",
+      "type": "source",
+      "duration": 9.0,
+      "outputStart": 0.0,
+      "outputEnd": 9.0,
+      "sourceStart": 0.0,
+      "sourceEnd": 9.0,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "user-entry",
+      "type": "source",
+      "duration": 8.001999999999999,
+      "outputStart": 9.0,
+      "outputEnd": 17.002,
+      "sourceStart": 10.006,
+      "sourceEnd": 18.008,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "planned-role",
+      "type": "source",
+      "duration": 7.003,
+      "outputStart": 17.002,
+      "outputEnd": 24.005,
+      "sourceStart": 18.008,
+      "sourceEnd": 25.011,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "continuous-correction",
+      "type": "source",
+      "duration": 23.506000000000004,
+      "outputStart": 24.005,
+      "outputEnd": 47.511,
+      "sourceStart": 25.011,
+      "sourceEnd": 48.517,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "confirmation",
+      "type": "source",
+      "duration": 6.003999999999998,
+      "outputStart": 47.511,
+      "outputEnd": 53.515,
+      "sourceStart": 48.517,
+      "sourceEnd": 54.521,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "context-choice",
+      "type": "source",
+      "duration": 7.0049999999999955,
+      "outputStart": 53.515,
+      "outputEnd": 60.52,
+      "sourceStart": 60.524,
+      "sourceEnd": 67.529,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "prepared-ravi-account",
+      "type": "source",
+      "duration": 8.0,
+      "outputStart": 60.52,
+      "outputEnd": 68.52,
+      "sourceStart": 77.537,
+      "sourceEnd": 85.537,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "difference",
+      "type": "source",
+      "duration": 5.5,
+      "outputStart": 68.52,
+      "outputEnd": 74.02,
+      "sourceStart": 87.537,
+      "sourceEnd": 93.037,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "question-edit",
+      "type": "source",
+      "duration": 6.500999999999991,
+      "outputStart": 74.02,
+      "outputEnd": 80.521,
+      "sourceStart": 103.558,
+      "sourceEnd": 110.059,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "consent-preview",
+      "type": "source",
+      "duration": 7.0,
+      "outputStart": 80.521,
+      "outputEnd": 87.521,
+      "sourceStart": 110.559,
+      "sourceEnd": 117.559,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "consent-hold",
+      "type": "still",
+      "duration": 2.5,
+      "outputStart": 87.521,
+      "outputEnd": 90.021,
+      "sourceStart": 116.5,
+      "sourceEnd": 116.5,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "cancel",
+      "type": "source",
+      "duration": 5.0020000000000095,
+      "outputStart": 90.021,
+      "outputEnd": 95.023,
+      "sourceStart": 117.559,
+      "sourceEnd": 122.561,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "private-takeaway",
+      "type": "source",
+      "duration": 6.002999999999986,
+      "outputStart": 95.023,
+      "outputEnd": 101.026,
+      "sourceStart": 129.562,
+      "sourceEnd": 135.565,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "ending",
+      "type": "card",
+      "duration": 3.979,
+      "outputStart": 101.026,
+      "outputEnd": 105.005,
+      "sourceStart": null,
+      "sourceEnd": null,
+      "asset": "demo-iterations/v30/capture/ending-editorial-card.png"
+    }
+  ],
+  "continuousCorrectionSourceInterval": [
+    25.011,
+    48.517
+  ],
+  "consentPreviewSeconds": 9.5,
+  "narrationCount": 18,
+  "narration": [
+    {
+      "start": 0.2,
+      "end": 5.9,
+      "text": "I can’t tell my family what I want without feeling ungrateful.",
+      "caption": "I can’t tell my family what I want without feeling ungrateful.\nFictional · prepared scenario."
+    },
+    {
+      "start": 9.2,
+      "end": 16.8,
+      "text": "For adults navigating family pressure: clarify privately, correct the reflection, then decide whether to share.",
+      "caption": "For adults navigating family pressure: clarify privately, correct the reflection, then decide whether to share."
+    },
+    {
+      "start": 17.2,
+      "end": 23.6,
+      "text": "Muse Spark is planned, not connected; it could organize themes for Arjun to review. This is prepared example content.",
+      "caption": "Muse Spark is planned, not connected; it could organize themes for Arjun to review. This is prepared example content."
+    },
+    {
+      "start": 24.2,
+      "end": 28.9,
+      "text": "A prepared possible reading is offered for him to check.",
+      "caption": "A prepared possible reading is offered for him to check."
+    },
+    {
+      "start": 29.2,
+      "end": 33.2,
+      "text": "He chooses “Not quite.”",
+      "caption": "He chooses “Not quite.”"
+    },
+    {
+      "start": 34.0,
+      "end": 40.8,
+      "text": "Arjun enters: “I want time to decide what I want, without someone choosing stay or leave for me.”",
+      "caption": "Arjun enters: “I want time to decide what I want, without someone choosing stay or leave for me.”"
+    },
+    {
+      "start": 41.1,
+      "end": 47.2,
+      "text": "The editable reflection changes: “You want time to decide what you want, without someone choosing stay or leave for you.”",
+      "caption": "The editable reflection changes: “You want time to decide what you want, without someone choosing stay or leave for you.”"
+    },
+    {
+      "start": 47.8,
+      "end": 53.2,
+      "text": "He accepts the corrected theme himself. The product does not decide what is true.",
+      "caption": "He accepts the corrected theme himself. The product does not decide what is true."
+    },
+    {
+      "start": 53.75,
+      "end": 60.3,
+      "text": "He sets aside broader legal results; family context stays in view.",
+      "caption": "He sets aside broader legal results; family context stays in view."
+    },
+    {
+      "start": 60.8,
+      "end": 67.9,
+      "text": "A prepared fictional account: Ravi says a trusted friend helped him speak with family.",
+      "caption": "A prepared fictional account: Ravi says a trusted friend helped him speak with family."
+    },
+    {
+      "start": 68.7,
+      "end": 73.8,
+      "text": "Their circumstances differ. Ravi had a trusted friend; Arjun has not said he does.",
+      "caption": "Their circumstances differ. Ravi had a trusted friend; Arjun has not said he does."
+    },
+    {
+      "start": 74.3,
+      "end": 79.9,
+      "text": "He edits the question: “Could I take time to decide before answering?”",
+      "caption": "He edits the question: “Could I take time to decide before answering?”"
+    },
+    {
+      "start": 80.6,
+      "end": 82.9,
+      "text": "Audience: Family Expectations group. Alias: QuietRiver.",
+      "caption": "Audience: Family Expectations group. Alias: QuietRiver."
+    },
+    {
+      "start": 83.0,
+      "end": 87.2,
+      "text": "Question: “Could I take time to decide before answering?” Private reflection excluded.",
+      "caption": "Question: “Could I take time to decide before answering?” Private reflection excluded."
+    },
+    {
+      "start": 87.25,
+      "end": 89.85,
+      "text": "Consent unchecked. Control: “Cancel · keep my draft.”",
+      "caption": "Consent unchecked. Control: “Cancel · keep my draft.”"
+    },
+    {
+      "start": 90.25,
+      "end": 94.5,
+      "text": "He chooses “Cancel · keep my draft.” Nothing is sent.",
+      "caption": "He chooses “Cancel · keep my draft.” Nothing is sent."
+    },
+    {
+      "start": 95.3,
+      "end": 100.5,
+      "text": "He keeps one takeaway privately for this preview session.",
+      "caption": "He keeps one takeaway privately for this preview session."
+    },
+    {
+      "start": 101.3,
+      "end": 104.7,
+      "text": "For this preview only: “I can ask for time before deciding.” Kept privately; nothing is sent.",
+      "caption": "For this preview only: “I can ask for time before deciding.” Kept privately; nothing is sent."
+    }
+  ],
+  "truthBoundary": {
+    "fictionalPreparedDemo": true,
+    "modelConnected": false,
+    "liveCommunity": false,
+    "museSpark": "planned, not connected",
+    "peerContent": "prepared/fictional",
+    "messageSent": false
+  },
+  "sourceMismatches": [
+    "The actual recorded consent question is “Could I take time to decide before answering?”",
+    "The actual recorded consent action is “Cancel · keep my draft.”"
+  ]
+}
