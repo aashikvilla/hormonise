@@ -26,6 +26,7 @@ test("first use names the audience and private-to-peer promise before Start priv
   await expect(page.getByText("FICTIONAL SCENARIO · ARJUN", { exact: true })).toBeVisible();
   await expect(page.getByText(/For adults facing family pressure\./i)).toBeVisible();
   await expect(page.getByText("Private reflection you can correct before exploring peer experiences.", { exact: true })).toBeVisible();
+  await expect(page.getByText("Find words for a boundary you choose.", { exact: true })).toBeVisible();
   await expect(page.getByText(/Fictional scenario · prepared examples · no model connected/i)).toBeVisible();
   await expect(page.getByRole("article").filter({ hasText: "Arjun said" })).toBeVisible();
   await expect(page.getByText("Prepared local mock-up · possible themes are not generated.")).toBeVisible();
@@ -57,6 +58,22 @@ test("a correction changes an editable local reflection instead of claiming a mo
   await expect(page.locator(".causal-understanding").getByText(/Prepared local example · no model connected/i)).toBeVisible();
   await updated.fill("I want to decide at my own pace.");
   await expect(updated).toHaveValue("I want to decide at my own pace.");
+});
+
+test("Arjun can choose a concrete private takeaway immediately after confirming the correction", async ({ page }) => {
+  await page.goto("/");
+  await page.getByRole("button", { name: "Start privately" }).click();
+  await sendChat(page, "Things at home feel uncertain. My family keeps asking what I want.");
+  await page.getByRole("button", { name: "Not quite" }).click();
+  await page.getByRole("button", { name: "Edit in my words" }).click();
+  await page.getByRole("textbox", { name: "Your message" }).fill("I can talk with my partner. It's my parents. I want time to decide what I want.");
+  await page.getByRole("button", { name: "Send" }).click();
+  await page.getByRole("textbox", { name: "WHAT HE CONFIRMED · EDITABLE" }).fill("I can ask for time before deciding.");
+  await page.getByRole("button", { name: "Yes, that’s closer" }).click();
+  const choice = page.getByRole("region", { name: "Arjun's optional private takeaway" });
+  await expect(choice).toContainText("I can ask for time before deciding.");
+  await choice.getByRole("button", { name: "Keep this takeaway privately" }).click();
+  await expect(choice.getByRole("status")).toHaveText("Arjun chose to keep this in the preview session only. Nothing is sent.");
 });
 
 test("scenario and example query params both open an editable unsent Arjun opener", async ({ page }) => {
@@ -221,7 +238,7 @@ test("Ravi preview edits live, support has a return path, and Arjun can keep a t
   await page.getByRole("tab", { name: "Discussions" }).click();
   await page.getByRole("button", { name: /Day 16 Keeping the question open/ }).click();
   await page.getByRole("button", { name: "Keep this takeaway privately" }).click();
-  await expect(page.getByRole("status").filter({ hasText: "Arjun chose this takeaway to keep privately" })).toBeVisible();
+  await expect(page.getByRole("status").filter({ hasText: "Arjun chose this in the preview session only" })).toBeVisible();
   await page.getByRole("button", { name: "Offer one thing that helped" }).click();
   await expect(page.getByRole("status").filter({ hasText: "Selected: Offer one thing that helped" })).toBeVisible();
   const preview = page.locator(".dev-bounded-preview");
@@ -232,10 +249,10 @@ test("Ravi preview edits live, support has a return path, and Arjun can keep a t
   await expect(preview.getByRole("button", { name: "Post in this example group" })).toBeDisabled();
   await preview.getByRole("button", { name: "Review my choices" }).click();
   const close = page.getByRole("region", { name: "Arjun's final local choices" });
-  await expect(close).toContainText("I want a conversation without someone deciding for me.");
+  await expect(close).toContainText("I can ask for time before deciding.");
   await expect(close).toContainText("One helpful thing for Dev");
-  await expect(close).toContainText("private context excluded");
-  await expect(close).toContainText("Nothing is sent without consent.");
+  await expect(close).toContainText("Private context excluded");
+  await expect(close).toContainText("Nothing is sent.");
   await expect(close).toContainText("consent unchecked · post disabled");
 });
 
