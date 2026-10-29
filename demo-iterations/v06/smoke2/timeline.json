@@ -1,0 +1,66 @@
+[
+  {
+    "name": "01-clean-entry",
+    "seconds": 0.921
+  },
+  {
+    "name": "02-talk-choice",
+    "seconds": 1.094
+  },
+  {
+    "name": "03-one-line-local-response",
+    "seconds": 1.272
+  },
+  {
+    "name": "04-tentative-context",
+    "seconds": 1.538
+  },
+  {
+    "name": "05-not-quite",
+    "seconds": 1.688
+  },
+  {
+    "name": "06-user-correction-draft",
+    "seconds": 1.841
+  },
+  {
+    "name": "07-correction-and-local-rule",
+    "seconds": 1.998
+  },
+  {
+    "name": "08-user-selected-family-result",
+    "seconds": 2.224
+  },
+  {
+    "name": "09-ravi-group-only",
+    "seconds": 2.67
+  },
+  {
+    "name": "10-ravi-exact-consent",
+    "seconds": 2.84
+  },
+  {
+    "name": "11-prepared-ravi-sample",
+    "seconds": 3.075
+  },
+  {
+    "name": "12-dev-contribution-preview",
+    "seconds": 3.474
+  },
+  {
+    "name": "13-local-contribution-posted",
+    "seconds": 3.698
+  },
+  {
+    "name": "14-professional-support-caveat",
+    "seconds": 3.968
+  },
+  {
+    "name": "15-planned-architecture-status",
+    "seconds": 4.057
+  },
+  {
+    "name": "16-final-bounded-choice",
+    "seconds": 4.47
+  }
+]

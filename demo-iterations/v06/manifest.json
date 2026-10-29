@@ -1,0 +1,44 @@
+{
+  "version": "v06",
+  "candidate": "demo-iterations/v06/demo.mp4",
+  "candidate_commit_sha": null,
+  "based_on": {
+    "v05_candidate_commit": "bdb0a049aa8dab8b2f24da7b9bd359dc441e04a6",
+    "v05_candidate": "demo-iterations/v05/demo.mp4",
+    "v05_candidate_sha256": "db51fecddd7ff244ca542ee055d16b59f93fbe28310585ea8cb5e65730a2729d"
+  },
+  "changes": [
+    "Fresh Playwright recording of first use, local prepared responses, an explicit Not quite/Edit in my words correction, the user-selected context branch, exact Ravi group-only consent review, prepared sample, bounded Dev contribution and support caveat.",
+    "The architecture status card is explicitly editorial, says both planned Meta components are disconnected, and precedes the close on the captured Dev contribution controls.",
+    "Opening narration names family expectations and the private room to think; film closes on the actual bounded contribution screen with group, alias, text, unchecked consent, disabled post, and nothing sent.",
+    "No app source changed. Capture and edit use fictional, local prepared content and offline synthetic Flite narration only."
+  ],
+  "source_react_capture": "demo-iterations/v06/capture/react-capture.webm",
+  "source_react_capture_sha256": "06ebf75e9e83606b2a65c47417e20c5abff91efe43b1dac6078fe0264c8c065c",
+  "duration_seconds": 176.0,
+  "video_stream_duration_seconds": 176.0,
+  "audio_stream_duration_seconds": 176.0,
+  "resolution": "1920x1080",
+  "frame_rate": 30,
+  "video_codec": "H.264",
+  "audio_codec": "AAC mono 48 kHz",
+  "narration": "Offline synthetic Flite voice; no model is connected.",
+  "captions": "Burned in and supplied as demo-iterations/v06/captions.srt (17 sequential cues).",
+  "sha256": "783d5e119254a54f49ec72de7ef47794d13bc8a87d04212878a48ecd27cad9dd",
+  "audio_measurement": {
+    "mean_dbfs": -20.3,
+    "peak_dbfs": -3.1
+  },
+  "verification": {
+    "ffprobe": "passed: 176.000 seconds; video and audio stream durations match exactly; 1920x1080 H.264 and AAC mono 48 kHz",
+    "full_decode": "passed: ffmpeg full-file decode exits 0",
+    "audio": "passed: mean -20.3 dBFS, peak -3.1 dBFS",
+    "captions": "passed: 17 SRT cues, no overlaps, cue end 172.703s, no doubled terminal punctuation; burned captions paired with narration",
+    "readability": "Reviewed opening, Ravi consent, and final bounded choice at 1920x1080 and 960x540; captured full/half-size verification frames are included.",
+    "playwright_smoke": "passed: smoke2 traversed all 16 recorded transitions including final visible checkbox and disabled post control",
+    "application_tests": "No application source changed; application test suites were not rerun."
+  },
+  "outstanding_gap": "Professional support remains a caveat screen only; no provider is verified or bookable. The planned-architecture card is an editorial status card, not an app interaction.",
+  "disclosure": "Fictional interactive preview. People and content are samples/local. Meta features are planned and disconnected. No live Meta, model, human, community, moderation action, report routing, or professional service action occurred.",
+  "review": "Builder did not assign a score or perform judge review."
+}
