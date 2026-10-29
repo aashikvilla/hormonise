@@ -1,0 +1,57 @@
+{
+  "iteration": "v21",
+  "parent_iteration": "v20",
+  "candidate": "demo.mp4",
+  "candidate_sha256": "7d5e8edd7cae75e7f02daf444a6d5ce023d03a9d4465b0e1105a77a5d192fcd4",
+  "captions": "captions.srt",
+  "captions_sha256": "dcca57f869d4387aafb84ecb468192977e2e8188a4a31a14be0ce4c59b864093",
+  "narration": "narration.txt",
+  "capture_script": "capture/capture-film.mjs",
+  "render_script": "capture/render-film.py",
+  "finalize_script": "capture/finalize-film.py",
+  "capture_source": "capture/react-capture.webm",
+  "capture_source_sha256": "71d0bb46e0d1ea8b06cdf1af7fb35b8c7c011f97dba68c0d1a2dc005f76d58e9",
+  "capture_type": "Fresh Playwright recording of actual local React UI interactions; prepared local content only",
+  "capture_viewport": "1600x900",
+  "source_revision": "a9a5b6112fd546d3fcc32b31fc5b0bcd5026b855",
+  "staged_fictional_arjun_images": [
+    {
+      "file": "arjun-staged.png",
+      "sha256": "ced8f743ec01cfaf64e53ea4c516f86b51dd044e5671e4abde5b2e4a9c658927"
+    },
+    {
+      "file": "arjun-face.png",
+      "sha256": "649d1e98bf4ca3548c0675dd8608bc9af8488281739fd0a0e81cc281e7739d93"
+    },
+    {
+      "file": "arjun-hand.png",
+      "sha256": "88e15b2a070be7f4e593a361bf9b775891f04b7d718e4e5af829cf831bbb6ec7"
+    }
+  ],
+  "human_image_disclosure": "Fictional Arjun \u00b7 staged AI-generated scene",
+  "ui_disclosure": "Prepared preview \u00b7 Muse Spark not connected \u00b7 no live peers / services",
+  "media": {
+    "video_codec": "H.264",
+    "audio_codec": "AAC mono 48 kHz",
+    "width": 1920,
+    "height": 1080,
+    "video_duration_seconds": 177.5,
+    "audio_duration_seconds": 177.5,
+    "stream_delta_seconds": 0.0,
+    "ui_pane_seconds": 110.033,
+    "ui_pane_share_percent": 62.0,
+    "human_visual_seconds": 177.5,
+    "picture_beats": 50,
+    "maximum_beat_seconds": 3.567,
+    "srt_cues": 49,
+    "srt_overlaps": 0,
+    "last_caption_end_seconds": 172.893,
+    "caption_tail_seconds": 4.607,
+    "full_decode": "passed",
+    "audio_mean": "-18.8 dBFS",
+    "audio_peak": "-3.5 dBFS"
+  },
+  "verification_frames": "verification/ (13 beats at 1920x1080 and 960x540)",
+  "application_checks": "Not run; no application code changed in v21.",
+  "integrations": "Frontend-only prepared preview. No model, live peers, provider directory, or message sending is connected. Flite narration is synthetic."
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "01-landing",
+    "seconds": 1.294
+  },
+  {
+    "name": "02-private-start",
+    "seconds": 3.883
+  },
+  {
+    "name": "03-prepared-reading",
+    "seconds": 5.98
+  },
+  {
+    "name": "04-not-quite",
+    "seconds": 8.625
+  },
+  {
+    "name": "05-correction-written",
+    "seconds": 10.695
+  },
+  {
+    "name": "06-reflection-changed",
+    "seconds": 13.149
+  },
+  {
+    "name": "07-takeaway-private",
+    "seconds": 15.949
+  },
+  {
+    "name": "08-ravi-example",
+    "seconds": 18.742
+  },
+  {
+    "name": "09-ravi-preview",
+    "seconds": 21.746
+  },
+  {
+    "name": "10-support-unavailable",
+    "seconds": 25.272
+  },
+  {
+    "name": "11-day16-takeaway",
+    "seconds": 27.723
+  },
+  {
+    "name": "12-maybe-later-selected",
+    "seconds": 30.083
+  }
+]
