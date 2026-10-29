@@ -1,0 +1,64 @@
+{
+  "review_version": "video-only protocol v2.1",
+  "review_evidence_mode": "video_picture_and_on_screen_captions_audio_inaccessible",
+  "independent_of_previous_rounds": true,
+  "technical_evidence_type": "film-visible prototype evidence",
+  "decision": "maybe",
+  "confidence": "medium",
+  "uncertainty": "Prepared examples and explicit no-model/no-live-service labels limit claims about execution, adoption, and real outcomes. Audio could not be heard; pacing and voice delivery judgments rely on picture and on-screen captions.",
+  "scores": {
+    "impact": {
+      "specificity_and_depth_of_problem": {"score": 8, "max": 10, "evidence": "0-11s: adults facing family pressure; first-person line says the speaker cannot tell family what they want without feeling ungrateful."},
+      "human_need_and_believable_outcomes": {"score": 7, "max": 10, "evidence": "25-50s and 133-153s: participant corrects a tentative reflection and chooses a modest takeaway; fictional prepared scenario does not demonstrate a real outcome."},
+      "practical_adoption_and_network_benefit": {"score": 5, "max": 10, "evidence": "51-74s shows prepared peer perspectives and no replies; 105-116s says no verified provider or appointment flow is connected."},
+      "subtotal": 20,
+      "max": 30
+    },
+    "meta_use": {
+      "correctly_named_model_roles": {"score": 4, "max": 7, "evidence": "35-45s names Muse Spark for organizing a correctable reflection and optional Muse voice transcription, explicitly planned and not connected."},
+      "necessity_rather_than_generic_wrapper": {"score": 5, "max": 8, "evidence": "12-16s and 25-45s frame a bounded role around a tentative, editable reflection; necessity is plausible but not validated by live execution."},
+      "visible_mechanism_reasoning_or_structured_ui": {"score": 5, "max": 6, "evidence": "12-16s and 25-45s show original words, a possible reading, and a participant-correctable reflection."},
+      "evidence_or_candid_limitation": {"score": 4, "max": 4, "evidence": "12-16s and 35-45s label the scenario prepared/local and the model not connected; no model call is shown."},
+      "subtotal": 18,
+      "max": 25
+    },
+    "demo": {
+      "hook_and_story": {"score": 4, "max": 6, "evidence": "0-11s gives a specific dilemma; the product promise arrives around 12s."},
+      "clarity_and_legibility": {"score": 5, "max": 6, "evidence": "12-16s workflow card and 25-45s editable reflection are clear; dense pages appear at 51-74s and 139-153s."},
+      "pacing_and_accessible_audio_subtitles": {"score": 3, "max": 5, "evidence": "Captions are visible throughout; static holds at 77-100s and 139-177s slow the film. Audio inaccessible, so voice/audio quality cannot be judged."},
+      "memorable_emotional_payoff": {"score": 3, "max": 5, "evidence": "46-50s correction and 133-138s takeaway offer a modest payoff, but the person remains fictional and text-only."},
+      "polished_coherent_ui": {"score": 3, "max": 3, "evidence": "12-16s, 77-100s, and 105-116s show consistent typography, spacing, and interface structure."},
+      "subtotal": 18,
+      "max": 25
+    },
+    "technical_depth": {
+      "plausible_full_user_workflow": {"score": 5, "max": 6, "evidence": "16-50s private reflection and correction, 51-100s peer exploration and exact share preview, 105-116s support limitation, 139-153s journey recap."},
+      "controls_permissions_privacy": {"score": 5, "max": 5, "evidence": "77-100s exact audience/alias/question preview, private context exclusion, unchecked consent, disabled send, and no-send disclosure; 139-153s private takeaway."},
+      "architecture_failure_handling_as_evidenced": {"score": 3, "max": 5, "evidence": "35-45s names planned/not-connected AI; 105-116s discloses unavailable provider checks and appointments; live service and technical failure paths are not shown."},
+      "implementation_evidence": {"score": 3, "max": 4, "evidence": "25-45s editable correction, 77-100s consent/share preview, and 139-153s recoverable private choice are film-visible prototype interactions; prepared local examples limit confidence."},
+      "subtotal": 16,
+      "max": 20
+    }
+  },
+  "total": 72,
+  "total_max": 100,
+  "film_persuasion_score": 70,
+  "film_persuasion_dimensions": {
+    "first_15_second_clarity": {"score": 17, "max": 25, "evidence": ["0-11s: identifies adults facing family pressure and the dilemma of feeling ungrateful.", "~12s: states private reflection and optional peer exploration after most of the opening window."]},
+    "human_journey_and_payoff": {"score": 19, "max": 25, "evidence": ["25-45s: Arjun can reject or edit a tentative interpretation.", "133-153s: chosen private takeaway remains modest; no next step is selected."]},
+    "differentiation_and_role_value": {"score": 19, "max": 25, "evidence": ["12-16s: private reflection, correction, optional peers form the product path.", "35-45s and 55-74s: Muse Spark is proposed/not connected; peer and host roles are clearly fictional/prepared."]},
+    "cinematic_and_narrative_craft": {"score": 15, "max": 25, "evidence": ["0-11s: clean graphic opening.", "46-50s gives the strongest reveal; 77-100s and 139-177s contain long static holds."]},
+    "arithmetic": "17 + 19 + 19 + 15 = 70",
+    "confidence": "medium-low for craft; medium overall",
+    "audio_limitation": "Audio could not be accessed or heard. Assessment uses picture and visible on-screen captions; narration delivery, music, mix, and exact caption synchronization are not judged."
+  },
+  "five_fix_tickets": [
+    {"timestamp": "0-16s", "current_issue": "Audience/problem are clear, but the product promise arrives near the end of the opening window.", "precise_replacement": "Use a 12-second cold open with the dilemma and the sentence: 'Harmonise helps you privately test and correct a reflection before choosing whether to hear peers.' Keep fictional/no-model disclosure visible.", "expected_result": "Audience, problem, and differentiator are clear within 15 seconds.", "verification": "A first-time viewer can state the audience, problem, and promise by 15 seconds."},
+    {"timestamp": "16-45s", "current_issue": "Long stable views make the core reflection feel narrated rather than interacted with.", "precise_replacement": "Cut to original words, tentative possible reading, visible reject/edit action, and corrected text in one sequence.", "expected_result": "The film shows the participant causing and controlling the change.", "verification": "The action and changed state are visible in one uninterrupted shot."},
+    {"timestamp": "35-45s", "current_issue": "The planned model role is described in a small status panel and could be missed.", "precise_replacement": "Show: 'Planned: Muse Spark organizes a draft. Arjun decides, edits, or discards it. This preview uses prepared examples.'", "expected_result": "Viewers understand both proposed role and non-execution.", "verification": "Viewers can distinguish proposed AI from demonstrated interaction after the scene."},
+    {"timestamp": "51-74s", "current_issue": "Peer value is presented as static prepared content without a concise relevance explanation.", "precise_replacement": "Show the confirmed theme, one clearly fictional peer perspective, and the unresolved/no-reply state together; retain the no-live-activity label.", "expected_result": "Peer relevance is understandable without implying live social proof.", "verification": "Viewers can identify matching basis, illustrative content, and whether a real reply occurred."},
+    {"timestamp": "139-177s", "current_issue": "The ending repeats the takeaway and preview-only/no-send message across a long static hold.", "precise_replacement": "Show 'Keep privately', 'Offer one thing', and 'Maybe later'; land once on the chosen private option and one concise preview-only disclosure.", "expected_result": "The film ends on a clear user choice and privacy state.", "verification": "The chosen path and unsent status are readable without duplicate cards or dead air."}
+  ],
+  "authenticity": "All scenario/community material is visibly fictional, prepared, illustrative, or local. The film does not substantiate live model calls, live peers/moderation, provider checks, appointments, or sent messages.",
+  "release_recommendation": "Revise before release; defensible as a fictional prepared prototype walkthrough only. Do not claim live model, community, or provider functionality from this film."
+}
