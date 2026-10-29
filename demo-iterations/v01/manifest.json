@@ -1,7 +1,7 @@
 {
   "version": "v01",
   "candidate": "demo-iterations/v01/demo.mp4",
-  "implementation_commit": null,
+  "implementation_commit": "20d9431db546d97ede3c94feb5f153228855bdfd",
   "source_capture": "demo-iterations/v01/capture/react-capture.webm",
   "source_capture_duration_seconds": 186.44,
   "candidate_duration_seconds": 179.0,
