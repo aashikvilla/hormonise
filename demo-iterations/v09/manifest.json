@@ -1,7 +1,7 @@
 {
   "version": "v09",
   "candidate": "demo-iterations/v09/demo.mp4",
-  "candidate_commit_sha": "3b2e22c",
+  "candidate_commit_sha": "3b2e22c8f87b30202ea9392d1443e244698f7e12",
   "candidate_sha256": "2247edaa686bb2250861d5b7c7908bf611992ef71d27094caa83f391d9447bd0",
   "based_on": {
     "v08_manifest_commit": "322292b693700aeaec1c8ef4966b5dbd0e25f673",
