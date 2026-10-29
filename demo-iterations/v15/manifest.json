@@ -1,0 +1,82 @@
+{
+  "iteration": "v15",
+  "parent_iteration": "v14",
+  "parent_candidate_sha256": "281753a0b2372b2ae3431b30cfdc9f3159ae53105765217b8ccfdecc16acf84a",
+  "candidate_commit_sha": null,
+  "candidate": "demo-iterations/v15/demo.mp4",
+  "candidate_sha256": "8904c00ad231407e2c6045a559c0d6f64b79c61e84275e55036cc8d544d9b7e4",
+  "duration_seconds": 177.966667,
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "duration_seconds": 177.966667,
+    "frames": 5339
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_seconds": 177.962,
+    "av_delta_seconds": 0.004667,
+    "last_speech_seconds": 176.402583,
+    "mean_volume_db": -19.7,
+    "peak_volume_db": -3.1
+  },
+  "captions": {
+    "path": "demo-iterations/v15/captions.srt",
+    "sha256": "75d3351067351f11f87a61d9a3b80b0258736276b9c3113987ab0025066b2e28",
+    "cue_count": 36,
+    "last_cue_end_seconds": 177.02,
+    "burned_in": true,
+    "overlapping_cues": 0
+  },
+  "narration": {
+    "path": "demo-iterations/v15/narration.txt",
+    "sha256": "05eb0aff715a6312dfd0c2e6a3e2613e2b5772688b1e4cd1ff3d95f3b7da40e8",
+    "voice": "synthetic Flite",
+    "model_connected": false
+  },
+  "capture": {
+    "path": "demo-iterations/v15/capture/react-capture.webm",
+    "sha256": "1827ce71947b56f8ba9b462ca91e32ff0e434b65f9050c7d19871c41eae3d656",
+    "duration_seconds": 192.56,
+    "resolution": "1600x900",
+    "fps": 25,
+    "timeline": "demo-iterations/v15/capture/timeline.json",
+    "timeline_sha256": "9dcad9f7156fd342d2d8ca181cc99c012a0c10e3a09c86de6bf310fdce59956c",
+    "actual_react_states": 19
+  },
+  "scripts": {
+    "capture": "demo-iterations/v15/capture/capture-film.mjs",
+    "capture_sha256": "eb28e8b3c35e4c7faefa4ffd921ace9ba4f935a1e362bc24ce2c2c9e5a133c48",
+    "render": "demo-iterations/v15/capture/render-film.py",
+    "render_sha256": "2e8f8ee3deb3839f3b8cadd92e1416d05f41b739bc2536b10ec8f57201487730"
+  },
+  "verification": "demo-iterations/v15/verification.md",
+  "verification_sha256": "8d296dc8cfdeed5b3273c835ba453623c2444afbce8815544f82dcc8aa9a01cb",
+  "visual_evidence": [
+    {
+      "path": "demo-iterations/v15/verification/contact.jpg",
+      "sha256": "f3ff437d504381840f25b5d9be1514fc9c433bd1f2a80e9f1a9fa042de4ea2a9"
+    },
+    {
+      "path": "demo-iterations/v15/verification/contact-960.jpg",
+      "sha256": "bef10516d201c9a7741120cb47ee8d448e088e8fb645555bd582bdd0f3241e5e"
+    }
+  ],
+  "acceptance": {
+    "lint": "passed",
+    "typecheck": "passed",
+    "unit": "27/27 passed",
+    "e2e": "32/32 desktop and mobile passed",
+    "build": "passed",
+    "capture_smoke": "19/19 states passed",
+    "full_decode": "passed",
+    "caption_overlap": "0",
+    "visual_review": "passed"
+  },
+  "source_code_changes": false,
+  "scope": "Fictional frontend-only preview; no live Meta, AI model, community, moderator, provider, human, or message integration."
+}
