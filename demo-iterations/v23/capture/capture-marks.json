@@ -1,0 +1,24 @@
+{
+  "marks": {
+    "entry": 3.663,
+    "private-start": 8.033,
+    "opening-entered": 12.183,
+    "corrected": 18.417,
+    "takeaway-kept-inline": 22.567,
+    "community-open": 26.766,
+    "match-and-difference": 30.929,
+    "question-open": 35.541,
+    "question-edited": 39.674,
+    "support-limit": 43.768,
+    "day-16": 49.938,
+    "private-takeaway-selected": 55.411,
+    "end": 56.415
+  },
+  "verified": {
+    "questionPreview": "Could I take time to decide before answering?",
+    "consentUnchecked": true,
+    "continueDisabled": true,
+    "maybeLater": "Maybe later selected. The private reflection stays private.",
+    "takeaway": "Arjun chose this in the preview session only: “I can ask for time before deciding.”"
+  }
+}

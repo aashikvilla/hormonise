@@ -1,0 +1,69 @@
+{
+  "version": "v23",
+  "status": "candidate",
+  "render": "demo.mp4",
+  "durationSeconds": 81.567,
+  "picture": {
+    "width": 1920,
+    "height": 1080,
+    "frameRate": "30/1",
+    "codec": "h264",
+    "staticHoldLimitSeconds": 5
+  },
+  "audio": {
+    "codec": "aac",
+    "sampleRateHz": 48000,
+    "channels": 2,
+    "durationSeconds": 81.567,
+    "startSeconds": 0,
+    "source": "FFmpeg Flite local kal voice",
+    "classification": "synthetic narration; identified in opening caption",
+    "cueCount": 13,
+    "meanDbfs": -30.6,
+    "peakDbfs": -6.6
+  },
+  "captions": {
+    "file": "capture/captions.srt",
+    "cueCount": 13,
+    "ordered": true,
+    "overlaps": 0,
+    "maxLinesPerCue": 1,
+    "narrationWithinCueWindows": true
+  },
+  "interactionCapture": {
+    "file": "capture/video/v23-full-route.webm",
+    "convertedFile": "capture/video/v23-full-route.mp4",
+    "checkpoints": "capture/capture-marks.json",
+    "continuousCorrectionSource": "capture/continuous-take.mp4",
+    "continuousCorrectionSourceIteration": "v22",
+    "retainedCorrectionSeconds": 39.2,
+    "trimSourceStartSeconds": 10.0,
+    "trimSourceEndSeconds": 49.2,
+    "trimmedStaticTailSeconds": 4.928,
+    "questionPreview": "Could I take time to decide before answering?",
+    "consentChecked": false,
+    "continueEnabled": false,
+    "finalMaybeLaterOutcome": "Maybe later selected. The private reflection stays private.",
+    "finalTakeawayOutcome": "Arjun chose to keep the takeaway in the preview session only. Nothing is sent."
+  },
+  "verification": {
+    "report": "verification.md",
+    "fullDecode": "passed",
+    "audioVideoStartDeltaSeconds": 0,
+    "audioVideoDurationDeltaSeconds": 0.000333,
+    "nativeAnd960FramesInspected": true,
+    "coldReview": "not performed",
+    "score": "not assigned"
+  },
+  "sha256": {
+    "demo.mp4": "b181d88389d0dc8f1b3ebc7160564927d5497c947408a8abf06bcbdb82c23f14",
+    "capture/captions.srt": "6db672200c19c4e2a65f330b0e9426fc21b37633e7526f6b58b37b534121758b",
+    "capture/continuous-take.mp4": "54a0e0338c933fb10ee3ac9e0f3973bae09e8241b156d06570500c66ad1a9039",
+    "capture/video/v23-full-route.webm": "5f9cec0171c5a3700273d4fe6e4c4f7ad364e79482b68d9d2f86e43e25e24b43",
+    "capture/video/v23-full-route.mp4": "61f4dbec5a1e0bf20e8b84bd0742ffcd1ddad4449e8f1ff1d39ef2b86b13543c",
+    "verification/contact-960.jpg": "28aa9fb84c3054d68b7638b07687015aec3bf73e9e2576b32a69fa0dc6c37e48",
+    "verification/frame-052s-960.jpg": "ea778c714ea9a9675d7742b0db51a8f14e4b81b9e8b4faf8a09b72830c23a0fd",
+    "verification/frame-064s-960.jpg": "8244050f8725191407b98ff8c0d1ac5f80e21a82cb683ec1789b9f09f1bcb51e",
+    "verification/frame-080s-960.jpg": "f40816e17998cf3f55ea4fba60f158f4f3d501b69f8578794c9c9b05e4606a0a"
+  }
+}
