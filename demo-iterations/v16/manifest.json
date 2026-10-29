@@ -1,0 +1,165 @@
+{
+  "iteration": "v16",
+  "parent_candidate": "v15",
+  "parent_candidate_sha256": "8904c00ad231407e2c6045a559c0d6f64b79c61e84275e55036cc8d544d9b7e4",
+  "candidate": "demo.mp4",
+  "candidate_sha256": "3181b539a6b2a6a3a23372e19ca77e025e0a7c4f75f312fecba7ba88f9923dcf",
+  "candidate_commit_sha": null,
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "duration_seconds": 177.966667
+  },
+  "audio": {
+    "codec": "aac",
+    "channels": 1,
+    "sample_rate": 48000,
+    "duration_seconds": 177.962,
+    "av_delta_seconds": 0.004667,
+    "synthetic_voice": "Flite"
+  },
+  "captions": {
+    "file": "captions.srt",
+    "burned_in": true,
+    "cue_count": 36,
+    "overlaps": 0,
+    "last_end_seconds": 177.715
+  },
+  "capture": {
+    "method": "Playwright browser recording of React app",
+    "raw": "capture/react-capture.webm",
+    "timeline": "capture/timeline.json",
+    "timeline_marker_count": 21,
+    "smoke_scene_count": 21
+  },
+  "limitations": [
+    "Fictional local fixtures only",
+    "Prepared local themes; no model connected",
+    "Planned Muse Spark role only; not connected",
+    "No live community/moderation/report/provider/message/send actions"
+  ],
+  "files": {
+    "demo.mp4": {
+      "sha256": "3181b539a6b2a6a3a23372e19ca77e025e0a7c4f75f312fecba7ba88f9923dcf",
+      "bytes": 10060241
+    },
+    "captions.srt": {
+      "sha256": "fef2b550bc471c04e99055e8aac855c2bd75d5cc3aba7c2f0698a9e71fa8c709",
+      "bytes": 2642
+    },
+    "narration.txt": {
+      "sha256": "81ed30a36ee5da823fa33ff2642f1db9fcf5aa812a7b0d4bff591ac3f2ecef1f",
+      "bytes": 1463
+    },
+    "verification.md": {
+      "sha256": "a380db7d7744e2c01de4f705d56a2fa82773ed6e99b7884af16446a1c3fa59bf",
+      "bytes": 2802
+    },
+    "capture/capture-film.mjs": {
+      "sha256": "874106def24cb56803a1bf019fb510d0a70422bd7d377d2f9d2cc492470752e4",
+      "bytes": 10359
+    },
+    "capture/render-film.py": {
+      "sha256": "4fdc63945f4283c609a28dbeeea6f4d385cb416ce130dd7304a4ef1ad17995b9",
+      "bytes": 13944
+    },
+    "capture/timeline.json": {
+      "sha256": "d0a815d5a86467ccafa557c8a103a9622b3400882f816187b814dad7b4a50aea",
+      "bytes": 1486
+    },
+    "capture/react-capture.webm": {
+      "sha256": "ac89415110fc71b4bacb34d5064ee96d5cb54f3230148eb00fc715504348f57d",
+      "bytes": 21407172
+    },
+    "capture/01-arjun-fictional-hook.png": {
+      "sha256": "5b2d7ec046ac70df0a5aa8d02a19967405f85b30a888c73dea2270814af31c09",
+      "bytes": 105016
+    },
+    "capture/06-changed-editable-reflection.png": {
+      "sha256": "5e1a7ceb3d1d8a10f773f585b6d05fd67d0513b3f2bc124c20422226d28acf63",
+      "bytes": 115545
+    },
+    "capture/06a-arjun-confirms-reflection.png": {
+      "sha256": "83d0d9ef660f1ee84ff04adacb77d475c532793e354e805bdd9ff0aa1ea5e506",
+      "bytes": 119412
+    },
+    "capture/06b-optional-human-perspectives.png": {
+      "sha256": "3593bfb0b63c3ce4fc02c96562901773d3a625a5ab89994156d6faa4c112837b",
+      "bytes": 145083
+    },
+    "capture/07-day-4-peer-perspective.png": {
+      "sha256": "9ce6dbb9357bde7172e8daaf9d73875fe11ea23310bb6677948bad1d1707b749",
+      "bytes": 122908
+    },
+    "capture/08-day-9-host-boundary.png": {
+      "sha256": "28144f4b34bcb56190235f1e6f2dc621cde567b0a1e1b946c5d90421c5eb2ad8",
+      "bytes": 121910
+    },
+    "capture/09-prepared-no-report.png": {
+      "sha256": "5c756e315d53d0730f77d7ac2d09216dfba4f0a6b4f813a7080462450fb0b219",
+      "bytes": 116148
+    },
+    "capture/10-day-16-dev-unanswered.png": {
+      "sha256": "d3af38fe034a408844eb66721a710838a2485145b8c979a42bb53e02154e55eb",
+      "bytes": 114951
+    },
+    "capture/12-ravi-changed-preview.png": {
+      "sha256": "d0838ba7bb91ea33123183efbacd9ab3a74464eff21dcb25fcd59014dca74839",
+      "bytes": 120519
+    },
+    "capture/13-support-caveat.png": {
+      "sha256": "3ff539f47ac0eaea5417c1cc741d7a9b0c8db37f6b92745b027d08c999b914fe",
+      "bytes": 107321
+    },
+    "capture/13a-support-return-peers.png": {
+      "sha256": "5a68ce15e052fd8c5f9e2ba20edc91f3d634cdefa756a08e28892143b97081e1",
+      "bytes": 111311
+    },
+    "capture/14-selected-private-takeaway.png": {
+      "sha256": "8d8093cda5edc8b1029e01575c806462caf84c109682a875fbfefdacdd6f459c",
+      "bytes": 118912
+    },
+    "capture/17-exact-unsent-dev-draft.png": {
+      "sha256": "a4a45f6e35e346c50b3c104c8f9d3ec636a4a0adf66dc39cb5f55e9720e5f11d",
+      "bytes": 118511
+    },
+    "capture/18-composed-agency-close.png": {
+      "sha256": "212eac0cc5f5a416cfdc19e98e5da760f6b33405b4d66006e8b04a4ce2e62faf",
+      "bytes": 104502
+    },
+    "verification/contact.jpg": {
+      "sha256": "ea2240b6af205eca1f722ba337700cad8e74774b4f88a01a6af1937bac2688c7",
+      "bytes": 673385
+    },
+    "verification/contact-960.jpg": {
+      "sha256": "64adc45476fb512935a5ade5fb6491d8bddccb1083e0de7884a6ee8653010a59",
+      "bytes": 675792
+    },
+    "verification/frames960/frame-0.jpg": {
+      "sha256": "f1367fcd00869e3889bed399353254cd86fd84f8a39f0c254dc27cbd3e8abd53",
+      "bytes": 174354
+    },
+    "verification/frames960/frame-0-960.jpg": {
+      "sha256": "b7286eeeb3f46e19ab1fce87c27ad4f8ea676f1f6ffe9570a2b7a819227c2462",
+      "bytes": 57991
+    },
+    "verification/frames960/frame-64.9-960.jpg": {
+      "sha256": "14f6a9cee6001d07e9e490bdc3038be685a0489f229a91f6130e925ab43d8a9c",
+      "bytes": 44071
+    },
+    "verification/frames960/frame-104.9-960.jpg": {
+      "sha256": "85daec1c55046ffeb86a49bbb4a88072cdd99058c3deb064350d1729a5cb1c08",
+      "bytes": 36982
+    },
+    "verification/frames960/frame-177.7.jpg": {
+      "sha256": "4bec7e15997238fe4da7d16bd8e9a97e376a9a8eece357990f5892d5a6ee6732",
+      "bytes": 131850
+    },
+    "verification/frames960/frame-177.7-960.jpg": {
+      "sha256": "3ef6e78a1d4ac3e071b4df01cbb8a3c28c75f428374b9e6bdbc0ab460e7031d0",
+      "bytes": 43263
+    }
+  }
+}
