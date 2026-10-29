@@ -1,0 +1,64 @@
+{
+  "version": "v09",
+  "candidate": "demo-iterations/v09/demo.mp4",
+  "candidate_commit_sha": null,
+  "candidate_sha256": "2247edaa686bb2250861d5b7c7908bf611992ef71d27094caa83f391d9447bd0",
+  "based_on": {
+    "v08_manifest_commit": "322292b693700aeaec1c8ef4966b5dbd0e25f673",
+    "v08_candidate_commit": "3be0883c66592f99cd2484eb189dc3db67dd048c",
+    "v08_candidate": "demo-iterations/v08/demo.mp4",
+    "v08_candidate_sha256": "eee121a07844d0b4128d54663940ce053efd6f74ab3e7091b47fd49f7b02e1dd"
+  },
+  "captions": "demo-iterations/v09/captions.srt",
+  "captions_sha256": "2d395f07a1965317a79cbbb71c3fb8df5a63a8b1ebb17ac07ee884a2c72b9123",
+  "narration_transcript": "demo-iterations/v09/narration.txt",
+  "source_react_capture": {
+    "recording": "demo-iterations/v09/capture/react-capture.webm",
+    "sha256": "5ed37a4bfbfd1d81ca2d3b655579462e0f2988814af66d371bee9932c3d5ede1",
+    "duration_seconds": 177.64,
+    "resolution": "1600x900",
+    "frame_rate": 25,
+    "actual_react_interactions": true,
+    "capture_timeline": "demo-iterations/v09/capture/timeline.json",
+    "smoke_recording": "demo-iterations/v09/capture/smoke/react-capture.webm"
+  },
+  "media": {
+    "container_duration_seconds": 176.428,
+    "video_stream_duration_seconds": 176.4,
+    "audio_stream_duration_seconds": 176.428,
+    "audio_video_delta_seconds": 0.028,
+    "video_frames": 5292,
+    "resolution": "1920x1080",
+    "frame_rate": 30,
+    "video_codec": "H.264",
+    "audio_codec": "AAC mono 48 kHz",
+    "narration": "Synthetic offline Flite narration only; no model generated any in-app content.",
+    "audio_mean_dbfs": -20.8,
+    "audio_peak_dbfs": -3.8,
+    "last_audible_speech_ends_seconds": 174.939,
+    "end_silence_seconds": 1.509
+  },
+  "changes": [
+    "The opening names Arjun's family pressure and shows What Arjun said → A possibility to check → Arjun can correct it, with the Interactive product preview, fictional/prepared and no-model labels, and planned Muse Spark role. Start privately is selected and the first actual typed interaction occurs by 10.944 seconds of the raw capture.",
+    "The film follows one prepared historical thread through Day 4, Day 9 and Day 16: distinct fictional perspectives, a host boundary, Dev's unanswered side question and a brief prepared moderator example. No report was sent.",
+    "Arjun edits Ravi's question and the exact group-only preview changes. The alias and audience remain visible; private conversation is excluded; consent is unchecked and the next action remains disabled. He returns from the professional-support caveat, which states no provider is verified or bookable.",
+    "Arjun keeps a takeaway privately, selects an optional local draft to Dev, and reviews a final composed state showing the chosen draft, private context excluded, consent unchecked, posting disabled and Nothing is sent without consent.",
+    "Only frontend fixture data and local browser state are used. No live Meta/API/model, speech transcription, community, human moderation, provider, authentication, database or message-sending integration is connected."
+  ],
+  "verification": {
+    "media_probe": "passed: 176.428s container; 176.400s video stream; 176.428s audio stream; 28ms stream delta; 1920x1080 30fps, 5292 frames",
+    "full_decode": "passed: full FFmpeg decode exits 0",
+    "captions": "passed: 19 sequential non-overlapping SRT cues, burned into the MP4; last cue ends 175.641s",
+    "audio": "passed: mean -20.8 dBFS, peak -3.8 dBFS; final speech ends 1.509s before stream end",
+    "visual_frames": "Full 1920x1080 and 960x540 frames extracted at first frame/opening, first interaction, correction, Day 4, Day 9 boundary, prepared triage, Day 16 unanswered post, Ravi before/after edit, support caveat, private takeaway, Dev draft, composed close and final frame.",
+    "capture_smoke": "passed: FAST_CAPTURE traversed all 15 React scenes through correction, all three historical days, Ravi preview edit, support return and final local choice; consent remained unchecked and post disabled.",
+    "application_tests": "passed: lint, typecheck, Vitest 27/27, Playwright 32/32 across desktop and mobile, production build"
+  },
+  "limitations": [
+    "All named participants, peer perspectives, host, posts, replies and moderation examples are fictional prepared content, not live community activity.",
+    "The reflection and replies use local deterministic preview logic. Planned Muse Spark and voice roles are not connected.",
+    "The provider screen is a caveat and return path only; no provider is verified or bookable.",
+    "The Dev text is an editable local draft. Consent remains unchecked, posting is disabled, and nothing is sent."
+  ],
+  "review": "Builder did not assign a score. Cold judge and release verifier are separate."
+}

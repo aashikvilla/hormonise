@@ -1,0 +1,62 @@
+[
+  {
+    "name": "01-first-use",
+    "seconds": 1.151
+  },
+  {
+    "name": "02-start-privately",
+    "seconds": 1.342
+  },
+  {
+    "name": "03-first-interaction-local-rule",
+    "seconds": 1.621
+  },
+  {
+    "name": "04-user-correction-draft",
+    "seconds": 1.883
+  },
+  {
+    "name": "05-correction-and-planned-roles",
+    "seconds": 2.166
+  },
+  {
+    "name": "06-day-4-thread",
+    "seconds": 2.702
+  },
+  {
+    "name": "07-day-9-thread",
+    "seconds": 2.865
+  },
+  {
+    "name": "08-prepared-moderator-triage",
+    "seconds": 3.047
+  },
+  {
+    "name": "09-day-16-open-question",
+    "seconds": 3.227
+  },
+  {
+    "name": "10-ravi-original-question-preview",
+    "seconds": 3.619
+  },
+  {
+    "name": "11-ravi-edited-exact-audience-preview",
+    "seconds": 3.754
+  },
+  {
+    "name": "12-professional-support-caveat",
+    "seconds": 4.177
+  },
+  {
+    "name": "13-selected-private-takeaway",
+    "seconds": 4.534
+  },
+  {
+    "name": "14-final-bounded-choice",
+    "seconds": 4.778
+  },
+  {
+    "name": "15-composed-agency-close",
+    "seconds": 4.999
+  }
+]

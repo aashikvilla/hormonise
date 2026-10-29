@@ -23,7 +23,11 @@ test("first use names the audience and private-to-peer promise before Start priv
   await page.goto("/");
   await expect(page.getByText("Interactive product preview", { exact: true })).toBeVisible();
   await expect(page.getByRole("heading", { name: /For adults under family or relationship pressure: think privately, then explore relevant lived experience on your terms/i })).toBeVisible();
-  await expect(page.getByText(/Fictional scenario · prepared examples · no connected AI or community/i)).toBeVisible();
+  await expect(page.getByText(/Fictional scenario · prepared examples · no model connected/i)).toBeVisible();
+  await expect(page.getByRole("article").filter({ hasText: "What Arjun said" })).toBeVisible();
+  await expect(page.getByRole("article").filter({ hasText: "A possibility to check" })).toBeVisible();
+  await expect(page.getByRole("article").filter({ hasText: "Arjun can correct it" })).toBeVisible();
+  await expect(page.getByText(/Planned: Muse Spark/i)).toBeVisible();
   await page.getByRole("button", { name: "Start privately" }).click();
   await expect(page.getByRole("textbox", { name: "Your message" })).toBeVisible();
   await expect(page.getByRole("button", { name: "Use voice" })).toBeVisible();
@@ -219,6 +223,13 @@ test("Ravi preview edits live, support has a return path, and Arjun can keep a t
   await expect(draft).toHaveValue("I asked for time to think before replying. I am still working out what I want.");
   await expect(preview.getByRole("checkbox")).not.toBeChecked();
   await expect(preview.getByRole("button", { name: "Post in this example group" })).toBeDisabled();
+  await preview.getByRole("button", { name: "Review my choices" }).click();
+  const close = page.getByRole("region", { name: "Arjun's final local choices" });
+  await expect(close).toContainText("I want a conversation without someone deciding for me.");
+  await expect(close).toContainText("One helpful thing for Dev");
+  await expect(close).toContainText("private context excluded");
+  await expect(close).toContainText("Nothing is sent without consent.");
+  await expect(close).toContainText("consent unchecked · post disabled");
 });
 
 test("quiet reading opens a story without alias, question, joining or feedback", async ({ page }) => {
