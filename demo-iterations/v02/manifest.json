@@ -1,0 +1,40 @@
+{
+  "version": "v02",
+  "candidate": "demo-iterations/v02/demo.mp4",
+  "candidate_commit_sha": null,
+  "based_on": {
+    "v01_implementation_commit": "20d9431db546d97ede3c94feb5f153228855bdfd",
+    "v01_candidate_commit": "a8597a2c8befed3fd7e9f3f19d4dfa9206dac382",
+    "v01_candidate": "demo-iterations/v01/demo.mp4",
+    "source_react_capture": "demo-iterations/v01/capture/react-capture.webm",
+    "source_react_capture_sha256": "520747affd17ab5dd3b5c6df419b6793937372ac146b29e2c22898da704be44c"
+  },
+  "changes": [
+    "Trimmed the initial 1.2 seconds containing the Suspense fallback; opens directly on Arjun's Day 1 reflection, with Day 1 before Day 4.",
+    "First narrated/captioned hook: Arjun can't tell his family what he wants without feeling ungrateful.",
+    "Recomposed the complete UI into a 1920x1080 frame with a reserved bottom caption band. The source comparison, controls, and purple moderator audit disclosure remain unobscured.",
+    "Replaced moderation narration and matching caption with: This sample screen records a fictional decision in this browser. No report reaches staff, and access is not restricted here."
+  ],
+  "duration_seconds": 178.0,
+  "resolution": "1920x1080",
+  "frame_rate": 30,
+  "video_codec": "H.264",
+  "audio_codec": "AAC mono 48 kHz",
+  "narration": "Synthetic offline Flite voice; captions are burned in and supplied as a sidecar SRT.",
+  "audio_measurement": {
+    "mean_db": -21.8,
+    "peak_db": -3.0
+  },
+  "sha256": "3d0c43b45354ba83edcfbd4964948c363ab3615b2dfb28dab24e4a800ad92217",
+  "verification": {
+    "duration_within_180s": "passed",
+    "ffprobe": "passed: 178.000 seconds, 1920x1080, 30fps H.264, AAC 48 kHz",
+    "full_decode": "passed: ffmpeg decode exit 0",
+    "audio": "passed: mean -21.8 dB, peak -3.0 dB",
+    "captions": "paired SRT cues; hook and moderation copy match narration; captions sit below the UI in the reserved band",
+    "visual_review": "Reviewed full-size frames at 0s, 1s, 43s, 152s and 176s plus 960x540 comparison and moderation previews. Opening has no fallback; source comparison and purple audit disclosure are visible above captions; closing frame is retained.",
+    "application_tests": "No source-code change from committed v01; existing lint/typecheck/unit/E2E/build results remain applicable."
+  },
+  "disclosure": "The footage is an actual Playwright recording of the local React product preview with fictional scenarios. No live Meta, community, human, or role-enforced behavior is shown or claimed.",
+  "review": "No score or independent judge review performed by the builder."
+}
