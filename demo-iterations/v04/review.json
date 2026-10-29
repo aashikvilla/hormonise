@@ -1,0 +1,64 @@
+{
+  "version": "v04",
+  "commit_sha": "7fdab42fcc4a3be805fea142e7c821583d0dfe21",
+  "reviewer_run_id": "cold-judge-v04-independent",
+  "video_path": "/workspace/hormonise/demo-iterations/v04/demo.mp4",
+  "review_evidence_mode": "video_without_audio",
+  "first_time_viewer_summary": "Harmonise is presented as a private reflection and peer-support service for someone facing family pressure. Its fictional Arjun scenario moves from a tentative reflection to curated community reading and consent-based sharing. The film clearly discloses that the interactions are prepared browser samples, local rules answer immediately, no AI service is connected, and the named Meta integrations are planned.",
+  "decision": "reject",
+  "scores": {
+    "impact": {"earned": 22, "possible": 30},
+    "meta_use": {"earned": 18, "possible": 25},
+    "demo": {"earned": 18, "possible": 25},
+    "technical_depth": {"earned": 10, "possible": 20}
+  },
+  "total": 68,
+  "film_persuasion_score": 79,
+  "technical_evidence_status": "sample_only_no_live_ai_or_social_workflow_demonstrated",
+  "confidence": 0.84,
+  "score_arithmetic": {
+    "impact": "8/10 problem specificity + 8/10 human need/outcomes + 6/10 adoption/network = 22/30",
+    "meta_use": "4/7 model roles + 5/8 necessity + 5/6 visible mechanism + 4/4 candor = 18/25",
+    "demo": "4/6 hook/story + 5/6 clarity + 2/5 pacing/audio/subtitles + 4/5 emotional payoff + 3/3 polish = 18/25",
+    "technical_depth": "5/6 workflow + 4/5 controls/privacy + 1/5 architecture/failure + 0/4 implementation evidence = 10/20",
+    "total": "22 + 18 + 18 + 10 = 68/100"
+  },
+  "audio_note": "AAC mono track is present, but playback was unavailable in the review environment. Voice performance, music, and mix were not judged; the demo audio/subtitles subscore reflects reduced evidence.",
+  "timestamped_strengths": [
+    {"timestamp": "00:03", "evidence": "Opening case identifies Arjun's family-pressure need and contrasts advice with room to explain. UI discloses fictional sample history and browser-session limits."},
+    {"timestamp": "00:28", "evidence": "Tentative interpretation is separated from confirmed words, with correction and edit controls; transcript review says transcription is disconnected and no audio is shared."},
+    {"timestamp": "00:43", "evidence": "Community discovery contrasts a broad legal-paperwork match with a confirmed family-expectations context and offers a correction route."},
+    {"timestamp": "01:51", "evidence": "Exact group, alias, and question are previewed; private conversation is excluded and the unchecked confirmation states nothing is sent in the preview."},
+    {"timestamp": "02:08", "evidence": "Reply draft previews exact audience and text; it remains unpublished in the sample."},
+    {"timestamp": "02:40", "evidence": "Review screen explicitly says no report reaches real staff and permissions are not enforced in this illustrative workspace."},
+    {"timestamp": "02:53", "evidence": "Ending labels Muse Spark and Muse Voice Transcribe as planned integrations rather than claiming they are connected."}
+  ],
+  "timestamped_weaknesses": [
+    {"timestamp": "00:03", "evidence": "The opening chat already contains 29 prepared exchanges, so the first-use experience is not demonstrated."},
+    {"timestamp": "00:28-00:35", "evidence": "Correction controls are shown, but no revised model response proves the central loop."},
+    {"timestamp": "01:18", "evidence": "Community is explicitly a browser example with no live activity, account, membership, or real group."},
+    {"timestamp": "01:51-02:08", "evidence": "Consent previews are persuasive, but all sending and reply states remain local examples."},
+    {"timestamp": "02:40", "evidence": "Moderation screen records a fictional decision locally and has no real reviewer or permission enforcement."},
+    {"timestamp": "02:53", "evidence": "The final beat is a planned-integration card rather than a human payoff or implementation result."},
+    {"timestamp": "00:00-02:58", "evidence": "Subtitle blocks sometimes cover controls and full-page screens reduce small interface text; audio could not be evaluated."}
+  ],
+  "model_claim_accuracy": [
+    {"model": "Muse Spark", "role_claimed": "Planned dialogue and structured, correctable context", "timestamp": "02:53", "status": "proposed_only", "evidence": "Ending card says planned; earlier UI says local example rules answer immediately and no AI service is connected."},
+    {"model": "Muse Voice Transcribe", "role_claimed": "Planned optional speech-to-text reviewed before sending", "timestamp": "02:53", "status": "proposed_only", "evidence": "Ending card says planned; transcript screen at 00:28 says transcription is not connected and no audio is shared."}
+  ],
+  "top_fixes": [
+    {"timestamp": "00:24-00:35", "current_failure": "Tentative interpretation and editing appear without a revised response.", "replacement": "Show input, attributed model interpretation, user correction, and changed output.", "expected_result": "Prove the core Meta mechanism and its correctability.", "verification": "Fresh session with a meaningful correction and attributed response."},
+    {"timestamp": "00:03-00:20", "current_failure": "The case begins with 29 prepared exchanges.", "replacement": "Show first use from a grounded fictional trigger and a user-selected sharing choice.", "expected_result": "Immediate comprehension and empathy without implying a real case.", "verification": "Cold viewer can identify the need and first action within 15 seconds."},
+    {"timestamp": "01:12-02:35", "current_failure": "Community, asking, reply, and moderation states are sample-only.", "replacement": "Demonstrate persisted opt-in, preview, cancel, and report states; mark remaining mock scenes.", "expected_result": "Credible evidence of a working workflow and its boundaries.", "verification": "Confirm persistence and no false implication that a person received an action."},
+    {"timestamp": "02:38-02:53", "current_failure": "Ending shows simulated report followed by planned models.", "replacement": "End on a reversible user choice and concise current/planned status card.", "expected_result": "Human payoff that preserves uncertainty and accurately reports status.", "verification": "Viewer can state Arjun's choice and what is planned."},
+    {"timestamp": "00:00-02:58", "current_failure": "Captions cover controls and full-page views make details small.", "replacement": "Use closer crops and a consistent caption band.", "expected_result": "Readable interface and subtitles at ordinary playback size.", "verification": "Check ordinary laptop viewing without pausing."}
+  ],
+  "blockers": [
+    "No connected Meta model is demonstrated; Muse Spark and Muse Voice Transcribe are explicitly planned.",
+    "Persistence and privacy behavior are unverified beyond local browser-session disclosures.",
+    "Community posting, group activity, reporting, and moderation are simulated; no live network or staff workflow exists in the evidence.",
+    "No model failure handling, backend architecture, or implementation evidence is shown."
+  ],
+  "review_report_path": "/workspace/hormonise/demo-iterations/v04/film_review.md",
+  "independent_of_previous_rounds": true
+}

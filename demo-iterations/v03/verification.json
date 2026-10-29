@@ -1,0 +1,75 @@
+{
+  "version": "v03",
+  "result": "pass_with_coverage_gaps",
+  "scope": {
+    "reviewed": [
+      "current React app",
+      "demo-iterations/v03 candidate, manifest, narration, captions, and visual evidence",
+      "/tmp/harmonise-agent-loop-v3/00_START_HERE.md",
+      "/tmp/harmonise-agent-loop-v3/01_PRODUCT_AND_FILM_CONTRACT.md",
+      "/tmp/harmonise-agent-loop-v3/04_META_AI_AND_PROTOTYPE_BOUNDARIES.md"
+    ],
+    "did_not_review": ["judge reports", "director reports", "story score"],
+    "source_or_video_edits": false,
+    "commit_created": false
+  },
+  "truthfulness": {
+    "opening_contrast_labeled_illustrative_fiction": "pass",
+    "preview_and_sample_scenarios_disclosed": "pass",
+    "planned_meta_and_not_connected_boundary_legible": "pass",
+    "community_and_moderator_fixture_truthfulness": "pass",
+    "moderator_no_routing_or_permission_enforcement_disclosed": "pass",
+    "real_meta_community_human_or_backend_behavior_occurred": false,
+    "actual_behavior_statement": "No real Meta calls, community activity or replies, moderator actions, clinician actions, or backend behavior occurred."
+  },
+  "film_app_parity": {
+    "present_in_film": [
+      "opening family-pressure dilemma and explicitly illustrative advice contrast",
+      "Day 1 and Day 4 sample history and correction from separation to parents",
+      "editable voice transcript preview",
+      "mismatch and family-context relevance change",
+      "disappointing argument without a claimed resolution",
+      "historical community framing and fictional facilitator",
+      "Ravi's imperfect prepared account",
+      "contribution draft and seeker identity",
+      "fictional moderator workflow with explicit no-live-routing boundary",
+      "planned Muse Spark and Voice Transcribe integration labels"
+    ],
+    "present_in_app_but_absent_or_not_demonstrated_in_film": [
+      "exact audience, alias, and question consent preview with checkbox",
+      "Ravi's group-only preference and lack of a private request path in the question scene",
+      "separate qualified-professional role and official support pathway",
+      "role-limited access behavior; app role views are illustrative and not permission-enforced",
+      "optional response-style controls as an interaction",
+      "editable understanding controls as a user action"
+    ],
+    "privacy_consent": "The film says the question is not sent and private conversation is excluded, but omits the app's exact consent review control from footage."
+  },
+  "media": {
+    "duration_seconds": 178.0,
+    "duration_target_seconds": "175-179",
+    "resolution": "1920x1080",
+    "frame_rate": "30 fps",
+    "video_codec": "H.264",
+    "audio_codec": "AAC mono 48 kHz",
+    "full_decode": "passed",
+    "mean_audio_db": -21.8,
+    "peak_audio_db": -5.2,
+    "sha256_matches_manifest": true,
+    "burned_captions": true,
+    "srt_supplied": true,
+    "caption_readability": "Readable in HD reviewed frames; smaller architecture copy and opening label are less legible at 960x540."
+  },
+  "accessibility_responsive_evidence": {
+    "app_source_has_focus_styles": true,
+    "app_source_honors_reduced_motion": true,
+    "app_source_uses_semantic_labels_and_live_regions": true,
+    "app_source_has_narrow_screen_breakpoints": true,
+    "mobile_app_capture_in_candidate_evidence": false,
+    "runtime_keyboard_or_screen_reader_review_in_evidence": false,
+    "assessment": "Partial evidence only; the scaled film is not a mobile app or assistive-technology demonstration."
+  },
+  "limitations": [
+    "This audit verifies the film and current source evidence; it does not establish production access controls, integrations, or service operations."
+  ]
+}

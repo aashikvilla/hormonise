@@ -1,0 +1,89 @@
+{
+  "iteration": "v02",
+  "reviewed_at_utc": "2026-10-29T09:38:40Z",
+  "status": "blocked",
+  "blockers": [
+    {
+      "id": "hook_contrast_missing",
+      "severity": "release_blocker",
+      "requirement": "01_PRODUCT_AND_FILM_CONTRACT.md, opening hook 0:00-0:14",
+      "finding": "Narration/caption says advice came before Arjun could explain, but the opening image shows no unwanted-advice example and does not visibly contrast that with his actual need.",
+      "evidence": [
+        { "time": "00:00", "file": "verification/frame-0.png", "observation": "Interactive product preview badge and hook caption visible; UI shows prepared Day 1 messages, including 'I'll leave it for now' and a supportive response." },
+        { "time": "00:05", "file": "candidate demo.mp4", "observation": "Same prepared history; no unwanted advice shown." },
+        { "time": "00:10", "file": "candidate demo.mp4", "observation": "Caption 'Advice came before he could explain'; no corresponding example or clear need contrast on screen." },
+        { "time": "captions.srt cue 2, 00:06.200-00:12.700", "observation": "Advice came before he could explain." }
+      ]
+    }
+  ],
+  "checks": {
+    "candidate_sha256": {
+      "status": "pass",
+      "value": "3d0c43b45354ba83edcfbd4964948c363ab3615b2dfb28dab24e4a800ad92217",
+      "manifest_match": true
+    },
+    "runtime": {
+      "status": "pass",
+      "container_seconds": 178.0,
+      "video_seconds": 177.833333,
+      "target_seconds": "175-179"
+    },
+    "video": {
+      "status": "pass",
+      "resolution": "1920x1080",
+      "frame_rate": 30,
+      "codec": "H.264",
+      "full_decode": "ffmpeg exit 0"
+    },
+    "audio": {
+      "status": "pass",
+      "codec": "AAC mono 48 kHz",
+      "mean_db": -21.8,
+      "peak_db": -3.0,
+      "full_decode": "ffmpeg exit 0"
+    },
+    "captions": {
+      "status": "pass",
+      "srt_cues": 18,
+      "text_matches_narration": true,
+      "opening_and_moderation_copy_match": true,
+      "reserved_caption_band": "visually clear at 00:00, 00:05, 00:10, 00:43, 02:32, 02:44, 02:49, and 02:56"
+    },
+    "moderation_disclosure": {
+      "status": "pass",
+      "evidence_time": "00:02:32",
+      "finding": "Fictional decision, no report reaches staff, and access is not restricted are stated in audio/caption; purple workspace notice and AI-not-connected copy are legible above captions."
+    },
+    "planned_meta_architecture": {
+      "status": "pass",
+      "evidence_times": ["00:02:44", "00:02:49"],
+      "finding": "Overlay labels planned Meta integration as not connected, marks Future Muse Spark, and depicts user-chosen context flowing to permissioned retrieval; human moderation decision is named."
+    },
+    "privacy_consent_and_roles": {
+      "status": "pass_source_and_visible_copy",
+      "finding": "Exact text/audience review and consent are present in sharing flows; private chat is stated to be excluded; moderator and professional workspaces disclose their illustrative, unstaffed/unverified status."
+    },
+    "react_parity_and_functional_basics": {
+      "status": "partial_source_review",
+      "finding": "Render script says candidate is built from recorded React capture and visible screens match current app content. Current source contains local state transitions and consent gates. Every shown interaction was not runtime-exercised in this audit."
+    },
+    "accessibility_and_responsive": {
+      "status": "partial_source_review",
+      "finding": "Source includes skip link, focus indication/transfer, labeled controls, reduced-motion CSS and responsive breakpoints; no mobile capture, keyboard run, or screen-reader evidence was supplied."
+    },
+    "real_external_behavior": {
+      "status": "none",
+      "finding": "No real Meta, human, community, moderation, professional, or backend behavior occurred."
+    }
+  },
+  "scope_and_limits": {
+    "requirements_reviewed": [
+      "/tmp/harmonise-agent-loop-v3/00_START_HERE.md",
+      "/tmp/harmonise-agent-loop-v3/01_PRODUCT_AND_FILM_CONTRACT.md",
+      "/tmp/harmonise-agent-loop-v3/04_META_AI_AND_PROTOTYPE_BOUNDARIES.md"
+    ],
+    "judge_or_director_reports_read": false,
+    "app_or_video_changed": false,
+    "tests_or_runtime_interactions_run": false
+  }
+}

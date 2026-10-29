@@ -1,0 +1,51 @@
+{
+  "version": "v01",
+  "commit_sha": "20d9431db546d97ede3c94feb5f153228855bdfd",
+  "reviewer_run_id": "coldjudge-v01-2026-10-29-reduced-evidence",
+  "video_path": "/workspace/hormonise/demo-iterations/v01/demo.mp4",
+  "review_evidence_mode": "frames_and_burned_captions_only",
+  "first_time_viewer_summary": "A private reflection and peer-support concept for people facing family pressure; the film shows an illustrative, local-only workflow and proposes future Meta model integrations.",
+  "decision": "reject",
+  "scores": {
+    "impact": {"earned": 20, "possible": 30, "breakdown": {"problem_specificity_depth": {"earned": 7, "possible": 10}, "human_need_outcomes": {"earned": 8, "possible": 10}, "adoption_network_benefit": {"earned": 5, "possible": 10}}},
+    "meta_use": {"earned": 13, "possible": 25, "breakdown": {"named_model_roles": {"earned": 3, "possible": 7}, "model_necessity": {"earned": 4, "possible": 8}, "visible_mechanism": {"earned": 4, "possible": 6}, "evidence_or_candid_limitation": {"earned": 2, "possible": 4}}},
+    "demo": {"earned": 14, "possible": 25, "breakdown": {"hook_story": {"earned": 4, "possible": 6}, "clarity_legibility": {"earned": 3, "possible": 6}, "pacing_audio_subtitles": {"earned": 2, "possible": 5}, "emotional_payoff": {"earned": 3, "possible": 5}, "polished_coherent_ui": {"earned": 2, "possible": 3}}},
+    "technical_depth": {"earned": 12, "possible": 20, "breakdown": {"plausible_workflow": {"earned": 5, "possible": 6}, "controls_permissions_privacy": {"earned": 4, "possible": 5}, "architecture_failure_handling": {"earned": 3, "possible": 5}, "implementation_evidence": {"earned": 0, "possible": 4}}}
+  },
+  "total": 59,
+  "film_persuasion_score": 73,
+  "technical_evidence_status": "unverified; local prepared examples and planned, unconnected integrations are explicitly disclosed",
+  "confidence": "medium-low; visual coverage across the full MP4, but audio could not be heard",
+  "timestamped_strengths": [
+    {"timestamp": "00:30–00:50", "evidence": "A thought-check card labels the interpretation unconfirmed and offers confirmation, correction, and edit-in-my-words controls; the transcript is editable before sending."},
+    {"timestamp": "00:50–01:20", "evidence": "Community discovery contrasts a broad topic with confirmed personal context, explains why a result may fit, and offers a way to change results."},
+    {"timestamp": "01:50–02:10", "evidence": "The question flow previews the exact audience, alias, and wording and says the earlier private conversation is excluded."},
+    {"timestamp": "02:30–02:50", "evidence": "The final slide explicitly labels Muse Spark and Muse Voice Transcribe integration as planned and not connected."}
+  ],
+  "timestamped_weaknesses": [
+    {"timestamp": "00:00–00:15", "evidence": "The concept-demo loading card and generic 'You can start anywhere' line delay a direct statement of the user problem and product value."},
+    {"timestamp": "00:30–00:50", "evidence": "Burned-in caption boxes cover portions of the interface and correction controls."},
+    {"timestamp": "00:50–01:20", "evidence": "The context-matching flow is displayed as a prepared result; no model/retrieval operation or changing output is demonstrated."},
+    {"timestamp": "01:20–02:30", "evidence": "The group, posts, responses, and review workflow are repeatedly labeled fictional, illustrative, or local-only; no live workflow is evidenced."},
+    {"timestamp": "02:30–02:50", "evidence": "Meta models appear as future plans, without connected output or an attributable model interaction."}
+  ],
+  "model_claim_accuracy": [
+    {"claim": "Muse Spark provides future context and intent understanding / structured correctable understanding.", "assessment": "Proposed role only; the final card says the integration is planned and not connected. No model output is demonstrated."},
+    {"claim": "Muse Voice Transcribe offers optional speech-to-text reviewed before sending.", "assessment": "The interface offers an editable transcript but explicitly says voice transcription is not connected here; actual model use is not shown."},
+    {"claim": "Permissioned retrieval of approved stories with source and audience visible.", "assessment": "Conceptual architecture shown on the closing card; no retrieval operation or source-backed live output is demonstrated."}
+  ],
+  "top_fixes": [
+    {"timestamp": "00:00–00:15", "fix": "Open with a clear user-and-problem statement before the private reflection screen; verify a first-time viewer can explain the premise within 15 seconds."},
+    {"timestamp": "00:30–00:50", "fix": "Move captions to a lower safe area and show the correctable interpretation panel unobstructed; verify legibility at mobile playback size."},
+    {"timestamp": "00:50–01:20", "fix": "Demonstrate a context correction changing surfaced results with visible sources; verify an inspectable, relevant change."},
+    {"timestamp": "01:20–02:00", "fix": "Separate illustrative community content from any real consented test flow; verify fictional posts cannot be mistaken for live activity."},
+    {"timestamp": "02:30–02:50", "fix": "Show an attributable connected Muse interaction with user review, correction, and uncertainty/failure state; verify it in the submitted build."}
+  ],
+  "blockers": [
+    "No connected Meta model interaction is demonstrated.",
+    "No real end-to-end backend or workflow operation is evidenced; the interface identifies examples as local and prepared.",
+    "Live community and moderation behavior cannot be verified from the film."
+  ],
+  "review_report_path": "/workspace/hormonise/demo-iterations/v01/film_review.md",
+  "independent_of_previous_rounds": true
+}

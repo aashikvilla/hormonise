@@ -1,0 +1,144 @@
+{
+  "version": "v01",
+  "candidate_path": "demo-iterations/v01/demo.mp4",
+  "candidate_sha256": "5245e76807e6df250cad0a753a9fb069b69b2041f01570ee31965d12b9858dcb",
+  "implementation_commit": "20d9431db546d97ede3c94feb5f153228855bdfd",
+  "manifest_path": "demo-iterations/v01/manifest.json",
+  "verification_scope": "Implementation, film-to-UI parity, truthful prototype boundaries, role/access and privacy handling, accessibility basics, responsive evidence, and media integrity against requirements 00–06. Story quality was not scored.",
+  "verification_status": "blockers_present",
+  "checks": [
+    {
+      "id": "evidence-provenance",
+      "requirement": "Builder validation evidence and candidate are available and attributable.",
+      "status": "pass",
+      "evidence": ["manifest.json identifies implementation commit 20d9431db546d97ede3c94feb5f153228855bdfd and source React capture.", "Manifest reports lint, typecheck, 27 unit tests, 28 E2E tests, and build passed.", "capture-film.mjs records actual local UI interactions with Playwright; capture frames and source WebM are present."],
+      "notes": "The manifest is the builder-provided evidence; automated test results were not rerun during this independent audit."
+    },
+    {
+      "id": "fictional-preview-label",
+      "requirement": "Identify the recording as an interactive product preview and distinguish fictional sample scenarios.",
+      "status": "pass",
+      "evidence": ["Opening film label: INTERACTIVE PRODUCT PREVIEW · FICTIONAL SAMPLE SCENARIOS, visible during the opening hook.", "App header/footer identify fictional participants and prepared content; the ending says INTERACTIVE PRODUCT PREVIEW · SIMULATED SCENARIOS."]
+    },
+    {
+      "id": "fixture-truthfulness",
+      "requirement": "Do not imply mock AI outputs, community posts, member replies, or moderation actions are live.",
+      "status": "pass",
+      "evidence": ["Local fixture data declares fictional participants and no actual AI inference, messaging, moderation, or clinical service.", "Conversation UI says replies use local example rules and no AI service is connected; turns are labeled prepared examples.", "Community content is labeled historical/example with no live activity; Ravi's response is identified as prepared.", "The film says the community is history, not a live room, and says no real post or person is involved in the moderation example."]
+    },
+    {
+      "id": "meta-claims",
+      "requirement": "Describe Meta models as planned, with role boundaries, until connected.",
+      "status": "pass",
+      "evidence": ["Architecture slate says PLANNED META INTEGRATION · NOT CONNECTED IN THIS PREVIEW and labels FUTURE MUSE SPARK.", "Narration calls Muse Spark a plan and Muse Voice Transcribe an optional planned speech-to-text capability; no model request is shown or claimed as executed.", "App voice fallback says transcription is not connected; app explicitly says AI triage is not connected."]
+    },
+    {
+      "id": "react-interaction-parity",
+      "requirement": "Every interaction presented as part of the product flow must have a working React state transition.",
+      "status": "pass",
+      "evidence": ["capture-film.mjs invokes the actual React controls for visit switching, editable transcript, understanding confirmation, result feedback, navigation, group reading, question consent, contribution review/post, and example moderator decision.", "The matching controls and reducer/local state transitions exist in demo-experience.tsx and harmonise.ts.", "The architecture slate and final title card are explicitly film-only editorial overlays, not represented as app interactions."]
+    },
+    {
+      "id": "narrative-fixture-depth",
+      "requirement": "Seed multiple realistic return visits with enough distinct conversational turns and a changed interpretation.",
+      "status": "pass",
+      "evidence": ["arjun-visits.ts contains four fictional visits (Days 1, 4, 9, 16), totaling 29 user turns and distinct prepared responses.", "Day 4 explicitly corrects the initial marriage framing to pressure from Arjun's parents; the film shows this correction and a corresponding discovery comparison.", "The Day 16 history contains the unresolved argument rather than a claimed resolution."]
+    },
+    {
+      "id": "privacy-and-consent",
+      "requirement": "Private notes must not be shared implicitly; show editable exact-text, audience, alias, consent and opt-out controls.",
+      "status": "pass",
+      "evidence": ["Ravi question flow shows group audience, alias, exact question, exclusion of private conversation/journey, explicit unchecked consent, and a prepared response; SEND_QUESTION requires valid content and consent.", "Week-six contribution flow shows exact group text and alias preview, explicit review checkbox, and a discard option; posting is local and expressly not visible to other people.", "Contributor workspace separates private writing from the editable public summary and offers discovery/question scope controls and revocation.", "Chats stay in browser session storage; reset clears the Arjun visit history for this tab."]
+    },
+    {
+      "id": "connections-and-provider-truthfulness",
+      "requirement": "Respect group-only preferences, mutual choice, and avoid claiming provider verification or availability.",
+      "status": "pass",
+      "evidence": ["Connections screen explains Ravi is group-only and provides no private message action; illustrative accept/decline/block states are labeled local.", "Find Support says no provider directory or credential checks are connected and labels the provider pathway unverified; official emergency-resource link advises users to verify current availability."]
+    },
+    {
+      "id": "moderator-role-disclosure",
+      "requirement": "Separate moderator view and accurately disclose whether staff access and review are real/enforced.",
+      "status": "blocker",
+      "evidence": ["At approximately 2:36, the filmed Community review screen visibly says: ‘Illustrative staff workspace · no report is routed to a real reviewer and this screen does not enforce staff permissions.’ This disclosure is legible and is not covered by the subtitle.", "The same frame records an illustrative decision in this browser session only.", "At approximately 2:32, narration and burned caption say: ‘A report opens a restricted workflow.’ The captured path opens the moderator screen from the general Find Support view; the app also exposes the view from the professional-support screen and expressly says it does not enforce permissions."],
+      "blocker": "The narration/caption contradict the visible access disclosure and imply a restriction the UI does not implement.",
+      "recommended_correction": "Replace the line and caption with: ‘This example moderator screen records a sample decision; no report reaches staff, and access is not restricted here.’ Keep the visible purple access-disclosure notice in frame. If ‘restricted’ is retained, implement and demonstrate an actual role gate before capture."
+    },
+    {
+      "id": "moderation-report-linkage",
+      "requirement": "Show the report entering a restricted queue and a human moderator making a sample decision.",
+      "status": "partial",
+      "evidence": ["The app has a local Report a post form and a distinct moderator decision view, and it explicitly says reports are not sent to a team.", "The filmed sequence navigates from Find Support directly to a pre-seeded fictional case; it does not show a report being submitted or routed into a queue.", "The film does show an illustrative moderator decision, labeled fictional and local."],
+      "notes": "The UI's reporting form state and the moderator case are not connected. Do not describe the filmed transition as an actual report route."
+    },
+    {
+      "id": "professional-role-and-official-support-in-film",
+      "requirement": "Show the separate professional role and official support pathway called for by the product/film contract.",
+      "status": "partial",
+      "evidence": ["The React app has a separate Professional screen, a Help screen that distinguishes peer/listener/moderator/professional roles, and an explicitly unverified provider message with an official emergency-resource link.", "The candidate does not show the professional screen or official support pathway; it shows only the moderator view and a future architecture slate."]
+    },
+    {
+      "id": "role-separation-and-access-limits",
+      "requirement": "Make role views distinct and do not overstate role-limited access.",
+      "status": "partial",
+      "evidence": ["Professional and moderator are separate React screens and Help describes their different functions.", "Both are reachable from public demo navigation; the moderator notice candidly says staff permissions are not enforced.", "The film's ‘restricted workflow’ claim conflicts with that notice; see blocker moderator-role-disclosure."]
+    },
+    {
+      "id": "accessibility-basics",
+      "requirement": "Provide keyboard and screen-reader basics, visible focus, manageable controls, and reduced-motion behavior.",
+      "status": "pass",
+      "evidence": ["App includes a skip link, semantic headings/landmarks, labeled inputs, live conversation region, alert/status roles, tab semantics, and keyboard tab handling.", "Focus-visible outlines and focus transfer to the page heading on screen changes are present.", "Reduced-motion preference is honored in CSS and Playwright capture context requests reduced motion.", "Primary controls generally meet 44–48px minimum sizing; mobile CSS stacks panels and controls."]
+    },
+    {
+      "id": "responsive-coverage",
+      "requirement": "Keep core screens usable responsively and provide evidence for mobile behavior.",
+      "status": "partial",
+      "evidence": ["App CSS contains breakpoints for 1000px, 700px, and 360px layouts; chat visits and navigation reflow on narrow screens.", "Builder manifest reports focused E2E flows on desktop and mobile; Playwright config specifies Desktop Chrome 1920x1080 and iPhone 13 390x844.", "The MP4 and screenshot evidence show only a 1600x900 desktop capture; no mobile screenshot is included."]
+    },
+    {
+      "id": "runtime-and-encoding",
+      "requirement": "Runtime is at most 180 seconds, target approximately 176–179 seconds, with playable video/audio streams.",
+      "status": "pass",
+      "evidence": ["Independent ffprobe: 179.000s format/audio duration; 178.966667s video duration; H.264 High, 1920x1080, 30fps, AAC mono 48kHz.", "Independent full FFmpeg decode completed with exit code 0.", "Builder manifest reports a full decode exit 0 and audio peak -3.4dB; independent volumedetect measured mean -21.7dB and peak -3.4dB."]
+    },
+    {
+      "id": "audio-and-voiceover",
+      "requirement": "Include audible narration paced to the film and avoid claiming a human recording or live model speech.",
+      "status": "partial",
+      "evidence": ["An AAC audio track spans the full 179 seconds and decodes successfully; the mix is synthetic offline Flite narration, as documented in manifest.json.", "Narration text has 230 whitespace-delimited words, slightly above the contract's approximate 170–220-word target.", "The candidate does not label the narrator as synthetic on-screen; the build manifest does. No model-generated or human-recorded voice is claimed."],
+      "notes": "Speech level and decode are technically sound. The synthetic voice is noticeably mechanical; this is a craft concern, not a false integration claim."
+    },
+    {
+      "id": "captions-and-readability",
+      "requirement": "Provide accurate captions and keep key UI information readable during the film.",
+      "status": "partial",
+      "evidence": ["English captions are burned in and also supplied as captions.srt; the SRT text matches the narration script and timing is aligned to the scripted beats.", "At 1920x1080 the app's main text is generally readable and the title/architecture cards are legible.", "Lower-center captions overlap active UI content in several scenes. At about 2:36 the subtitle ‘A report opens a restricted workflow’ covers the moderator audit-scope line; at about 0:44 captions cover part of the comparison cards."]
+    },
+    {
+      "id": "film-timeline",
+      "requirement": "Cover the requested scenes in target order and end with encoding safety.",
+      "status": "pass",
+      "evidence": ["Film timing follows the contract: hook 0:00–0:14; Day 1/4 0:14–0:40; context shift 0:40–1:01; Day 9/16 1:01–1:17; history/Ravi/consent 1:17–2:02; contribution 2:02–2:32; moderation 2:32–2:44; planned architecture 2:44–2:54; close 2:54–2:59."]
+    },
+    {
+      "id": "asset-rights-and-fixture-origin",
+      "requirement": "Use original fictional text and avoid importing real sensitive posts or implying real participant activity.",
+      "status": "pass",
+      "evidence": ["Fixtures identify all people/stories as fictional; no external human-content source is cited or integrated.", "The app and manifest describe local deterministic sample content; the manifest reports no external requests during E2E coverage."]
+    }
+  ],
+  "blockers": [
+    {
+      "id": "moderator-role-disclosure",
+      "severity": "truthfulness and role-control blocker",
+      "evidence": "Narration/caption at approximately 2:32: ‘A report opens a restricted workflow.’ The app notice says staff permissions are not enforced, and the filmed route enters from general Find Support.",
+      "required_change": "Use candid wording such as: ‘This example moderator screen records a sample decision; no report reaches staff, and access is not restricted here.’ Keep the visible disclosure on screen, or implement and demonstrate actual role-gated access before describing it as restricted."
+    }
+  ],
+  "additional_contract_gaps": [
+    "The clip does not show the professional-support role or official support pathway, although both exist in the app and are required film elements in the contract.",
+    "The clip does not show the post-report submission entering the sample moderator case; the report form and moderator screen are separate local states.",
+    "No mobile viewport is captured in the film/evidence, though responsive CSS and mobile E2E coverage are reported."
+  ],
+  "reviewer_note": "This is a prototype verification report, not a story score or a final/release designation."
+}

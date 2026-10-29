@@ -1,0 +1,205 @@
+{
+  "version": "v02",
+  "commit_sha": "047b2652ea4a560cd4831308dac988a846e70696",
+  "reviewer_run_id": "v02-cold-judge-reduced-evidence",
+  "video_path": "/workspace/hormonise/demo-iterations/v02/demo.mp4",
+  "review_evidence_mode": "video_without_audio",
+  "first_time_viewer_summary": "Harmonise is a private-first space for people navigating family pressure: reflect, review your words, then optionally explore peer experiences or share with a group. The demo explicitly presents fictional sample scenarios and disconnected services.",
+  "decision": "reject",
+  "confidence": 0.72,
+  "scores": {
+    "impact": {
+      "earned": 19,
+      "possible": 30,
+      "subscores": {
+        "problem_specificity_depth": {
+          "earned": 7,
+          "possible": 10
+        },
+        "human_need_outcomes": {
+          "earned": 7,
+          "possible": 10
+        },
+        "adoption_network_benefit": {
+          "earned": 5,
+          "possible": 10
+        }
+      }
+    },
+    "meta_use": {
+      "earned": 10,
+      "possible": 25,
+      "subscores": {
+        "named_model_roles": {
+          "earned": 0,
+          "possible": 7
+        },
+        "model_necessity": {
+          "earned": 3,
+          "possible": 8
+        },
+        "visible_mechanism": {
+          "earned": 3,
+          "possible": 6
+        },
+        "evidence_and_limitations": {
+          "earned": 4,
+          "possible": 4
+        }
+      }
+    },
+    "demo": {
+      "earned": 18,
+      "possible": 25,
+      "subscores": {
+        "hook_story": {
+          "earned": 4,
+          "possible": 6
+        },
+        "clarity_legibility": {
+          "earned": 5,
+          "possible": 6
+        },
+        "pacing_audio_subtitles": {
+          "earned": 3,
+          "possible": 5
+        },
+        "emotional_payoff": {
+          "earned": 3,
+          "possible": 5
+        },
+        "ui_polish": {
+          "earned": 3,
+          "possible": 3
+        }
+      }
+    },
+    "technical_depth": {
+      "earned": 11,
+      "possible": 20,
+      "subscores": {
+        "workflow": {
+          "earned": 4,
+          "possible": 6
+        },
+        "controls_permissions_privacy": {
+          "earned": 4,
+          "possible": 5
+        },
+        "architecture_failure_handling": {
+          "earned": 2,
+          "possible": 5
+        },
+        "implementation_evidence": {
+          "earned": 1,
+          "possible": 4
+        }
+      }
+    }
+  },
+  "total": 58,
+  "film_persuasion_score": 66,
+  "technical_evidence_status": "unverified; UI explicitly labels conversations, community, voice transcription, AI triage, and reviewer workspace as prepared or illustrative, with no connected services and no enforced staff permissions shown",
+  "timestamped_strengths": [
+    {
+      "timestamp": "00:15-00:35",
+      "evidence": "Correction card says its interpretation is only a possible reading and offers Yes, Not quite, and Edit in my words; voice transcript is editable before sending."
+    },
+    {
+      "timestamp": "00:40-01:05",
+      "evidence": "Community discovery explains its context and says it sets aside broad legal-topic suggestions; no match scores are shown."
+    },
+    {
+      "timestamp": "01:10-01:35",
+      "evidence": "Group flow previews exact alias, audience, and question and says no message is sent; reply can be previewed or discarded."
+    },
+    {
+      "timestamp": "00:00-02:58",
+      "evidence": "Fictional sample scenarios and disconnected services are repeatedly disclosed, avoiding a false claim of live activity or AI."
+    }
+  ],
+  "timestamped_weaknesses": [
+    {
+      "timestamp": "00:00-00:15",
+      "evidence": "Opening slogan does not state user or differentiator; the problem is carried by burned-in caption while UI labels the scenario fictional."
+    },
+    {
+      "timestamp": "00:00-02:58",
+      "evidence": "Prepared examples/local rules; no named Meta model or functioning model output is demonstrated."
+    },
+    {
+      "timestamp": "01:10-02:20",
+      "evidence": "Community, reporting and staff review are illustrative; screen says no live group, AI triage, real reviewer, or enforced permissions."
+    },
+    {
+      "timestamp": "02:53-02:58",
+      "evidence": "Closing 'someday help someone else' states aspiration, not a demonstrated user outcome."
+    }
+  ],
+  "model_claim_accuracy": [
+    {
+      "timestamp": "00:00",
+      "claim_or_attribution": "Replies appear from local example rules; no AI service is connected.",
+      "assessment": "Accurate and candid in the UI; no AI implementation demonstrated."
+    },
+    {
+      "timestamp": "01:40-02:20",
+      "claim_or_attribution": "AI triage and report review.",
+      "assessment": "Explicitly marked not connected and illustrative; no Meta model named or used on-screen."
+    },
+    {
+      "timestamp": "whole film",
+      "claim_or_attribution": "Meta model role or integration.",
+      "assessment": "No model is named and no Meta integration claim is substantiated; award no model-role credit."
+    }
+  ],
+  "top_fixes": [
+    {
+      "timestamp": "00:00-00:15",
+      "failure": "Product audience and distinction arrive late through caption.",
+      "replacement": "Open with private reflection first and optional peer perspectives, naming the family-pressure use case.",
+      "expected_result": "First-time viewers understand problem and differentiation within five seconds.",
+      "verification": "Ask first-time viewers to describe the product after watching the opening without narration."
+    },
+    {
+      "timestamp": "00:15-00:35",
+      "failure": "Prepared transcript interaction; no Meta model or live result.",
+      "replacement": "Show a reproducible live Meta model interaction, role attribution, generated structure, and user correction changing the result.",
+      "expected_result": "Evidence that the model is necessary, correctly attributed, and controllable.",
+      "verification": "Rerun same input and an adversarial correction; inspect visible output and model trace."
+    },
+    {
+      "timestamp": "00:40-01:05",
+      "failure": "T1/T2/R1-R3 context markers lack plain-language explanation or user controls.",
+      "replacement": "Explain each matching reason and let the user remove or revise a reason before discovery.",
+      "expected_result": "Matching rationale becomes inspectable and controllable.",
+      "verification": "Change one preference and show suggestions update with explanation."
+    },
+    {
+      "timestamp": "01:10-01:35",
+      "failure": "Privacy and sharing flow is only local illustration.",
+      "replacement": "Demonstrate real authentication, alias handling, audience preview, cancellation, persistence, and data movement.",
+      "expected_result": "Privacy claims map to enforceable behavior.",
+      "verification": "Cancel a share; inspect recipient and storage views and confirm canceled content is not delivered."
+    },
+    {
+      "timestamp": "01:40-02:20",
+      "failure": "Illustrative review queue, no permission enforcement or live escalation.",
+      "replacement": "Show functioning report queue, authorized reviewer action, escalation, and urgent-help route.",
+      "expected_result": "Clear operational safety path and distinction from clinical care.",
+      "verification": "Submit and process a report, then test unauthorized access and escalation."
+    }
+  ],
+  "blockers": [
+    "No connected AI or voice transcription; no Meta model is named or demonstrated.",
+    "Conversations and community content are prepared examples, with no live peer activity.",
+    "Moderation/review screen is illustrative; report does not reach staff and permissions are not enforced.",
+    "No end-to-end user outcome or operational service behavior is verified in the film."
+  ],
+  "review_report_path": "/workspace/hormonise/demo-iterations/v02/film_review.md",
+  "independent_of_previous_rounds": true,
+  "limitations": [
+    "No direct audio playback/listening capability; sound, voice delivery, music, and audio mix are unassessed. Burned-in captions were reviewed."
+  ],
+  "release_recommendation": "Reject for shortlist as a working submission; continue product development and resubmit after live model, privacy, community, and moderation flows are demonstrated."
+}
