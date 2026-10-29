@@ -1,0 +1,90 @@
+[
+  {
+    "name": "01-arjun-fictional-hook",
+    "seconds": 2.645
+  },
+  {
+    "name": "02-start-privately",
+    "seconds": 3.633
+  },
+  {
+    "name": "03-prepared-first-reply",
+    "seconds": 4.793
+  },
+  {
+    "name": "04-not-quite-selected",
+    "seconds": 5.581
+  },
+  {
+    "name": "05-arjun-rewrites",
+    "seconds": 6.571
+  },
+  {
+    "name": "06-changed-editable-reflection",
+    "seconds": 7.83
+  },
+  {
+    "name": "06a-selected-private-takeaway",
+    "seconds": 8.781
+  },
+  {
+    "name": "06b-experience-intro",
+    "seconds": 9.865
+  },
+  {
+    "name": "07-day-4-peer-perspective",
+    "seconds": 11.456
+  },
+  {
+    "name": "08-day-9-host-boundary",
+    "seconds": 12.127
+  },
+  {
+    "name": "09-prepared-no-report",
+    "seconds": 12.933
+  },
+  {
+    "name": "10-day-16-dev-unanswered",
+    "seconds": 13.497
+  },
+  {
+    "name": "11-ravi-before-edit",
+    "seconds": 14.897
+  },
+  {
+    "name": "12-ravi-changed-preview",
+    "seconds": 15.505
+  },
+  {
+    "name": "13-support-caveat",
+    "seconds": 17.041
+  },
+  {
+    "name": "14-selected-private-takeaway",
+    "seconds": 18.285
+  },
+  {
+    "name": "15-private-only-choice",
+    "seconds": 18.869
+  },
+  {
+    "name": "16-optional-offer-selected",
+    "seconds": 19.671
+  },
+  {
+    "name": "17-exact-unsent-dev-draft",
+    "seconds": 20.342
+  },
+  {
+    "name": "18-composed-agency-close",
+    "seconds": 21.081
+  },
+  {
+    "name": "19-close-choice-reveal",
+    "seconds": 22.433
+  },
+  {
+    "name": "20-close-return-choice",
+    "seconds": 23.841
+  }
+]
