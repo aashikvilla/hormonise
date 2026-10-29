@@ -14,7 +14,7 @@
   "capture_type": "Fresh Playwright recording of actual local React UI interactions; no synthetic interface screens",
   "capture_viewport": "1600x900",
   "source_revision": "35bbc71563ff92ac8f110bb13d5978c6963c9d0c0",
-  "commit_sha": null,
+  "commit_sha": "70beaa94bb49671d23f43d2ee09afa0424260977",
   "media": {
     "video_codec": "H.264",
     "audio_codec": "AAC",
