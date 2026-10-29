@@ -25,13 +25,9 @@ test("first use names the audience and private-to-peer promise before Start priv
   await expect(page.getByRole("heading", { name: "I can’t tell my family what I want without feeling ungrateful." })).toBeVisible();
   await expect(page.getByText("FICTIONAL SCENARIO · ARJUN", { exact: true })).toBeVisible();
   await expect(page.getByText(/For adults facing family pressure\./i)).toBeVisible();
-  await expect(page.getByText("Private reflection you can correct before exploring peer experiences.", { exact: true })).toBeVisible();
-  await expect(page.getByText("Think it through privately, correct the reflection, then choose whether to explore peers.", { exact: true })).toBeVisible();
   await expect(page.getByText(/Fictional scenario · prepared examples · no model connected/i)).toBeVisible();
-  await expect(page.getByRole("article").filter({ hasText: "What Arjun said" })).toBeVisible();
-  await expect(page.getByRole("article").filter({ hasText: "A possibility to check" })).toBeVisible();
-  await expect(page.getByRole("article").filter({ hasText: "Arjun can correct it" })).toBeVisible();
-  await expect(page.getByText(/Planned: Muse Spark/i)).toBeVisible();
+  await expect(page.getByText("Think it through privately, correct the reflection, then choose whether to share.", { exact: true })).toBeVisible();
+  await expect(page.locator(".entry-mechanism")).toHaveCount(0);
   await page.getByRole("button", { name: "Start privately" }).click();
   await expect(page.getByRole("textbox", { name: "Your message" })).toBeVisible();
   await expect(page.getByRole("button", { name: "Use voice" })).toBeVisible();
@@ -54,6 +50,7 @@ test("a correction changes an editable local reflection instead of claiming a mo
   const updated = page.getByRole("textbox", { name: "WHAT HE CONFIRMED · EDITABLE" });
   await expect(updated).toHaveValue("You want time to decide what you want, without someone choosing stay or leave for you.");
   await expect(page.locator(".causal-understanding").getByText(/Prepared local example · no model connected/i)).toBeVisible();
+  await expect(page.locator(".causal-understanding").getByText(/Muse Spark could suggest a theme from words Arjun shares/i)).toBeVisible();
   await updated.fill("I want to decide at my own pace.");
   await expect(updated).toHaveValue("I want to decide at my own pace.");
 });
@@ -244,14 +241,28 @@ test("Ravi preview edits live, support has a return path, and Arjun can keep a t
   await draft.fill("I asked for time to think before replying. I am still working out what I want.");
   await expect(draft).toHaveValue("I asked for time to think before replying. I am still working out what I want.");
   await expect(preview.getByRole("checkbox")).not.toBeChecked();
-  await expect(preview.getByRole("button", { name: "Post in this example group" })).toBeDisabled();
+  const addButton = preview.getByRole("button", { name: "Add to preview group" });
+  await expect(addButton).toBeDisabled();
+  await preview.getByRole("checkbox", { name: /I reviewed this exact text and group audience/i }).check();
+  await expect(addButton).toBeEnabled();
+  await addButton.click();
+  await expect(preview.getByRole("status")).toHaveText("Added to this fictional preview group. Nothing was sent to any real group or person.");
+  await expect(preview).toContainText("Fictional local preview");
+  await draft.fill("I needed time before replying.");
+  await expect(preview.getByRole("checkbox")).not.toBeChecked();
+  await expect(addButton).toBeDisabled();
+  await expect(preview.getByRole("status")).toHaveCount(0);
+  await preview.getByRole("checkbox", { name: /I reviewed this exact text and group audience/i }).check();
+  await addButton.click();
+  await expect(preview.getByRole("status")).toHaveText("Added to this fictional preview group. Nothing was sent to any real group or person.");
   await preview.getByRole("button", { name: "Review my choices" }).click();
   const close = page.getByRole("region", { name: "Arjun's final local choices" });
   await expect(close).toContainText("I can ask for time before deciding.");
   await expect(close).toContainText("One helpful thing for Dev");
   await expect(close).toContainText("Private context excluded");
-  await expect(close).toContainText("Nothing is sent.");
-  await expect(close).toContainText("consent unchecked · post disabled");
+  await expect(close).toContainText("Nothing is sent to a real group or person.");
+  await expect(close).toContainText("I needed time before replying.");
+  await expect(close).toContainText("Consent added this text to the fictional preview only.");
 });
 
 test("quiet reading opens a story without alias, question, joining or feedback", async ({ page }) => {
