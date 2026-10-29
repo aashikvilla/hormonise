@@ -8,7 +8,15 @@ The v5 UI work adds local frontend interactions for independent My Space, Commun
 
 The deployed application remains a static GitHub Pages export using local fictional fixtures. No Meta key, server backend/API, authentication, database, live community or messaging, real moderation service, provider directory, or provider-verification process is configured. No model evaluation or Meta inference was run. Local consent/reply/moderation screens do not publish content, route a report to a real reviewer, or enforce server-side role boundaries.
 
-The v3 film remains historical: it is silent and does not show v5 independent spaces or reciprocal contribution, audible narration, actual Meta model evidence, or the technical proof required by the v5 brief. A final narrated v5 film has not been produced. Do not present v3 as a v5 product recording or evidence of Meta use.
+The v3 film remains historical: it is silent and does not show v5 independent spaces or reciprocal contribution, audible narration, actual Meta model evidence, or the technical proof required by the v5 brief. Do not present v3 as a v5 product recording or evidence of Meta use.
+
+## v5 fixture-only interactive walkthrough
+
+- Video: [`demo-videos/harmonise-v5-interactive-walkthrough.mp4`](../demo-videos/harmonise-v5-interactive-walkthrough.mp4)
+- Sidecar captions: [`demo-videos/harmonise-v5-interactive-walkthrough.en.srt`](../demo-videos/harmonise-v5-interactive-walkthrough.en.srt)
+- Runtime and frame: **139.5 seconds**, 1920×1080.
+- Audio: synthetic narration generated with FFmpeg Flite; it is not professional or human voice narration. Captions are burned into the video and supplied as an SRT sidecar.
+- Scope: frontend UI interactions backed by local fictional fixtures. No real Meta inference, Meta API call, messaging, or human participants are shown or occurred. It is not the final v5 submission film and is not evidence of Meta model use.
 
 ## Current v5 screenshot evidence
 

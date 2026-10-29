@@ -67,7 +67,12 @@ The v5 specification's live Meta integration, secure multi-user data boundaries,
 
 ## Film and video archive
 
-The latest available video is the **historical v3 sample-mode recording**, created before the v5 product expansion. It is 173.5 seconds, silent, and has burned-in narration text plus an SRT sidecar. It does **not** show the v5 independent spaces and reciprocal contribution flow, actual audible narration, real Meta inference, or Meta technical proof. It is not the final v5 submission film.
+The newest recording is a **fixture-only v5 interactive walkthrough**. It runs 139.5 seconds at 1920×1080 and has synthetic FFmpeg Flite narration with burned-in captions and an English SRT sidecar. The synthetic track is not professional or human voice narration. The walkthrough shows no real Meta inference, API call, messaging, or human participants; its people and replies are fictional fixtures. It is not the final v5 submission film and provides no real Meta evidence.
+
+- [v5 fixture-only walkthrough MP4](demo-videos/harmonise-v5-interactive-walkthrough.mp4)
+- [v5 walkthrough English SRT](demo-videos/harmonise-v5-interactive-walkthrough.en.srt)
+
+The earlier **v3 sample-mode recording** remains historical. It predates the v5 product expansion, runs 173.5 seconds, and is silent, with burned-in narration text and an SRT sidecar. It is not the final v5 submission film.
 
 - [Historical v3 MP4](demo-videos/harmonise-deep-human-journey-v3.mp4)
 - [Historical v3 English SRT](demo/harmonise-deep-human-journey-v3.en.srt)
