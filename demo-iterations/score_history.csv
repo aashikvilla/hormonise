@@ -1,5 +1,9 @@
-version,candidate_commit_sha,manifest_commit_sha,candidate_path,rubric_total_100,film_persuasion_100,decision,evidence_mode,confidence
-v01,20d9431db546d97ede3c94feb5f153228855bdfd,a8597a2c8befed3fd7e9f3f19d4dfa9206dac382,demo-iterations/v01/demo.mp4,59,73,reject,frames_and_burned_captions_only,medium-low
-v02,047b2652ea4a560cd4831308dac988a846e70696,a3bffbef19c6b2914e081da4bf83f32d487f972c,demo-iterations/v02/demo.mp4,58,66,reject,video_without_audio,0.72
-v03,698731572f70e1a6a71df54c2173e0e4ce124189,4082635019151efa975a3f55ae95a6beb3628a66,demo-iterations/v03/demo.mp4,64,78,reject,video_without_audio_playback,moderate-high
-v04,7fdab42fcc4a3be805fea142e7c821583d0dfe21,5cb98b2d17d38ee6fa7914e2c6fb4ac666d4a9ba,demo-iterations/v04/demo.mp4,68,79,reject,video_without_audio,0.84
+version,candidate_commit_sha,manifest_commit_sha,candidate_path,rubric_total_100,film_persuasion_100,decision,evidence_mode,confidence,protocol_version,persuasion_confidence,review_source
+v01,20d9431db546d97ede3c94feb5f153228855bdfd,a8597a2c8befed3fd7e9f3f19d4dfa9206dac382,demo-iterations/v01/demo.mp4,59,73,reject,frames_and_burned_captions_only,medium-low,,,
+v02,047b2652ea4a560cd4831308dac988a846e70696,a3bffbef19c6b2914e081da4bf83f32d487f972c,demo-iterations/v02/demo.mp4,58,66,reject,video_without_audio,0.72,,,
+v03,698731572f70e1a6a71df54c2173e0e4ce124189,4082635019151efa975a3f55ae95a6beb3628a66,demo-iterations/v03/demo.mp4,64,78,reject,video_without_audio_playback,moderate-high,,,
+v04,7fdab42fcc4a3be805fea142e7c821583d0dfe21,5cb98b2d17d38ee6fa7914e2c6fb4ac666d4a9ba,demo-iterations/v04/demo.mp4,68,79,reject,video_without_audio,0.84,,,
+v05,bdb0a049aa8dab8b2f24da7b9bd359dc441e04a6,316a5aa82de5bb55bca660f26b408d168868bd91,demo-iterations/v05/demo.mp4,66,N/A,maybe,reduced_video_without_audio,medium-low,video-only v2.0,N/A,demo-iterations/v05/review.json; report.md
+v06,a94206a937c6b38d5e4c808d5c0720fdec8af92e,35c226b2cf7bff3573eb4da6efcb14b461612880,demo-iterations/v06/demo.mp4,74,76,shortlist,reduced_evidence_video_only_audio_unavailable,medium,video-only v2.1,medium-low,demo-iterations/v06/review.json; report.md
+v07,7824972e6941e10deaca22d3dc5139f12703251b,428a821e0c166f315e531eddc7f836b0963c3d1a,demo-iterations/v07/demo.mp4,66,68,maybe,video_with_captions_audio_inaccessible,medium,video-only v2.1,medium-low,demo-iterations/v07/cold-review/review.json; report.md
+v08,3be0883c66592f99cd2484eb189dc3db67dd048c,322292b693700aeaec1c8ef4966b5dbd0e25f673,demo-iterations/v08/demo.mp4,74,76,maybe,visual_and_burned_in_captions_audio_inaccessible,medium,video-only v2.1,medium-low,demo-iterations/v08/cold-review/review.json; report.md
