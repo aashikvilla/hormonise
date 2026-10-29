@@ -1,0 +1,114 @@
+{
+  "iteration": "v35",
+  "master": "demo-iterations/v13/demo.mp4",
+  "masterSha256": "dd21e18a055cf80bca4ee60b0f62620d6e82025b10639985bfb64a722d691d47",
+  "candidate": "demo-iterations/v35/demo.mp4",
+  "candidateSha256": "27c4fc952bd8fb876afe533f374e3f4bc4c60e2e5ab5d95e00c382d0f56e79d5",
+  "retainedSourceRangesSeconds": [
+    {
+      "in": 0.0,
+      "out": 45.425
+    },
+    {
+      "in": 46.5,
+      "out": 62.8
+    },
+    {
+      "in": 70.59,
+      "out": 98.395
+    },
+    {
+      "in": 104.343,
+      "out": 178.767
+    }
+  ],
+  "targetRuntimeSeconds": 162.882,
+  "runtimeByRangesSeconds": 163.95399999999998,
+  "openingCrop": {
+    "sourceIn": 3.8,
+    "sourceOut": 10.7,
+    "pixels": [
+      88,
+      0,
+      1744,
+      980
+    ],
+    "scaledTo": [
+      1920,
+      1080
+    ],
+    "headerAndDisclosureRestored": true,
+    "captionBandRestored": true
+  },
+  "readabilityCrops": [
+    {
+      "sourceIn": 18.702,
+      "sourceOut": 30.095,
+      "pixels": [
+        160,
+        0,
+        1600,
+        900
+      ],
+      "scaledTo": [
+        1920,
+        1080
+      ],
+      "headerAndDisclosureRestored": true,
+      "captionBandRestored": true
+    },
+    {
+      "sourceIn": 46.5,
+      "sourceOut": 62.8,
+      "pixels": [
+        160,
+        0,
+        1600,
+        900
+      ],
+      "scaledTo": [
+        1920,
+        1080
+      ],
+      "headerAndDisclosureRestored": true,
+      "captionBandRestored": true
+    },
+    {
+      "sourceIn": 70.59,
+      "sourceOut": 98.395,
+      "pixels": [
+        160,
+        0,
+        1600,
+        900
+      ],
+      "scaledTo": [
+        1920,
+        1080
+      ],
+      "headerAndDisclosureRestored": true,
+      "captionBandRestored": true
+    },
+    {
+      "sourceIn": 147.272,
+      "sourceOut": 178.767,
+      "pixels": [
+        160,
+        0,
+        1600,
+        900
+      ],
+      "scaledTo": [
+        1920,
+        1080
+      ],
+      "headerAndDisclosureRestored": true,
+      "captionBandRestored": true
+    }
+  ],
+  "audio": "Original v13 narration AAC source ranges are rippled with the picture.",
+  "captionSidecar": "Original v13 cue wording is rippled; cues intersecting an edit boundary are time-clipped to the retained picture/audio window.",
+  "conditionalNoSend": "Retained approved source copy because the exact capture shows unchecked/disabled preview, a Maybe later exit, and return to the fictional group.",
+  "truthBoundary": "Only v13 captured pixels, narration, captions, prepared fictional disclosures, and the v34 opening crop are used.",
+  "verification": "demo-iterations/v35/verification/media-checks.json"
+}

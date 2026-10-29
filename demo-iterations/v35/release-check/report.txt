@@ -1,0 +1,10 @@
+HOLD — /workspace/hormonise/demo-iterations/v35/demo.mp4
+SHA-256: 27c4fc952bd8fb876afe533f374e3f4bc4c60e2e5ab5d95e00c382d0f56e79d5
+
+The 1920x1080 H.264 video is 30 fps, 4,918 frames (163.933 s); its 48 kHz mono AAC track runs 163.939 s. Full ffmpeg decode completed without errors. The streams begin together and differ by only 5.7 ms at the end; DTS ordering is monotonic. The AAC decoder read one fewer packet than the declared count, with no decode error.
+
+Captions are large and readable at 1920x1080 and 960x540. The story is coherent: Arjun privately reflects on family pressure, edits a tentative interpretation, reviews prepared fictional community examples, previews an optional exact-audience question, can leave without sharing, and may prepare a local draft. The UI consistently labels examples fictional/prepared, says no model/live person is connected, excludes private conversation from the preview, and shows an unchecked consent box with no-send language.
+
+Hold for recurring horizontal duplicated/offset UI bands. They are visible in sampled frames at 30, 150, and 160 seconds at both display sizes. In the final sample, a stale duplicated strip shows a filled “Post in this example group” control while the main final card says consent is unchecked and posting is disabled. This visual contradiction weakens the central no-send assurance. Review the screen capture/compositing and the final disabled-control state before release.
+
+Audio limitation: I verified stream metadata and decode only; I could not listen to the track or independently validate speech against captions.

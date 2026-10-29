@@ -1,0 +1,117 @@
+{
+  "candidate": "hormonise/demo-iterations/v35/demo.mp4",
+  "sha256": "27c4fc952bd8fb876afe533f374e3f4bc4c60e2e5ab5d95e00c382d0f56e79d5",
+  "review_evidence_mode": "video_with_accessible_visuals_and_inaccessible_audio_reduced_evidence",
+  "audio_limitation": "The MP4 contains an AAC audio stream, but it could not be heard or transcribed in this review environment. No claims are made about narration, dialogue, music, or sound mix. Captions were visually accessible.",
+  "independent_of_previous_rounds": true,
+  "technical_evidence_type": "film-visible prototype evidence",
+  "scores": {
+    "impact": {
+      "problem_specificity": 8,
+      "human_need_and_believable_outcomes": 8,
+      "practical_adoption_and_network_benefit": 6,
+      "total": 22,
+      "max": 30,
+      "evidence": [
+        {"timestamp": "00:00-00:08", "observation": "Opening: 'I can't tell my family what I want without feeling ungrateful.'"},
+        {"timestamp": "00:32-00:44", "observation": "User corrects a possible interpretation and asks for time to decide."},
+        {"timestamp": "00:56-01:16", "observation": "Illustrative peer perspectives; screen says no live people or moderation are connected."}
+      ]
+    },
+    "meta_use": {
+      "correctly_named_model_roles": 4,
+      "necessity_rather_than_generic_wrapper": 5,
+      "visible_mechanism_reasoning_or_structured_ui": 5,
+      "evidence_or_candid_limitation": 4,
+      "total": 18,
+      "max": 25,
+      "evidence": [
+        {"timestamp": "00:08-00:16", "observation": "Muse Spark is described as planned; UI states 'no model connected' and 'prepared local example.'"},
+        {"timestamp": "00:16-00:44", "observation": "Structured thought-check separates user statement, possible reading, and user correction; no live execution is shown."}
+      ]
+    },
+    "demo": {
+      "hook_and_story": 5,
+      "clarity_and_legibility": 5,
+      "pacing_and_accessible_audio_subtitles": 3,
+      "emotional_payoff": 3,
+      "polished_coherent_ui": 3,
+      "total": 19,
+      "max": 25,
+      "evidence": [
+        {"timestamp": "00:00-00:08", "observation": "Specific emotional hook and short differentiation caption."},
+        {"timestamp": "00:56-02:43", "observation": "Long series of dense UI states; captions remain visible but sometimes cover lower controls."}
+      ]
+    },
+    "technical_depth": {
+      "plausible_full_user_workflow": 5,
+      "controls_permissions_and_privacy": 5,
+      "architecture_and_failure_handling": 4,
+      "implementation_evidence": 4,
+      "total": 18,
+      "max": 20,
+      "evidence": [
+        {"timestamp": "00:16-00:44", "observation": "Visible private reflection and correction states."},
+        {"timestamp": "01:16-01:28", "observation": "Alias, exact audience and message preview, unchecked consent, and no-send disclosure."},
+        {"timestamp": "01:32-01:48", "observation": "Professional support page says no verified provider is bookable."},
+        {"timestamp": "02:30-02:43", "observation": "Optional draft stays local and unsent; user can leave without sharing."}
+      ]
+    }
+  },
+  "total": 77,
+  "total_max": 100,
+  "total_arithmetic": "22 + 18 + 19 + 18 = 77",
+  "confidence": "medium",
+  "uncertainty": "AAC audio was not accessible to hearing; audio-dependent assessment is reduced. Screen timing and text are based on visual inspection of the MP4.",
+  "film_persuasion": {
+    "dimensions": {
+      "first_15_second_clarity": {
+        "score": 20,
+        "max": 25,
+        "evidence": [
+          {"timestamp": "00:00-00:04", "observation": "Opening identifies family pressure and fear of seeming ungrateful."},
+          {"timestamp": "00:04-00:08", "observation": "Caption states private reflection can be corrected before peer experiences."}
+        ]
+      },
+      "human_journey_and_payoff": {
+        "score": 20,
+        "max": 25,
+        "evidence": [
+          {"timestamp": "00:32-00:44", "observation": "The person corrects the interpretation and retains decision-making agency."},
+          {"timestamp": "02:30-02:43", "observation": "Optional takeaway remains unsent; no reciprocal response or external outcome is shown."}
+        ]
+      },
+      "differentiation_and_role_value": {
+        "score": 18,
+        "max": 25,
+        "evidence": [
+          {"timestamp": "00:08-00:16", "observation": "Planned Muse Spark role is distinguished from prepared local content; no model is connected."},
+          {"timestamp": "01:16-01:28", "observation": "Community role is bounded by alias and exact audience preview; it remains proposed/illustrative."}
+        ]
+      },
+      "cinematic_and_narrative_craft": {
+        "score": 18,
+        "max": 25,
+        "evidence": [
+          {"timestamp": "00:00-00:08", "observation": "Clear opening caption establishes tension and promise."},
+          {"timestamp": "00:56-02:43", "observation": "Repeated dense interface views limit visual variation; caption bar sometimes covers controls."}
+        ]
+      }
+    },
+    "score": 76,
+    "max": 100,
+    "arithmetic": "20 + 20 + 18 + 18 = 76",
+    "confidence": "medium-low",
+    "audio_limitation": "AAC audio could not be heard or transcribed. Craft score relies on visible captions and visuals only."
+  },
+  "authenticity": {
+    "scenario": "Illustrative; fictional participants are identified on screen.",
+    "community": "No live people or moderation are connected; a thread indicates no replies yet.",
+    "model_execution": "Not shown; screen states no model connected and prepared local example.",
+    "integration": "Professional support page states no verified provider is bookable.",
+    "consent": "Preview and consent states are visible; sharing remains unchecked and unsent."
+  },
+  "release_recommendation": "Maybe; hold from shortlist pending a stronger film.",
+  "threshold_85_achieved": false,
+  "threshold_applies_to": "film_persuasion_score"
+}

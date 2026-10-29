@@ -1,0 +1,63 @@
+{
+  "artifact": "/workspace/hormonise/demo-iterations/v35/demo.mp4",
+  "sha256": "27c4fc952bd8fb876afe533f374e3f4bc4c60e2e5ab5d95e00c382d0f56e79d5",
+  "decision": "HOLD",
+  "review_scope": "MP4 only; no source, Git, other iteration, or prior review material inspected",
+  "container": {
+    "format": "MP4 / ISO Base Media",
+    "duration_seconds": 163.939,
+    "size_bytes": 24358894,
+    "full_decode": "passed; ffmpeg decoded to null with no errors"
+  },
+  "streams": [
+    {
+      "type": "video",
+      "codec": "H.264",
+      "dimensions": "1920x1080",
+      "frame_rate": "30/1",
+      "frame_count": 4918,
+      "start_seconds": 0.0,
+      "duration_seconds": 163.933333,
+      "decode": "all 4918 frames read"
+    },
+    {
+      "type": "audio",
+      "codec": "AAC",
+      "sample_rate_hz": 48000,
+      "channels": 1,
+      "start_seconds": 0.0,
+      "duration_seconds": 163.939,
+      "declared_packets": 7686,
+      "decoded_packets": 7685,
+      "decode": "no ffmpeg errors; one packet fewer read than declared, consistent with end/priming packet handling"
+    }
+  ],
+  "sync": {
+    "assessment": "streams are aligned within about 6 ms by duration; no material drift or decode/sync fault observed",
+    "video_end_seconds": 163.933333,
+    "audio_end_seconds": 163.939,
+    "end_offset_seconds_audio_after_video": 0.005667,
+    "packet_timestamps": "DTS monotonic for both streams; video PTS reordering is present as expected for H.264 B-frames"
+  },
+  "visual_review": {
+    "sample_times_seconds": [0, 10, 20, 30, 60, 90, 120, 150, 160],
+    "resolutions_checked": ["1920x1080", "960x540"],
+    "caption_legibility": "pass at both sizes; high-contrast captions are large and readable in sampled frames",
+    "ui_legibility": "main labels, fields, and safety text readable at 1920x1080 and generally readable at 960x540; secondary body copy is small at 960x540",
+    "visual_artifacts": [
+      {
+        "severity": "release-blocking",
+        "evidence_times_seconds": [30, 150, 160],
+        "description": "Several sampled frames show horizontal duplicated/offset screen bands and stale UI fragments across the viewport (visible in both 1920x1080 and 960x540 review). At 160 seconds this creates an apparent filled 'Post in this example group' button in a duplicated strip while the main card says consent is unchecked and posting is disabled. The mismatch weakens the final no-send assurance."
+      }
+    ]
+  },
+  "story_and_claims": {
+    "story_beats": "The demo follows fictional participant Arjun through private reflection about family pressure, an editable interpretation, prepared historical community examples, an optional exact-audience question preview, a no-sharing exit, and an optional local draft. The closing card preserves his private takeaway and says the draft remains optional.",
+    "fictional_and_prepared": "Pass: screens repeatedly label the scenario/participants fictional, illustrative, prepared, or historical; no live people or moderation are connected.",
+    "no_model_or_live_connection": "Pass: UI states the preview uses local prepared rules and that no model or live person is connected.",
+    "consent_and_no_send": "Mostly clear: exact audience and text are previewed; checkbox is visibly unchecked; UI/captions say nothing is sent and posting is disabled. However the duplicated strip at 160 seconds shows a filled post control and undermines the disabled-state claim.",
+    "privacy_and_choice": "Pass: UI states private conversation is excluded; a no-sharing exit and 'Maybe later' choice are shown; final card says the private reflection is not shared."
+  },
+  "audio_access_limitation": "Audio track was probed and fully decoded, but not listened to or independently checked against the captions because no audio playback/listening path was available in this review."
+}
