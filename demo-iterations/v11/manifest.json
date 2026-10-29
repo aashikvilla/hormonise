@@ -54,5 +54,6 @@
     "No provider is verified or bookable; the support screen is a caveat and return path.",
     "The optional Dev contribution remains a local draft; consent is unchecked, posting is disabled, and nothing is sent."
   ],
-  "review": "Builder did not assign a score. Cold judge and release verifier are separate."
+  "review": "Builder did not assign a score. Cold judge and release verifier are separate.",
+  "narration_sha256": "3dcb37500937045e29493fb28e759b2cad88781578e53a72748f115803766250"
 }
