@@ -1,0 +1,103 @@
+{
+  "review_evidence_mode": "video_visual_only_audio_unheard",
+  "independent_of_previous_rounds": true,
+  "technical_evidence_type": "film_visible_prototype_evidence",
+  "confidence": "medium",
+  "audio_limitation": "The MP4 contains mono AAC audio, but it was not audible in this review environment. Scores use visible captions and on-screen text only for narration-dependent claims.",
+  "scores": {
+    "impact": {
+      "problem_specificity": 8,
+      "human_need_and_outcomes": 8,
+      "adoption_network_benefit": 6,
+      "subtotal": 22,
+      "evidence": [
+        {"timestamp": "00:02-00:08", "observation": "Opening identifies adults navigating family pressure and promises private reflection, correction, and choice over sharing."},
+        {"timestamp": "00:42-00:51", "observation": "Arjun's corrected need is time to decide without someone choosing stay or leave for him."},
+        {"timestamp": "00:54-01:08", "observation": "Community discovery shows context-grounded matching, but no live participants or observed network effects."}
+      ]
+    },
+    "meta_use": {
+      "correctly_named_model_roles": 2,
+      "necessity": 4,
+      "visible_mechanism_reasoning_or_structured_ui": 5,
+      "evidence_or_candid_limitation": 2,
+      "subtotal": 13,
+      "evidence": [
+        {"timestamp": "00:22-00:24", "observation": "Muse Spark is labeled planned and not connected; theme organization is proposed."},
+        {"timestamp": "00:33-00:51", "observation": "Possible interpretation, user rejection, authored correction, and changed reflection appear as prepared prototype states."},
+        {"timestamp": "00:54-01:08", "observation": "Context-grounded community rationale is visible, but matching execution is not attributed to a live model."}
+      ]
+    },
+    "demo": {
+      "hook_and_story": 5,
+      "clarity_and_legibility": 5,
+      "pacing_accessible_audio_subtitles": 3,
+      "emotional_payoff": 3,
+      "polished_coherent_ui": 2,
+      "subtotal": 18,
+      "evidence": [
+        {"timestamp": "00:00-00:08", "observation": "Brief gray opening precedes a clear audience and promise title."},
+        {"timestamp": "00:33-00:51", "observation": "Large crops and visible captions make the correction sequence understandable."},
+        {"timestamp": "01:41-01:48", "observation": "Private takeaway provides a restrained payoff; audio could not be heard."}
+      ]
+    },
+    "technical_depth": {
+      "plausible_full_user_workflow": 5,
+      "controls_permissions_privacy": 5,
+      "architecture_failure_handling_as_evidenced": 3,
+      "implementation_evidence": 3,
+      "subtotal": 16,
+      "evidence": [
+        {"timestamp": "00:08-01:48", "observation": "Film-visible prototype proceeds from private reflection through correction, discovery, and share preview."},
+        {"timestamp": "01:26-01:37", "observation": "Exact audience, alias, question, unchecked consent, no-send notice, and cancel/keep-draft route are shown."},
+        {"timestamp": "00:33-00:51", "observation": "Visible 'Not quite' branch and editable correction support implementation evidence; prepared content limits conclusions."}
+      ]
+    }
+  },
+  "total": 69,
+  "film_persuasion_score": 68,
+  "film_persuasion_dimensions": {
+    "first_15_second_clarity": {
+      "score": 19,
+      "evidence": [
+        {"timestamp": "00:02", "observation": "Names adults navigating family pressure and states: 'Reflect privately · correct it · choose whether to share.'"},
+        {"timestamp": "00:08", "observation": "'You can start anywhere' clarifies approachability; opening starts on a gray field and differentiation is not yet clear."}
+      ]
+    },
+    "human_journey_and_payoff": {
+      "score": 18,
+      "evidence": [
+        {"timestamp": "00:33-00:51", "observation": "Arjun rejects a possible reading, authors his own meaning, and the reflection changes without resolving the relationship choice."},
+        {"timestamp": "01:41-01:48", "observation": "He keeps the takeaway private: 'I can ask for time before deciding.'"}
+      ]
+    },
+    "differentiation_and_role_value": {
+      "score": 14,
+      "evidence": [
+        {"timestamp": "00:22-00:24", "observation": "Muse Spark is explicitly planned, not connected; it could organize themes for review."},
+        {"timestamp": "00:54-01:08; 01:26-01:37", "observation": "Context-based discovery and exact-scope sharing are differentiated concepts, with no live model/community evidence."}
+      ]
+    },
+    "cinematic_and_narrative_craft": {
+      "score": 17,
+      "evidence": [
+        {"timestamp": "00:00-00:08", "observation": "Strong title after a short blank start."},
+        {"timestamp": "00:33-00:51; 01:26-01:37", "observation": "Crops and persistent captions clarify evidence; mostly static captures and a 108-second run soften momentum."}
+      ]
+    },
+    "arithmetic": "19 + 18 + 14 + 17 = 68",
+    "confidence": "medium"
+  },
+  "model_attribution": [
+    {
+      "model": "Muse Spark",
+      "film_moment": "00:22-00:24",
+      "status": "planned, not connected",
+      "proposed_role": "Organize themes from Arjun's words for him to review.",
+      "substantiated": "The film presents a prepared UI flow and a proposed role.",
+      "not_substantiated": "No model execution, output generation, or performance is shown."
+    }
+  ],
+  "decision": "maybe",
+  "release_recommendation": "Advance as a prototype concept; do not treat the film as validation of live AI or community functionality."
+}

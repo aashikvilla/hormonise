@@ -1,0 +1,231 @@
+{
+  "iteration": "v31",
+  "durationSeconds": 108,
+  "source": "demo-iterations/v27/capture/video/v27-real-product-session.webm",
+  "sourceSha256": "121b23bfd9124b9c97a10ba70dedd80051b0d71c27cf9cf809b5be64a94d23ff",
+  "shots": [
+    {
+      "name": "hook",
+      "sourceStart": 0.0,
+      "sourceEnd": 8.0,
+      "duration": 8.0,
+      "outputStart": 0.0,
+      "outputEnd": 8.0,
+      "crop": null,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "reflection",
+      "sourceStart": 12.006,
+      "sourceEnd": 18.008,
+      "duration": 6.001999999999999,
+      "outputStart": 8.0,
+      "outputEnd": 14.001999999999999,
+      "crop": [
+        70,
+        45,
+        1460,
+        820
+      ],
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "planned-role",
+      "sourceStart": 18.008,
+      "sourceEnd": 25.011,
+      "duration": 7.003,
+      "outputStart": 14.001999999999999,
+      "outputEnd": 21.005,
+      "crop": [
+        55,
+        40,
+        1490,
+        838
+      ],
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "continuous-correction",
+      "sourceStart": 25.011,
+      "sourceEnd": 48.517,
+      "duration": 23.506000000000004,
+      "outputStart": 21.005,
+      "outputEnd": 44.511,
+      "crop": null,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "corrected-context",
+      "sourceStart": 48.517,
+      "sourceEnd": 58.517,
+      "duration": 10.0,
+      "outputStart": 44.511,
+      "outputEnd": 54.511,
+      "crop": null,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "community-context",
+      "sourceStart": 58.517,
+      "sourceEnd": 68.517,
+      "duration": 9.999999999999993,
+      "outputStart": 54.511,
+      "outputEnd": 64.511,
+      "crop": null,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "peer-example",
+      "sourceStart": 79.537,
+      "sourceEnd": 90.537,
+      "duration": 11.0,
+      "outputStart": 64.511,
+      "outputEnd": 75.511,
+      "crop": null,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "peer-followthrough",
+      "sourceStart": 90.537,
+      "sourceEnd": 101.537,
+      "duration": 11.0,
+      "outputStart": 75.511,
+      "outputEnd": 86.511,
+      "crop": null,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "consent-preview",
+      "sourceStart": 109.5,
+      "sourceEnd": 117.559,
+      "duration": 8.058999999999997,
+      "outputStart": 86.511,
+      "outputEnd": 94.57,
+      "crop": null,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "cancel-action",
+      "sourceStart": 117.559,
+      "sourceEnd": 124.561,
+      "duration": 7.0020000000000095,
+      "outputStart": 94.57,
+      "outputEnd": 101.572,
+      "crop": null,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "private-takeaway",
+      "sourceStart": 129.562,
+      "sourceEnd": 135.99,
+      "duration": 6.427999999999997,
+      "outputStart": 101.572,
+      "outputEnd": 108.0,
+      "crop": null,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    }
+  ],
+  "narration": [
+    {
+      "start": 0.2,
+      "end": 5.8,
+      "text": "I can’t tell my family what I want without feeling ungrateful.",
+      "caption": "I can’t tell my family what I want without feeling ungrateful."
+    },
+    {
+      "start": 8.25,
+      "end": 13.6,
+      "text": "Arjun can put the pressure into his own words, privately.",
+      "caption": "Arjun can put the pressure into his own words, privately."
+    },
+    {
+      "start": 14.4,
+      "end": 25.3,
+      "text": "Muse Spark is planned, not connected; it could organize themes for Arjun to review. This response is prepared.",
+      "caption": "Muse Spark is planned, not connected; it could organize themes for Arjun to review. This response is prepared."
+    },
+    {
+      "start": 25.6,
+      "end": 29.7,
+      "text": "A prepared reading is offered for him to check.",
+      "caption": "A prepared reading is offered for him to check."
+    },
+    {
+      "start": 29.85,
+      "end": 32.1,
+      "text": "He chooses “Not quite.”",
+      "caption": "He chooses “Not quite.”"
+    },
+    {
+      "start": 32.2,
+      "end": 41.0,
+      "text": "Arjun enters: “I want time to decide what I want, without someone choosing stay or leave for me.”",
+      "caption": "Arjun enters: “I want time to decide what I want, without someone choosing stay or leave for me.”"
+    },
+    {
+      "start": 41.1,
+      "end": 47.9,
+      "text": "The reflection changes to hold his correction. He decides what fits.",
+      "caption": "The reflection changes to hold his correction. He decides what fits."
+    },
+    {
+      "start": 48.8,
+      "end": 56.5,
+      "text": "He keeps family context in view and sets broader legal results aside.",
+      "caption": "He keeps family context in view and sets broader legal results aside."
+    },
+    {
+      "start": 64.7,
+      "end": 70.0,
+      "text": "A prepared fictional account says Ravi had a trusted friend.",
+      "caption": "A prepared fictional account says Ravi had a trusted friend."
+    },
+    {
+      "start": 70.1,
+      "end": 76.1,
+      "text": "Their circumstances differ; Arjun has not said he has someone he trusts.",
+      "caption": "Their circumstances differ; Arjun has not said he has someone he trusts."
+    },
+    {
+      "start": 87.0,
+      "end": 90.45,
+      "text": "The preview names the Family Expectations group and the alias QuietRiver.",
+      "caption": "The preview names the Family Expectations group and the alias QuietRiver."
+    },
+    {
+      "start": 90.5,
+      "end": 93.35,
+      "text": "It shows the question, “Could I take time to decide before answering?”",
+      "caption": "It shows the question, “Could I take time to decide before answering?”"
+    },
+    {
+      "start": 93.4,
+      "end": 95.2,
+      "text": "Private reflection is excluded.",
+      "caption": "Private reflection is excluded."
+    },
+    {
+      "start": 95.25,
+      "end": 99.2,
+      "text": "Consent is unchecked; he can cancel and keep the draft.",
+      "caption": "Consent is unchecked; he can cancel and keep the draft."
+    },
+    {
+      "start": 99.3,
+      "end": 101.4,
+      "text": "He cancels and keeps the draft. Nothing is sent.",
+      "caption": "He cancels and keeps the draft. Nothing is sent."
+    },
+    {
+      "start": 102.0,
+      "end": 107.6,
+      "text": "For this prepared preview, Arjun keeps one line privately: “I can ask for time before deciding.”",
+      "caption": "For this prepared preview, Arjun keeps one line privately: “I can ask for time before deciding.”"
+    }
+  ],
+  "sourceNotes": [
+    "The brief overlaps source 48.517–51.017 between correction and context; v31 uses source 25.011–48.517, then continues once at 48.517.",
+    "No UI text or activity was synthesized. The consent inset is a labeled crop from the actual source frame at 116.500s.",
+    "Muse Spark is identified as planned and not connected; fictional/prepared/no-live/no-send boundaries remain editorial overlays."
+  ]
+}

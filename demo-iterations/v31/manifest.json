@@ -1,0 +1,41 @@
+{
+  "iteration": "v31",
+  "status": "release checks passed; one independent blind video-only judge returned Maybe; fixed score target unmet",
+  "candidate": "demo-iterations/v31/demo.mp4",
+  "candidate_sha256": "81a927860ee00049ecc579e7d05a5b65fde124a6cce1b91e9c51270e39a906df",
+  "duration_seconds": 108.0,
+  "source_code_changes": false,
+  "checks": {
+    "full_decode": "passed; full FFmpeg decode completed without errors (2,700 video frames)",
+    "streams": "H.264 1920x1080 at 25 fps video and mono AAC at 48 kHz; both streams start at 0.000 s and report 108.000 s duration",
+    "audio": "present and active; -17.9 LUFS integrated, 7.1 LU range, -1.9 dBFS sample/true peak; long pauses are present, and AAC was inaccessible to the reviewer",
+    "sync": "stream timestamps and durations match; sampled captions matched visible UI at 40, 70, and 85 s",
+    "freeze_scan": "long static UI holds flagged; sampled frames showed deliberate screen holds, so flags are not classified as clean no-freeze evidence",
+    "release_check_file": "demo-iterations/v31/release-check.md"
+  },
+  "truth_boundary": {
+    "fictional_prepared_demo": true,
+    "model_connected": false,
+    "live_community": false,
+    "muse_spark": "planned, not connected",
+    "message_sent": false
+  },
+  "review": {
+    "status": "one independent blind video-only judge; Maybe",
+    "decision": "maybe",
+    "judge_count": 1,
+    "confidence": "medium",
+    "review_evidence_mode": "video_visual_only_audio_unheard",
+    "audio_limitation": "AAC audio was not audible to the reviewer; narration-dependent claims were assessed from visible captions and on-screen text.",
+    "fixed_weighted_score": 69,
+    "film_persuasion_score": 68,
+    "film_persuasion_is_separate": true,
+    "target_score": 85,
+    "target_met": false,
+    "review_file": "demo-iterations/v31/review.json",
+    "cold_review_file": "demo-iterations/v31/cold-review.md",
+    "release_check_file": "demo-iterations/v31/release-check.md",
+    "comparison_note": "The v31 scores are lower than the recorded v30 scores (79 fixed, 75 persuasion). With one judge per review, this is a recorded score difference and does not establish that any particular edit caused it.",
+    "v32_priorities_file": "demo-iterations/v31/v32-priorities.md"
+  }
+}
