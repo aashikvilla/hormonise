@@ -30,6 +30,7 @@ export type ThemeId =
   | "hobbies";
 export type SupportNeed = "human-perspective" | "quiet-reading" | "shared-activity" | "not-sure";
 export type CommunityTab = "experiences" | "discussions" | "people" | "guidelines";
+export type QuestionChannel = "none" | "private" | "group";
 export type Helpfulness = "perspective" | "understood" | "action" | "not-helpful" | "skip" | null;
 
 export type DemoFixtures = {
@@ -167,6 +168,7 @@ export interface HarmoniseState {
   alias: string;
   questionText: string;
   questionConsent: boolean;
+  questionChannel: QuestionChannel;
   questionPayload: PeerQuestionPayload | null;
   reportShown: boolean;
   usefulness: Helpfulness;
@@ -213,6 +215,7 @@ export const initialHarmoniseState: HarmoniseState = {
   alias: "QuietRiver",
   questionText: fixtures.peerQuestionDemo.questionText,
   questionConsent: false,
+  questionChannel: "none",
   questionPayload: null,
   reportShown: false,
   usefulness: null,
@@ -262,6 +265,7 @@ export type HarmoniseAction =
   | { type: "TOGGLE_TOPIC_COMPARISON" }
   | { type: "SET_NO_MATCH"; value: boolean }
   | { type: "OPEN_QUESTION" }
+  | { type: "OPEN_GROUP_QUESTION" }
   | { type: "SET_ALIAS"; value: string }
   | { type: "SET_QUESTION_TEXT"; value: string }
   | { type: "SET_QUESTION_CONSENT"; value: boolean }
@@ -450,17 +454,24 @@ export function harmoniseReducer(state: HarmoniseState, action: HarmoniseAction)
     case "OPEN_QUESTION": {
       const allowed = fixtures.contributors.find((person) => person.id === "contributor.ravi")?.scope.anonymousQuestions;
       if (state.selectedExperienceId !== "experience.ravi" || !allowed || !state.contributorAllowsQuestions || !state.contributorPublished) return { ...state, error: "This contributor is not accepting questions in this example." };
-      return go({ ...state, questionConsent: false, questionPayload: null, error: "" }, "question");
+      return go({ ...state, questionConsent: false, questionChannel: "private", questionPayload: null, error: "" }, "question");
+    }
+    case "OPEN_GROUP_QUESTION": {
+      if (state.selectedExperienceId !== "experience.ravi" || state.selectedCommunityId !== "community.family-expectations" || !state.contributorAllowsQuestions || !state.contributorPublished) return { ...state, error: "This group question is not available in the current example." };
+      return go({ ...state, questionConsent: false, questionChannel: "group", questionPayload: null, error: "" }, "question");
     }
     case "SET_ALIAS": return { ...state, alias: action.value.slice(0, 24), questionConsent: false };
     case "SET_QUESTION_TEXT": return { ...state, questionText: action.value.slice(0, 400), questionConsent: false };
     case "SET_QUESTION_CONSENT": return { ...state, questionConsent: action.value };
     case "SEND_QUESTION": {
       const validAlias = /^[A-Za-z0-9_]{3,24}$/.test(state.alias.trim());
-      if (!state.questionConsent || !validAlias || state.questionText.trim().length < 12 || !state.contributorPublished || !state.contributorAllowsQuestions) {
+      const channelAllowed = state.questionChannel === "group"
+        ? state.selectedCommunityId === "community.family-expectations" && state.selectedExperienceId === "experience.ravi"
+        : state.questionChannel === "private" && fixtures.contributors.find((person) => person.id === "contributor.ravi")?.scope.anonymousQuestions === true;
+      if (!state.questionConsent || !validAlias || state.questionText.trim().length < 12 || !state.contributorPublished || !state.contributorAllowsQuestions || !channelAllowed) {
         return { ...state, error: "Review the alias and question, then choose the consent checkbox to continue." };
       }
-      const questionPayload = composePeerQuestionPayload({ recipientId: "contributor.ravi", alias: state.alias, questionText: state.questionText });
+      const questionPayload = composePeerQuestionPayload({ recipientId: state.questionChannel === "group" ? "community.family-expectations" : "contributor.ravi", alias: state.alias, questionText: state.questionText });
       return go({ ...state, questionPayload, error: "" }, "reply");
     }
     case "CONTINUE_AFTER_REPLY": return go(state, "reflection");

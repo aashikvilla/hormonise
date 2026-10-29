@@ -16,6 +16,7 @@ import {
   type ThemeId,
 } from "@/lib/harmonise";
 import { hasFamilyContext, replyForUserMessage } from "@/lib/conversation";
+import { arjunVisits, type VisitTurn } from "@/lib/arjun-visits";
 
 const navItems = [
   { label: "My Space", screen: "conversation" as const },
@@ -75,7 +76,7 @@ function appHeading(state: HarmoniseState) {
     discovery: state.chapter === "belonging" ? "Find a way to feel more connected" : "Explore communities and experiences",
     community: activeCommunity(state)?.name ?? "Community example",
     experience: "One person's experience",
-    question: "Ask Ravi a question",
+    question: "Ask Ravi in the group",
     reply: "A perspective from Ravi",
     reflection: "Was any part of this useful?",
     journey: "Your journey, in your words",
@@ -102,6 +103,8 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
   const [connectionStatus, setConnectionStatus] = useState<"none" | "pending" | "accepted" | "declined" | "blocked">("none");
   const [spaceTopic, setSpaceTopic] = useState("family");
   const [topicChats, setTopicChats] = useState<Record<string, { id: string; role: "you" | "harmonise"; text: string }[]>>({ family: [] });
+  const [activeVisitId, setActiveVisitId] = useState("day-1");
+  const [visitHistory, setVisitHistory] = useState<Record<string, VisitTurn[]>>(() => Object.fromEntries(arjunVisits.map((visit) => [visit.id, visit.turns])));
   const [chatTurns, setChatTurns] = useState<{ id: string; role: "you" | "harmonise"; text: string }[]>([]);
   const [composer, setComposer] = useState(initialPath === "arjun" ? "I don't know... things at home feel weird lately." : "");
   const [understandingConfirmed, setUnderstandingConfirmed] = useState(false);
@@ -133,6 +136,7 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
   }, [state.screen]);
 
   useEffect(() => {
+    if (chatTurns.length === 0) return;
     chatEndRef.current?.scrollIntoView({ block: "nearest" });
   }, [chatTurns.length]);
 
@@ -159,6 +163,30 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
     setTranscriptDraft("");
     setSpaceTopic("family");
     setTopicChats({ family: [] });
+    setActiveVisitId("day-1");
+    setVisitHistory(Object.fromEntries(arjunVisits.map((visit) => [visit.id, visit.turns])));
+    try { window.sessionStorage.removeItem("harmonise-arjun-visits"); } catch { /* storage is optional */ }
+  }
+
+  function openVisit(visitId: string) {
+    let merged = { ...visitHistory };
+    try {
+      const saved: unknown = JSON.parse(window.sessionStorage.getItem("harmonise-arjun-visits") ?? "null");
+      if (saved && typeof saved === "object") {
+        for (const visit of arjunVisits) {
+          const candidate = (saved as Record<string, unknown>)[visit.id];
+          if (Array.isArray(candidate) && candidate.every((turn) => turn && typeof turn === "object" && typeof (turn as VisitTurn).text === "string" && ((turn as VisitTurn).role === "you" || (turn as VisitTurn).role === "harmonise"))) merged[visit.id] = candidate as VisitTurn[];
+        }
+      }
+    } catch { /* session storage is optional */ }
+    if (chatTurns.length > 0) merged = { ...merged, [activeVisitId]: chatTurns };
+    setVisitHistory(merged);
+    setActiveVisitId(visitId);
+    const nextTurns = merged[visitId] ?? arjunVisits.find((visit) => visit.id === visitId)?.turns ?? [];
+    setChatTurns(nextTurns);
+    try { window.sessionStorage.setItem("harmonise-arjun-visits", JSON.stringify(merged)); } catch { /* session storage is optional */ }
+    setComposer("");
+    setUnderstandingConfirmed(false);
   }
 
   function localIllustrativeReply(text: string, turnNo: number, priorUserMessages: string[]) {
@@ -202,6 +230,11 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
       ];
       setChatTurns(next);
       setTopicChats((chats) => ({ ...chats, [spaceTopic]: next }));
+      if (state.isArjunDemo) {
+        const updated = { ...visitHistory, [activeVisitId]: next };
+        setVisitHistory(updated);
+        try { window.sessionStorage.setItem("harmonise-arjun-visits", JSON.stringify(updated)); } catch { /* session storage is optional */ }
+      }
       setComposer("");
       setUnderstandingConfirmed(false);
     }
@@ -242,6 +275,12 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
       setTranscriptDraft("");
     }
 
+    function reviewSampleTranscript() {
+      setRecordingError("");
+      setRecordingState("review");
+      setTranscriptDraft("I want to ask Dad for a little time before I answer.");
+    }
+
     function exploreExperiences() {
       const family = hasFamilyContext(chatTurns);
       const mappedTurns = chatTurns.map((turn) => ({ id: turn.id, speaker: turn.role === "you" ? "arjun" as const : "guide" as const, text: turn.text }));
@@ -253,11 +292,16 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
     return <>
       <p className="lede">{spaceTopic === "family" ? "Talk it through privately, or explore at your own pace." : `A separate ${spaceTopic} conversation. Earlier family context is not included.`}</p>
       <p className="small-note">Your chats don&apos;t appear in communities. Choose what you share. This example keeps messages in this browser session only.</p>
+      {state.isArjunDemo && <section className="visit-switcher" aria-label="Arjun's saved visits">
+        <div className="visit-switcher-heading"><div><span className="context-eyebrow">ARJUN · FICTIONAL SAMPLE HISTORY</span><strong>Return visits</strong></div><span>{arjunVisits.reduce((total, visit) => total + visit.turns.filter((turn) => turn.role === "you").length, 0)} prepared exchanges</span></div>
+        <div className="visit-buttons">{arjunVisits.map((visit) => <button key={visit.id} type="button" className={activeVisitId === visit.id ? "visit-button selected" : "visit-button"} aria-pressed={activeVisitId === visit.id} onClick={() => openVisit(visit.id)}><strong>{visit.day}</strong><span>{visit.title}</span></button>)}</div>
+        <p className="small-note">{arjunVisits.find((visit) => visit.id === activeVisitId)?.intention}. Choose any visit; history stays in this browser tab. Restart clears it.</p>
+      </section>}
       <section className="panel conversation-panel organic-chat" aria-label="Conversation">
         <div className="chat-provenance">Replies appear immediately from local example rules · no AI service is connected</div>
         <div className="chat-log" aria-live="polite" aria-relevant="additions text">
         {chatTurns.length === 0 && <article className="conversation-turn turn-guide"><span>Harmonise · example response</span><p>We can take this slowly. Is this mainly about something happening with someone, or how you’ve been feeling? You can also just tell me a little more.</p></article>}
-          {chatTurns.map((turn) => <article className={`conversation-turn ${turn.role === "you" ? "turn-arjun" : "turn-guide"}`} key={turn.id}><span>{turn.role === "you" ? "You" : "Harmonise · example reply"}</span><p>{turn.text}</p></article>)}
+          {chatTurns.map((turn) => <article className={`conversation-turn ${turn.role === "you" ? "turn-arjun" : "turn-guide"}`} key={turn.id}><span>{turn.role === "you" ? "Arjun · {day}".replace("{day}", arjunVisits.find((visit) => visit.id === activeVisitId)?.day ?? "You") : "Harmonise · prepared example"}</span><p>{turn.text}</p></article>)}
           <div ref={chatEndRef}/>
         </div>
         {chatTurns.filter((turn) => turn.role === "you").length === 1 && <div className="inline-chat-choices" aria-label="Optional response"><span>Only if it helps:</span>{["Something with someone", "How I’ve felt", "Not sure"].map((choice) => <button key={choice} type="button" onClick={() => sendChat(choice)}>{choice}</button>)}</div>}
@@ -272,7 +316,7 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
         <form className="chat-composer" onSubmit={(event) => { event.preventDefault(); sendChat(); }}>
           <label className="sr-only" htmlFor="chat-input">Your message</label>
           <textarea id="chat-input" rows={2} value={composer} onChange={(event) => setComposer(event.target.value)} onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); sendChat(); } }} placeholder="Write a message…" />
-          <div className="composer-actions"><span>Enter to send · Shift+Enter for a new line</span><div><SecondaryButton onClick={startRecording}>Use voice</SecondaryButton><PrimaryButton type="submit" disabled={!composer.trim()}>Send</PrimaryButton></div></div>
+          <div className="composer-actions"><span>Enter to send · Shift+Enter for a new line</span><div>{state.isArjunDemo && <SecondaryButton onClick={reviewSampleTranscript}>Review sample transcript</SecondaryButton>}<SecondaryButton onClick={startRecording}>Use voice</SecondaryButton><PrimaryButton type="submit" disabled={!composer.trim()}>Send</PrimaryButton></div></div>
         </form>
       </section>
       <div className="inline-actions"><SecondaryButton onClick={() => stateDispatch({ type: "OPEN_DISCOVERY" })}>Explore quietly</SecondaryButton><button className="text-button" onClick={() => stateDispatch({ type: "OPEN_HELP" })}>How information is used</button><button className="text-button" onClick={() => { setChatTurns([]); setTopicChats((chats) => ({ ...chats, [spaceTopic]: [] })); setComposer(""); setUnderstandingConfirmed(false); }}>Start a fresh conversation</button></div>
@@ -392,18 +436,18 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
       <section className="panel timeline-panel"><h2>What {person?.alias ?? "this contributor"} reported</h2><ol className="timeline">{experience.milestones.map((milestone) => <li key={milestone.id} id={`source-${milestone.id}`}><span className="timeline-time">{milestone.relativeTime}</span><h3>{milestone.title}</h3><p><strong>What happened:</strong> {milestone.whatHappened}</p><p><strong>What they tried:</strong> {milestone.whatIActuallyTried}</p>{milestone.whatHelped && <p><strong>What they reported helped:</strong> {milestone.whatHelped}</p>}{milestone.whatDidNotHelp && <p><strong>What they reported did not help:</strong> {milestone.whatDidNotHelp}</p>}<p className="source-id">Source: {milestone.id}</p></li>)}</ol></section>
       <div className="two-columns"><section className="panel story-overlap"><span className="tag tag-suggestion">{isRavi ? "WHERE YOUR EXPERIENCES MEET" : "WHAT THIS ACCOUNT COVERS"}</span><h2>{isRavi ? "Space to think before others decide" : experience.milestones[0]?.title}</h2>{isRavi ? <><p><strong>Arjun said:</strong> “{fixtures.leadPersona.private.utterances[2].text}”</p><p><strong>Ravi wrote:</strong> “{experience.milestones[1]?.whatIActuallyTried}”</p><p className="source-id">Grounded in Arjun u3 and Ravi {experience.milestones.map((milestone) => milestone.id).join(", ")}</p></> : <><p>{experience.milestones[0]?.whatHappened}</p><p><strong>{person?.alias} tried:</strong> {experience.milestones[0]?.whatIActuallyTried}</p><p className="source-id">Source: {experience.milestones.map((milestone) => milestone.id).join(", ")}</p></>}</section><section className="panel difference-panel"><span className="tag tag-private">WHERE YOUR LIVES DIFFER</span><h2>What may not carry over</h2><ul>{experience.importantDifferencesFromArjun.map((difference) => <li key={difference}>{difference}</li>)}</ul>{experience.unknowns.map((unknown) => <p key={unknown}><strong>Still unknown:</strong> {unknown}</p>)}</section></div>
       {isRavi && !privateQuestionsAllowed && <section className="no-recipient"><h2>Ravi accepts replies in the group only</h2><p>He isn&apos;t accepting private requests here. You can share a group reply, read Nisha&apos;s story, or keep reading quietly.</p><div className="inline-actions"><SecondaryButton onClick={() => { stateDispatch({ type: "CLOSE_EXPERIENCE" }); stateDispatch({ type: "SET_COMMUNITY_TAB", tab: "discussions" }); }}>See the group conversation</SecondaryButton><SecondaryButton onClick={() => stateDispatch({ type: "OPEN_EXPERIENCE", experienceId: "experience.nisha" })}>Read Nisha&apos;s story</SecondaryButton><SecondaryButton onClick={() => stateDispatch({ type: "CONTINUE_AFTER_REPLY" })}>Reflect on what you read</SecondaryButton></div></section>}
-      <div className="action-row"><SecondaryButton onClick={() => stateDispatch({ type: "CLOSE_EXPERIENCE" })}>Back to community</SecondaryButton>{isRavi && privateQuestionsAllowed && !state.quietReader && <PrimaryButton onClick={() => stateDispatch({ type: "OPEN_QUESTION" })}>Ask Ravi</PrimaryButton>}<button className="text-button" onClick={() => stateDispatch({ type: "EXPLORE_DIFFERENT_PERSPECTIVE" })}>Not relevant to me</button></div>
+      <div className="action-row"><SecondaryButton onClick={() => stateDispatch({ type: "CLOSE_EXPERIENCE" })}>Back to community</SecondaryButton>{isRavi && state.contributorAllowsQuestions && state.contributorPublished && !state.quietReader && <PrimaryButton onClick={() => stateDispatch({ type: "OPEN_GROUP_QUESTION" })}>Ask Ravi in the group</PrimaryButton>}<button className="text-button" onClick={() => stateDispatch({ type: "EXPLORE_DIFFERENT_PERSPECTIVE" })}>Not relevant to me</button></div>
     </>;
   }
 
   function renderQuestion() {
     return <>
-      <p className="lede">If you want to ask, review exactly what this prepared example contains. Your earlier conversation isn&apos;t included.</p>
+      <p className="lede">If you want to ask, review exactly what this prepared example contains. Ravi accepts questions in the group only, not by private message. Your earlier conversation isn&apos;t included.</p>
       <div className="question-layout"><section className="panel question-form">
         <label className="field-label" htmlFor="alias">Your alias</label><input id="alias" value={state.alias} onChange={(event) => stateDispatch({ type: "SET_ALIAS", value: event.target.value })} aria-invalid={state.alias.trim().length > 0 && !aliasValid} aria-describedby="alias-help alias-error" autoComplete="off"/><p id="alias-help" className="small-note">3–24 letters, numbers or underscores. An alias does not guarantee anonymity in a real service.</p>{state.alias.trim().length > 0 && !aliasValid && <p id="alias-error" className="field-error">Use 3–24 letters, numbers or underscores.</p>}
         <label className="field-label" htmlFor="question">Your question</label><textarea id="question" rows={4} maxLength={400} value={state.questionText} onChange={(event) => stateDispatch({ type: "SET_QUESTION_TEXT", value: event.target.value })} aria-invalid={state.questionText.trim().length > 0 && !questionValid} aria-describedby="question-help question-error"/><p id="question-help" className="small-note">Keep it to what you want Ravi to see. {state.questionText.length}/400</p>{state.questionText.trim().length > 0 && !questionValid && <p id="question-error" className="field-error">Add at least 12 characters, or cancel and keep reading.</p>}
-        <label className="consent-row"><input type="checkbox" checked={state.questionConsent} onChange={(event) => stateDispatch({ type: "SET_QUESTION_CONSENT", value: event.target.checked })}/><span>I reviewed the exact alias and question below. In this prepared scenario, nothing is sent to a person.</span></label>
-      </section><aside className="panel recipient-preview"><span className="tag tag-private">EXACT RECIPIENT PREVIEW</span><h2>What would be shared</h2><dl><dt>Recipient</dt><dd>Ravi · contributor.ravi</dd><dt>Alias</dt><dd>{state.alias.trim() || "Not entered"}</dd><dt>Question</dt><dd>{state.questionText.trim() || "No question entered"}</dd></dl><p className="small-note">Your private conversation and journey are not included.</p></aside></div>
+        <label className="consent-row"><input type="checkbox" checked={state.questionConsent} onChange={(event) => stateDispatch({ type: "SET_QUESTION_CONSENT", value: event.target.checked })}/><span>I reviewed this exact alias, audience and question. Nothing is sent in this preview.</span></label>
+      </section><aside className="panel recipient-preview"><span className="tag tag-private">EXACT AUDIENCE PREVIEW</span><h2>What would be shared</h2><dl><dt>Audience</dt><dd>Family Expectations group · Ravi may reply in group</dd><dt>Alias</dt><dd>{state.alias.trim() || "Not entered"}</dd><dt>Question</dt><dd>{state.questionText.trim() || "No question entered"}</dd></dl><p className="small-note">Your private conversation and journey are not included. No direct message is sent.</p></aside></div>
       {state.error && <p className="error-message" role="alert">{state.error}</p>}
       <div className="action-row"><SecondaryButton onClick={() => stateDispatch({ type: "BACK" })}>Cancel · keep my draft</SecondaryButton><PrimaryButton onClick={() => stateDispatch({ type: "SEND_QUESTION" })} disabled={!aliasValid || !questionValid || !state.questionConsent}>Continue to prepared response</PrimaryButton></div><p className="small-note">This is an illustrative response flow. It does not send a message or contact Ravi.</p>
     </>;
@@ -411,8 +455,8 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
 
   function renderReply() {
     return <>
-      <Notice tone="human">Prepared illustrative reply · Ravi is a fictional participant.</Notice>
-      <section className="prepared-reply"><span className="context-eyebrow">RAVI · PREPARED EXAMPLE</span><blockquote>{fixtures.peerQuestionDemo.response.text}</blockquote><p>This original fictional response was not generated by Meta AI or sent by a person.</p></section>
+      <Notice tone="human">Prepared illustrative group reply · Ravi is a fictional participant.</Notice>
+      <section className="prepared-reply"><span className="context-eyebrow">FAMILY EXPECTATIONS GROUP · PREPARED EXAMPLE</span><blockquote>{fixtures.peerQuestionDemo.response.text}</blockquote><p>This original fictional response was not generated by Meta AI or sent by a person.</p></section>
       <section className="arjun-reaction"><span className="context-eyebrow">WHAT ARJUN NOTICED</span><p>“{fixtures.leadPersona.private.reaction}”</p></section>
       <div className="action-row"><SecondaryButton onClick={() => stateDispatch({ type: "BACK" })}>Back to question</SecondaryButton><PrimaryButton onClick={() => stateDispatch({ type: "CONTINUE_AFTER_REPLY" })}>Continue to reflection</PrimaryButton></div>
     </>;

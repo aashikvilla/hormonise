@@ -40,6 +40,29 @@ test("scenario and example query params both open an editable unsent Arjun opene
   }
 });
 
+test("Arjun's four prepared return visits can be opened, edited, and resumed", async ({ page }) => {
+  await page.goto("/demo?scenario=arjun");
+  await expect(page.getByText("29 prepared exchanges")).toBeVisible();
+  await page.getByRole("button", { name: /Day 1 Something feels strange/ }).click();
+  await expect(page.getByText("Things at home feel strange. I don't even know how to explain it.")).toBeVisible();
+  await page.getByRole("button", { name: /Day 4 Correcting the assumption/ }).click();
+  await expect(page.getByText("I wasn't talking about separating. It's my parents. I can't say no without feeling ungrateful.")).toBeVisible();
+  await page.getByRole("button", { name: "Review sample transcript" }).click();
+  const transcript = page.getByRole("textbox", { name: "Your transcript" });
+  await expect(transcript).toHaveValue("I want to ask Dad for a little time before I answer.");
+  await transcript.fill("I need a week before I answer.");
+  await page.getByRole("button", { name: "Send this text" }).click();
+  await expect(page.getByText("I need a week before I answer.", { exact: true })).toBeVisible();
+  await page.getByRole("button", { name: /Day 9 A conversation/ }).click();
+  await expect(page.getByText("Could I try saying: I need until next weekend to think?")).toBeVisible();
+  await page.getByRole("button", { name: /Day 4 Correcting the assumption/ }).click();
+  await expect(page.getByText("I need a week before I answer.", { exact: true })).toBeVisible();
+  await page.getByRole("button", { name: /Day 16 A question/ }).click();
+  await expect(page.getByText("I tried talking to Dad. He listened, but we argued.", { exact: true })).toBeVisible();
+  await page.getByRole("button", { name: "Restart" }).click();
+  await expect(page.getByRole("heading", { name: "You can start anywhere." })).toBeVisible();
+});
+
 test("microphone denial leaves the text composer usable", async ({ page }) => {
   await page.addInitScript(() => {
     Object.defineProperty(navigator, "mediaDevices", {
@@ -98,9 +121,15 @@ test("independent spaces support group-only contact, reviewed contribution and h
   await expect(page.getByText(/Ravi.*group replies only/i)).toBeVisible();
   await page.getByRole("tab", { name: "Experiences" }).click();
   await page.getByRole("button", { name: "Read experience" }).first().click();
-  await expect(page.getByRole("heading", { name: "Ravi accepts replies in the group only" })).toBeVisible();
-  await expect(page.getByRole("button", { name: "Ask Ravi" })).toHaveCount(0);
-  await page.getByRole("button", { name: "See the group conversation" }).click();
+  await expect(page.getByRole("heading", { name: "One person's experience" })).toBeVisible();
+  await expect(page.getByText(/One person's account, not a recommendation/i)).toBeVisible();
+  await page.getByRole("button", { name: "Ask Ravi in the group" }).click();
+  await expect(page.getByText(/Ravi accepts questions in the group only, not by private message/i)).toBeVisible();
+  await expect(page.getByText(/Family Expectations group · Ravi may reply in group/i)).toBeVisible();
+  await expect(page.getByText(/Your private conversation and journey are not included/i)).toBeVisible();
+  await page.getByRole("button", { name: "Cancel · keep my draft" }).click();
+  await page.getByRole("button", { name: "Back to community" }).click();
+  await page.getByRole("tab", { name: "Discussions" }).click();
   await expect(page.getByRole("heading", { name: "Questions people might explore" })).toBeVisible();
   await page.getByRole("button", { name: "Join this example group" }).click();
   await expect(page.getByText(/Joined in this browser example only/i)).toBeVisible();

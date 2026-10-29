@@ -1,0 +1,30 @@
+{
+  "version": "v01",
+  "candidate": "demo-iterations/v01/demo.mp4",
+  "implementation_commit": null,
+  "source_capture": "demo-iterations/v01/capture/react-capture.webm",
+  "source_capture_duration_seconds": 186.44,
+  "candidate_duration_seconds": 179.0,
+  "resolution": "1920x1080",
+  "frame_rate": 30,
+  "video_codec": "H.264",
+  "audio_codec": "AAC mono 48 kHz",
+  "audio_peak_db": -3.4,
+  "narration": "Synthetic offline Flite voice; no human voice recording.",
+  "captions": "Burned into the video and provided as demo-iterations/v01/captions.srt.",
+  "capture": "Actual local product UI recorded with Playwright; synthetic data and sample interactions only.",
+  "disclosures": [
+    "The application is an interactive product preview with fictional sample scenarios.",
+    "No live Meta API, authentication, database, community, human moderator, or professional support integration is connected.",
+    "Meta Muse Spark and Muse Voice Transcribe are described as planned capabilities, not live features."
+  ],
+  "acceptance": {
+    "lint": "passed",
+    "typecheck": "passed",
+    "unit": "27 passed",
+    "e2e": "28 passed; focused visit/group consent flows passed on desktop and mobile",
+    "build": "passed",
+    "media": "ffprobe: 179.000 seconds, 1920x1080, 30fps, H.264/AAC; full FFmpeg decode exit 0; audio mean -21.7 dB, peak -3.4 dB"
+  },
+  "review": "No judge review performed in this build task; candidate awaits independent review."
+}
