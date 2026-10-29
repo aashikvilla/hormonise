@@ -34,5 +34,6 @@
   },
   "verification_frames": "verification/ (13 beats at 1920x1080 and 960x540)",
   "application_checks": "Not run; no application code changed in v20.",
-  "integrations": "Frontend-only prepared preview. No model, live community, live moderation, provider directory, or message sending is connected. Flite narration is synthetic."
+  "integrations": "Frontend-only prepared preview. No model, live community, live moderation, provider directory, or message sending is connected. Flite narration is synthetic.",
+  "commit_sha": "0434878cb843a9087075735b6b23fec26b90e637"
 }
