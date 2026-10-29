@@ -1,0 +1,19 @@
+{
+  "iteration": "v26",
+  "source": "demo-iterations/v26/capture/video/v26-real-product-session.webm",
+  "sourceSeconds": 145.44,
+  "durationSeconds": 144.133333,
+  "resolution": "1920x1080",
+  "fps": "30/1",
+  "sceneCount": 27,
+  "captionCueCount": 27,
+  "captionSafeArea": "192px lower band; real application view remains above it.",
+  "picture": "Fresh capture of real application; no fabricated app states.",
+  "narration": "FFmpeg Flite rms fictional example VO, normal-speed delivery.",
+  "audioMetrics": {
+    "integratedLoudnessLUFS": -18.0,
+    "truePeakDbfs": -1.9,
+    "longestSilenceSeconds": 2.411,
+    "finalSilenceSeconds": 2.352
+  }
+}

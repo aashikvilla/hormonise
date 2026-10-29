@@ -1,0 +1,112 @@
+{
+  "entry": "Harmonise",
+  "decision": "maybe",
+  "review_evidence_mode": "reduced_evidence_video_captions_audio_inaccessible",
+  "independent_of_previous_rounds": true,
+  "technical_evidence_basis": "film-visible prototype evidence only",
+  "audio_access_limitation": "AAC audio was present but could not be heard in this review; spoken narration and audio-dependent pacing were not assessed. Visible captions were used where readable.",
+  "scores": {
+    "impact": {
+      "problem_specificity_and_depth": 8,
+      "human_need_and_believable_outcomes": 8,
+      "practical_adoption_and_network_benefit": 7,
+      "subtotal": 23,
+      "max": 30,
+      "evidence": [
+        {"timestamp": "0:00-0:05", "observation": "The title names a specific family-pressure dilemma and labels the scenario fictional and prepared."},
+        {"timestamp": "0:05-0:10", "observation": "Caption describes private clarification, correction, and choice about sharing."},
+        {"timestamp": "0:58-1:20", "observation": "Family-expectations context is surfaced, but community is explicitly an example with no live activity."}
+      ]
+    },
+    "meta_use": {
+      "correctly_named_model_roles": 4,
+      "compelling_necessity": 5,
+      "visible_mechanism_reasoning_or_structured_ui": 5,
+      "evidence_or_candid_limitation": 4,
+      "subtotal": 18,
+      "max": 25,
+      "evidence": [
+        {"timestamp": "0:25-0:35", "observation": "Muse Spark is described as a planned role to suggest a tentative reflection; the screen says no model is connected."},
+        {"timestamp": "0:30-0:55", "observation": "A tentative interpretation, rejection, user correction, and editable revised reflection are shown as prepared example content."},
+        {"timestamp": "0:10-0:25", "observation": "Optional voice transcription is described as planned, not connected."}
+      ]
+    },
+    "demo": {
+      "hook_and_story": 5,
+      "clarity_and_legibility": 5,
+      "pacing_accessible_audio_subtitles": 3,
+      "emotional_payoff": 3,
+      "polished_coherent_ui": 2,
+      "subtotal": 18,
+      "max": 25,
+      "evidence": [
+        {"timestamp": "0:00-0:10", "observation": "Specific opening and clear premise; interface text is relatively small in full-frame view."},
+        {"timestamp": "0:30-0:55", "observation": "Correction is a meaningful story beat; visible captions summarize the action."},
+        {"timestamp": "2:00-2:24", "observation": "Final consent state is clear but screen remains text-heavy; audio could not be assessed."}
+      ]
+    },
+    "technical_depth": {
+      "plausible_full_user_workflow": 6,
+      "controls_permissions_privacy": 5,
+      "architecture_failure_handling_as_evidenced": 3,
+      "implementation_evidence": 4,
+      "subtotal": 18,
+      "max": 20,
+      "evidence": [
+        {"timestamp": "0:10-0:25", "observation": "Private chat disclosure says chats do not appear in communities and this example stays in the browser session."},
+        {"timestamp": "1:30-1:50", "observation": "Alias, group audience, exact question, private-context exclusion, and cancel are shown; no response is promised."},
+        {"timestamp": "2:00-2:24", "observation": "User edits a contribution, consent remains unchecked, the draft stays unposted, and the screen says nothing is sent."}
+      ]
+    }
+  },
+  "total": 77,
+  "total_arithmetic": "23 + 18 + 18 + 18 = 77",
+  "confidence": "medium",
+  "uncertainty": "Live model behavior, response quality, moderation, and real community outcomes are not established by the film.",
+  "film_persuasion_score": {
+    "dimensions": {
+      "first_15_second_clarity": {
+        "score": 20,
+        "max": 25,
+        "evidence": [
+          {"timestamp": "0:00-0:05", "observation": "Specific family-pressure problem is named; the scenario is labeled fictional/prepared."},
+          {"timestamp": "0:05-0:10", "observation": "Caption explains the private-correct-share promise."}
+        ],
+        "confidence": "high"
+      },
+      "human_journey_and_payoff": {
+        "score": 21,
+        "max": 25,
+        "evidence": [
+          {"timestamp": "0:30-0:55", "observation": "Arjun rejects and rewrites a tentative interpretation."},
+          {"timestamp": "1:30-1:50; 2:00-2:24", "observation": "He cancels a question, later edits an optional contribution, and retains an unposted draft."}
+        ],
+        "confidence": "high"
+      },
+      "differentiation_and_role_value": {
+        "score": 19,
+        "max": 25,
+        "evidence": [
+          {"timestamp": "0:05-0:10", "observation": "The private reflection, correction, and optional sharing flow differentiates the experience."},
+          {"timestamp": "0:25-0:35", "observation": "Muse Spark is proposed to suggest a tentative reflection; no model connection or execution is shown."}
+        ],
+        "confidence": "medium-high"
+      },
+      "cinematic_and_narrative_craft": {
+        "score": 16,
+        "max": 25,
+        "evidence": [
+          {"timestamp": "0:00-2:24", "observation": "A coherent screen progression is supported by recurring visible caption cards."},
+          {"timestamp": "1:30-2:24", "observation": "Later screen tour is text-heavy and moves quickly; speech audio could not be heard."}
+        ],
+        "confidence": "medium-low"
+      }
+    },
+    "score": 76,
+    "arithmetic": "20 + 21 + 19 + 16 = 76",
+    "confidence": "medium",
+    "audio_limitation": "AAC audio was present but inaccessible; captions were used and speech-dependent evidence was excluded."
+  },
+  "technical_depth_evidence_type": "film-visible prototype evidence",
+  "model_execution_credit": false
+}
