@@ -482,7 +482,8 @@ textarea:focus, input:focus, select:focus { border-color: var(--teal); }
 .entry-mechanism > span { align-self: center; color: var(--teal); font-size: 22px; font-weight: 700; }
 .entry-first-use .planned-role-note { margin: 8px 0; padding: 8px 11px; font-size: 13px; }
 .entry-first-use .entry-first-actions { margin-top: 9px; }
-.entry-audience-promise { margin: 8px 0 12px; color: #304a3a; font: 600 19px/1.35 var(--serif); }
+.entry-audience-note { margin: 8px 0 0; color: #304a3a; font-weight: 650; }
+.entry-audience-promise { margin: 5px 0 12px; color: #304a3a; font: 600 19px/1.35 var(--serif); }
 .entry-first-use .entry-audience-promise { padding: 8px 10px; border-left: 3px solid var(--teal); background: #e3ece5; }
 .correction-request-status { margin: 10px 0; padding: 9px 12px; border-left: 4px solid #9a8154; background: #f6f2e8; color: #433b2e; font-weight: 650; }
 .agency-close { margin-top: 12px; padding: 18px; border: 1px solid #a9b9ae; border-top: 5px solid var(--teal); border-radius: 9px; background: #edf3ee; }

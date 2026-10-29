@@ -24,7 +24,8 @@ test("first use names the audience and private-to-peer promise before Start priv
   await expect(page.getByText("Interactive product preview", { exact: true })).toBeVisible();
   await expect(page.getByRole("heading", { name: "I can’t tell my family what I want without feeling ungrateful." })).toBeVisible();
   await expect(page.getByText("FICTIONAL SCENARIO · ARJUN", { exact: true })).toBeVisible();
-  await expect(page.getByText(/For adults facing family pressure: think privately before exploring peer perspectives/i)).toBeVisible();
+  await expect(page.getByText(/For adults facing family pressure\./i)).toBeVisible();
+  await expect(page.getByText("Private reflection you can correct before exploring peer experiences.", { exact: true })).toBeVisible();
   await expect(page.getByText(/Fictional scenario · prepared examples · no model connected/i)).toBeVisible();
   await expect(page.getByRole("article").filter({ hasText: "What Arjun said" })).toBeVisible();
   await expect(page.getByRole("article").filter({ hasText: "A possibility to check" })).toBeVisible();
