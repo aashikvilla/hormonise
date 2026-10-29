@@ -8,7 +8,7 @@
     "v07_candidate": "demo-iterations/v07/demo.mp4",
     "v07_candidate_sha256": "05c3f1047418255b9129e9c548437abbaf0b79ae27e7ea545fdbf5ebf5397545"
   },
-  "candidate_sha256": "eee121a0784d0b4128d54663940ce053efd6f74ab3e7091b47fd49f7b02e1dd",
+  "candidate_sha256": "eee121a07844d0b4128d54663940ce053efd6f74ab3e7091b47fd49f7b02e1dd",
   "captions": "demo-iterations/v08/captions.srt",
   "captions_sha256": "252f6a298e5ab5227be49b8e9568db1ccbbad8bd8deb16534d448c748cea95ec",
   "source_react_capture": {
