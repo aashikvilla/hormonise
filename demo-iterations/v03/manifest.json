@@ -1,0 +1,44 @@
+{
+  "version": "v03",
+  "candidate": "demo-iterations/v03/demo.mp4",
+  "candidate_commit_sha": null,
+  "based_on": {
+    "v02_candidate_commit": "a3bffbef19c6b2914e081da4bf83f32d487f972c",
+    "v02_film_commit": "047b2652ea4a560cd4831308dac988a846e70696",
+    "v02_candidate": "demo-iterations/v02/demo.mp4",
+    "source_react_capture": "demo-iterations/v01/capture/react-capture.webm",
+    "source_react_capture_sha256": "520747affd17ab5dd3b5c6df419b6793937372ac146b29e2c22898da704be44c"
+  },
+  "changes": [
+    "Re-rendered from the unchanged raw v01 Playwright capture; v01 and v02 files were not changed.",
+    "Opening narration/captions now say: Advice can arrive before the story. Arjun needs room to explain what's happening at home.",
+    "Removed the earlier Advice came before he could explain line.",
+    "Added an ILLUSTRATIVE CONTRAST · FICTIONAL CASE label and two high-contrast panels: Advice: decide now; What Arjun needs: room to explain what’s happening at home.",
+    "In the planned architecture section, added high-contrast, readable text for Planned Meta Muse Spark — dialogue and structured, correctable context and Planned Muse Voice Transcribe — optional speech-to-text, reviewed before sending."
+  ],
+  "duration_seconds": 178.0,
+  "resolution": "1920x1080",
+  "frame_rate": 30,
+  "video_codec": "H.264",
+  "audio_codec": "AAC mono 48 kHz",
+  "narration": "Synthetic offline Flite voice; no live model or human voice is used. Captions are burned in and supplied as SRT.",
+  "sha256": "3abb112e5bdd75f821167ad5da3b069a7cccb1968ee6f1e34708285179bd017c",
+  "verification": {
+    "duration_within_180s": "passed",
+    "ffprobe": "passed: 178.000 seconds, 1920x1080, 30fps H.264, AAC 48 kHz",
+    "full_decode": "passed: ffmpeg decode exit 0",
+    "audio": "passed: mean -21.8 dB, peak -5.2 dB",
+    "captions": "SRT matches opening and planned-feature narration, with the moderator segment retained from v02.",
+    "muted_visual_review": "At 1920x1080 and 960x540, the fictional-case label and side-by-side contrast panels clearly frame the opening as an illustrative comparison. The planned Meta and voice-transcription lines remain readable without narration; planned/not-connected and human-moderator disclosures remain visible in the architecture screen.",
+    "frames": [
+      "demo-iterations/v03/verification/frame-0.png",
+      "demo-iterations/v03/verification/frame-6.png",
+      "demo-iterations/v03/verification/frame-165.png",
+      "demo-iterations/v03/verification/frame-0-960x540.png",
+      "demo-iterations/v03/verification/frame-165-960x540.png"
+    ],
+    "application_tests": "No app source changed; product tests were not rerun for this film-only edit."
+  },
+  "disclosure": "Actual Playwright footage of the local React preview with fictional sample scenarios. Meta features are planned and not connected. No live community or human action is claimed.",
+  "review": "Builder performed visual readability checks only and did not assign a score or conduct an independent judge review."
+}
