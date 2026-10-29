@@ -1,7 +1,7 @@
 {
   "version": "v03",
   "candidate": "demo-iterations/v03/demo.mp4",
-  "candidate_commit_sha": null,
+  "candidate_commit_sha": "698731572f70e1a6a71df54c2173e0e4ce124189",
   "based_on": {
     "v02_candidate_commit": "a3bffbef19c6b2914e081da4bf83f32d487f972c",
     "v02_film_commit": "047b2652ea4a560cd4831308dac988a846e70696",
@@ -13,8 +13,8 @@
     "Re-rendered from the unchanged raw v01 Playwright capture; v01 and v02 files were not changed.",
     "Opening narration/captions now say: Advice can arrive before the story. Arjun needs room to explain what's happening at home.",
     "Removed the earlier Advice came before he could explain line.",
-    "Added an ILLUSTRATIVE CONTRAST · FICTIONAL CASE label and two high-contrast panels: Advice: decide now; What Arjun needs: room to explain what’s happening at home.",
-    "In the planned architecture section, added high-contrast, readable text for Planned Meta Muse Spark — dialogue and structured, correctable context and Planned Muse Voice Transcribe — optional speech-to-text, reviewed before sending."
+    "Added an ILLUSTRATIVE CONTRAST \u00b7 FICTIONAL CASE label and two high-contrast panels: Advice: decide now; What Arjun needs: room to explain what\u2019s happening at home.",
+    "In the planned architecture section, added high-contrast, readable text for Planned Meta Muse Spark \u2014 dialogue and structured, correctable context and Planned Muse Voice Transcribe \u2014 optional speech-to-text, reviewed before sending."
   ],
   "duration_seconds": 178.0,
   "resolution": "1920x1080",
