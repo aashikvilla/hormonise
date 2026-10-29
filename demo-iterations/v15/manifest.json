@@ -2,7 +2,7 @@
   "iteration": "v15",
   "parent_iteration": "v14",
   "parent_candidate_sha256": "281753a0b2372b2ae3431b30cfdc9f3159ae53105765217b8ccfdecc16acf84a",
-  "candidate_commit_sha": null,
+  "candidate_commit_sha": "ada7b0cc561e3ad3859b399f58d6b8fbeed5d4a4",
   "candidate": "demo-iterations/v15/demo.mp4",
   "candidate_sha256": "8904c00ad231407e2c6045a559c0d6f64b79c61e84275e55036cc8d544d9b7e4",
   "duration_seconds": 177.966667,
