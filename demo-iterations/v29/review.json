@@ -1,0 +1,72 @@
+{
+  "candidate": "candidate.mp4",
+  "review_evidence_mode": "video_with_captions_audio_inaccessible",
+  "independent_of_previous_rounds": true,
+  "technical_evidence_type": "film-visible prototype evidence only",
+  "audio_limitation": "The MP4 contains an AAC audio stream, but I could not hear it. Captions are burned in and visible. No claims about spoken narration, voice performance, or sound mixing are scored.",
+  "decision": "maybe",
+  "confidence": "moderate",
+  "scores": {
+    "impact": {
+      "problem_specificity_depth": {"score": 8, "max": 10, "evidence": "Opening names conflict between personal wishes and family expectations (0:00). Scale is not established."},
+      "human_need_believable_outcomes": {"score": 8, "max": 10, "evidence": "Arjun clarifies a need for time; the outcome remains unresolved and private (0:30, 1:15–1:20)."},
+      "adoption_network_benefit": {"score": 5, "max": 10, "evidence": "Optional group sharing/community browsing is shown, but no live activity or uptake (0:40–1:00)."},
+      "subtotal": 21,
+      "max": 30
+    },
+    "meta_use": {
+      "correctly_named_model_roles": {"score": 4, "max": 7, "evidence": "Muse Spark is proposed as a theme suggester, subject to Arjun's judgment (about 0:25–0:30); no model is connected."},
+      "necessity_beyond_generic_wrapper": {"score": 6, "max": 8, "evidence": "Correction and context-sensitive peer examples are specific to the problem (0:25–0:40), though need is not validated."},
+      "visible_mechanism_reasoning_ui": {"score": 5, "max": 6, "evidence": "Correction controls, editable wording, editorial comparison, and consent preview (0:25–0:55)."},
+      "evidence_or_candid_limitation": {"score": 4, "max": 4, "evidence": "Persistent labels say fictional prepared demo, no model connected, no live community (throughout)."},
+      "subtotal": 19,
+      "max": 25
+    },
+    "demo": {
+      "hook_story": {"score": 5, "max": 6, "evidence": "Specific opening problem leads to modest self-chosen close (0:00–1:20); middle is explanatory."},
+      "clarity_legibility": {"score": 5, "max": 6, "evidence": "Main text and captions readable; some community/navigation text is small (0:40–1:05)."},
+      "pacing_accessible_audio_subtitles": {"score": 3, "max": 5, "evidence": "Burned-in captions are present. AAC was not hearable to this judge; screen holds are steady but static."},
+      "emotional_payoff": {"score": 4, "max": 5, "evidence": "Closing thought offers a believable step without resolving the conflict (1:15–1:20)."},
+      "polished_coherent_ui": {"score": 2, "max": 3, "evidence": "Consistent muted system; repeated full-screen captures and small interface text limit finish (0:10–1:05)."},
+      "subtotal": 19,
+      "max": 25
+    },
+    "technical_depth": {
+      "plausible_full_user_workflow": {"score": 5, "max": 6, "evidence": "Reflection, correction, exploration, and optional sharing form a plausible path (0:10–1:20); service operation is not proved."},
+      "controls_permissions_privacy": {"score": 5, "max": 5, "evidence": "Exact audience, alias, question, exclusions, unchecked review, and cancel action (0:50–1:20)."},
+      "architecture_failure_handling": {"score": 3, "max": 5, "evidence": "Theme suggestion/correction are described (0:25–0:30); failure and service behavior are not shown."},
+      "implementation_evidence": {"score": 4, "max": 4, "evidence": "Film-visible states show correction, browse choice, exact sharing scope, and recoverable private outcome (0:25–1:20). Prototype evidence only."},
+      "subtotal": 17,
+      "max": 20
+    }
+  },
+  "total": 76,
+  "total_max": 100,
+  "arithmetic": "21 + 19 + 19 + 17 = 76/100",
+  "film_persuasion_dimensions": {
+    "first_15_second_clarity": {"score": 23, "max": 25, "confidence": "high", "evidence": ["0:00: opening states the problem and adult family-pressure audience.", "0:00: landing card promises private reflection, correction, and a choice about sharing."]},
+    "human_journey_and_payoff": {"score": 21, "max": 25, "confidence": "moderate-high", "evidence": ["0:25–0:30: Arjun may reject or edit the proposed reading.", "1:15–1:20: he keeps the draft private; no reply from others is shown."]},
+    "differentiation_and_role_value": {"score": 21, "max": 25, "confidence": "moderate", "evidence": ["0:25–0:30: Muse Spark is a proposed theme suggester, not connected.", "0:40–0:55: Ravi's prepared account offers lived context and explicitly notes differing circumstances."]},
+    "cinematic_and_narrative_craft": {"score": 19, "max": 25, "confidence": "moderate", "evidence": ["Throughout: repeated banner and captions aid orientation.", "0:10–1:05: screen captures are static and text-heavy; AAC inaccessible to judge."]},
+    "sum": 84,
+    "max": 100,
+    "arithmetic": "23 + 21 + 21 + 19 = 84/100",
+    "separate_from_fixed_weighted_total": true
+  },
+  "authenticity_and_credibility": {
+    "dialogue_linearity_transformation": "Prepared dialogue is presented in a linear recorded sequence. The film does not show a resolved relationship; it states that the outcome remains unresolved and closes with a private next step.",
+    "social_activity": "Fictional prepared examples; no live community activity is claimed or shown.",
+    "integration_claims": "Muse Spark is described as a planned theme suggestion role. No model is connected, and no model execution is evidenced.",
+    "confidence_note": "Judgments are based only on the candidate MP4 and scorecard. AAC audio could not be heard."
+  },
+  "fix_tickets": [
+    {"timestamp": "0:10–0:30", "issue": "Prepared response may be confused with proposed AI.", "replacement": "Label beside response: 'Prepared response; planned Muse Spark role: suggest a theme for the user to accept, edit, or reject.'", "expected_result": "Clear separation of prepared content and future model role.", "verification": "Show label beside response and correction controls."},
+    {"timestamp": "0:25–0:40", "issue": "Correction is not clearly shown as an observed action.", "replacement": "One continuous capture of Arjun editing, confirming, and seeing changed context.", "expected_result": "Show correction as an agency-preserving prototype flow.", "verification": "Before and after text remain visible without a cut."},
+    {"timestamp": "0:40–1:00", "issue": "Community sequence could imply real participation.", "replacement": "Keep 'fictional prepared example; no live activity' onscreen and label Ravi's account provenance.", "expected_result": "Peer context remains useful without implying live activity.", "verification": "Qualification legible on the story itself."},
+    {"timestamp": "0:50–1:00", "issue": "Consent preview moves quickly.", "replacement": "Pause on audience, alias, question, exclusions, unchecked box, and cancel action.", "expected_result": "Sharing boundary can be reviewed at normal playback speed.", "verification": "All fields legible in one full-frame shot."},
+    {"timestamp": "0:00–1:20", "issue": "Static holds and text-heavy screens limit rhythm.", "replacement": "Add close views of hook, correction, and privacy choice, returning to full UI for context.", "expected_result": "Improve pacing while retaining context.", "verification": "Captions unobscured and decisions readable at normal speed."}
+  ],
+  "release_recommendation": "Maybe / shortlist discussion",
+  "blockers": ["No connected-model evidence in this film", "No live community activity", "No demonstrated outcome beyond a private draft", "AAC audio inaccessible to judge"],
+  "report_file": "/tmp/harmonise-v29-blind/cold-review.md"
+}

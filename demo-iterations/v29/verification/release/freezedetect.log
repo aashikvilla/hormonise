@@ -1,0 +1,38 @@
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'demo-iterations/v29/demo.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.103
+  Duration: 00:01:40.00, start: 0.000000, bitrate: 800 kb/s
+  Stream #0:0[0x1](eng): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], 677 kb/s, 25.01 fps, 25 tbr, 12800 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 libx264
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 117 kb/s (default)
+      Metadata:
+        handler_name    : SoundHandler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> wrapped_avframe (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.103
+  Stream #0:0(eng): Video: wrapped_avframe, yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 25 fps, 25 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 wrapped_avframe
+frame=   92 fps=0.0 q=-0.0 size=N/A time=00:00:03.68 bitrate=N/A speed=7.31x    frame=  211 fps=210 q=-0.0 size=N/A time=00:00:08.44 bitrate=N/A speed=8.41x    frame=  349 fps=232 q=-0.0 size=N/A time=00:00:13.96 bitrate=N/A speed=9.27x    frame=  493 fps=246 q=-0.0 size=N/A time=00:00:19.72 bitrate=N/A speed=9.83x    frame=  638 fps=255 q=-0.0 size=N/A time=00:00:25.52 bitrate=N/A speed=10.2x    frame=  784 fps=261 q=-0.0 size=N/A time=00:00:31.36 bitrate=N/A speed=10.4x    frame=  914 fps=261 q=-0.0 size=N/A time=00:00:36.56 bitrate=N/A speed=10.4x    frame= 1050 fps=262 q=-0.0 size=N/A time=00:00:42.00 bitrate=N/A speed=10.5x    frame= 1174 fps=261 q=-0.0 size=N/A time=00:00:46.96 bitrate=N/A speed=10.4x    frame= 1290 fps=258 q=-0.0 size=N/A time=00:00:51.60 bitrate=N/A speed=10.3x    frame= 1423 fps=258 q=-0.0 size=N/A time=00:00:56.92 bitrate=N/A speed=10.3x    frame= 1521 fps=253 q=-0.0 size=N/A time=00:01:00.84 bitrate=N/A speed=10.1x    frame= 1594 fps=245 q=-0.0 size=N/A time=00:01:03.76 bitrate=N/A speed=9.79x    frame= 1709 fps=244 q=-0.0 size=N/A time=00:01:08.36 bitrate=N/A speed=9.75x    frame= 1794 fps=239 q=-0.0 size=N/A time=00:01:11.76 bitrate=N/A speed=9.56x    frame= 1904 fps=238 q=-0.0 size=N/A time=00:01:16.16 bitrate=N/A speed=9.51x    frame= 2020 fps=237 q=-0.0 size=N/A time=00:01:20.80 bitrate=N/A speed=9.49x    frame= 2156 fps=239 q=-0.0 size=N/A time=00:01:26.24 bitrate=N/A speed=9.57x    frame= 2295 fps=241 q=-0.0 size=N/A time=00:01:31.80 bitrate=N/A speed=9.65x    [freezedetect @ 0x7f210c0026c0] lavfi.freezedetect.freeze_start: 90.44
+[freezedetect @ 0x7f210c0026c0] lavfi.freezedetect.freeze_duration: 4
+[freezedetect @ 0x7f210c0026c0] lavfi.freezedetect.freeze_end: 94.44
+frame= 2438 fps=244 q=-0.0 size=N/A time=00:01:37.52 bitrate=N/A speed=9.74x    [freezedetect @ 0x7f210c0026c0] lavfi.freezedetect.freeze_start: 94.72
+[freezedetect @ 0x7f210c0026c0] lavfi.freezedetect.freeze_duration: 4.32
+[freezedetect @ 0x7f210c0026c0] lavfi.freezedetect.freeze_end: 99.04
+[out#0/null @ 0x5561e9a3c5c0] video:1074KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame= 2499 fps=244 q=-0.0 Lsize=N/A time=00:01:39.96 bitrate=N/A speed=9.76x    

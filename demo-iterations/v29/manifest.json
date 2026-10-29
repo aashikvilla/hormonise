@@ -1,0 +1,92 @@
+{
+  "iteration": "v29",
+  "status": "release checks passed; independent video-only cold review complete; Maybe / shortlist discussion",
+  "score_claim": {
+    "fixed_weighted_total": 76,
+    "film_persuasion_total": 84,
+    "film_persuasion_is_separate": true,
+    "target": 85,
+    "target_met": false
+  },
+  "candidate": "demo-iterations/v29/demo.mp4",
+  "candidate_sha256": "0adebec5a5da9ef7d89d0ceee32064ad527a93ec425aabe34328c28b92f2077f",
+  "duration_seconds": 100.0,
+  "parent_source_commit": "e7e8cbe3c6b94f41324f030b7bb21aaf96f25af0",
+  "source_code_changes": false,
+  "source_capture": {
+    "path": "demo-iterations/v27/capture/video/v27-real-product-session.webm",
+    "sha256": "121b23bfd9124b9c97a10ba70dedd80051b0d71c27cf9cf809b5be64a94d23ff",
+    "source_revision": "e7e8cbe3c6b94f41324f030b7bb21aaf96f25af0",
+    "capture_script": "demo-iterations/v27/capture/capture-v27.mjs",
+    "capture_script_sha256": "14f81876c78fa36ae7a80ea760232dc4bafed4f4eec3dc8cd1b7a2cea2dd0077",
+    "interaction": "Recorded Playwright interaction against the existing local frontend; v29 selects authentic source intervals and crops.",
+    "rendering_checkout_revision": "be6daf1e0106284ca835113da302283d2c312d2d"
+  },
+  "edit": {
+    "render_script": "demo-iterations/v29/capture/render-v29.py",
+    "render_script_sha256": "a234a47977f4c63fd37068edd3e2f899b358e8baf3be420e4b2374a686b25ae0",
+    "edit_map": "demo-iterations/v29/capture/edit-map.json",
+    "edit_map_sha256": "7cd7569580d68ccdbc17f3f55757156a03add4f03e21f1f0e5db9c99106c02b2",
+    "captions": "demo-iterations/v29/capture/captions.srt",
+    "captions_sha256": "06bf71cb1fffe6b2ad0efcf4989d34d4e6ba35693a77ab2ea50d3ea1256d775c",
+    "narration_text": "demo-iterations/v29/capture/narration.txt",
+    "narration_sha256": "583fa87c41b87d0959afd99686f50e1e4e0067f1f6a4bf0fb64d4c422d012926",
+    "narration": "Synthetic Flite voice; captions reproduce spoken lines verbatim. No human voice or product response is implied."
+  },
+  "video": {
+    "codec": "h264",
+    "profile": "High",
+    "width": 1920,
+    "height": 1080,
+    "nominal_fps": "25/1",
+    "stream_duration_seconds": 99.96,
+    "frames": 2500,
+    "pixel_format": "yuv420p",
+    "progressive": true
+  },
+  "audio": {
+    "codec": "aac",
+    "profile": "LC",
+    "sample_rate_hz": 48000,
+    "channels": 1,
+    "stream_duration_seconds": 100.0,
+    "integrated_loudness_lufs": -18.1,
+    "loudness_range_lu": 5.2,
+    "av_duration_offset_seconds": 0.04,
+    "peak_dbfs": -2.0
+  },
+  "checks": {
+    "full_decode": "passed",
+    "stream_format": "passed",
+    "audio_video_sync": "passed; 0.04 seconds (one frame) audio/video stream-duration offset, container duration 100 seconds",
+    "loudness": "measured; -18.1 LUFS integrated, 5.2 LU range",
+    "freeze_scan": "no non-final hold over 4 seconds; final captured takeaway holds 4.00 seconds and authored ending hold 4.32 seconds (within final 5-second allowance)",
+    "960x540_screenshots": "21 exported; sampled opening, planned-role labels, correction, comparisons, consent, and ending reviewed"
+  },
+  "truth_boundary": {
+    "fictional_prepared_demo": true,
+    "model_connected": false,
+    "live_community": false,
+    "muse_spark": "planned role only; never presented as having run",
+    "all_peers": "prepared fictional examples",
+    "message_sent": false
+  },
+  "documented_source_mismatches": [
+    "Captured consent question is “Could I take time to decide before answering?”; the brief proposed the corrected reflection instead. v29 uses the recorded question.",
+    "Captured consent action is “Cancel · keep my draft”; “Maybe later selected” appears in the later captured private-takeaway state. v29 narrates the captured cancel and preserves the later private choice."
+  ],
+  "review": {
+    "cold_blind_review": "complete; video with captions, AAC inaccessible",
+    "decision": "maybe",
+    "confidence": "moderate",
+    "fixed_weighted_score": 76,
+    "film_persuasion_score": 84,
+    "target_score": 85,
+    "target_met": false,
+    "review_evidence_mode": "video_with_captions_audio_inaccessible",
+    "review_file": "demo-iterations/v29/review.json",
+    "cold_review_file": "demo-iterations/v29/cold-review.md",
+    "release_check_file": "demo-iterations/v29/release-check.md"
+  },
+  "rendering_checkout_commit": "be6daf1e0106284ca835113da302283d2c312d2d"
+}

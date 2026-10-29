@@ -1,0 +1,429 @@
+{
+  "iteration": "v29",
+  "durationSeconds": 100,
+  "source": "demo-iterations/v27/capture/video/v27-real-product-session.webm",
+  "sourceSha256": "121b23bfd9124b9c97a10ba70dedd80051b0d71c27cf9cf809b5be64a94d23ff",
+  "sourceRevision": "e7e8cbe3c6b94f41324f030b7bb21aaf96f25af0",
+  "shots": [
+    {
+      "name": "hook",
+      "type": "source",
+      "duration": 8.0,
+      "outStart": 0.0,
+      "sourceStart": 0.0,
+      "sourceEnd": 8.0,
+      "crop": null,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "reflection-wide",
+      "type": "source",
+      "duration": 2.0,
+      "outStart": 8.0,
+      "sourceStart": 12.006,
+      "sourceEnd": 14.006,
+      "crop": null,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "reflection-detail",
+      "type": "source",
+      "duration": 7.0,
+      "outStart": 10.0,
+      "sourceStart": 14.006,
+      "sourceEnd": 21.006,
+      "crop": [
+        100,
+        80,
+        1400,
+        790
+      ],
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "planned-role",
+      "type": "source",
+      "duration": 7.003,
+      "outStart": 17.0,
+      "sourceStart": 18.008,
+      "sourceEnd": 25.011,
+      "crop": [
+        80,
+        45,
+        1440,
+        810
+      ],
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "possible-reading",
+      "type": "source",
+      "duration": 4.0020000000000024,
+      "outStart": 24.003,
+      "sourceStart": 25.011,
+      "sourceEnd": 29.013,
+      "crop": [
+        100,
+        120,
+        1400,
+        760
+      ],
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "not-quite-control",
+      "type": "source",
+      "duration": 2.0,
+      "outStart": 28.005000000000003,
+      "sourceStart": 29.013,
+      "sourceEnd": 31.013,
+      "crop": [
+        200,
+        180,
+        1200,
+        675
+      ],
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "correction-entry",
+      "type": "source",
+      "duration": 5.001000000000001,
+      "outStart": 30.005000000000003,
+      "sourceStart": 31.013,
+      "sourceEnd": 36.014,
+      "crop": [
+        80,
+        90,
+        1440,
+        810
+      ],
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "before-after-card",
+      "type": "card",
+      "duration": 4.0,
+      "outStart": 35.006,
+      "sourceStart": null,
+      "sourceEnd": null,
+      "crop": null,
+      "asset": "demo-iterations/v29/capture/editorial-before-after.png"
+    },
+    {
+      "name": "corrected-reflection",
+      "type": "source",
+      "duration": 8.503,
+      "outStart": 39.006,
+      "sourceStart": 40.014,
+      "sourceEnd": 48.517,
+      "crop": [
+        0,
+        40,
+        1500,
+        844
+      ],
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "relevance-full",
+      "type": "source",
+      "duration": 2.5,
+      "outStart": 47.509,
+      "sourceStart": 54.5,
+      "sourceEnd": 57.0,
+      "crop": null,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "relevance-comparison-card",
+      "type": "card",
+      "duration": 4.0,
+      "outStart": 50.009,
+      "sourceStart": null,
+      "sourceEnd": null,
+      "crop": null,
+      "asset": "demo-iterations/v29/capture/editorial-relevance.png"
+    },
+    {
+      "name": "community-rationale",
+      "type": "source",
+      "duration": 2.5,
+      "outStart": 54.009,
+      "sourceStart": 61.0,
+      "sourceEnd": 63.5,
+      "crop": [
+        0,
+        45,
+        1500,
+        844
+      ],
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "peer-context",
+      "type": "source",
+      "duration": 2.0,
+      "outStart": 56.509,
+      "sourceStart": 77.537,
+      "sourceEnd": 79.537,
+      "crop": null,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "peer-example",
+      "type": "source",
+      "duration": 8.0,
+      "outStart": 58.509,
+      "sourceStart": 79.537,
+      "sourceEnd": 87.537,
+      "crop": [
+        80,
+        80,
+        1440,
+        810
+      ],
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "peer-difference",
+      "type": "source",
+      "duration": 5.5,
+      "outStart": 66.509,
+      "sourceStart": 87.537,
+      "sourceEnd": 93.037,
+      "crop": [
+        80,
+        0,
+        1440,
+        810
+      ],
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "consent-full",
+      "type": "source",
+      "duration": 3.5,
+      "outStart": 72.009,
+      "sourceStart": 109.5,
+      "sourceEnd": 113.0,
+      "crop": null,
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "consent-proof-card",
+      "type": "card",
+      "duration": 4.5,
+      "outStart": 75.509,
+      "sourceStart": null,
+      "sourceEnd": null,
+      "crop": null,
+      "asset": "demo-iterations/v29/capture/editorial-consent-proof.png"
+    },
+    {
+      "name": "maybe-later-action",
+      "type": "source",
+      "duration": 5.0,
+      "outStart": 80.009,
+      "sourceStart": 117.5,
+      "sourceEnd": 122.5,
+      "crop": [
+        100,
+        80,
+        1400,
+        788
+      ],
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "unsent-return",
+      "type": "source",
+      "duration": 5.0,
+      "outStart": 85.009,
+      "sourceStart": 122.5,
+      "sourceEnd": 127.5,
+      "crop": [
+        0,
+        45,
+        1500,
+        844
+      ],
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "private-takeaway",
+      "type": "source",
+      "duration": 3.799999999999983,
+      "outStart": 90.009,
+      "sourceStart": 129.562,
+      "sourceEnd": 133.362,
+      "crop": [
+        0,
+        0,
+        1600,
+        900
+      ],
+      "asset": "demo-iterations/v27/capture/video/v27-real-product-session.webm"
+    },
+    {
+      "name": "private-takeaway-hold",
+      "type": "still",
+      "duration": 1.2,
+      "outStart": 93.80899999999998,
+      "sourceStart": null,
+      "sourceEnd": null,
+      "crop": null,
+      "asset": "demo-iterations/v29/capture/private-takeaway-freeze.png"
+    },
+    {
+      "name": "authored-private-choice",
+      "type": "card",
+      "duration": 5.0,
+      "outStart": 95.00899999999999,
+      "sourceStart": null,
+      "sourceEnd": null,
+      "crop": null,
+      "asset": "demo-iterations/v29/capture/private-choice-ending.png"
+    }
+  ],
+  "narrationCount": 22,
+  "narration": [
+    {
+      "start": 0.2,
+      "end": 5.8,
+      "text": "I can’t tell my family what I want without feeling ungrateful.",
+      "caption": "I can’t tell my family what I want without feeling ungrateful."
+    },
+    {
+      "start": 8.15,
+      "end": 12.15,
+      "text": "Arjun puts the family pressure into his own words.",
+      "caption": "Arjun puts the family pressure into his own words."
+    },
+    {
+      "start": 12.25,
+      "end": 16.6,
+      "text": "No one else sees this reflection.",
+      "caption": "No one else sees this reflection."
+    },
+    {
+      "start": 17.1,
+      "end": 20.55,
+      "text": "Muse Spark's planned role is organizing themes.",
+      "caption": "Muse Spark's planned role is organizing themes."
+    },
+    {
+      "start": 20.6,
+      "end": 24.0,
+      "text": "Prepared example; no model is connected.",
+      "caption": "Prepared example; no model is connected."
+    },
+    {
+      "start": 24.15,
+      "end": 28.15,
+      "text": "A possible reading is offered for him to check.",
+      "caption": "A possible reading is offered for him to check."
+    },
+    {
+      "start": 28.2,
+      "end": 31.2,
+      "text": "He says, “Not quite.”",
+      "caption": "He says, “Not quite.”"
+    },
+    {
+      "start": 31.3,
+      "end": 36.1,
+      "text": "He needs time to decide for himself.",
+      "caption": "He needs time to decide for himself."
+    },
+    {
+      "start": 36.2,
+      "end": 43.8,
+      "text": "The reflection changes to hold his correction.",
+      "caption": "The reflection changes to hold his correction."
+    },
+    {
+      "start": 47.7,
+      "end": 52.0,
+      "text": "His corrected theme keeps family context in view.",
+      "caption": "His corrected theme keeps family context in view."
+    },
+    {
+      "start": 52.05,
+      "end": 56.2,
+      "text": "Broader legal results are set aside.",
+      "caption": "Broader legal results are set aside."
+    },
+    {
+      "start": 56.65,
+      "end": 60.0,
+      "text": "One prepared fictional perspective appears.",
+      "caption": "One prepared fictional perspective appears."
+    },
+    {
+      "start": 60.0,
+      "end": 64.0,
+      "text": "Ravi says a trusted friend helped him speak with family.",
+      "caption": "Ravi says a trusted friend helped him speak with family."
+    },
+    {
+      "start": 64.1,
+      "end": 68.2,
+      "text": "They share family pressure; their circumstances differ.",
+      "caption": "They share family pressure; their circumstances differ."
+    },
+    {
+      "start": 68.25,
+      "end": 71.8,
+      "text": "Arjun has not said he has someone he trusts.",
+      "caption": "Arjun has not said he has someone he trusts."
+    },
+    {
+      "start": 72.2,
+      "end": 76.0,
+      "text": "If he asks, it is for the group under an alias.",
+      "caption": "If he asks, it is for the group under an alias."
+    },
+    {
+      "start": 76.1,
+      "end": 79.0,
+      "text": "His private reflection is excluded.",
+      "caption": "His private reflection is excluded."
+    },
+    {
+      "start": 80.2,
+      "end": 83.9,
+      "text": "Consent remains unchecked.",
+      "caption": "Consent remains unchecked."
+    },
+    {
+      "start": 84.05,
+      "end": 86.8,
+      "text": "He cancels and keeps the draft.",
+      "caption": "He cancels and keeps the draft."
+    },
+    {
+      "start": 87.0,
+      "end": 89.5,
+      "text": "Nothing is sent.",
+      "caption": "Nothing is sent."
+    },
+    {
+      "start": 90.2,
+      "end": 94.4,
+      "text": "For now, his words stay private.",
+      "caption": "For now, his words stay private."
+    },
+    {
+      "start": 94.5,
+      "end": 99.0,
+      "text": "He can ask for time before deciding.",
+      "caption": "He can ask for time before deciding."
+    }
+  ],
+  "discrepancies": [
+    "The brief proposes the corrected reflection as the consent question. Recorded consent UI instead contains “Could I take time to decide before answering?” v29 preserves this actual captured question.",
+    "The brief says the on-screen consent action is “Maybe later”; the captured consent screen action is “Cancel · keep my draft.” “Maybe later selected” is visible in the later captured private takeaway. Narration identifies the recorded action as cancel, while the ending preserves the later private choice."
+  ],
+  "renderRevision": "be6daf1e0106284ca835113da302283d2c312d2d"
+}
