@@ -1,7 +1,7 @@
 {
   "version": "v09",
   "candidate": "demo-iterations/v09/demo.mp4",
-  "candidate_commit_sha": null,
+  "candidate_commit_sha": "3b2e22c",
   "candidate_sha256": "2247edaa686bb2250861d5b7c7908bf611992ef71d27094caa83f391d9447bd0",
   "based_on": {
     "v08_manifest_commit": "322292b693700aeaec1c8ef4966b5dbd0e25f673",
@@ -39,7 +39,7 @@
     "end_silence_seconds": 1.509
   },
   "changes": [
-    "The opening names Arjun's family pressure and shows What Arjun said → A possibility to check → Arjun can correct it, with the Interactive product preview, fictional/prepared and no-model labels, and planned Muse Spark role. Start privately is selected and the first actual typed interaction occurs by 10.944 seconds of the raw capture.",
+    "The opening names Arjun's family pressure and shows What Arjun said \u2192 A possibility to check \u2192 Arjun can correct it, with the Interactive product preview, fictional/prepared and no-model labels, and planned Muse Spark role. Start privately is selected and the first actual typed interaction occurs by 10.944 seconds of the raw capture.",
     "The film follows one prepared historical thread through Day 4, Day 9 and Day 16: distinct fictional perspectives, a host boundary, Dev's unanswered side question and a brief prepared moderator example. No report was sent.",
     "Arjun edits Ravi's question and the exact group-only preview changes. The alias and audience remain visible; private conversation is excluded; consent is unchecked and the next action remains disabled. He returns from the professional-support caveat, which states no provider is verified or bookable.",
     "Arjun keeps a takeaway privately, selects an optional local draft to Dev, and reviews a final composed state showing the chosen draft, private context excluded, consent unchecked, posting disabled and Nothing is sent without consent.",
