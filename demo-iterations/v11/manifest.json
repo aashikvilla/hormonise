@@ -21,7 +21,7 @@
     "actual_react_interactions": true,
     "capture_timeline": "demo-iterations/v11/capture/timeline.json",
     "smoke_recording": "demo-iterations/v11/capture/smoke/react-capture.webm",
-    "smoke_sha256": "918abfd6fa5bee35741fc55bddc7f7e0f359eb769ec2dc9ec6e66051ef117387"
+    "smoke_sha256": "c2dc9faaed0c10da6694f7d0e17bc08ff71dc3e3b9a33998b4dd63466917c0f6"
   },
   "media": {
     "container_duration_seconds": 178.013,
