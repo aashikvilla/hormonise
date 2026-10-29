@@ -1,0 +1,73 @@
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'demo-iterations/v28/demo.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.103
+  Duration: 00:01:33.36, start: 0.000000, bitrate: 600 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], 474 kb/s, 25 fps, 25 tbr, 12800 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 libx264
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 119 kb/s (default)
+      Metadata:
+        handler_name    : SoundHandler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> wrapped_avframe (native))
+  Stream #0:1 -> #0:1 (aac (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.103
+  Stream #0:0(und): Video: wrapped_avframe, yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 25 fps, 25 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 wrapped_avframe
+  Stream #0:1(und): Audio: pcm_s16le, 48000 Hz, mono, s16, 768 kb/s (default)
+      Metadata:
+        handler_name    : SoundHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 pcm_s16le
+[silencedetect @ 0x7f81900026c0] silence_start: 2.444667
+[silencedetect @ 0x7f81900026c0] silence_end: 3.64575 | silence_duration: 1.201083
+[silencedetect @ 0x7f81900026c0] silence_start: 10.466687
+[silencedetect @ 0x7f81900026c0] silence_end: 13.187479 | silence_duration: 2.720792
+frame=  379 fps=0.0 q=-0.0 size=N/A time=00:00:15.16 bitrate=N/A speed=30.2x
+[silencedetect @ 0x7f81900026c0] silence_start: 17.51925
+[silencedetect @ 0x7f81900026c0] silence_end: 20.04675 | silence_duration: 2.5275
+[silencedetect @ 0x7f81900026c0] silence_start: 23.479125
+[silencedetect @ 0x7f81900026c0] silence_end: 26.145146 | silence_duration: 2.666021
+[silencedetect @ 0x7f81900026c0] silence_start: 29.97025
+[silencedetect @ 0x7f81900026c0] silence_end: 31.146479 | silence_duration: 1.176229
+frame=  786 fps=784 q=-0.0 size=N/A time=00:00:31.44 bitrate=N/A speed=31.3x
+[silencedetect @ 0x7f81900026c0] silence_start: 34.542938
+[silencedetect @ 0x7f81900026c0] silence_end: 38.179479 | silence_duration: 3.636542
+[silencedetect @ 0x7f81900026c0] silence_start: 41.759917
+[silencedetect @ 0x7f81900026c0] silence_end: 43.649208 | silence_duration: 1.889292
+frame= 1179 fps=784 q=-0.0 size=N/A time=00:00:47.16 bitrate=N/A speed=31.4x
+[silencedetect @ 0x7f81900026c0] silence_start: 48.684354
+[silencedetect @ 0x7f81900026c0] silence_end: 50.646396 | silence_duration: 1.962042
+[silencedetect @ 0x7f81900026c0] silence_start: 55.831437
+[silencedetect @ 0x7f81900026c0] silence_end: 57.706521 | silence_duration: 1.875083
+[silencedetect @ 0x7f81900026c0] silence_start: 61.393333
+frame= 1548 fps=773 q=-0.0 size=N/A time=00:01:01.92 bitrate=N/A speed=30.9x
+[silencedetect @ 0x7f81900026c0] silence_end: 63.661375 | silence_duration: 2.268042
+[silencedetect @ 0x7f81900026c0] silence_start: 67.805312
+[silencedetect @ 0x7f81900026c0] silence_end: 70.671458 | silence_duration: 2.866146
+[silencedetect @ 0x7f81900026c0] silence_start: 74.380479
+[silencedetect @ 0x7f81900026c0] silence_end: 77.719479 | silence_duration: 3.339
+frame= 1956 fps=781 q=-0.0 size=N/A time=00:01:18.24 bitrate=N/A speed=31.2x
+[silencedetect @ 0x7f81900026c0] silence_start: 81.69975
+[silencedetect @ 0x7f81900026c0] silence_end: 84.672583 | silence_duration: 2.972833
+[silencedetect @ 0x7f81900026c0] silence_start: 88.361708
+[silencedetect @ 0x7f81900026c0] silence_end: 89.682396 | silence_duration: 1.320688
+[silencedetect @ 0x7f81900026c0] silence_start: 91.958104
+[silencedetect @ 0x7f81900026c0] silence_end: 93.350667 | silence_duration: 1.392562
+[out#0/null @ 0x55f17d592680] video:1003KiB audio:8746KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame= 2334 fps=787 q=-0.0 Lsize=N/A time=00:01:33.35 bitrate=N/A speed=31.5x

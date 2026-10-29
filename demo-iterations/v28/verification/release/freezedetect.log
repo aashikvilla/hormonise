@@ -1,0 +1,39 @@
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'demo-iterations/v28/demo.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.103
+  Duration: 00:01:33.36, start: 0.000000, bitrate: 600 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], 474 kb/s, 25 fps, 25 tbr, 12800 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 libx264
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 119 kb/s (default)
+      Metadata:
+        handler_name    : SoundHandler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> wrapped_avframe (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.103
+  Stream #0:0(und): Video: wrapped_avframe, yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 25 fps, 25 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 wrapped_avframe
+frame=  364 fps=0.0 q=-0.0 size=N/A time=00:00:14.56 bitrate=N/A speed=  29x
+frame=  667 fps=666 q=-0.0 size=N/A time=00:00:26.68 bitrate=N/A speed=26.6x
+frame=  965 fps=642 q=-0.0 size=N/A time=00:00:38.60 bitrate=N/A speed=25.7x
+frame= 1218 fps=608 q=-0.0 size=N/A time=00:00:48.72 bitrate=N/A speed=24.3x
+frame= 1492 fps=596 q=-0.0 size=N/A time=00:00:59.68 bitrate=N/A speed=23.8x
+frame= 1761 fps=586 q=-0.0 size=N/A time=00:01:10.44 bitrate=N/A speed=23.5x
+frame= 2058 fps=587 q=-0.0 size=N/A time=00:01:22.32 bitrate=N/A speed=23.5x
+[out#0/null @ 0x562ac1b4d6c0] video:1003KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame= 2334 fps=597 q=-0.0 Lsize=N/A time=00:01:33.36 bitrate=N/A speed=23.9x

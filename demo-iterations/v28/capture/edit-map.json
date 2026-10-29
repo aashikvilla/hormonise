@@ -1,0 +1,144 @@
+{
+  "source": "demo-iterations/v27/capture/video/v27-real-product-session.webm",
+  "segments": [
+    {
+      "name": "hook-and-promise",
+      "start": 0.0,
+      "end": 7.004,
+      "narration": [
+        [
+          "01",
+          0.0
+        ],
+        [
+          "02",
+          3.502
+        ]
+      ],
+      "duration": 7.004,
+      "outStart": 0.0
+    },
+    {
+      "name": "arjun-own-words",
+      "start": 12.006,
+      "end": 18.008,
+      "narration": [
+        [
+          "04",
+          12.006
+        ]
+      ],
+      "duration": 6.001999999999999,
+      "outStart": 7.004
+    },
+    {
+      "name": "planned-muse-role",
+      "start": 18.008,
+      "end": 25.011,
+      "narration": [
+        [
+          "05",
+          18.008
+        ]
+      ],
+      "duration": 7.003,
+      "outStart": 13.005999999999998
+    },
+    {
+      "name": "not-quite-correction",
+      "start": 25.011,
+      "end": 48.517,
+      "narration": [
+        [
+          "06",
+          25.011
+        ],
+        [
+          "07",
+          31.013
+        ],
+        [
+          "08",
+          36.014
+        ],
+        [
+          "09",
+          43.015
+        ]
+      ],
+      "duration": 23.506000000000004,
+      "outStart": 20.009
+    },
+    {
+      "name": "family-context-relevance",
+      "start": 60.524,
+      "end": 67.529,
+      "narration": [
+        [
+          "12",
+          60.524
+        ]
+      ],
+      "duration": 7.0049999999999955,
+      "outStart": 43.515
+    },
+    {
+      "name": "one-fictional-peer-perspective",
+      "start": 77.537,
+      "end": 97.554,
+      "narration": [
+        [
+          "15",
+          77.537
+        ],
+        [
+          "16",
+          84.542
+        ],
+        [
+          "17",
+          90.552
+        ]
+      ],
+      "duration": 20.016999999999996,
+      "outStart": 50.519999999999996
+    },
+    {
+      "name": "question-and-decline",
+      "start": 103.558,
+      "end": 122.561,
+      "narration": [
+        [
+          "19",
+          103.558
+        ],
+        [
+          "20",
+          110.559
+        ],
+        [
+          "21",
+          117.559
+        ]
+      ],
+      "duration": 19.003,
+      "outStart": 70.53699999999999
+    },
+    {
+      "name": "private-takeaway",
+      "start": 129.562,
+      "end": 133.362,
+      "narration": [
+        [
+          "28",
+          129.562
+        ]
+      ],
+      "duration": 3.799999999999983,
+      "outStart": 89.53999999999999
+    }
+  ],
+  "durationSeconds": 93.33999999999997,
+  "narrationSource": "Truthful selected v27 Flite narration clips; custom 3-word-equivalent closing line for the short final shot.",
+  "captions": 16
+}

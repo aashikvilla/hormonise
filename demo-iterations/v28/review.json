@@ -1,0 +1,59 @@
+{
+  "review_evidence_mode": "video_with_audio_track_inaccessible_reduced_audio_evidence",
+  "independent_of_previous_rounds": true,
+  "technical_evidence_type": "film_visible_prototype_evidence",
+  "audio_accessibility": {
+    "audio_track_present": true,
+    "codec": "AAC mono",
+    "could_hear_audio": false,
+    "limitation": "No audio transcription or spoken content inferred; judged visible captions and on-screen text only."
+  },
+  "scores": {
+    "impact": {
+      "problem_specificity": {"score": 8, "max": 10, "evidence": "0:00–0:08: family-pressure dilemma is specific and stated directly."},
+      "human_need_and_outcomes": {"score": 8.5, "max": 10, "evidence": "0:24–0:40: user corrects the interpretation; 1:12–1:33: modest private takeaway."},
+      "adoption_network_benefit": {"score": 6.5, "max": 10, "evidence": "0:40–1:12: community pathway is proposed through prepared material; no live network is shown."},
+      "subtotal": 23,
+      "max": 30
+    },
+    "meta_use": {
+      "correctly_named_model_roles": {"score": 5, "max": 7, "evidence": "About 0:28: Muse Spark is named as a planned theme organizer; human, peer and moderation roles appear as intentions."},
+      "necessity": {"score": 6, "max": 8, "evidence": "0:24–0:56: theme organization and correction have plausible value, but the film does not establish that AI is necessary."},
+      "visible_mechanism_or_structured_ui": {"score": 4.5, "max": 6, "evidence": "0:24–0:40: structured reflection and editable correction; 0:40–0:56: matching rationale is visible but prepared."},
+      "evidence_and_limitation_candor": {"score": 4, "max": 4, "evidence": "Persistent banner and repeated labels state fictional prepared demo, no model connected, no live community."},
+      "subtotal": 19.5,
+      "max": 25
+    },
+    "demo": {
+      "hook_story": {"score": 5.5, "max": 6, "evidence": "0:00–0:08: clear family-pressure conflict and private-first promise."},
+      "clarity_legibility": {"score": 4.5, "max": 6, "evidence": "0:08–1:33: flow is coherent, though dense UI text is small in overview."},
+      "pacing_accessibility": {"score": 3, "max": 5, "evidence": "Burned-in captions are readable; AAC audio could not be heard, limiting audio and pacing judgment."},
+      "emotional_payoff": {"score": 3.5, "max": 5, "evidence": "1:12–1:33: private takeaway is useful but restrained and presented in a prepared scenario."},
+      "polished_coherent_ui": {"score": 2.5, "max": 3, "evidence": "0:08–1:33: consistent interface and transitions, with dense screen capture and caption overlap."},
+      "subtotal": 19,
+      "max": 25
+    },
+    "technical_depth": {
+      "workflow": {"score": 5.5, "max": 6, "evidence": "0:08–1:33: private intake, correction, community exploration, share preview, and private outcome."},
+      "controls_permissions_privacy": {"score": 5, "max": 5, "evidence": "0:24–0:40: correction; 0:56–1:12: exact audience preview, exclusion of private conversation, unchecked consent and no-send path."},
+      "architecture_failure_handling": {"score": 4, "max": 5, "evidence": "0:40–0:56: rationale and differences/unknowns; 1:12–1:33: unresolved side thread and maybe-later outcome."},
+      "implementation_evidence": {"score": 3, "max": 4, "evidence": "0:24–0:40 and 0:56–1:33 show prototype correction, changed reflection, preview, and recoverable private choice."},
+      "subtotal": 17.5,
+      "max": 20
+    }
+  },
+  "total": 79,
+  "confidence": "medium",
+  "uncertainty": "Prepared scenario and inaccessible audio limit claims about real interactions, model behavior, community activity and audio-dependent craft.",
+  "film_persuasion_dimensions": {
+    "first_15_second_clarity": {"score": 22, "max": 25, "evidence": ["0:00–0:08 names family pressure and adults as the audience.", "0:00–0:08 promises private reflection, correction and optional sharing."]},
+    "human_journey_and_payoff": {"score": 22, "max": 25, "evidence": ["0:24–0:40 shows user correction and agency.", "1:12–1:33 lands on a modest takeaway while leaving the decision unresolved."]},
+    "differentiation_and_role_value": {"score": 20, "max": 25, "evidence": ["About 0:28 says Muse Spark is planned to organize themes and no model is connected.", "0:40–1:12 depicts proposed peer/community support and bounded sharing, with no live community connected."]},
+    "cinematic_and_narrative_craft": {"score": 17, "max": 25, "evidence": ["0:00–1:33 provides a coherent screen-recorded path with readable caption bars.", "0:00–1:33 offers little visual variety; AAC track could not be heard."]}
+  },
+  "film_persuasion_score": 81,
+  "persuasion_target": 85,
+  "persuasion_target_met": false,
+  "decision": "maybe",
+  "truthful_claims_assessment": "The film repeatedly labels the scenario and content prepared and states no model is connected and no live community is connected. Muse Spark is described as planned; no model execution is evidenced. Sampled community and reflection content should be treated as illustrative, not live activity."
+}

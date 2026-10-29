@@ -1,0 +1,116 @@
+{
+  "iteration": "v28",
+  "status": "candidate release checks passed; independent video-only cold review complete",
+  "parent_source_commit": "74a4414c0d690f45257ebf85192e470134fa3b97",
+  "source_code_changes": false,
+  "candidate": "demo-iterations/v28/demo.mp4",
+  "candidate_sha256": "bb68fe53355c95f9f66d5711e1a07a07c4feb5aad7a1b769830fe644bc370e42",
+  "duration_seconds": 93.36,
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": "25/1",
+    "duration_seconds": 93.36
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_seconds": 93.34,
+    "integrated_loudness_lufs": -18.0,
+    "true_peak_dbfs": -1.9,
+    "narration": "Synthetic Flite voice; selected truthful v27 lines plus a short original closing line."
+  },
+  "source_capture": {
+    "path": "demo-iterations/v27/capture/video/v27-real-product-session.webm",
+    "sha256": "121b23bfd9124b9c97a10ba70dedd80051b0d71c27cf9cf809b5be64a94d23ff",
+    "source_revision": "74a4414c0d690f45257ebf85192e470134fa3b97",
+    "interaction": "Actual Playwright interactions against the existing local interactive frontend; v28 picture is selected from this capture."
+  },
+  "edit": {
+    "script": "demo-iterations/v28/capture/render-v28.py",
+    "script_sha256": "a7afcb91337bbcc52572eebfeb6c82ee134b43a97ca57e7c5c023131d8eb18c6",
+    "edit_map": "demo-iterations/v28/capture/edit-map.json",
+    "captioned_component": "demo-iterations/v28/capture/captioned-picture.mp4",
+    "captioned_component_sha256": "87367ac238112b3ae05c6d6b51dde89d3f0b6a479cf3876af5e1f60fcf230419",
+    "captions": "demo-iterations/v28/capture/captions.srt",
+    "caption_count": 16,
+    "narration_text": "demo-iterations/v28/capture/narration.txt",
+    "narration_source": "demo-iterations/v28/capture/narration-source.md",
+    "change_rationale": "demo-iterations/v28/change-rationale.md"
+  },
+  "checks": {
+    "full_decode": "passed",
+    "960x540_readability": "sampled correction, audience/alias/question/consent/cancel frames reviewed",
+    "final_shot_seconds": 3.8,
+    "freeze_over_4_seconds": "none detected after mild continuous crop drift",
+    "audio": "-18.0 LUFS integrated, -1.9 dBFS true peak",
+    "truth": "fiction/prepared, no model connected, no live community throughout; Muse Spark named only as planned; nothing sent"
+  },
+  "review": {
+    "cold_blind_review": "demo-iterations/v28/cold-review.md",
+    "structured_review": "demo-iterations/v28/review.json",
+    "decision": "maybe",
+    "evidence_boundary": "Candidate MP4 only; AAC track present but inaccessible to reviewer; visible captions/on-screen text only; no source or repository inspected.",
+    "evidence_mode": "video_only_with_visible_captions_audio_inaccessible",
+    "confidence": "medium",
+    "fixed_weighted_score": 79,
+    "fixed_weighted_score_out_of_100": 79,
+    "film_persuasion_score": 81,
+    "film_persuasion_score_out_of_100": 81,
+    "film_persuasion_components": {
+      "first_15_second_clarity": 22,
+      "human_journey_and_payoff": 22,
+      "differentiation_and_role_value": 20,
+      "cinematic_and_narrative_craft": 17
+    },
+    "persuasion_confidence": "medium-low",
+    "persuasion_target": 85,
+    "persuasion_target_met": false,
+    "independent_of_previous_rounds": true
+  },
+  "release_evidence": {
+    "report": "demo-iterations/v28/verification/release/release_report.md",
+    "ffprobe": "demo-iterations/v28/verification/release/ffprobe.json",
+    "decode": "demo-iterations/v28/verification/release/decode.log",
+    "audio_levels": "demo-iterations/v28/verification/release/audio-levels.txt",
+    "silence_detection": "demo-iterations/v28/verification/release/silence-detection.txt",
+    "freeze_detection": "demo-iterations/v28/verification/release/freezedetect.log",
+    "frames": "demo-iterations/v28/verification/release/frames"
+  },
+  "release_check": {
+    "report": "demo-iterations/v28/release-check.md",
+    "reviewed_artifact": "/tmp/harmonise-v28-blind/candidate.mp4",
+    "runtime_seconds": 93.36,
+    "video": {
+      "codec": "H.264/AVC High",
+      "width": 1920,
+      "height": 1080,
+      "fps": 25,
+      "pixel_format": "yuv420p",
+      "progressive": true
+    },
+    "audio": {
+      "codec": "AAC-LC",
+      "sample_rate_hz": 48000,
+      "channels": 1,
+      "duration_seconds": 93.34,
+      "integrated_loudness_lufs": -18.0,
+      "true_peak_dbfs": -1.9,
+      "mean_dbfs": -19.3,
+      "max_dbfs": -2.0
+    },
+    "av_duration_offset_seconds": 0.02,
+    "full_decode": "passed without errors",
+    "caption_readability": "sampled burned-in captions readable at 960x540",
+    "truth_disclosures": "Persistent fictional/prepared, no-model-connected, no-live-community banner; sampled screens show unchecked consent and nothing sent.",
+    "freeze_scan": "12 unchanged holds of about 2.2\u20133.0 seconds; sampled holds appear consistent with deliberate reading pauses."
+  },
+  "lesson_for_v29": {
+    "clarity_score": 22,
+    "human_journey_score": 22,
+    "cinematic_narrative_craft_score": 17,
+    "summary": "Clarity and journey are now 22 each; craft remains 17. Retain the opening and the correction sequence, then improve cinematic visual variety without reducing content legibility or truth disclosures."
+  }
+}
