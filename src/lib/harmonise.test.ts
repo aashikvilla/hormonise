@@ -173,38 +173,25 @@ describe("Harmonise guided demo state and fictional fixtures", () => {
     expect(state.error).toMatch(/not accepting questions/i);
   });
 
-  it("requires consent and returns only the approved recipient, alias and question", () => {
+  it("keeps Ravi group-only and blocks direct question payloads", () => {
     let state = stateForEntry("arjun");
     expect(initialHarmoniseState.alias).toBe("QuietRiver");
     expect(state.questionText).toBe(fixtures.peerQuestionDemo.questionText);
     state = harmoniseReducer(state, { type: "OPEN_EXPERIENCE", experienceId: "experience.ravi" });
     state = harmoniseReducer(state, { type: "OPEN_QUESTION" });
-    state = harmoniseReducer(state, { type: "SET_QUESTION_TEXT", value: "How did you make room for your own choices?" });
-    state = harmoniseReducer(state, { type: "SEND_QUESTION" });
-    expect(state.screen).toBe("question");
-    state = harmoniseReducer(state, { type: "SET_QUESTION_CONSENT", value: true });
-    state = harmoniseReducer(state, { type: "SEND_QUESTION" });
-    expect(state.screen).toBe("reply");
-    expect(state.questionPayload).toEqual({
-      recipientId: "contributor.ravi",
-      alias: "QuietRiver",
-      questionText: "How did you make room for your own choices?",
-    });
-    expect(Object.keys(state.questionPayload ?? {}).sort()).toEqual(["alias", "questionText", "recipientId"]);
-    expect(JSON.stringify(state.questionPayload)).not.toMatch(/Hyderabad|married|Everything seems normal/);
+    expect(state.screen).toBe("experience");
+    expect(state.error).toMatch(/not accepting questions/i);
+    expect(state.questionPayload).toBeNull();
     expect(composePeerQuestionPayload({ recipientId: "contributor.ravi", alias: " river ", questionText: " question text " })).toEqual({ recipientId: "contributor.ravi", alias: "river", questionText: "question text" });
   });
 
-  it("preserves a question draft when the user cancels and goes back", () => {
+  it("does not open a direct message draft for a group-only contributor", () => {
     let state = stateForEntry("arjun");
     state = harmoniseReducer(state, { type: "OPEN_EXPERIENCE", experienceId: "experience.ravi" });
     state = harmoniseReducer(state, { type: "OPEN_QUESTION" });
-    state = harmoniseReducer(state, { type: "SET_QUESTION_TEXT", value: "My own revised question for Ravi." });
-    state = harmoniseReducer(state, { type: "BACK" });
     expect(state.screen).toBe("experience");
-    state = harmoniseReducer(state, { type: "OPEN_QUESTION" });
-    expect(state.questionText).toBe("My own revised question for Ravi.");
-    expect(state.questionConsent).toBe(false);
+    expect(state.questionPayload).toBeNull();
+    expect(state.error).toMatch(/not accepting questions/i);
   });
 
   it("removes Ravi from discovery and disables contact when sharing is revoked", () => {

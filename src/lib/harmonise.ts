@@ -12,7 +12,10 @@ export type Screen =
   | "reflection"
   | "journey"
   | "contribute"
-  | "help";
+  | "help"
+  | "connections"
+  | "professional"
+  | "moderation";
 
 export type EntryPath = "talk" | "unsure" | "quiet" | "support" | null;
 export type Chapter = "relationships" | "belonging";
@@ -88,7 +91,7 @@ export type DemoFixtures = {
     activityLabel: string;
     joiningIsOptional: boolean;
   }[];
-  discussions: { id: string; authorAlias: string; prompt: string; preview: string; reply: string | null; sourceId: string }[];
+  discussions: { id: string; authorAlias: string; prompt: string; preview: string; reply: string | null; sourceId: string; timeLabel?: string; replyAuthor?: string }[];
   topicOnlyBaseline: { id: string; name: string; explanation: string; sourceIds: string[] };
   peerQuestionDemo: {
     recipientId: string;
@@ -280,6 +283,10 @@ export type HarmoniseAction =
   | { type: "PUBLISH_CONTRIBUTOR" }
   | { type: "REVOKE_CONTRIBUTOR" }
   | { type: "OPEN_HELP" }
+  | { type: "OPEN_CONVERSATION" }
+  | { type: "OPEN_CONNECTIONS" }
+  | { type: "OPEN_PROFESSIONAL" }
+  | { type: "OPEN_MODERATION" }
   | { type: "REPORT_EXAMPLE" }
   | { type: "BACK" }
   | { type: "RESTART" };
@@ -527,6 +534,10 @@ export function harmoniseReducer(state: HarmoniseState, action: HarmoniseAction)
       : { ...state, error: "Review the public summary and approve it before publishing." };
     case "REVOKE_CONTRIBUTOR": return { ...state, contributorPublished: false, contributorDiscoverable: false, contributorAllowsQuestions: false, contributorApproved: false, error: "" };
     case "OPEN_HELP": return go(state, "help");
+    case "OPEN_CONVERSATION": return go(state, "conversation");
+    case "OPEN_CONNECTIONS": return go(state, "connections");
+    case "OPEN_PROFESSIONAL": return go(state, "professional");
+    case "OPEN_MODERATION": return go(state, "moderation");
     case "REPORT_EXAMPLE": return { ...state, reportShown: true };
     case "BACK": {
       const previous = state.history[state.history.length - 1];

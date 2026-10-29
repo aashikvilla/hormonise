@@ -1,6 +1,18 @@
-# Three-minute film capture checklist
+# Historical v3 film capture checklist
 
-**Status:** the Harmonise Deep Human Journey v3 film was browser-captured and verified on 2026-10-28. Runtime is **173.500 seconds (2:53.5)**, under the 180-second limit. It has a two-second opening card and a silent, live-interaction screen capture with burned-in narration captions.
+**Status:** This checklist records the earlier Harmonise v3 fixture-only film, not a v5 release. The v3 MP4 is **173.500 seconds (2:53.5)**, 1920×1080 H.264, and silent, with burned-in narration text and an SRT sidecar. It is not the final v5 film.
+
+## Current v5 handoff status
+
+The v5 UI work adds local frontend interactions for independent My Space, Communities, Connections, My Journey and Find Support surfaces; topic-separated conversation state; confirmable/correctable understanding; seeded group threads and stories; local group reply preview and consent; group-only connection states; optional contribution review; editable goal/reflection states; and example support and moderation screens. These have been checked with lint, typecheck, production build, 27 unit tests and 26 desktop/mobile Playwright checks.
+
+The deployed application remains a static GitHub Pages export using local fictional fixtures. No Meta key, server backend/API, authentication, database, live community or messaging, real moderation service, provider directory, or provider-verification process is configured. No model evaluation or Meta inference was run. Local consent/reply/moderation screens do not publish content, route a report to a real reviewer, or enforce server-side role boundaries.
+
+The v3 film remains historical: it is silent and does not show v5 independent spaces or reciprocal contribution, audible narration, actual Meta model evidence, or the technical proof required by the v5 brief. A final narrated v5 film has not been produced. Do not present v3 as a v5 product recording or evidence of Meta use.
+
+## Current v5 screenshot evidence
+
+The repository's [`evidence/v5/`](../evidence/v5/) inventory contains the current fixture-mode UI screenshots: `01-my-space.png`, `02-understanding-shift.png`, `03-relevance-comparison.png`, `04-community-thread.png`, `05-ravi-human-connection.png`, `06-reviewed-contribution.png`, `07-connections.png`, `08-moderation-review.png`, `09-provider-unavailable.png`, and `10-mobile-navigation.png`. These are frontend UI captures only. They are not Meta/API execution evidence or architecture diagrams and do not verify real communities, moderators, or providers.
 
 ## Capture and review
 
@@ -32,7 +44,7 @@ Times below are approximate film timestamps from the captured browser interactio
 
 ## Final artifacts
 
-- Video: [`demo/harmonise-deep-human-journey-v3.mp4`](../demo/harmonise-deep-human-journey-v3.mp4)
+- Video: [`demo-videos/harmonise-deep-human-journey-v3.mp4`](../demo-videos/harmonise-deep-human-journey-v3.mp4)
 - English caption sidecar: [`demo/harmonise-deep-human-journey-v3.en.srt`](../demo/harmonise-deep-human-journey-v3.en.srt)
 - Narration-ready script: [`demo/harmonise-deep-human-journey-v3.voiceover.md`](../demo/harmonise-deep-human-journey-v3.voiceover.md)
 - Encoding: MP4, H.264, 1920×1080, 24 fps, yuv420p; 3,001,654 bytes; no audio stream

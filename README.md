@@ -1,6 +1,12 @@
 # Harmonise
 
-An incremental upgrade of the existing Beyond Silence Next.js application. Harmonise helps a person explore what they want, read relevant community experiences, and decide what—if anything—they want to share. Communities and people provide the human value; interpretation and ranking in this build use local, deterministic fixtures.
+Harmonise is an incremental upgrade of the existing Beyond Silence Next.js 16 / React 19 application. Its current v5 work focuses on a nonlinear personal companion and reciprocal community experience: people can move between topic-scoped conversations, communities, connections, a user-directed journey, and support choices without being forced through a wizard. The repository implementation is a **frontend fixture build**; it does not make Meta AI calls or connect to live people or services.
+
+## What is implemented in the current frontend
+
+The browser experience includes independent My Space, Communities, Connections, My Journey, and Find Support navigation; separate family and work conversation contexts within the current session; immediate, deterministic local example replies; a tentative understanding the user can confirm or correct; fictional group discussions and lived-experience stories; community join/read/reply flows with an explicit local preview; group-only connection request states; a reviewed, optional contribution flow; editable journey reflections and goal states; and illustrative reporting/moderation and professional-support screens.
+
+These are local UI interactions, not server-backed operations. For example, a consented group reply is only recorded in the current browser session and is not published to other people; a moderation decision is only an example shown in this browser and does not change a real post or account. The screens identify fictional people and content.
 
 ## Run locally
 
@@ -11,32 +17,11 @@ npm ci
 npm run dev
 ```
 
-Open <http://localhost:3000>. Start with **Follow Arjun's illustrative story** for the guided walkthrough, or choose any of the four entry paths. `/demo` opens the in-app entry chooser; `?path=quiet`, `?path=support`, and `?help=safety` open specific paths.
-
-## Final demo video
-
-[Watch or download the v3 film](demo/harmonise-deep-human-journey-v3.mp4) · [English SRT sidecar](demo/harmonise-deep-human-journey-v3.en.srt) · [Narration-ready script](demo/harmonise-deep-human-journey-v3.voiceover.md). It runs 2:53.5 at 1920×1080 H.264. The MP4 is intentionally silent; narration text is burned in as captions, and the SRT is supplied separately for accessibility and recording.
-
-## Deploy to GitHub Pages
-
-For the one-time repository setup, open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**. After that, pushes to the `main` branch run the workflow in `.github/workflows/deploy-pages.yml`, which checks the app, builds its static export, and deploys it. The expected project site URL is <https://aashikvilla.github.io/hormonise/>.
-
-## Three-minute rehearsal
-
-This measured browser walkthrough is 2:53.5. Keep the fictional-participant disclosure visible and use the timed SRT when recording narration.
-
-1. **0:00–0:14 — Hesitate and revise.** Let the opening title card play. In the conversation composer, type `Everything is fine...`, pause, then revise to `I don't know... things at home feel weird lately.`
-2. **0:14–0:38 — Build context in conversation.** Send the opening, choose **With someone**, then send `Maybe my wife. We aren't always arguing. I can talk with her.` Let the fixture response ask what feels hard without requesting details.
-3. **0:38–1:02 — Try voice, review, and correct.** Choose **Use voice**, record briefly, then **Stop and review**. Since transcription is not connected in this build, type the words into the editable transcript and send them. When the tentative understanding appears, choose **Not quite** → **Edit in my words**, send `I don't want someone telling me to stay or leave.`, then choose **Yes, that’s closer** and **Hear experiences**.
-4. **1:02–1:26 — Reject a poor fit.** Show the contextual family-pressure result. Choose **Not for me · change these results** on the broad legal-topic result and note that the displayed discovery changes. This is a deterministic illustrative comparison, not a Meta result.
-5. **1:26–1:50 — Read contrasting stories.** Open the family community and read Nisha, Mira, then Ravi. Highlight what Ravi tried and reported helpful, what did not help, and that he had a trusted friend Arjun has not reported.
-6. **1:50–2:10 — Review and consent.** Choose **Ask Ravi**. Review Ravi, alias `QuietRiver`, and the exact question. Check consent and continue to the clearly labeled prepared fictional reply; no real person receives a message.
-7. **2:10–2:38 — Choose a takeaway.** Continue to reflection, select **A new perspective**, edit the note to `I want to hear myself think before I ask others for answers.`, choose an optional next step, and click **Keep privately** then **View my journey**.
-8. **2:38–2:53.5 — Start a new chapter separately.** Show the journey recap and choose **Start separately**. Return to **My journey** to show both chapters and that the previous relationship context did not carry forward.
-
-The capture has no recorded or synthetic narration. The narration-ready text is in the linked script; all voice, Meta, and fictional-content limits are stated there and in the closing captions.
+Open <http://localhost:3000>. Use `/demo` for the entry chooser or `/demo?path=talk` to open My Space. The UI is usable with fictional sample data and does not require credentials.
 
 ## Verification
+
+The current frontend changes were checked with:
 
 ```bash
 npm run lint
@@ -46,14 +31,50 @@ npm run build
 npm run test:e2e -- --workers=1
 ```
 
-Playwright covers desktop at 1920×1080 and mobile at 390×844 (plus a 320px overflow check). Browser screenshots are written to `/tmp/harmonise-*.png`. See [the migration map](docs/harmonise-migration-map.md) and [UX/accessibility review](docs/harmonise-quality-review.md) for implementation and review evidence.
+Results: lint, typecheck and production build passed; **27 unit tests** passed; **26 desktop/mobile Playwright checks** passed. The build is a static export in `out/`. The committed screenshot inventory is under [`evidence/v5/`](evidence/v5/); these captures document fixture-mode UI only.
 
-## Prototype boundaries
+## Current v5 UI screenshot inventory
 
-- People, communities, experiences, discussion posts and the contributor reply are fictional sample data. They are not testimonials or live users.
-- The guided conversation and contextual ordering are mock behavior. Arbitrary typed answers are not interpreted. The app makes no application API requests and has no Meta model integration configured; no live model call was made.
-- Question preview is allowlisted to `recipientId`, `alias` and `questionText`; consent is required before the UI shows a local fictional reply. Nothing is sent to a person.
-- State is in memory only and resets on refresh. There is no login, database, external messaging, real moderation, provider directory, booking, persistence or safety monitoring.
-- A pseudonym does not guarantee anonymity. Leaving the page does not erase browser history. This demo is not therapy, legal advice, emergency support or clinical care.
+The screenshots in [`evidence/v5/`](evidence/v5/) document the fixture-mode interface:
 
-The earlier Beyond Silence video files record a previous product direction; use this rehearsal sequence for the current Harmonise interface.
+- [01-my-space.png](evidence/v5/01-my-space.png)
+- [02-understanding-shift.png](evidence/v5/02-understanding-shift.png)
+- [03-relevance-comparison.png](evidence/v5/03-relevance-comparison.png)
+- [04-community-thread.png](evidence/v5/04-community-thread.png)
+- [05-ravi-human-connection.png](evidence/v5/05-ravi-human-connection.png)
+- [06-reviewed-contribution.png](evidence/v5/06-reviewed-contribution.png)
+- [07-connections.png](evidence/v5/07-connections.png)
+- [08-moderation-review.png](evidence/v5/08-moderation-review.png)
+- [09-provider-unavailable.png](evidence/v5/09-provider-unavailable.png)
+- [10-mobile-navigation.png](evidence/v5/10-mobile-navigation.png)
+
+These images show UI states backed by local examples. They do not demonstrate Meta inference, system architecture, real members, real moderation, or provider verification.
+
+## Deployment and runtime status
+
+The existing public site is [GitHub Pages](https://aashikvilla.github.io/hormonise/), deployed as a static export. GitHub Pages does not run the Next.js server routes needed for private Meta credentials, authenticated access, or server-side authorization. There is currently no configured Meta key, backend, authentication, database, persistent account state, live community, production messaging, staffed moderation service, or verified provider directory. The static deployment remains fixture-only; the latest v5 frontend changes are repository work and must not be described as live AI functionality.
+
+## Meta AI, privacy, and service limits
+
+- No Meta/Muse model call or speech-transcription request has been made. Chat replies are immediate local rules; there is no real model pending, failure, or retry state.
+- No model evaluation was run. There are no measured relevance, source-grounding, privacy-leak, moderation, latency, token-cost, or wellbeing metrics to report.
+- No raw audio is transcribed. The voice control is a browser recording/review demonstration with a manual text-entry fallback; text is not auto-sent.
+- Messages and sample state are held in the browser session and reset when the page is refreshed. There is no account or secure server-side memory.
+- Group membership, contributions, connection choices, reports, moderation decisions, and provider states are local examples. They are not sent to or visible to real people. The moderator and professional screens do not enforce production role permissions.
+- All people, communities, posts, experiences, staff roles and replies are fictional fixtures. No contributor response is a real testimonial. No provider is verified or available through this build.
+
+The v5 specification's live Meta integration, secure multi-user data boundaries, production community services, professional credential checks, actual human moderation, model evaluation and final narrated Meta-proof film remain incomplete. No API key is included in the repository or browser bundle.
+
+## Film and video archive
+
+The latest available video is the **historical v3 sample-mode recording**, created before the v5 product expansion. It is 173.5 seconds, silent, and has burned-in narration text plus an SRT sidecar. It does **not** show the v5 independent spaces and reciprocal contribution flow, actual audible narration, real Meta inference, or Meta technical proof. It is not the final v5 submission film.
+
+- [Historical v3 MP4](demo-videos/harmonise-deep-human-journey-v3.mp4)
+- [Historical v3 English SRT](demo/harmonise-deep-human-journey-v3.en.srt)
+- [Historical v3 narration-ready script](demo/harmonise-deep-human-journey-v3.voiceover.md)
+- [Earlier walkthrough v2](demo-videos/demo-walkthrough-v2.mp4)
+- [Earlier walkthrough](demo-videos/demo-walkthrough.mp4)
+- [Earlier final-film rehearsal](demo-videos/harmonise-final-film-rehearsal.mp4)
+- [Earlier three-minute demo](demo-videos/harmonise-three-minute-demo.mp4)
+
+All repository MP4 videos are collected under [`demo-videos/`](demo-videos/). See [the existing film capture checklist](docs/film-capture-checklist.md) for the v3 recording evidence and remaining film gaps.
