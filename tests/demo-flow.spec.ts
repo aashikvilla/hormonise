@@ -34,6 +34,21 @@ test("first use names the audience and private-to-peer promise before Start priv
   await expect(page.getByRole("button", { name: "Not quite" })).toBeVisible();
 });
 
+test("a correction changes an editable local reflection instead of claiming a model reply", async ({ page }) => {
+  await page.goto("/");
+  await page.getByRole("button", { name: "Start privately" }).click();
+  await sendChat(page, "Things at home feel uncertain. My family keeps asking what I want.");
+  await page.getByRole("button", { name: "Not quite" }).click();
+  await page.getByRole("button", { name: "Edit in my words" }).click();
+  await page.getByRole("textbox", { name: "Your message" }).fill("I can talk with my partner. It's my parents. I want time to decide what I want.");
+  await page.getByRole("button", { name: "Send" }).click();
+  const updated = page.getByRole("textbox", { name: "WHAT HE CONFIRMED · EDITABLE" });
+  await expect(updated).toHaveValue("You want time to decide what you want, without someone choosing stay or leave for you.");
+  await expect(page.getByText(/Prepared preview example · no model connected/i)).toBeVisible();
+  await updated.fill("I want to decide at my own pace.");
+  await expect(updated).toHaveValue("I want to decide at my own pace.");
+});
+
 test("scenario and example query params both open an editable unsent Arjun opener", async ({ page }) => {
   for (const query of ["scenario=arjun", "example=arjun"]) {
     await page.goto(`/demo?${query}`);
@@ -174,6 +189,36 @@ test("independent spaces support group-only contact, reviewed contribution and h
   await page.getByRole("button", { name: "Paused" }).click();
   await expect(page.getByRole("button", { name: "Paused" })).toHaveAttribute("aria-pressed", "true");
   expect(externalRequests).toEqual([]);
+});
+
+test("Ravi preview edits live, support has a return path, and Arjun can keep a takeaway privately", async ({ page }) => {
+  await reachCommunity(page);
+  await page.getByRole("button", { name: "Explore community" }).first().click();
+  await page.getByRole("tab", { name: "Experiences" }).click();
+  await page.getByRole("button", { name: "Read experience" }).first().click();
+  await page.getByRole("button", { name: "Ask Ravi in the group" }).click();
+  const question = page.getByRole("textbox", { name: "Your question" });
+  await question.fill("What helped you ask for time?");
+  await expect(page.getByRole("complementary").getByText("What helped you ask for time?", { exact: true })).toBeVisible();
+  await expect(page.getByRole("complementary").getByText(/Family Expectations group · Ravi may reply in group/)).toBeVisible();
+  await expect(page.getByRole("checkbox", { name: /I reviewed this exact alias/i })).not.toBeChecked();
+  await page.getByRole("navigation", { name: "Main navigation" }).getByRole("button", { name: "Find Support" }).click();
+  await page.getByRole("button", { name: "Explore professional support" }).click();
+  await expect(page.getByRole("heading", { name: "We don't have a verified provider for these preferences yet." })).toBeVisible();
+  await page.getByRole("button", { name: "Return to peer perspectives" }).click();
+  await expect(page.getByRole("heading", { name: "Family Expectations & Personal Choices", level: 1 })).toBeVisible();
+  await page.getByRole("tab", { name: "Discussions" }).click();
+  await page.getByRole("button", { name: /Day 16 Keeping the question open/ }).click();
+  await page.getByRole("button", { name: "Keep this takeaway privately" }).click();
+  await expect(page.getByRole("status").filter({ hasText: "Arjun chose this takeaway to keep privately" })).toBeVisible();
+  await page.getByRole("button", { name: "Offer one thing that helped" }).click();
+  await expect(page.getByRole("status").filter({ hasText: "Selected: Offer one thing that helped" })).toBeVisible();
+  const preview = page.locator(".dev-bounded-preview");
+  const draft = preview.getByRole("textbox", { name: "Edit the one part you may offer" });
+  await draft.fill("I asked for time to think before replying. I am still working out what I want.");
+  await expect(draft).toHaveValue("I asked for time to think before replying. I am still working out what I want.");
+  await expect(preview.getByRole("checkbox")).not.toBeChecked();
+  await expect(preview.getByRole("button", { name: "Post in this example group" })).toBeDisabled();
 });
 
 test("quiet reading opens a story without alias, question, joining or feedback", async ({ page }) => {

@@ -1,0 +1,63 @@
+{
+  "version": "v08",
+  "candidate": "demo-iterations/v08/demo.mp4",
+  "candidate_commit_sha": null,
+  "based_on": {
+    "v07_manifest_commit": "428a821e0c166f315e531eddc7f836b0963c3d1a",
+    "v07_candidate_commit": "7824972e6941e10deaca22d3dc5139f12703251b",
+    "v07_candidate": "demo-iterations/v07/demo.mp4",
+    "v07_candidate_sha256": "05c3f1047418255b9129e9c548437abbaf0b79ae27e7ea545fdbf5ebf5397545"
+  },
+  "candidate_sha256": "eee121a0784d0b4128d54663940ce053efd6f74ab3e7091b47fd49f7b02e1dd",
+  "captions": "demo-iterations/v08/captions.srt",
+  "captions_sha256": "252f6a298e5ab5227be49b8e9568db1ccbbad8bd8deb16534d448c748cea95ec",
+  "source_react_capture": {
+    "full_recording": "demo-iterations/v08/capture/react-capture-full.webm",
+    "full_sha256": "4fd26864b610fd1630b3139fc61a469ee7e60796365dcec429829176b4c4dca2",
+    "full_duration_seconds": 190.92,
+    "film_source_trimmed_from_same_capture": "demo-iterations/v08/capture/react-capture.webm",
+    "film_source_sha256": "2296a983039766b79e8b330d9afde0d343c7f8ff33f213cb5d234dadbd2eca52",
+    "film_source_duration_seconds": 178.0,
+    "resolution": "1600x900",
+    "frame_rate": 25,
+    "capture_timeline": "demo-iterations/v08/capture/timeline.json"
+  },
+  "media": {
+    "container_duration_seconds": 176.788,
+    "video_stream_duration_seconds": 176.766667,
+    "audio_stream_duration_seconds": 176.788,
+    "audio_video_delta_seconds": 0.021333,
+    "video_frames": 5303,
+    "resolution": "1920x1080",
+    "frame_rate": 30,
+    "video_codec": "H.264",
+    "audio_codec": "AAC mono 48 kHz",
+    "narration": "Offline synthetic Flite only; no connected model generated in-app content.",
+    "audio_mean_dbfs": -20.3,
+    "audio_peak_dbfs": -3.8
+  },
+  "changes": [
+    "The first-use hook names the audience, family pressure, private reflection and peer-experience option. Start privately is a real choice before Arjun's first message.",
+    "The recorded story shows Arjun's first words, an immediate prepared local reply, his explicit correction, and a visibly changed editable reflection beside the original. Copy states Prepared preview example · no model connected and Planned: help organize a reflection Arjun can correct.",
+    "The historical discussion moves through Day 4, Day 9 and Day 16 with distinct fictional perspectives, a host boundary and Dev's unanswered side question. Prepared triage is clearly local and no report is sent.",
+    "Arjun edits Ravi's exact group-only question and the preview updates. Alias and audience remain visible; private context is excluded, consent is unchecked and no message is sent. The professional-support screen states no provider is verified/bookable and returns to peer perspectives.",
+    "Arjun selects and keeps a personal takeaway privately, then selects Offer one thing that helped and edits the bounded local Dev draft. The audience, alias, excluded private context, unchecked consent and disabled post are visible at close; nothing is sent.",
+    "Only frontend fixtures and local browser state are used. There is no live Meta model/API, speech transcription, authentication, database, community activity, moderator action, provider availability, or human contact."
+  ],
+  "verification": {
+    "ffprobe": "passed: 176.788s container/audio; video stream 176.766667s; A/V delta 0.021333s; 1920x1080, 30fps, 5303 frames",
+    "full_decode": "passed: ffmpeg full decode exits 0",
+    "captions": "passed: 19 sequential non-overlapping cues; final cue ends 176.224s, leaving 0.564s to container end; captions are burned in and supplied as SRT",
+    "audio": "passed: mean -20.3 dBFS, peak -3.8 dBFS; last spoken line and caption end within 0.564s of the stream end",
+    "visual_frames": "Full 1920x1080 and 960x540 frames extracted at opening, correction, each thread day, Ravi preview, support return, selected takeaway and final local draft. The correction crop reserves a padded caption band and keeps the updated editable text and prepared/not-connected status unobscured.",
+    "capture_smoke": "passed: FAST_CAPTURE traversed all 13 React scenes, including correction, editable Ravi preview, support return, selected private takeaway and editable Dev draft; final checkbox stayed unchecked and post stayed disabled",
+    "application_tests": "passed: lint, typecheck, Vitest 27/27, Playwright E2E 32/32 across desktop and mobile, production build"
+  },
+  "limitations": [
+    "Arjun, Ravi, Dev, peers, host, historical posts, replies and moderator triage are fictional prepared examples, not live people or community activity.",
+    "The reflection is deterministic local preview logic and is not an AI-generated interpretation; proposed Muse Spark and voice roles are not connected.",
+    "No provider is verified or bookable; the professional-support route is a limitation and recovery example only.",
+    "The full browser recording is 190.920s; a frame-copy derivative from the same actual React capture is exactly 178.000s and is the footage used in the 176.788s candidate."
+  ],
+  "review": "Builder did not assign a score. Independent v2.1 judge and release verifier are separate."
+}

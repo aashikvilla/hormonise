@@ -147,6 +147,14 @@ textarea:focus, input:focus, select:focus { border-color: var(--teal); }
 .inline-understanding { display: grid; gap: 10px; margin: 12px 0 17px; padding: 19px; border: 1px solid #b9c9bf; border-left: 4px solid var(--teal); border-radius: 8px; background: #f3f6f1; }
 .inline-understanding h2 { margin: 5px 0 8px; font: 23px/1.25 var(--serif); }
 .inline-understanding p { margin: 5px 0; color: #39473e; }
+.causal-understanding { margin-top: 11px; padding: 15px; border: 1px solid #a9bdb0; border-radius: 8px; background: #fffefa; }
+.causal-comparison { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.2fr); align-items: center; gap: 14px; }
+.causal-comparison > div { min-width: 0; }
+.causal-comparison p, .causal-comparison textarea { margin: 7px 0 0; color: #293b31; font-size: 19px; line-height: 1.42; }
+.causal-comparison textarea { width: 100%; min-height: 90px; padding: 10px; border: 1px solid #82978a; border-radius: 6px; background: white; resize: vertical; }
+.comparison-arrow { color: var(--teal); font-size: 26px; font-weight: 700; }
+.preview-provenance { margin: 12px 0 0 !important; padding: 9px 11px; border-left: 3px solid #77718b; background: #f1eef5; font-size: 14px; line-height: 1.45; }
+.support-return { margin: 14px 0; border-left: 4px solid var(--teal); background: #edf3ee; }
 .visit-switcher { margin: 16px 0; padding: 15px 17px; border: 1px solid #bdcbc1; border-radius: 9px; background: #edf3ee; }
 .visit-switcher-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 10px; color: #41594b; font-size: 13px; }
 .visit-switcher-heading > div { display: grid; gap: 2px; }
@@ -471,6 +479,8 @@ textarea:focus, input:focus, select:focus { border-color: var(--teal); }
   .entry-first-actions { align-items: stretch; flex-direction: column; }
   .entry-first-actions > * { width: 100%; }
   .historical-day-tabs, .historical-posts { grid-template-columns: 1fr; }
+  .causal-comparison { grid-template-columns: 1fr; }
+  .comparison-arrow { transform: rotate(90deg); justify-self: center; }
 }
 @media (max-width: 700px) {
   .topic-cards { grid-template-columns: 1fr; }
