@@ -1,0 +1,69 @@
+{
+  "iteration": "v32",
+  "status": "release checks passed; independent blind review complete; Maybe; fixed target not met",
+  "candidate": "demo-iterations/v32/demo.mp4",
+  "candidateSha256": "ff146927bf2ab553352f5dabd9d24704bbd9dbb3157ef806a1000befed64fa3d",
+  "master": "demo-iterations/v29/demo.mp4",
+  "masterSha256": "0adebec5a5da9ef7d89d0ceee32064ad527a93ec425aabe34328c28b92f2077f",
+  "durationSeconds": 100,
+  "renderScript": "demo-iterations/v32/capture/render-v32.py",
+  "editMap": "demo-iterations/v32/capture/edit-map.json",
+  "sourceCapture": "demo-iterations/v27/capture/video/v27-real-product-session.webm",
+  "sourceSha256": "121b23bfd9124b9c97a10ba70dedd80051b0d71c27cf9cf809b5be64a94d23ff",
+  "replacements": [
+    {
+      "output": [24.003, 47.509],
+      "source": [25.011, 48.517],
+      "type": "continuous captured correction with moderate continuous reframe"
+    },
+    {
+      "output": [72.009, 80.009],
+      "source": [109.5, 117.5],
+      "type": "1s captured context plus 7s enlarged captured preview crop with editorial label"
+    }
+  ],
+  "narrationAndCaptions": "v29 wording retained; correction line timing adjusted to visible captured change; all 22 cue texts retained",
+  "checks": {
+    "fullDecode": "passed; full-file decode completed without errors",
+    "runtimeSeconds": 100,
+    "video": "H.264, 1920x1080, 25 fps, 2499 frames; video stream duration 99.96 seconds",
+    "audio": "AAC-LC mono at 48 kHz; 100.00 seconds",
+    "audioVideoDurationDeltaMs": 40,
+    "integratedLoudnessLufs": -18.2,
+    "truePeakDbtp": -2.0,
+    "releaseCheckFile": "demo-iterations/v32/release-check.md"
+  },
+  "comparisonToV29": {
+    "frameHashMethod": "decoded video frame hashes",
+    "matchingOutsideChangedWindows": true,
+    "changedWindowsSeconds": [[24.000, 47.480], [72.000, 80.000]],
+    "changedWindowsFramesInclusive": [[600, 1187], [1800, 2000]],
+    "changedFrameCount": 789,
+    "note": "All changed frames are within these two windows; fractional edit-map boundaries quantize to the nearest 25 fps frames."
+  },
+  "truthBoundary": {
+    "fictionalPreparedDemo": true,
+    "modelConnected": false,
+    "liveCommunity": false,
+    "museSpark": "planned theme suggestion role, not connected",
+    "messageSent": false
+  },
+  "review": {
+    "status": "one independent blind video-only judge; Maybe",
+    "decision": "maybe",
+    "judgeCount": 1,
+    "confidence": "medium; persuasion confidence medium-low",
+    "evidenceMode": "reduced-evidence video with accessible captions; audio inaccessible",
+    "audioLimitation": "AAC stream was present but could not be heard by the reviewer; narration and speech-to-caption sync were not assessed from audio.",
+    "fixedWeightedScore": 75,
+    "filmPersuasionScore": 74,
+    "filmPersuasionIsSeparate": true,
+    "targetScore": 85,
+    "targetMet": false,
+    "reviewFile": "demo-iterations/v32/review.json",
+    "coldReviewFile": "demo-iterations/v32/cold-review.md",
+    "releaseCheckFile": "demo-iterations/v32/release-check.md",
+    "comparisonNote": "v29 received a higher persuasion score (84) from a different single judge. With one judge per review, this score difference does not establish that any particular edit caused it."
+  },
+  "v33PrioritiesFile": "demo-iterations/v32/v33-priorities.md"
+}

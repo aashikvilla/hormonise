@@ -1,0 +1,72 @@
+{
+  "candidate": "candidate.mp4",
+  "review_evidence_mode": "reduced_evidence_video_with_accessible_captions_audio_inaccessible",
+  "audio_limitation": "AAC audio stream is present, but could not be heard in the review environment. No spoken narration is inferred or credited; pacing/access scoring uses visible captions and picture only.",
+  "technical_evidence_type": "film-visible prototype evidence",
+  "independent_of_previous_rounds": true,
+  "decision": "maybe",
+  "confidence": "medium; film-persuasion confidence medium-low due to inaccessible audio",
+  "scores": {
+    "impact": {
+      "specificity_and_depth_of_problem": {"score": 7, "max": 10, "evidence": "0:00–0:10 names family pressure and difficulty voicing personal wishes; 1:06–1:19 gives a bounded peer context."},
+      "human_need_and_believable_outcomes": {"score": 7, "max": 10, "evidence": "0:39–0:51 shows a correction; 1:37–1:40 closes on asking for time. All content is fictional/prepared."},
+      "practical_adoption_and_network_benefit": {"score": 7, "max": 10, "evidence": "1:06–1:39 illustrates community perspectives and sharing paths, but labels activity as not live."},
+      "subtotal": 21,
+      "max": 30
+    },
+    "meta_use": {
+      "correctly_named_model_roles": {"score": 4, "max": 7, "evidence": "Around 0:25–0:30 Muse Spark is described as a planned theme suggester; it is not connected."},
+      "necessity_over_generic_wrapper": {"score": 6, "max": 8, "evidence": "0:30–0:51 structures a tentative interpretation and user correction around preserving agency."},
+      "visible_mechanism_reasoning_or_structured_ui": {"score": 5, "max": 6, "evidence": "0:30–0:51 separates what was said, what might matter, and what the user wants; corrected text changes the editable reflection."},
+      "evidence_or_candid_limitation": {"score": 4, "max": 4, "evidence": "Persistent fictional prepared demo, no model connected, no live community labels."},
+      "subtotal": 19,
+      "max": 25
+    },
+    "demo": {
+      "hook_and_story": {"score": 5, "max": 6, "evidence": "0:00–0:10 emotional opening; 0:39–0:51 correction; 1:37–1:40 personal takeaway."},
+      "clarity_and_legibility": {"score": 4, "max": 6, "evidence": "Correction and consent are readable in zoomed views; full-page screens contain small copy."},
+      "pacing_and_accessible_audio_subtitles": {"score": 3, "max": 5, "evidence": "Captions appear throughout and follow visible events; AAC inaccessible, and page holds slow the middle."},
+      "emotional_payoff": {"score": 4, "max": 5, "evidence": "1:37–1:40 ends with a modest, agency-preserving choice rather than a forced resolution."},
+      "polished_coherent_ui": {"score": 2, "max": 3, "evidence": "Consistent interface and labels; static screen recording and dense pages limit visual polish."},
+      "subtotal": 18,
+      "max": 25
+    },
+    "technical_depth": {
+      "plausible_full_user_workflow": {"score": 5, "max": 6, "evidence": "0:12–0:51 private reflection and correction; 1:19–1:33 preview, cancel/unchecked state, return to community."},
+      "controls_permissions_privacy": {"score": 5, "max": 5, "evidence": "1:27 shows alias, audience, exact question, exclusions, unchecked confirmation, and cancel together."},
+      "architecture_and_failure_handling_as_evidenced": {"score": 3, "max": 5, "evidence": "Prepared roles and no-activity limits are candid; no failure recovery flow is shown."},
+      "implementation_evidence": {"score": 4, "max": 4, "evidence": "0:39–0:51 corrected input changes a visible prototype state; 1:27–1:33 consent stays unchecked and draft remains recoverable."},
+      "subtotal": 17,
+      "max": 20
+    }
+  },
+  "total": 75,
+  "weighted_total_arithmetic": "21 + 19 + 18 + 17 = 75/100",
+  "film_persuasion_dimensions": {
+    "first_15_second_clarity": {"score": 20, "max": 25, "evidence": ["0:00–0:10: family pressure is stated in one specific sentence.", "0:00–0:15: private reflection is promised, but Arjun and differentiation arrive later."]},
+    "human_journey_and_payoff": {"score": 21, "max": 25, "evidence": ["0:30–0:51: Arjun rejects a tentative reading and gets a changed reflection.", "1:37–1:40: takeaway is asking for time, with the decision retained by Arjun."]},
+    "differentiation_and_role_value": {"score": 18, "max": 25, "evidence": ["0:39–1:19: user correction and a bounded peer perspective distinguish the workflow.", "0:25–0:30: Muse Spark is a planned theme role; no live model call is evidenced."]},
+    "cinematic_and_narrative_craft": {"score": 15, "max": 25, "evidence": ["0:00–1:40: consistent action-matched visible captions and restrained interface presentation.", "0:51–1:19: static page transitions and dense small text slow the middle; audio inaccessible."]},
+    "total": 74,
+    "arithmetic": "20 + 21 + 18 + 15 = 74/100",
+    "confidence": "medium-low due to AAC audio being inaccessible"
+  },
+  "truth_ai_community_claims": {
+    "truth_labels_observed": ["FICTIONAL PREPARED DEMO", "NO MODEL CONNECTED", "NO LIVE COMMUNITY", "NO LIVE ACTIVITY", "prepared local example", "historical example / prepared content"],
+    "model_execution": "No live model execution is truthfully shown. Muse Spark is proposed as a theme suggestion role; interface responses are labeled prepared.",
+    "community_activity": "Displayed participant stories and threads are fictional/prepared or historical examples; no live activity or moderator is connected.",
+    "sharing": "A recorded preview shows what would be shared and explicitly says no message is sent; consent is unchecked and cancel keeps the draft."
+  },
+  "opening_clarity": "Specific problem appears immediately; intended audience is implied by family pressure, but the person and differentiated promise are delayed.",
+  "correction_causality_and_captions": "At 0:39 the user types a correction; by 0:45–0:51 the editable reflection incorporates it, with the prior and corrected statements shown together. Visible captions track the sequence. Speech-to-caption synchronization cannot be assessed because AAC cannot be heard.",
+  "consent_details_together": "At approximately 1:27 the alias, group audience, exact question, exclusions, no-direct-message statement, unchecked confirmation, and cancel path are visible together.",
+  "fix_tickets": [
+    {"timestamp": "0:00–0:15", "issue": "Product-first opening delays the person and stakes.", "replacement": "Identify Arjun and family pressure in one short opening line before navigation.", "expected_result": "Clearer problem, audience, and promise in first 15 seconds.", "verification": "First-time viewers can identify all three from the opening."},
+    {"timestamp": "0:25–0:51", "issue": "Proposed AI boundary competes with notices.", "replacement": "Overlay: planned theme suggestion; Arjun decides; prepared example/no model connected.", "expected_result": "Role value and truth status are understood together.", "verification": "Viewer accurately distinguishes proposed role from execution."},
+    {"timestamp": "0:30–0:51", "issue": "Correction and changed reflection are dense and brief.", "replacement": "Hold a two-state close view highlighting corrected phrase and updated reflection.", "expected_result": "Causal interaction is immediately legible.", "verification": "Viewers can state the correction and resulting change."},
+    {"timestamp": "1:19–1:30", "issue": "Consent content is readable together only in a zoomed view.", "replacement": "Use a steady crop of alias, audience, text, exclusions, unchecked consent, and cancel.", "expected_result": "Sharing scope remains readable at normal playback size.", "verification": "Viewers can recall audience, content, exclusions, and unsent state from one frame."},
+    {"timestamp": "0:51–1:19", "issue": "Multiple page transitions make the middle dense.", "replacement": "Combine the transition into one labeled prepared-peer-perspective card.", "expected_result": "Keeps the human arc prominent while retaining caveats.", "verification": "Viewers can explain why the perspective appears and what does not carry over."}
+  ],
+  "release_recommendation": "Maybe / conditional shortlist. Credible as a frontend prototype film, with explicit prepared-content labels and strong visible correction and consent controls. No live model or community claims are substantiated; this limits claims of deployment or social proof, not frontend-phase technical credit.",
+  "report_path": "/tmp/harmonise-v32-blind/cold-review.md"
+}

@@ -1,0 +1,28 @@
+{
+    "programs": [
+
+    ],
+    "stream_groups": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "avg_frame_rate": "25/1",
+            "duration": "99.960000",
+            "nb_frames": "2499"
+        },
+        {
+            "codec_name": "aac",
+            "avg_frame_rate": "0/0",
+            "duration": "100.000000",
+            "nb_frames": "4689"
+        }
+    ],
+    "format": {
+        "duration": "100.000000",
+        "size": "47300345"
+    }
+}
