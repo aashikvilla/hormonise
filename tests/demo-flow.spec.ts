@@ -22,7 +22,9 @@ async function reachCommunity(page: Page) {
 test("first use names the audience and private-to-peer promise before Start privately", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByText("Interactive product preview", { exact: true })).toBeVisible();
-  await expect(page.getByRole("heading", { name: /For adults under family or relationship pressure: think privately, then explore relevant lived experience on your terms/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "I can’t tell my family what I want without feeling ungrateful." })).toBeVisible();
+  await expect(page.getByText("FICTIONAL SCENARIO · ARJUN", { exact: true })).toBeVisible();
+  await expect(page.getByText(/For adults facing family pressure: think privately before exploring peer perspectives/i)).toBeVisible();
   await expect(page.getByText(/Fictional scenario · prepared examples · no model connected/i)).toBeVisible();
   await expect(page.getByRole("article").filter({ hasText: "What Arjun said" })).toBeVisible();
   await expect(page.getByRole("article").filter({ hasText: "A possibility to check" })).toBeVisible();
@@ -32,7 +34,7 @@ test("first use names the audience and private-to-peer promise before Start priv
   await expect(page.getByRole("textbox", { name: "Your message" })).toBeVisible();
   await expect(page.getByRole("button", { name: "Use voice" })).toBeVisible();
   await expect(page.getByRole("button", { name: "Explore quietly" })).toBeVisible();
-  await expect(page.getByText(/Replies appear immediately from local example rules/i)).toBeVisible();
+  await expect(page.locator(".chat-provenance")).toHaveText("Prepared local example · no model connected");
   await sendChat(page, "Things at home feel uncertain.");
   await expect(page.getByText("Things at home feel uncertain.", { exact: true })).toBeVisible();
   await expect(page.getByRole("button", { name: "Not quite" })).toBeVisible();
@@ -43,12 +45,13 @@ test("a correction changes an editable local reflection instead of claiming a mo
   await page.getByRole("button", { name: "Start privately" }).click();
   await sendChat(page, "Things at home feel uncertain. My family keeps asking what I want.");
   await page.getByRole("button", { name: "Not quite" }).click();
+  await expect(page.getByRole("status").filter({ hasText: "Not quite. Tell me what I missed in your own words." })).toBeVisible();
   await page.getByRole("button", { name: "Edit in my words" }).click();
   await page.getByRole("textbox", { name: "Your message" }).fill("I can talk with my partner. It's my parents. I want time to decide what I want.");
   await page.getByRole("button", { name: "Send" }).click();
   const updated = page.getByRole("textbox", { name: "WHAT HE CONFIRMED · EDITABLE" });
   await expect(updated).toHaveValue("You want time to decide what you want, without someone choosing stay or leave for you.");
-  await expect(page.getByText(/Prepared preview example · no model connected/i)).toBeVisible();
+  await expect(page.locator(".causal-understanding").getByText(/Prepared local example · no model connected/i)).toBeVisible();
   await updated.fill("I want to decide at my own pace.");
   await expect(updated).toHaveValue("I want to decide at my own pace.");
 });
@@ -59,7 +62,7 @@ test("scenario and example query params both open an editable unsent Arjun opene
     const composer = page.getByRole("textbox", { name: "Your message" });
     await expect(composer).toHaveValue("I don't know... things at home feel weird lately.");
     await expect(page.getByRole("heading", { name: "You can start anywhere." })).not.toBeFocused();
-    await expect(page.getByText(/Replies appear immediately from local example rules/i)).toBeVisible();
+    await expect(page.getByText(/Prepared local example · no model connected/i)).toBeVisible();
   }
 });
 
@@ -141,6 +144,7 @@ test("independent spaces support group-only contact, reviewed contribution and h
   await page.getByRole("button", { name: /Day 9 A conversation that stayed difficult/ }).click();
   await expect(page.getByText(/Historical example · fictional participants · prepared content/)).toBeVisible();
   await expect(page.getByText(/Thread host · fictional human community role/)).toBeVisible();
+  await expect(page.getByText(/I can listen; I can’t decide for you/i)).toBeVisible();
   await page.getByRole("button", { name: /Flag directive reply · prepared example/ }).click();
   await expect(page.getByText(/Fictional moderator holds the directive reply from view/i)).toBeVisible();
   await page.getByRole("button", { name: /Day 16 Keeping the question open/ }).click();
