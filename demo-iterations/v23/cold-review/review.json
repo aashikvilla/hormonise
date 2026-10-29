@@ -1,0 +1,81 @@
+{
+  "review_evidence_mode": "reduced_evidence_video_audio_inaccessible",
+  "independent_of_previous_rounds": true,
+  "technical_evidence_type": "film_visible_prototype_evidence",
+  "decision": "maybe",
+  "scores": {
+    "impact": {
+      "problem_specificity_and_depth": {"score": 8, "max": 10, "evidence": "0:00: Specific family-pressure dilemma; depth beyond this illustrative scenario is not established."},
+      "human_need_and_believable_outcomes": {"score": 7, "max": 10, "evidence": "0:24-0:39: correction and practical takeaway; 1:18: private next step. The content is fictional/prepared."},
+      "adoption_and_network_benefit": {"score": 4, "max": 10, "evidence": "0:42-1:06: peer stories and group option; 1:09-1:15: no live activity or verified provider."},
+      "subtotal": 19,
+      "max": 30
+    },
+    "meta_use": {
+      "named_model_roles": {"score": 4, "max": 7, "evidence": "0:00, 0:36: Muse Spark is named as a planned reflection aid; no live model role is evidenced."},
+      "necessity_vs_generic_wrapper": {"score": 3, "max": 8, "evidence": "0:24-0:39: correctable reflection fits the sensitive context, but the film does not show why a model is necessary."},
+      "visible_mechanism_reasoning_or_structured_ui": {"score": 4, "max": 6, "evidence": "0:24-0:39: thought-check fields and editable confirmed wording."},
+      "evidence_or_candid_limitation": {"score": 3, "max": 4, "evidence": "0:00-0:39: repeated prepared-example and no-model-connected labels."},
+      "subtotal": 14,
+      "max": 25
+    },
+    "demo": {
+      "hook_and_story": {"score": 5, "max": 6, "evidence": "0:00: personal dilemma opens and leads into private reflection."},
+      "clarity_and_legibility": {"score": 5, "max": 6, "evidence": "0:00-1:21: large text and distinct cards; dense pages begin around 0:42."},
+      "pacing_audio_and_subtitles": {"score": 3, "max": 5, "evidence": "Captions are readable and track actions throughout; audio inaccessible, rapid screen transitions limit pacing."},
+      "emotional_payoff": {"score": 3, "max": 5, "evidence": "1:18: restrained private takeaway, but no demonstrated human outcome."},
+      "polished_coherent_ui": {"score": 2, "max": 3, "evidence": "0:00-1:21: consistent visual system; long page captures and abrupt transitions reduce polish."},
+      "subtotal": 18,
+      "max": 25
+    },
+    "technical_depth": {
+      "plausible_user_workflow": {"score": 5, "max": 6, "evidence": "0:06-1:21: private reflection, correction, browsing, share preview, and private exit."},
+      "controls_permissions_and_privacy": {"score": 5, "max": 5, "evidence": "0:00, 0:54-1:06: private-by-default claim and exact audience/question preview; consent unchecked."},
+      "architecture_and_failure_handling": {"score": 3, "max": 5, "evidence": "1:09-1:15: unavailable listener, moderator, and provider boundaries are stated; no operating failure path shown."},
+      "implementation_evidence": {"score": 2, "max": 4, "evidence": "0:24-0:39, 0:54-1:06: plausible correction and share-preview states, presented with prepared content and cuts."},
+      "subtotal": 15,
+      "max": 20
+    }
+  },
+  "total": 66,
+  "fixed_weighted_total_max": 100,
+  "confidence": "medium-low",
+  "uncertainty": "UI evidence is clear, but prepared-example labels limit operational conclusions; audio was inaccessible. Meta-use and implementation evidence are most uncertain.",
+  "film_persuasion_score": 72,
+  "film_persuasion_dimensions": {
+    "first_15_second_clarity": {
+      "score": 21,
+      "max": 25,
+      "evidence": ["0:00: dilemma, adult audience, private reflection, and peer-exploration promise are explicit.", "0:00-0:06: three-card sequence differentiates a correctable reflection from advice."],
+      "confidence": "medium-high"
+    },
+    "human_journey_and_payoff": {
+      "score": 18,
+      "max": 25,
+      "evidence": ["0:24-0:39: Arjun rejects and edits the interpretation.", "1:18: he keeps a practical takeaway private; the journey remains fictional and hypothetical."],
+      "confidence": "medium"
+    },
+    "differentiation_and_role_value": {
+      "score": 16,
+      "max": 25,
+      "evidence": ["0:00, 0:36: Muse Spark is proposed as a reflection aid; no execution is shown.", "0:54-1:06: peer experiences and group sharing are separate options."],
+      "confidence": "medium-low"
+    },
+    "cinematic_and_narrative_craft": {
+      "score": 17,
+      "max": 25,
+      "evidence": ["0:00 and 1:18: opening dilemma and private takeaway frame a compact arc.", "0:42 onward: dense community and support pages interrupt pacing; captions are readable."],
+      "confidence": "medium-low"
+    }
+  },
+  "film_persuasion_arithmetic": "21 + 18 + 16 + 17 = 72/100",
+  "audio_limitation": "An audio stream is present, but playback was inaccessible to this judge. No narration, music, or sound-mixing claims are used as evidence. The pacing/audio/subtitles score is reduced; visible captions were assessed.",
+  "model_execution_claim": "None substantiated. Muse Spark is described as planned/not connected; prepared local examples are explicitly labeled.",
+  "fix_tickets": [
+    {"timestamp": "0:06-0:18", "issue": "Prepared reply appears without visible provenance.", "replacement": "Show one continuous sequence from user input and submit through a persistent prepared-rule or model-generated label to the result.", "expected_result": "Viewers distinguish a live interaction from prepared example content.", "later_film_verification": "Uncut cursor/submit/result sequence with provenance label visible."},
+    {"timestamp": "0:24-0:39", "issue": "Cuts obscure which control changes the reflection.", "replacement": "Show an uninterrupted click on Not quite, Arjun entering a correction, and revised wording appearing with the change visible.", "expected_result": "Credible evidence of user agency and a recoverable branch.", "later_film_verification": "One uninterrupted capture of old and new values around the user action."},
+    {"timestamp": "0:54-1:09", "issue": "Audience preview is shown, but consent is unchecked and no decision follows.", "replacement": "Show choices to keep the draft, edit, or share, a private cancel path, and confirmation only after consent.", "expected_result": "Viewers see scope remains under the person's control.", "later_film_verification": "Show exact audience/question, choice, and resulting state; claim a real send only if one occurs."},
+    {"timestamp": "0:42-0:54", "issue": "Prepared Ravi story may briefly read as live testimony.", "replacement": "Keep a fictional-example label on the story and add a short transition explaining what live community participation would add.", "expected_result": "Social proof remains persuasive without implying real participants.", "later_film_verification": "Label stays visible on story and reply screens; evidence live activity separately if claimed."},
+    {"timestamp": "1:09-1:21", "issue": "Unavailable support roles are named without an actionable next step.", "replacement": "Show a relevant verified external-help route, or a candid screen explaining the current offer and safe exit.", "expected_result": "Support boundaries lead to a useful choice rather than a dead end.", "later_film_verification": "Show destination and verification status, or the exit and privacy state."}
+  ]
+}
