@@ -1,0 +1,106 @@
+{
+  "candidate": "v22/demo.mp4",
+  "review_evidence_mode": "video_with_burned_in_captions_audio_inaccessible",
+  "technical_evidence_type": "film-visible prototype evidence",
+  "independent_of_previous_rounds": true,
+  "decision": "maybe",
+  "scores": {
+    "impact": {
+      "problem_specificity_depth": 7,
+      "human_need_outcomes": 7,
+      "adoption_network_benefit": 4,
+      "subtotal": 18,
+      "evidence": [
+        {"timestamp": "0:00", "note": "Concrete family-pressure dilemma and audience of adults facing family pressure."},
+        {"timestamp": "2:12", "note": "Private takeaway offers a modest, believable outcome."},
+        {"timestamp": "1:08-1:28", "note": "Peer example is explicitly fictional and prepared; no adoption or network activity is evidenced."}
+      ]
+    },
+    "meta_use": {
+      "correctly_named_model_roles": 5,
+      "necessity": 5,
+      "visible_mechanism_reasoning_structured_ui": 5,
+      "evidence_or_candid_limitation": 4,
+      "subtotal": 19,
+      "evidence": [
+        {"timestamp": "0:24-0:48", "note": "Editable proposed reflection and correction states are visible, but marked as prepared and unconnected."},
+        {"timestamp": "0:48-1:04", "note": "Muse Spark is described as a future theme organizer; no execution is shown."},
+        {"timestamp": "0:04-0:12", "note": "Film clearly discloses fictional examples and no connected model."}
+      ]
+    },
+    "demo": {
+      "hook_story": 5,
+      "clarity_legibility": 5,
+      "pacing_accessible_audio_subtitles": 3,
+      "emotional_payoff": 4,
+      "polished_coherent_ui": 3,
+      "subtotal": 20,
+      "evidence": [
+        {"timestamp": "0:00-0:20", "note": "Clear opening problem and private-reflection premise."},
+        {"timestamp": "2:12-2:48", "note": "Agency-centered private / maybe later choices."},
+        {"timestamp": "0:00-2:58", "note": "Burned-in captions are readable; static screens and long duration reduce pace; audio inaccessible."}
+      ]
+    },
+    "technical_depth": {
+      "plausible_user_workflow": 5,
+      "controls_permissions_privacy": 4,
+      "architecture_failure_handling": 3,
+      "implementation_evidence": 3,
+      "subtotal": 15,
+      "evidence": [
+        {"timestamp": "0:24-1:48", "note": "Plausible flow from private reflection to comparison and review of exact sharing scope."},
+        {"timestamp": "1:32-1:48", "note": "Alias, audience, question, unchecked consent, and nothing-sent disclosure are visible."},
+        {"timestamp": "1:40-2:00", "note": "No verified provider or appointment is clearly disclosed."},
+        {"timestamp": "2:12-2:48", "note": "A prototype choice to keep private or defer sharing is visible."}
+      ]
+    }
+  },
+  "total": 72,
+  "total_arithmetic": "18 + 19 + 20 + 15 = 72",
+  "film_persuasion_score": 69,
+  "film_persuasion_dimensions": {
+    "first_15_second_clarity": {
+      "score": 21,
+      "max": 25,
+      "evidence": [
+        {"timestamp": "0:00", "note": "Specific family-pressure problem is immediately stated."},
+        {"timestamp": "0:04-0:12", "note": "Audience, private-reflection promise, and preview limitations are visible."}
+      ]
+    },
+    "human_journey_and_payoff": {
+      "score": 18,
+      "max": 25,
+      "evidence": [
+        {"timestamp": "0:24-0:48", "note": "User correction is represented in the prototype."},
+        {"timestamp": "2:12-2:48", "note": "Arjun keeps the takeaway private and selects Maybe later."}
+      ]
+    },
+    "differentiation_and_role_value": {
+      "score": 17,
+      "max": 25,
+      "evidence": [
+        {"timestamp": "0:00", "note": "Private reflection before asking others distinguishes the concept."},
+        {"timestamp": "0:48-1:28", "note": "Proposed Muse Spark role and prepared peer example are labeled as not connected/not live."}
+      ]
+    },
+    "cinematic_and_narrative_craft": {
+      "score": 13,
+      "max": 25,
+      "evidence": [
+        {"timestamp": "0:00-2:58", "note": "Consistent visual system and burned-in readable captions; prolonged static UI lowers pace."},
+        {"timestamp": "1:32-2:00", "note": "Large consent and support-limit screens are especially legible."}
+      ]
+    }
+  },
+  "film_persuasion_arithmetic": "21 + 18 + 17 + 13 = 69",
+  "confidence": "Moderate for visual/product evidence; moderate-low overall because audio could not be assessed and nearly all scenarios are prepared fictional examples.",
+  "uncertainty": "The MP4 contains an audio stream, but listening was unavailable. Narration, speech intelligibility, sound mix, and caption-to-speech accuracy are not assessed. Visible claims and screen states were scored from the video only.",
+  "audio_limitation": "Audio inaccessible; reduced evidence applied to pacing/accessibility and cinematic craft.",
+  "fix_tickets": [
+    {"timestamp": "0:00-0:12", "issue": "Opening copy is dense.", "replacement": "Use a brief scenario line, the private-reflection promise, and one persistent fictional-preview/no-model-connected label.", "expected_result": "Preserve problem, audience, differentiation, and candor with an easier first read.", "verification": "Pause at 0:05 and confirm all three points remain legible."},
+    {"timestamp": "0:24-1:04", "issue": "Prepared correction may resemble live AI.", "replacement": "Label the correction as a prepared local example before it appears and identify Muse Spark only as a proposed role in the same frame.", "expected_result": "Separate interaction design from model execution.", "verification": "Confirm every response remains visibly disclosed as prepared and no shot implies a live generated response."},
+    {"timestamp": "1:08-1:28", "issue": "Peer comparison is static and risks reading as social proof.", "replacement": "Show briefly how the difference affects the next choice, retaining a persistent fictional/not-live label.", "expected_result": "Connect community context to the decision without implying live activity.", "verification": "Check that both consequence and fictional status appear in the cut."},
+    {"timestamp": "1:32-2:00", "issue": "Sharing scope and support limitations are separated.", "replacement": "Show what is shared, what remains private, consent state, and unverified provider status in a concise review sequence.", "expected_result": "Make the boundary and limits easy to understand together.", "verification": "Confirm audience, alias, question, consent, and provider status are legible in one or two clear steps."},
+    {"timestamp": "2:12-2:58", "issue": "Ending lingers on unresolved example threads without a firm landing.", "replacement": "End after Maybe later with the private choice, nothing-sent state, and one optional next step; trim or explicitly frame the unanswered thread as an open limitation.", "expected_result": "Close on agency without implying fulfilled peer support.", "verification": "Confirm the final shot shows a chosen outcome and no message sent."}
+  ]
+}

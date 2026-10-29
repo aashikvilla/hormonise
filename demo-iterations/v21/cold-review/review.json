@@ -1,0 +1,104 @@
+{
+  "review_evidence_mode": "reduced_evidence_video_picture_and_captions_audio_inaccessible",
+  "independent_of_previous_rounds": true,
+  "technical_evidence_type": "film-visible prototype evidence only",
+  "scores": {
+    "impact": {
+      "problem_specificity_and_depth": 8,
+      "human_need_and_believable_outcomes": 6,
+      "practical_adoption_and_network_benefit": 4,
+      "total": 18,
+      "max": 30,
+      "evidence": [
+        {"timestamp": "00:00-00:10", "observation": "Headline: ‘I can’t tell my family what I want without feeling ungrateful’; captions identify adults facing family pressure."},
+        {"timestamp": "02:10-02:57", "observation": "Prepared community and professional surfaces are shown, but the film says providers are unverified and no live peers/services are connected."},
+        {"timestamp": "02:40-02:57", "observation": "The ending states no contribution is made and there is no real user outcome."}
+      ]
+    },
+    "meta_use": {
+      "correctly_named_model_roles": 4,
+      "compelling_necessity": 5,
+      "visible_mechanism_reasoning_or_structured_ui": 4,
+      "evidence_or_candid_limitation": 4,
+      "total": 17,
+      "max": 25,
+      "evidence": [
+        {"timestamp": "00:15-00:35", "observation": "Structured interpretation with accept, reject, or edit options; screen states the prepared text is not model output."},
+        {"timestamp": "00:35-00:50", "observation": "Film says Muse Spark could organize themes for review, then labels the prepared preview as not connected."},
+        {"timestamp": "02:40-02:57", "observation": "Film states no model or live peer is connected."}
+      ]
+    },
+    "demo": {
+      "hook_and_story": 5,
+      "clarity_and_legibility": 4,
+      "pacing_and_accessible_audio_subtitles": 2,
+      "memorable_emotional_payoff": 3,
+      "polished_coherent_ui": 2,
+      "total": 16,
+      "max": 25,
+      "evidence": [
+        {"timestamp": "00:00-00:15", "observation": "Specific emotional hook and audience; visible captions explain the premise."},
+        {"timestamp": "01:05-01:40", "observation": "Consent and sharing UI is visible but dense and small in the composed frame."},
+        {"timestamp": "02:10-02:57", "observation": "Slow repeated close-ups and prepared interface states lead to a restrained, low-consequence ending."},
+        {"timestamp": "00:00-02:57", "observation": "Audio track was not accessible to this reviewer; no audio-dependent claims are credited."}
+      ]
+    },
+    "technical_depth": {
+      "plausible_full_user_workflow": 5,
+      "controls_permissions_and_privacy": 4,
+      "architecture_and_failure_handling_as_evidenced": 3,
+      "implementation_evidence": 3,
+      "total": 15,
+      "max": 20,
+      "evidence": [
+        {"timestamp": "00:15-00:35", "observation": "Visible correction/edit choices create a plausible prototype step."},
+        {"timestamp": "01:05-01:40", "observation": "Audience and sharing choice are previewed; consent is unchecked and continue is disabled."},
+        {"timestamp": "01:40-02:57", "observation": "Private choice and deferral remain available; film states services are disconnected and no outcome occurs."}
+      ]
+    }
+  },
+  "total": 66,
+  "total_max": 100,
+  "confidence": "medium-low",
+  "uncertainty": "Staged fictional character and prepared prototype states; all live connections are disclaimed; audio could not be accessed.",
+  "film_persuasion_score": 72,
+  "film_persuasion_dimensions": {
+    "first_15_second_clarity": {
+      "score": 22,
+      "max": 25,
+      "evidence": [
+        {"timestamp": "00:00-00:10", "observation": "Headline and captions establish the problem and target audience."},
+        {"timestamp": "00:10-00:15", "observation": "Correction and optional peers begin to differentiate the promise."}
+      ]
+    },
+    "human_journey_and_payoff": {
+      "score": 18,
+      "max": 25,
+      "evidence": [
+        {"timestamp": "00:15-00:35", "observation": "Arjun can reject or edit the prepared interpretation."},
+        {"timestamp": "01:40-02:10", "observation": "He keeps the takeaway private and chooses ‘Maybe later’; no external outcome follows."}
+      ]
+    },
+    "differentiation_and_role_value": {
+      "score": 15,
+      "max": 25,
+      "evidence": [
+        {"timestamp": "00:35-00:50", "observation": "Muse Spark is proposed to organize themes for review, but is not connected."},
+        {"timestamp": "00:35-01:40", "observation": "Prepared peer/account and optional sharing imply human/community roles, while no live participation is shown."}
+      ]
+    },
+    "cinematic_and_narrative_craft": {
+      "score": 17,
+      "max": 25,
+      "evidence": [
+        {"timestamp": "00:00-02:57", "observation": "Warm recurring table scene and visible captions sustain a calm visual identity."},
+        {"timestamp": "01:05-02:57", "observation": "Dense UI, held shots, and repeated disclosures slow the middle and ending."}
+      ]
+    },
+    "arithmetic": "22 + 18 + 15 + 17 = 72",
+    "confidence": "medium-low",
+    "audio_limitation": "Audio was inaccessible. Judgment uses picture and visible captions only; no narration, music, or spoken accessibility claims are made."
+  },
+  "decision": "maybe",
+  "release_recommendation": "Concept prototype only; retain candid disclosures and add a continuous truthful prototype action with a verifiable outcome in a later cut."
+}
