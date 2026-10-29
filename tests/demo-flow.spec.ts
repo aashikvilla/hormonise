@@ -19,15 +19,19 @@ async function reachCommunity(page: Page) {
   await page.getByRole("button", { name: "Hear experiences" }).click();
 }
 
-test("the first view is a real editable conversation with quiet browsing available", async ({ page }) => {
+test("first use names the audience and private-to-peer promise before Start privately", async ({ page }) => {
   await page.goto("/");
+  await expect(page.getByText("Interactive product preview", { exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /For adults under family or relationship pressure: think privately, then explore relevant lived experience on your terms/i })).toBeVisible();
+  await expect(page.getByText(/Fictional scenario · prepared examples · no connected AI or community/i)).toBeVisible();
+  await page.getByRole("button", { name: "Start privately" }).click();
   await expect(page.getByRole("textbox", { name: "Your message" })).toBeVisible();
   await expect(page.getByRole("button", { name: "Use voice" })).toBeVisible();
   await expect(page.getByRole("button", { name: "Explore quietly" })).toBeVisible();
   await expect(page.getByText(/Replies appear immediately from local example rules/i)).toBeVisible();
-  await sendChat(page, "A concern I want to phrase in my own words.");
-  await expect(page.getByText("A concern I want to phrase in my own words.")).toBeVisible();
-  await expect(page.getByText(/We can keep it broad/i)).toBeVisible();
+  await sendChat(page, "Things at home feel uncertain.");
+  await expect(page.getByText("Things at home feel uncertain.", { exact: true })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Not quite" })).toBeVisible();
 });
 
 test("scenario and example query params both open an editable unsent Arjun opener", async ({ page }) => {
@@ -70,11 +74,11 @@ test("microphone denial leaves the text composer usable", async ({ page }) => {
       value: { getUserMedia: async () => Promise.reject(new DOMException("Permission denied", "NotAllowedError")) },
     });
   });
-  await page.goto("/");
+  await page.goto("/demo?path=talk");
   await page.getByRole("button", { name: "Use voice" }).click();
   await expect(page.getByText(/Microphone access wasn’t granted/i)).toBeVisible();
   await sendChat(page, "I can still type what I want to say.");
-  await expect(page.getByText("I can still type what I want to say.")).toBeVisible();
+  await expect(page.getByText("I can still type what I want to say.", { exact: true })).toBeVisible();
 });
 
 test("recorded audio reaches an editable typed-transcript fallback before sending", async ({ page }) => {
@@ -90,14 +94,14 @@ test("recorded audio reaches an editable typed-transcript fallback before sendin
     }
     Object.defineProperty(window, "MediaRecorder", { configurable: true, value: MockRecorder });
   });
-  await page.goto("/");
+  await page.goto("/demo?path=talk");
   await page.getByRole("button", { name: "Use voice" }).click();
   await expect(page.getByText("Listening", { exact: true })).toBeVisible();
   await page.getByRole("button", { name: "Stop and review" }).click();
   await expect(page.getByText(/Voice transcription is not connected here/i)).toBeVisible();
   await page.getByRole("textbox", { name: "Your transcript" }).fill("I want to share these words after reviewing them.");
   await page.getByRole("button", { name: "Send this text" }).click();
-  await expect(page.getByText("I want to share these words after reviewing them.")).toBeVisible();
+  await expect(page.getByText("I want to share these words after reviewing them.", { exact: true })).toBeVisible();
 });
 
 test("independent spaces support group-only contact, reviewed contribution and human review", async ({ page }) => {
@@ -115,6 +119,20 @@ test("independent spaces support group-only contact, reviewed contribution and h
   await page.getByRole("tab", { name: "Discussions" }).click();
   await expect(page.getByRole("heading", { name: "Questions people might explore" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Does anyone know how to tell your parents what you want when they see it as disrespect?" })).toBeVisible();
+  await page.getByRole("button", { name: /Day 9 A conversation that stayed difficult/ }).click();
+  await expect(page.getByText(/Historical example · fictional participants · prepared content/)).toBeVisible();
+  await expect(page.getByText(/Thread host · fictional human community role/)).toBeVisible();
+  await page.getByRole("button", { name: /Flag directive reply · prepared example/ }).click();
+  await expect(page.getByText(/Fictional moderator holds the directive reply from view/i)).toBeVisible();
+  await page.getByRole("button", { name: /Day 16 Keeping the question open/ }).click();
+  await expect(page.getByText(/Side thread · no replies yet/)).toBeVisible();
+  await page.getByRole("button", { name: "Offer one thing that helped" }).click();
+  const devPreview = page.locator(".dev-bounded-preview");
+  await expect(devPreview.getByText("Alias: QuietRiver")).toBeVisible();
+  await expect(devPreview.getByRole("checkbox")).not.toBeChecked();
+  await expect(devPreview.getByRole("button", { name: "Post in this example group" })).toBeDisabled();
+  await expect(devPreview.getByText("Nothing is sent to a real group.")).toBeVisible();
+  await page.getByRole("button", { name: /Day 4 Naming the pressure/ }).click();
   await expect(page.locator(".discussion-card")).toHaveCount(11);
   await page.getByRole("tab", { name: "People" }).click();
   await expect(page.getByText("Ravi", { exact: true })).toBeVisible();
@@ -137,7 +155,7 @@ test("independent spaces support group-only contact, reviewed contribution and h
   await page.getByRole("button", { name: "Preview audience and text" }).click();
   await expect(page.getByText("Alias: QuietRiver · this group only")).toBeVisible();
   await expect(page.getByText(/Your private conversation is not included/i)).toBeVisible();
-  await page.getByRole("checkbox", { name: /I reviewed this exact text and group audience/i }).check();
+  await page.locator(".group-reply-composer").getByRole("checkbox", { name: /I reviewed this exact text and group audience/i }).check();
   await page.getByRole("button", { name: "Post in this example group" }).click();
   await expect(page.getByText(/Not published or visible to other people/i)).toBeVisible();
   await page.getByRole("button", { name: "Find Support" }).click();
@@ -260,15 +278,15 @@ test("My Journey keeps work and family conversation transcripts separate", async
   await page.getByRole("button", { name: /Work decisions/ }).click();
   await expect(page.getByRole("heading", { name: "You can start anywhere." })).toBeVisible();
   await sendChat(page, "My manager changed the project deadline.");
-  await expect(page.getByText("At home, family expectations are weighing on me.")).toHaveCount(0);
+  await expect(page.getByText("At home, family expectations are weighing on me.", { exact: true })).toHaveCount(0);
   await page.getByRole("navigation", { name: "Main navigation" }).getByRole("button", { name: "My Journey" }).click();
   await page.getByRole("button", { name: /Family and choices/ }).click();
-  await expect(page.getByText("At home, family expectations are weighing on me.")).toBeVisible();
+  await expect(page.getByText("At home, family expectations are weighing on me.", { exact: true })).toBeVisible();
   await expect(page.getByText("My manager changed the project deadline.")).toHaveCount(0);
 });
 
 test("navigation reaches safety information and supports keyboard use without horizontal overflow", async ({ page }, testInfo) => {
-  await page.goto("/");
+  await page.goto("/demo?path=talk");
   await page.keyboard.press("Tab");
   await expect(page.locator(":focus")).toBeVisible();
   await page.getByRole("navigation", { name: "Main navigation" }).getByRole("button", { name: "Find Support" }).click();

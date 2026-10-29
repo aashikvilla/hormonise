@@ -1,0 +1,54 @@
+[
+  {
+    "name": "01-first-use",
+    "seconds": 1.212
+  },
+  {
+    "name": "02-start-privately",
+    "seconds": 5.362
+  },
+  {
+    "name": "03-first-interaction-local-rule",
+    "seconds": 9.696
+  },
+  {
+    "name": "04-user-correction-draft",
+    "seconds": 24.03
+  },
+  {
+    "name": "05-correction-and-planned-roles",
+    "seconds": 35.163
+  },
+  {
+    "name": "06-day-4-thread",
+    "seconds": 52.016
+  },
+  {
+    "name": "07-day-9-thread",
+    "seconds": 69.203
+  },
+  {
+    "name": "08-prepared-moderator-triage",
+    "seconds": 85.498
+  },
+  {
+    "name": "09-day-16-open-question",
+    "seconds": 96.65
+  },
+  {
+    "name": "10-ravi-exact-audience-preview",
+    "seconds": 114.916
+  },
+  {
+    "name": "11-professional-support-caveat",
+    "seconds": 130.339
+  },
+  {
+    "name": "12-maybe-later-choice",
+    "seconds": 134.789
+  },
+  {
+    "name": "13-final-bounded-choice",
+    "seconds": 138.979
+  }
+]

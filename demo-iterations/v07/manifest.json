@@ -1,0 +1,54 @@
+{
+  "version": "v07",
+  "candidate": "demo-iterations/v07/demo.mp4",
+  "candidate_commit_sha": null,
+  "based_on": {
+    "v06_manifest_commit": "35c226b2cf7bff3573eb4da6efcb14b461612880",
+    "v06_candidate_commit": "a94206a937c6b38d5e4c808d5c0720fdec8af92e",
+    "v06_candidate": "demo-iterations/v06/demo.mp4",
+    "v06_candidate_sha256": "783d5e119254a54f49ec72de7ef47794d13bc8a87d04212878a48ecd27cad9dd"
+  },
+  "changes": [
+    "First-use home screen is the actual React page with the required Interactive product preview label, family/relationship-pressure audience and private-to-lived-experience promise. Start privately is selected before the first user message at 8.484s of the final cut; the entry text no longer clips.",
+    "The user types a concern, selects Not quite, edits in their own words, and sees only prepared local-rule text. Planned Muse Spark reflection and optional reviewed voice transcription are named beside the correction/voice UI and marked disconnected.",
+    "The Family Expectations discussion UI contains a navigable local fixture-backed Day 4 → Day 9 → Day 16 historical thread, with fictional member perspectives, a listening-first fictional host boundary, an unresolved no-replies-yet side thread, and a prepared human-triage view. No live post, report, moderator, or community action occurs.",
+    "The actual Ravi flow shows exact group-only audience, alias, question, no private-message option, unchecked consent, and no send. The actual support route states no professional provider is verified or bookable.",
+    "The final React screen offers Arjun a real Maybe later choice followed by Offer one thing that helped. It shows only the bounded Dev group reply, exact alias/audience/text, excluded private reflection, unchecked consent, disabled post and Nothing is sent to a real group.",
+    "No app backend, model, Meta, live community, human, moderator, or professional integration is used. All people/posts/replies are fictional prepared browser examples; synthetic offline Flite narration only."
+  ],
+  "source_react_capture": "demo-iterations/v07/capture/react-capture.webm",
+  "source_react_capture_sha256": "9670c3780b4e930c2ba50786b325855c8dcdc890c69a3c558e0559c875a94b78",
+  "source_react_capture_duration_seconds": 177.0,
+  "duration_seconds": 176.0,
+  "video_stream_duration_seconds": 176.0,
+  "audio_stream_duration_seconds": 176.0,
+  "video_frames": 5280,
+  "resolution": "1920x1080",
+  "frame_rate": 30,
+  "video_codec": "H.264",
+  "audio_codec": "AAC mono 48 kHz",
+  "narration": "Offline synthetic Flite only; no connected model generated app content.",
+  "captions": "Burned in and supplied as demo-iterations/v07/captions.srt (19 cues).",
+  "sha256": "05c3f1047418255b9123ebc548437abbaf0b79ae27e7ea545fdbf5ebf5397545",
+  "audio_measurement": {
+    "mean_dbfs": -20.4,
+    "peak_dbfs": -3.9
+  },
+  "verification": {
+    "ffprobe": "passed: container, video and audio each 176.000 seconds; video/audio delta 0.000 seconds; 1920x1080, 30fps, 5280 video frames, AAC mono 48 kHz",
+    "full_decode": "passed: full ffmpeg decode exits 0",
+    "audio": "passed: mean -20.4 dBFS, peak -3.9 dBFS",
+    "captions": "passed: 19 cues, sequential and non-overlapping, final cue ends at 154.072s, no doubled terminal punctuation; burned captions match synthetic narration",
+    "opening": "Reviewed at full size and 960x540: literal preview label, exact premise, fictional/prepared disclosure and both entry choices readable; Start privately selected at 4.150s and first message at 8.484s in final film.",
+    "thread": "Reviewed Day 4, Day 9, prepared triage, and Day 16 at full/960x540; member/host/moderator roles and unresolved post remain legible with captions in the reserved band.",
+    "consent_close": "Reviewed exact Ravi consent and final Dev preview at full/960x540; exact audience, alias, text, unchecked consent, disabled post, private context exclusion and nothing-sent status remain readable.",
+    "playwright_smoke": "passed: FAST_CAPTURE traversed all app interactions through Maybe later and the final offer preview.",
+    "application_tests": "passed after source changes: lint, typecheck, Vitest 27/27, Playwright E2E 28/28 desktop/mobile, production build."
+  },
+  "outstanding_gaps": [
+    "Professional support remains a caveat screen only; no provider is verified or bookable.",
+    "Historical posts, moderation state, host, peers and Dev reply are prepared fiction, not actual community activity or a real moderator action.",
+    "The planned AI roles are informational only; no model or voice transcription is connected."
+  ],
+  "review": "Builder did not assign a score; cold judge and release verifier are separate."
+}

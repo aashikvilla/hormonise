@@ -17,6 +17,7 @@ import {
 } from "@/lib/harmonise";
 import { hasFamilyContext, replyForUserMessage } from "@/lib/conversation";
 import { arjunVisits, type VisitTurn } from "@/lib/arjun-visits";
+import { historicalThread, type HistoricalDay } from "@/lib/historical-thread";
 
 const navItems = [
   { label: "My Space", screen: "conversation" as const },
@@ -70,7 +71,7 @@ function activeExperience(state: HarmoniseState) {
 
 function appHeading(state: HarmoniseState) {
   const headings: Record<HarmoniseState["screen"], string> = {
-    entry: "A place to begin, at your pace",
+    entry: "For adults under family or relationship pressure: think privately, then explore relevant lived experience on your terms.",
     conversation: "You can start anywhere.",
     understanding: "Have I understood what matters?",
     discovery: state.chapter === "belonging" ? "Find a way to feel more connected" : "Explore communities and experiences",
@@ -98,6 +99,10 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
   const [groupReplies, setGroupReplies] = useState<string[]>([]);
   const [groupReportOpen, setGroupReportOpen] = useState(false);
   const [groupReportSubmitted, setGroupReportSubmitted] = useState(false);
+  const [historicalDay, setHistoricalDay] = useState<HistoricalDay>("Day 4");
+  const [historicalTriageOpen, setHistoricalTriageOpen] = useState(false);
+  const [devContributionChoice, setDevContributionChoice] = useState<"offer" | "later" | null>(null);
+  const [devContributionConsent, setDevContributionConsent] = useState(false);
   const [moderationDecision, setModerationDecision] = useState("");
   const [goalStatus, setGoalStatus] = useState<"not-tried" | "tried" | "changed-plan" | "paused">("not-tried");
   const [connectionStatus, setConnectionStatus] = useState<"none" | "pending" | "accepted" | "declined" | "blocked">("none");
@@ -305,11 +310,12 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
           <div ref={chatEndRef}/>
         </div>
         {chatTurns.filter((turn) => turn.role === "you").length === 1 && <div className="inline-chat-choices" aria-label="Optional response"><span>Only if it helps:</span>{["Something with someone", "How I’ve felt", "Not sure"].map((choice) => <button key={choice} type="button" onClick={() => sendChat(choice)}>{choice}</button>)}</div>}
-        {chatTurns.filter((turn) => turn.role === "you").length >= 3 && <section className="inline-understanding" aria-labelledby="understanding-inline-title">
+        {chatTurns.filter((turn) => turn.role === "you").length >= 1 && <section className="inline-understanding" aria-labelledby="understanding-inline-title">
           <div><span className="context-eyebrow">A THOUGHT TO CHECK</span><h2 id="understanding-inline-title">Have I got this right?</h2><p><strong>What you said:</strong> “{chatTurns.filter((turn) => turn.role === "you").at(-1)?.text}”</p><p><strong>Might matter:</strong> {hasFamilyContext(chatTurns) ? "family expectations and making your own choices. This is only a possible reading." : "I don’t have enough context to name a theme yet."}</p><p><strong>What you want now:</strong> {understandingConfirmed ? `${hasFamilyContext(chatTurns) ? "Hear lived experiences without a verdict" : "Explore without personal context"} · confirmed by you` : "Not confirmed yet"}</p></div>
           <div className="inline-chat-choices"><button type="button" onClick={() => setUnderstandingConfirmed(true)}>Yes, that’s closer</button><button type="button" onClick={() => setUnderstandingConfirmed(false)}>Not quite</button><button type="button" onClick={() => setComposer("I don't want someone to tell me to stay or leave.")}>Edit in my words</button></div>
           {understandingConfirmed && <div className="inline-chat-choices"><button type="button" onClick={exploreExperiences}>Hear experiences</button><button type="button" onClick={() => setComposer("")}>Keep talking</button></div>}
         </section>}
+        <div className="planned-role-note"><strong>Planned, not connected:</strong> Muse Spark could help organize a correctable reflection. Optional Muse voice transcription could turn reviewed speech into text. This preview uses local prepared rules; no model or live person is connected.</div>
         {recordingState === "recording" && <div className="voice-review" role="status"><strong>Listening</strong><span>Recording stays in this browser and is not sent anywhere.</span><div className="inline-actions"><SecondaryButton onClick={stopRecording}>Stop and review</SecondaryButton><button className="text-button" onClick={cancelRecording}>Cancel recording</button></div></div>}
         {recordingState === "review" && <div className="voice-review"><strong>Review before sending</strong><p>Voice transcription is not connected here. Type or edit the words you want to send; no audio will be shared.</p><label className="field-label" htmlFor="voice-transcript">Your transcript</label><textarea id="voice-transcript" rows={3} value={transcriptDraft} onChange={(event) => setTranscriptDraft(event.target.value)} placeholder="Type what you said, or cancel and use the composer."/><div className="inline-actions"><PrimaryButton onClick={() => { sendChat(transcriptDraft); setRecordingState("idle"); setTranscriptDraft(""); }} disabled={!transcriptDraft.trim()}>Send this text</PrimaryButton><SecondaryButton onClick={cancelRecording}>Cancel</SecondaryButton></div></div>}
         {recordingError && <Notice>{recordingError}</Notice>}
@@ -414,6 +420,28 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
         </>}
         {state.communityTab === "discussions" && <>
           <span className="tag tag-human">ILLUSTRATIVE POSTS</span><h2>Questions people might explore</h2>
+          {community.id === "community.family-expectations" && (() => {
+            const selectedDay = historicalThread.days.find((day) => day.day === historicalDay)!;
+            return <section className="historical-thread" aria-labelledby="historical-thread-title">
+              <span className="tag tag-private">{historicalThread.label}</span>
+              <h2 id="historical-thread-title">One thread, over time</h2>
+              <p className="small-note">Arjun&apos;s correction is why this family-pressure thread is relevant. These are prepared historical posts, not live activity.</p>
+              <div className="historical-day-tabs" role="group" aria-label="Choose a day in the historical example">
+                {historicalThread.days.map((day) => <button type="button" key={day.day} className={historicalDay === day.day ? "historical-day selected" : "historical-day"} aria-pressed={historicalDay === day.day} onClick={() => { setHistoricalDay(day.day); setHistoricalTriageOpen(false); }}>{day.day}<span>{day.title}</span></button>)}
+              </div>
+              <div className="historical-posts" aria-live="polite">
+                {selectedDay.posts.map((post) => <article className="historical-post" key={`${historicalDay}-${post.role}`}><strong>{post.role}</strong><p>{post.text}</p></article>)}
+                {historicalDay === "Day 9" && <aside className="host-boundary"><strong>Thread host · fictional human community role</strong><p>Listen first and speak from your experience. No one here decides what Arjun should do.</p></aside>}
+                {historicalDay === "Day 16" && <aside className="unanswered-thread"><strong>Side thread · no replies yet</strong><p>There is no response shown to Dev&apos;s question. Silence can remain unresolved.</p></aside>}
+                {historicalDay === "Day 9" && <div className="triage-trigger"><button type="button" className="text-button" onClick={() => setHistoricalTriageOpen((open) => !open)}>Flag directive reply · prepared example</button>{historicalTriageOpen && <aside className="prepared-triage"><strong>Prepared example of human triage · no report was sent</strong><p>Fictional moderator holds the directive reply from view while it is reviewed. This preview does not contact or assign a real moderator.</p></aside>}</div>}
+              </div>
+              <Notice tone="human">Historical thread roles: peers share experience; the host sets a boundary; a moderator reviews reports. No live people or moderation are connected.</Notice>
+              {historicalDay === "Day 16" && <section className="dev-choice-panel"><span className="context-eyebrow">ARJUN&apos;S OPTIONAL NEXT STEP · FICTIONAL SAMPLE</span><p className="arjun-takeaway">“It helped me realize I want a conversation without someone deciding for me.”</p><div className="inline-actions"><SecondaryButton onClick={() => { setDevContributionChoice("offer"); setDevContributionConsent(false); }}>Offer one thing that helped</SecondaryButton><button type="button" className="text-button" onClick={() => { setDevContributionChoice("later"); setDevContributionConsent(false); }}>Maybe later</button></div>
+                {devContributionChoice === "later" && <p className="small-note">Maybe later selected. The private reflection stays private.</p>}
+                {devContributionChoice === "offer" && <div className="public-preview dev-bounded-preview"><strong>Prepared reply to Dev · fictional member · Family Expectations group only</strong><p>Alias: QuietRiver</p><p>Only this one part would be shared:</p><blockquote>I asked for time to think before replying. We argued, and I&apos;m still working out what I want.</blockquote><p className="small-note">Private conversation excluded. No other context is included.</p><label className="consent-row"><input type="checkbox" checked={devContributionConsent} onChange={(event) => setDevContributionConsent(event.target.checked)} /><span>I reviewed this exact text and group audience.</span></label><PrimaryButton disabled={!devContributionConsent}>Post in this example group</PrimaryButton><p className="small-note">Nothing is sent to a real group.</p></div>}
+              </section>}
+            </section>;
+          })()}
           {discussions.length ? discussions.map((discussion) => <article className="discussion-card" key={discussion.id}><p className="discussion-author">{discussion.authorAlias} · {discussion.timeLabel ?? "Earlier"} · {discussion.sourceId}</p><h3>{discussion.prompt}</h3><p>{discussion.preview}</p>{discussion.reply && <blockquote className="post-reply"><span>{discussion.replyAuthor || "Another perspective"} · illustrative reply</span>{discussion.reply}</blockquote>}</article>) : <p>No posts are included for this community yet. You can explore a different topic.</p>}
           {community.id === "community.family-expectations" && <article className="discussion-card dev-question"><p className="discussion-author">Dev · illustrative member · several weeks later</p><h3>Does anyone know how to tell your parents what you want when they see it as disrespect?</h3><p>This is a prepared historical example, not a live post.</p></article>}
           {groupReplies.map((reply, index) => <article className="discussion-card" key={`local-reply-${index}`}><p className="discussion-author">Your group alias · local example</p><p>{reply}</p><p className="small-note">Not published or visible to other people.</p></article>)}
@@ -564,12 +592,7 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
 
   function renderCurrentScreen() {
     switch (state.screen) {
-      case "entry": return <div className="entry-layout"><div><p className="lede">You can talk privately, read experiences, or support others. No account is needed.</p><Notice>Your private words aren&apos;t included in community posts or the prepared response.</Notice><div className="entry-grid">{([
-        ["talk", "Talk something through", "Start with a few words or sample answers."],
-        ["unsure", "I'm not sure where to start", "Choose a gentle prompt, or skip it."],
-        ["quiet", "Just read experiences", "Browse without a profile or personal context."],
-        ["support", "I'd like to support others", "Preview a contributor's choices and boundaries."],
-      ] as [Exclude<EntryPath, null>, string, string][]).map(([path, title, description]) => <button key={path} className="entry-choice" onClick={() => stateDispatch({ type: "START_PATH", path })}><span className="entry-icon" aria-hidden="true">{path === "quiet" ? "○" : path === "support" ? "↗" : path === "talk" ? "…" : "◇"}</span><strong>{title}</strong><span>{description}</span></button>)}</div><div className="entry-example"><span><strong>Follow one person&apos;s journey</strong><small>See how a changing understanding leads to a different kind of support.</small></span><PrimaryButton onClick={() => stateDispatch({ type: "START_ARJUN" })}>Explore Arjun&apos;s story</PrimaryButton></div></div><aside className="entry-aside"><div className="entry-aside-mark">h</div><p className="aside-quote">“I want to hear what others went through, without anyone deciding for me.”</p><p className="small-note">Illustrative participant · Arjun</p><Link className="text-button-link" href="/">Leave page <span>·</span> this does not erase browser history</Link></aside></div>;
+      case "entry": return <div className="entry-first-use"><span className="tag tag-private">Interactive product preview</span><p className="small-note">Fictional scenario · prepared examples · no connected AI or community</p><div className="entry-first-actions"><PrimaryButton onClick={() => stateDispatch({ type: "START_PATH", path: "talk" })}>Start privately</PrimaryButton><SecondaryButton onClick={() => stateDispatch({ type: "START_PATH", path: "quiet" })}>Browse example stories</SecondaryButton></div><p className="small-note">Your private words stay separate from anything you might choose to share.</p></div>;
       case "conversation": return renderConversation();
       case "understanding": return renderUnderstanding();
       case "discovery": return renderDiscovery();
@@ -592,7 +615,7 @@ export default function DemoExperience({ initialPath }: { initialPath?: Exclude<
     <header className="app-header"><div className="header-inner"><Brand/><div className="header-status">Illustrative scenario · fictional participants</div><div className="header-actions"><button className="text-button" onClick={restartJourney}>Restart</button><Link className="leave-link" href="/">Leave page</Link></div></div></header>
     {state.screen !== "entry" && <nav className="primary-nav" aria-label="Main navigation">{navItems.map((item) => <button key={item.screen} className={state.screen === item.screen || (item.screen === "discovery" && ["community", "experience", "question", "reply", "reflection"].includes(state.screen)) || (item.screen === "help" && ["professional", "moderation"].includes(state.screen)) ? "nav-item active" : "nav-item"} aria-current={state.screen === item.screen ? "page" : undefined} onClick={() => navigate(item.screen)}>{item.label}</button>)}</nav>}
     <section id="main-content" className="app-main" aria-labelledby="page-title">
-      <div className="page-topline"><div><span className="page-kicker">HARMONISE</span><h1 id="page-title" ref={headingRef} tabIndex={-1}>{appHeading(state)}</h1></div>{state.screen !== "entry" && state.screen !== "conversation" && <button className="text-button back-action" onClick={() => stateDispatch({ type: "BACK" })}>← Back</button>}</div>
+      <div className={`page-topline ${state.screen === "entry" ? "entry-topline" : ""}`}><div><span className="page-kicker">{state.screen === "entry" ? "HARMONISE · INTERACTIVE PRODUCT PREVIEW" : "HARMONISE"}</span><h1 id="page-title" className={state.screen === "entry" ? "entry-headline" : undefined} ref={headingRef} tabIndex={-1}>{appHeading(state)}</h1></div>{state.screen !== "entry" && state.screen !== "conversation" && <button className="text-button back-action" onClick={() => stateDispatch({ type: "BACK" })}>← Back</button>}</div>
       <div className="screen-content">{renderCurrentScreen()}</div>
       {state.error && state.screen !== "question" && state.screen !== "contribute" && <p className="error-message" role="alert">{state.error}</p>}
     </section>
