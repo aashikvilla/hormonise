@@ -4,7 +4,7 @@
   "parent_candidate_sha256": "8904c00ad231407e2c6045a559c0d6f64b79c61e84275e55036cc8d544d9b7e4",
   "candidate": "demo.mp4",
   "candidate_sha256": "3181b539a6b2a6a3a23372e19ca77e025e0a7c4f75f312fecba7ba88f9923dcf",
-  "candidate_commit_sha": null,
+  "candidate_commit_sha": "ad32310",
   "video": {
     "codec": "h264",
     "width": 1920,
