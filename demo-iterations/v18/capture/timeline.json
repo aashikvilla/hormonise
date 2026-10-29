@@ -1,0 +1,86 @@
+[
+  {
+    "name": "01-arjun-fictional-hook",
+    "seconds": 1.354
+  },
+  {
+    "name": "02-start-privately",
+    "seconds": 7.488
+  },
+  {
+    "name": "03-prepared-first-reply",
+    "seconds": 10.73
+  },
+  {
+    "name": "04-not-quite-selected",
+    "seconds": 18.854
+  },
+  {
+    "name": "05-arjun-rewrites",
+    "seconds": 23.028
+  },
+  {
+    "name": "06-changed-editable-reflection",
+    "seconds": 30.274
+  },
+  {
+    "name": "06a-selected-private-takeaway",
+    "seconds": 38.506
+  },
+  {
+    "name": "07-day-4-peer-perspective",
+    "seconds": 44.025
+  },
+  {
+    "name": "08-day-9-host-boundary",
+    "seconds": 53.147
+  },
+  {
+    "name": "09-prepared-no-report",
+    "seconds": 61.303
+  },
+  {
+    "name": "10-day-16-dev-unanswered",
+    "seconds": 65.438
+  },
+  {
+    "name": "11-ravi-before-edit",
+    "seconds": 73.857
+  },
+  {
+    "name": "12-ravi-changed-preview",
+    "seconds": 78.949
+  },
+  {
+    "name": "13-support-caveat",
+    "seconds": 99.349
+  },
+  {
+    "name": "14-selected-private-takeaway",
+    "seconds": 111.747
+  },
+  {
+    "name": "15-private-only-choice",
+    "seconds": 127.943
+  },
+  {
+    "name": "16-optional-offer-selected",
+    "seconds": 136.191
+  },
+  {
+    "name": "17-exact-unsent-dev-draft",
+    "seconds": 142.322
+  },
+  {
+    "name": "18-composed-agency-close",
+    "seconds": 154.499
+  },
+  {
+    "name": "19-close-choice-reveal",
+    "seconds": 163.481
+  },
+  {
+    "name": "20-close-return-choice",
+    "seconds": 168.621
+  }
+]

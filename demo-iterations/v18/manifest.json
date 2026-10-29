@@ -1,0 +1,43 @@
+{
+  "iteration": "v18",
+  "parent_iteration": "v13 narrative and visual baseline",
+  "preserved_iterations": "v01-v17",
+  "candidate": "demo.mp4",
+  "candidate_sha256": "d7bdde25bd93136eb98da9674839ed2789dbb31c152c9ef12b34711fd8ac2e51",
+  "captions": "captions.srt",
+  "captions_sha256": "88568b4f0d6760556d2fc7736a603622accc2a34d063ce94c425b2ea35b2de6b",
+  "narration": "narration.txt",
+  "capture_script": "capture/capture-film.mjs",
+  "render_script": "capture/render-film.py",
+  "capture_source": "capture/react-capture.webm",
+  "capture_type": "Fresh Playwright recording of actual local React UI interactions; no synthetic interface screens",
+  "capture_viewport": "1600x900",
+  "source_revision": "d9623725eeba3448911a0e4637f0316e8a76f974",
+  "commit_sha": null,
+  "media": {
+    "video_codec": "H.264",
+    "audio_codec": "AAC",
+    "width": 1920,
+    "height": 1080,
+    "video_duration_seconds": 176.066667,
+    "audio_duration_seconds": 176.064,
+    "stream_delta_seconds": 0.002667,
+    "srt_cues": 41,
+    "srt_overlaps": 0,
+    "last_caption_end_seconds": 174.98,
+    "speech_tail_seconds": 1.53,
+    "measured_silent_tail_seconds": 1.69,
+    "full_decode": "passed",
+    "audio_peak": "-3.3 dBFS"
+  },
+  "verification_frames": "verification/",
+  "application_checks": {
+    "lint": "passed",
+    "typecheck": "passed",
+    "unit": "passed, 27/27",
+    "e2e": "passed, 34/34; isolated on port 3033 (desktop and mobile)",
+    "production_build": "passed",
+    "capture_smoke": "passed, 21 scene markers"
+  },
+  "integrations": "Frontend-only local preview. No model, Meta API, live community, moderation, provider directory, or message sending is connected. Flite voice is synthetic."
+}
