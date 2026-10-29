@@ -1,0 +1,67 @@
+1
+00:00:00,000 --> 00:00:04,500
+Arjun feels ungrateful asking for room to think.
+
+2
+00:00:04,500 --> 00:00:11,800
+He can talk, browse, or leave the question unanswered.
+
+3
+00:00:12,000 --> 00:00:27,000
+He chooses to talk and offers one short line.
+This reply is a prepared local example; no model is connected.
+
+4
+00:00:28,000 --> 00:00:42,000
+A possible reading appears. Arjun says “Not quite”
+and edits the words himself.
+
+5
+00:00:42,000 --> 00:00:50,000
+His correction is visible in the conversation.
+
+6
+00:00:50,000 --> 00:01:09,000
+He confirms that account, then chooses to look at family experiences.
+The next step follows his choice, not an automatic model revision.
+
+7
+00:01:12,000 --> 00:01:23,000
+Ravi's fictional account overlaps in one place
+and differs in others. Group replies only; no private message option.
+
+8
+00:01:24,000 --> 00:01:37,000
+Arjun reviews the exact audience, alias, and question.
+The checkbox is still clear; nothing is sent.
+
+9
+00:01:37,000 --> 00:01:44,000
+A prepared illustrative sample,
+not a live message.
+
+10
+00:01:44,000 --> 00:02:01,000
+Dev's fictional question leaves room for a bounded story.
+Arjun can share what he tried, including what went badly.
+
+11
+00:02:01,000 --> 00:02:18,000
+He keeps private notes separate, previews the exact group text,
+and chooses whether to post this local example.
+
+12
+00:02:14,000 --> 00:02:24,000
+Professional support is separate.
+No provider is verified or bookable here.
+
+13
+00:02:24,000 --> 00:02:45,000
+Planned Meta Muse Spark — dialogue and structured, correctable context.
+Planned Muse Voice Transcribe — optional speech-to-text, reviewed before sending.
+Neither is connected in this preview.
+
+14
+00:02:46,000 --> 00:02:57,800
+He still has questions. One day, if he chooses, he can offer
+someone else one honest part of what he tried—and keep the rest private.

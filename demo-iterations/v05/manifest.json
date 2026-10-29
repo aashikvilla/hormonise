@@ -1,0 +1,45 @@
+{
+  "version": "v05",
+  "candidate": "demo-iterations/v05/demo.mp4",
+  "candidate_commit_sha": null,
+  "based_on": {
+    "v04_manifest_commit": "5cb98b2d17d38ee6fa7914e2c6fb4ac666d4a9ba",
+    "v04_film_commit": "7fdab42fcc4a3be805fea142e7c821583d0dfe21",
+    "v04_candidate": "demo-iterations/v04/demo.mp4",
+    "v04_candidate_sha256": "4cb08bbb531dc4b4870421a94d1267cecb89db25f601252335d9036bb044f5d7"
+  },
+  "changes": [
+    "Recaptured the actual first-use React screen and real Talk choice, with the fictional-preview disclosure visible. The intro loading frame was trimmed; no preloaded conversation is shown before the first action.",
+    "Recorded the actual provisional interpretation, Not quite/Edit in my words controls, typed correction, user confirmation, and user-selected family-experience branch. Narration calls the response prepared and local; no model is connected.",
+    "Recorded Ravi's actual group-only route, exact audience, alias, question, unchecked consent, and prepared illustrative reply; nothing is sent and no private message is offered.",
+    "Recorded the actual bounded local contribution preview and post controls, then the actual professional-support caveat that no provider directory or credential checks are connected and no provider is verified/bookable.",
+    "An editorial planned-architecture status card uses a captured frame and is explicitly labeled as editorial, not an app interaction. The film returns to actual React footage for Arjun's agency close.",
+    "No application source files changed. All people and content remain fictional, sample, and local. No live Meta/API/auth/database/community/professional integrations are used."
+  ],
+  "source_react_capture": "demo-iterations/v05/capture/react-capture.webm",
+  "source_react_capture_sha256": "f79a5a276e81196ad830d0b33d527bf5d33476fed69d63d95181f7180268b4ce",
+  "duration_seconds": 178.0,
+  "resolution": "1920x1080",
+  "frame_rate": 30,
+  "video_codec": "H.264",
+  "audio_codec": "AAC mono 48 kHz",
+  "narration": "Synthetic offline Flite narration only.",
+  "captions": "Burned in and supplied as demo-iterations/v05/captions.srt.",
+  "sha256": "db51fecddd7ff244ca542ee055d16b59f93fbe28310585ea8cb5e65730a2729d",
+  "audio_measurement": {
+    "mean_db": -20.7,
+    "peak_db": -2.9
+  },
+  "verification": {
+    "ffprobe": "passed: 178.000 seconds, 1920x1080, 30fps H.264, AAC mono 48kHz",
+    "full_decode": "passed: ffmpeg decode exit 0",
+    "audio": "passed: mean -20.7 dBFS, peak -2.9 dBFS",
+    "captions": "passed: 14 sequential SRT cues, final cue ends at 177.8s; burned captions match synthetic narration",
+    "readability": "Reviewed full and 960x540 frames at entry, correction, consent, provider caveat, editorial architecture card, and close.",
+    "playwright_smoke": "passed: FAST_CAPTURE traversed the complete interaction path",
+    "application_tests": "No application source changed; application test suites were not rerun."
+  },
+  "outstanding_gap": "No actual qualified professional is available or bookable in this preview; the screen explicitly states this. The editorial architecture card is not an interactive app screen.",
+  "disclosure": "Fictional interactive preview; sample people and content are local. Meta integrations are planned and not connected. No real human, community, moderator, report routing, or provider action occurred.",
+  "review": "No self-score or judge review performed by the builder."
+}
