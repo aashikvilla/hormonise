@@ -1,0 +1,53 @@
+{
+  "candidate_sha256": "b180025740cca42ce4a2a8117ae213c7a7f2a8c5856621c7482cdb99751b846b",
+  "review_evidence_mode": "video_with_visible_captions_audio_inaccessible",
+  "technical_evidence_type": "film_visible_prototype_evidence",
+  "independent_of_previous_rounds": true,
+  "decision": "maybe",
+  "confidence": "medium; medium-low for persuasion because AAC playback was inaccessible",
+  "audio_limitation": "The MP4 contains an AAC mono audio stream, but playback was inaccessible in this review. No claims about speech or sound are made. Burned-in captions were visible; no separate closed-caption stream was present.",
+  "scores": {
+    "impact": {
+      "specificity_and_depth": {"score": 8, "max": 10, "evidence": "00:00–00:09: first-person family-pressure dilemma and Arjun identified as adult facing family pressure."},
+      "human_need_and_believable_outcomes": {"score": 7, "max": 10, "evidence": "00:18–00:36: user corrects tentative reading; 01:24–01:27: asks for time without claiming a resolved relationship."},
+      "adoption_and_network_benefit": {"score": 5, "max": 10, "evidence": "00:45–00:54 and 01:06–01:24: peer perspectives and historical threads are shown as fictional prepared examples with no live activity."},
+      "subtotal": 20,
+      "max": 30
+    },
+    "meta_use": {
+      "correctly_named_model_roles": {"score": 3, "max": 7, "evidence": "Around 00:18–00:27, Muse Spark is described as a planned role organizing themes; no model execution shown."},
+      "necessity_not_generic_wrapper": {"score": 5, "max": 8, "evidence": "00:18–00:36: sensitive reflection and user correction are useful, but no reason a generative model is necessary is demonstrated."},
+      "visible_mechanism_reasoning_or_structured_ui": {"score": 5, "max": 6, "evidence": "00:27–00:36: tentative interpretation, uncertainty label, correction and editable reflection."},
+      "evidence_or_candid_limitation": {"score": 4, "max": 4, "evidence": "Persistent banners and prepared-example labels state no model connected and no live community."},
+      "subtotal": 17,
+      "max": 25
+    },
+    "demo": {
+      "hook_and_story": {"score": 3, "max": 6, "evidence": "00:00–00:09: specific hook, but a mostly blank sampled transition and delayed product setup."},
+      "clarity_and_legibility": {"score": 4, "max": 6, "evidence": "00:45–01:24: coherent sequence but small, dense body text and static wide UI shots."},
+      "pacing_accessible_audio_subtitles": {"score": 3, "max": 5, "evidence": "Burned-in captions carry the story; AAC playback inaccessible; repeated screen views are slow."},
+      "memorable_emotional_payoff": {"score": 3, "max": 5, "evidence": "01:24–01:27: modest agency-focused takeaway, no resolved outcome."},
+      "polished_coherent_ui": {"score": 2, "max": 3, "evidence": "00:09–01:27: consistent restrained palette and interface, with limited framing variation and small type."},
+      "subtotal": 15,
+      "max": 25
+    },
+    "technical_depth": {
+      "plausible_full_workflow": {"score": 5, "max": 6, "evidence": "00:09–01:06: private reflection, correction, community exploration and proposed sharing preview."},
+      "controls_permissions_privacy": {"score": 4, "max": 5, "evidence": "00:54–01:06: exact audience preview, private content excluded, unchecked consent and cancel/keep draft."},
+      "architecture_failure_handling": {"score": 2, "max": 5, "evidence": "Prepared/no-live status is candid; architecture and meaningful failure recovery are scarcely shown."},
+      "implementation_evidence": {"score": 3, "max": 4, "evidence": "00:27–00:36 correction/edit states and 00:54–01:06 cancel/consent states provide film-visible prototype evidence."},
+      "subtotal": 14,
+      "max": 20
+    }
+  },
+  "total": 66,
+  "film_persuasion_score": 69,
+  "film_persuasion_dimensions": {
+    "first_15_second_clarity": {"score": 18, "max": 25, "evidence": ["00:00–00:06: dilemma is clear.", "00:09: private, self-paced promise appears; differentiation remains incomplete."]},
+    "human_journey_and_payoff": {"score": 20, "max": 25, "evidence": ["00:27–00:36: Arjun corrects the interpretation.", "01:24–01:27: agency-focused option to ask for time, not a resolution."]},
+    "differentiation_and_role_value": {"score": 16, "max": 25, "evidence": ["00:18–00:27: Muse Spark is a planned theme-organizing role.", "00:54–01:06: consent and audience scope are concrete; no live model or community use is shown."]},
+    "cinematic_and_narrative_craft": {"score": 15, "max": 25, "evidence": ["00:00–00:09: text-led opening and largely blank sampled transition.", "00:18–01:27: coherent captioned screen journey but repetitive; sound could not be assessed."]},
+    "arithmetic": "18 + 20 + 16 + 15 = 69",
+    "confidence": "medium-low because AAC audio was inaccessible"
+  }
+}

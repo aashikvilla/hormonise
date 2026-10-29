@@ -1,0 +1,287 @@
+{
+  "iteration": "v33",
+  "runtimeSeconds": 87.61,
+  "pictureFrames": 2190,
+  "frameRate": 25,
+  "shots": [
+    {
+      "name": "hook",
+      "type": "source",
+      "outputStart": 0.0,
+      "outputEnd": 8.0,
+      "duration": 8.0,
+      "frames": 200,
+      "sourceStart": 0,
+      "sourceEnd": 8,
+      "asset": "demo-iterations/v29/capture/picture-01.mp4"
+    },
+    {
+      "name": "reflection-wide",
+      "type": "source",
+      "outputStart": 8.0,
+      "outputEnd": 10.0,
+      "duration": 2.0,
+      "frames": 50,
+      "sourceStart": 12.006,
+      "sourceEnd": 14.006,
+      "asset": "demo-iterations/v29/capture/picture-02.mp4"
+    },
+    {
+      "name": "reflection-detail",
+      "type": "source",
+      "outputStart": 10.0,
+      "outputEnd": 17.0,
+      "duration": 7.0,
+      "frames": 175,
+      "sourceStart": 14.006,
+      "sourceEnd": 21.006,
+      "asset": "demo-iterations/v29/capture/picture-03.mp4"
+    },
+    {
+      "name": "planned-role",
+      "type": "source",
+      "outputStart": 17.0,
+      "outputEnd": 24.0,
+      "duration": 7.0,
+      "frames": 175,
+      "sourceStart": 18.008,
+      "sourceEnd": 25.011,
+      "asset": "demo-iterations/v29/capture/picture-04.mp4"
+    },
+    {
+      "name": "continuous-correction",
+      "type": "source",
+      "outputStart": 24.0,
+      "outputEnd": 47.52,
+      "duration": 23.52,
+      "frames": 588,
+      "sourceStart": 25.011,
+      "sourceEnd": 48.517,
+      "asset": "demo-iterations/v33/capture/continuous-correction.mp4"
+    },
+    {
+      "name": "peer-example",
+      "type": "source",
+      "outputStart": 47.52,
+      "outputEnd": 55.52,
+      "duration": 8.0,
+      "frames": 200,
+      "sourceStart": 79.537,
+      "sourceEnd": 87.537,
+      "asset": "demo-iterations/v29/capture/picture-14.mp4"
+    },
+    {
+      "name": "peer-difference",
+      "type": "source",
+      "outputStart": 55.52,
+      "outputEnd": 59.6,
+      "duration": 4.08,
+      "frames": 102,
+      "sourceStart": 87.537,
+      "sourceEnd": 91.617,
+      "asset": "demo-iterations/v29/capture/picture-15.mp4"
+    },
+    {
+      "name": "consent-preview",
+      "type": "source",
+      "outputStart": 59.6,
+      "outputEnd": 67.6,
+      "duration": 8.0,
+      "frames": 200,
+      "sourceStart": 109.5,
+      "sourceEnd": 117.5,
+      "asset": "demo-iterations/v33/capture/consent-replacement.mp4"
+    },
+    {
+      "name": "maybe-later-action",
+      "type": "source",
+      "outputStart": 67.6,
+      "outputEnd": 72.6,
+      "duration": 5.0,
+      "frames": 125,
+      "sourceStart": 117.5,
+      "sourceEnd": 122.5,
+      "asset": "demo-iterations/v29/capture/picture-18.mp4"
+    },
+    {
+      "name": "unsent-return",
+      "type": "source",
+      "outputStart": 72.6,
+      "outputEnd": 77.6,
+      "duration": 5.0,
+      "frames": 125,
+      "sourceStart": 122.5,
+      "sourceEnd": 127.5,
+      "asset": "demo-iterations/v29/capture/picture-19.mp4"
+    },
+    {
+      "name": "private-takeaway",
+      "type": "source",
+      "outputStart": 77.6,
+      "outputEnd": 81.4,
+      "duration": 3.8,
+      "frames": 95,
+      "sourceStart": 129.562,
+      "sourceEnd": 133.362,
+      "asset": "demo-iterations/v29/capture/picture-20.mp4"
+    },
+    {
+      "name": "private-takeaway-hold",
+      "type": "still",
+      "outputStart": 81.4,
+      "outputEnd": 82.6,
+      "duration": 1.2,
+      "frames": 30,
+      "sourceStart": null,
+      "sourceEnd": null,
+      "asset": "demo-iterations/v29/capture/picture-21.mp4"
+    },
+    {
+      "name": "authored-private-choice",
+      "type": "card",
+      "outputStart": 82.6,
+      "outputEnd": 87.6,
+      "duration": 5.0,
+      "frames": 125,
+      "sourceStart": null,
+      "sourceEnd": null,
+      "asset": "demo-iterations/v29/capture/picture-22.mp4"
+    }
+  ],
+  "narrationCount": 19,
+  "narration": [
+    {
+      "start": 0.2,
+      "end": 6.6,
+      "text": "I’m Arjun. I can’t tell my family what I want without feeling ungrateful.",
+      "caption": "I’m Arjun. I can’t tell my family what I want without feeling ungrateful."
+    },
+    {
+      "start": 8.15,
+      "end": 12.15,
+      "text": "Arjun puts the family pressure into his own words.",
+      "caption": "Arjun puts the family pressure into his own words."
+    },
+    {
+      "start": 12.25,
+      "end": 16.6,
+      "text": "No one else sees this reflection.",
+      "caption": "No one else sees this reflection."
+    },
+    {
+      "start": 17.1,
+      "end": 20.55,
+      "text": "Muse Spark's planned role is organizing themes.",
+      "caption": "Muse Spark's planned role is organizing themes."
+    },
+    {
+      "start": 20.6,
+      "end": 24.0,
+      "text": "Prepared example; no model is connected.",
+      "caption": "Prepared example; no model is connected."
+    },
+    {
+      "start": 24.15,
+      "end": 28.15,
+      "text": "A possible reading is offered for him to check.",
+      "caption": "A possible reading is offered for him to check."
+    },
+    {
+      "start": 28.2,
+      "end": 31.2,
+      "text": "He says, “Not quite.”",
+      "caption": "He says, “Not quite.”"
+    },
+    {
+      "start": 31.3,
+      "end": 36.1,
+      "text": "He needs time to decide for himself.",
+      "caption": "He needs time to decide for himself."
+    },
+    {
+      "start": 44.75,
+      "end": 47.4,
+      "text": "The reflection changes to hold his correction.",
+      "caption": "The reflection changes to hold his correction."
+    },
+    {
+      "start": 47.7,
+      "end": 51.05,
+      "text": "One prepared fictional perspective appears.",
+      "caption": "One prepared fictional perspective appears."
+    },
+    {
+      "start": 51.05,
+      "end": 55.05,
+      "text": "Ravi says a trusted friend helped him speak with family.",
+      "caption": "Ravi says a trusted friend helped him speak with family."
+    },
+    {
+      "start": 55.52,
+      "end": 59.62,
+      "text": "They share family pressure; their circumstances differ.",
+      "caption": "They share family pressure; their circumstances differ."
+    },
+    {
+      "start": 59.81,
+      "end": 63.61,
+      "text": "If he asks, it is for the group under an alias.",
+      "caption": "If he asks, it is for the group under an alias."
+    },
+    {
+      "start": 63.71,
+      "end": 66.61,
+      "text": "His private reflection is excluded.",
+      "caption": "His private reflection is excluded."
+    },
+    {
+      "start": 67.81,
+      "end": 71.51,
+      "text": "Consent remains unchecked.",
+      "caption": "Consent remains unchecked."
+    },
+    {
+      "start": 71.66,
+      "end": 74.41,
+      "text": "He cancels and keeps the draft.",
+      "caption": "He cancels and keeps the draft."
+    },
+    {
+      "start": 74.61,
+      "end": 77.11,
+      "text": "Nothing is sent.",
+      "caption": "Nothing is sent."
+    },
+    {
+      "start": 77.81,
+      "end": 82.01,
+      "text": "For now, his words stay private.",
+      "caption": "For now, his words stay private."
+    },
+    {
+      "start": 82.11,
+      "end": 86.61,
+      "text": "He can ask for time before deciding.",
+      "caption": "He can ask for time before deciding."
+    }
+  ],
+  "openingIdentifier": {
+    "start": 0,
+    "end": 4,
+    "text": "Arjun · adult facing family pressure",
+    "kind": "editorial label"
+  },
+  "truthBoundary": {
+    "fictionalPreparedDemo": true,
+    "modelConnected": false,
+    "liveCommunity": false,
+    "museSpark": "planned organizing role, not connected",
+    "messageSent": false
+  },
+  "sourceNotes": [
+    "Continuous correction copied from v32 capture, uninterrupted 588 frames.",
+    "Consent replacement copied from v32 and retains the actual captured fields and action.",
+    "Peer-difference trim is 102 frames (4.08s) to preserve a frame-accurate 25 fps cut, approximating the 4.10s brief.",
+    "Picture runtime is 87.60s at 25 fps; audio/container runtime is 87.61s."
+  ]
+}

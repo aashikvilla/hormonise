@@ -1,0 +1,49 @@
+{
+  "verdict": "READY",
+  "artifact": "/workspace/hormonise/demo-iterations/v34/demo.mp4",
+  "sha256": "d362f09d6fd7119a1ce3d65db0876172a2e48548327a5ec15f5ed734932cc913",
+  "format": {
+    "container": "ISO Base Media / MP4",
+    "video": {
+      "codec": "H.264/AVC",
+      "profile": "High 4:4:4 Predictive",
+      "pixel_format": "yuv420p",
+      "width": 1920,
+      "height": 1080,
+      "frame_rate_fps": 30,
+      "frames": 5363,
+      "duration_seconds": 178.766667,
+      "full_decode": "pass"
+    },
+    "audio": {
+      "codec": "AAC-LC",
+      "sample_rate_hz": 48000,
+      "channels": 1,
+      "duration_seconds": 178.752,
+      "full_decode": "pass",
+      "mean_volume_dbfs": -19.0,
+      "peak_volume_dbfs": -4.0
+    },
+    "stream_start_difference_seconds": 0.0,
+    "stream_end_difference_seconds": 0.014667,
+    "subtitle_stream": false
+  },
+  "review": {
+    "resolutions_reviewed": ["1920x1080", "960x540"],
+    "caption_visibility": "Burned-in captions are readable at both reviewed resolutions; sampled beats align with scenes.",
+    "ui_readability": "Primary headings, controls, and form contents readable at both resolutions; dense explanatory copy is smaller at 960x540.",
+    "claims": {
+      "fictional_and_prepared": "Supported by repeated on-screen labels.",
+      "no_model": "Opening screen says no model is connected.",
+      "no_live_people_or_moderation": "Community view explicitly says no live people or moderation are connected.",
+      "consent_and_no_send": "Exact audience preview and unchecked consent are shown; no-send disclosure is repeated, with the post control shown in a muted disabled-looking style.",
+      "no_verified_provider_or_booking": "Support screen says no provider is verified and no appointment can be requested."
+    }
+  },
+  "limitations": [
+    "Audio could not be auditioned; subjective intelligibility, mix quality, and word-for-word speech/caption agreement are not certified.",
+    "No physical-device playback or execution test of the underlying UI was performed.",
+    "Captions are burned into the video; there is no selectable or toggleable subtitle stream.",
+    "H.264 High 4:4:4 Predictive may have narrower hardware/browser support than common H.264 High, despite successful FFmpeg decoding."
+  ]
+}

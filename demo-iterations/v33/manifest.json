@@ -1,0 +1,67 @@
+{
+  "iteration": "v33",
+  "status": "score-only history for an unavailable reviewed artifact; current demo.mp4 is a distinct unreviewed repair archived separately as v33b",
+  "candidate": "demo-iterations/v33/demo.mp4",
+  "candidateSha256": "b180025740cca42ce4a2a8117ae213c7a7f2a8c5856621c7482cdb99751b846b",
+  "durationSeconds": 87.6,
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "frameRate": "25/1",
+    "frames": 2190,
+    "durationSeconds": 87.6
+  },
+  "audio": {
+    "codec": "aac",
+    "sampleRate": 48000,
+    "channels": 1,
+    "durationSeconds": 87.61
+  },
+  "renderScript": "demo-iterations/v33/capture/render-v33.py",
+  "editMap": "demo-iterations/v33/capture/edit-map.json",
+  "narrationAndCaptions": "demo-iterations/v33/capture/narration.txt; captions.srt",
+  "sourceCapture": "demo-iterations/v27/capture/video/v27-real-product-session.webm",
+  "sourceSha256": "121b23bfd9124b9c97a10ba70dedd80051b0d71c27cf9cf809b5be64a94d23ff",
+  "v32MasterSha256": "ff146927bf2ab553352f5dabd9d24704bbd9dbb3157ef806a1000befed64fa3d",
+  "v29MasterSha256": "0adebec5a5da9ef7d89d0ceee32064ad527a93ec425aabe34328c28b92f2077f",
+  "checksPending": [
+    "fresh blind review of v33b",
+    "fresh release check of v33b"
+  ],
+  "chainOfCustody": {
+    "reviewedCandidateSha256": "574d97628262a472a66aba2b47b54d0f527d199713012f5ee0c5d76332d24dd7",
+    "reviewedCandidateArtifactAvailable": false,
+    "reviewRecord": "demo-iterations/v33/verification/sha256.txt",
+    "note": "The exact 574d candidate was overwritten during a concurrent render. The 71/100 fixed score and separate 72/100 persuasion score are historical and apply only to that lost candidate. The current demo.mp4 hashes to b180025740cca42ce4a2a8117ae213c7a7f2a8c5856621c7482cdb99751b846b and is an unreviewed repair, copied and frozen as v33b."
+  },
+  "review": {
+    "status": "historical score only; reviewed artifact unavailable",
+    "decision": "maybe",
+    "judgeCount": 1,
+    "confidence": "moderate; audio inaccessible",
+    "evidenceMode": "reduced-evidence video with visible captions; audio inaccessible",
+    "audioLimitation": "The MP4 audio was inaccessible to the judge; scoring used visible picture, captions, and on-screen labels.",
+    "reviewedCandidateSha256": "574d97628262a472a66aba2b47b54d0f527d199713012f5ee0c5d76332d24dd7",
+    "fixedWeightedScore": 71,
+    "filmPersuasionScore": 72,
+    "filmPersuasionIsSeparate": true,
+    "targetScore": 85,
+    "targetMet": false,
+    "reviewFile": "demo-iterations/v33/cold-review/review.json",
+    "reportFile": "demo-iterations/v33/cold-review/report.md",
+    "archiveStatus": "score-only historical record; unavailable reviewed bytes"
+  },
+  "releaseCheck": {
+    "status": "historical path-only check; release HOLD",
+    "reportFile": "demo-iterations/v33/release-check.md",
+    "candidateSha256": null,
+    "appliesTo": "The lost 574d candidate, according to the recorded chain of custody; the checker recorded only the reused path.",
+    "verdict": "hold",
+    "blockingIssue": "The report says an apparent Send action and resulting prepared response conflict with the closing \u201cNothing is sent\u201d claim.",
+    "reportedAudioVideoMismatchMs": 450,
+    "mismatchStatus": "Reported by the historical check as 87.16s video and 87.61s audio, with a silent tail. The report also lists 2,190 frames at 25 fps, which implies 87.60s video; because the exact checked bytes are unavailable and those report values conflict, the 450ms mismatch is preserved as reported but is not confirmed against an exact candidate SHA.",
+    "currentRepair": "demo-iterations/v33b/demo.mp4; fresh blind and release checks pending.",
+    "binding": "path-only report; not bound to bytes or a SHA-256"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "review_evidence_mode": "video_with_audio_track_inaccessible_reduced_audio_evidence",
+  "independent_of_previous_rounds": true,
+  "candidate": "/workspace/hormonise/demo-iterations/v34/demo.mp4",
+  "sha256": "d362f09d6fd7119a1ce3d65db0876172a2e48548327a5ec15f5ed734932cc913",
+  "technical_evidence_type": "film-visible prototype evidence",
+  "confidence": "medium; medium-low for audio-dependent judgments",
+  "audio_limitation": "AAC mono audio stream exists, but audio playback was unavailable to this reviewer; narration, music, mix, and synchronization were not judged. Visible captions were judged.",
+  "scores": {
+    "impact": {
+      "specificity_and_depth": 8,
+      "human_need_and_believable_outcomes": 8,
+      "practical_adoption_network_benefit": 5,
+      "total": 21
+    },
+    "meta_use": {
+      "correctly_named_model_roles": 3,
+      "necessity_beyond_generic_wrapper": 7,
+      "visible_mechanism_reasoning_or_structured_ui": 5,
+      "convincing_evidence_or_candid_limitation": 4,
+      "total": 19
+    },
+    "demo": {
+      "hook_and_story": 5,
+      "clarity_and_legibility": 4,
+      "pacing_accessible_audio_subtitles": 3,
+      "memorable_emotional_payoff": 3,
+      "polished_coherent_ui": 2,
+      "total": 17
+    },
+    "technical_depth": {
+      "plausible_full_user_workflow": 5,
+      "controls_permissions_privacy": 5,
+      "architecture_failure_handling_as_evidenced": 4,
+      "implementation_evidence": 4,
+      "total": 18
+    }
+  },
+  "total": 75,
+  "weighted_arithmetic": "Impact 8+8+5=21/30; Meta use 3+7+5+4=19/25; Demo 5+4+3+3+2=17/25; Technical depth 5+5+4+4=18/20; total 21+19+17+18=75/100.",
+  "film_persuasion_score": 73,
+  "film_persuasion_dimensions": {
+    "first_15_second_clarity": {
+      "score": 21,
+      "evidence": [
+        "0:00 family-pressure dilemma and adult audience label",
+        "0:05–0:15 correctable private reflection before peer experiences; prepared/no-model disclosure"
+      ]
+    },
+    "human_journey_and_payoff": {
+      "score": 18,
+      "evidence": [
+        "0:25 Arjun corrects family to parents and says he wants time",
+        "2:55 keeps takeaway private; no sharing without consent"
+      ]
+    },
+    "differentiation_and_role_value": {
+      "score": 19,
+      "evidence": [
+        "0:00–0:30 proposed correctable reflection",
+        "0:35–1:40 prepared peer examples and exact sharing preview; no model/live member"
+      ]
+    },
+    "cinematic_and_narrative_craft": {
+      "score": 15,
+      "evidence": [
+        "0:00 opening title and persistent captioning",
+        "0:35–2:58 largely static, text-heavy screens; audio inaccessible"
+      ]
+    }
+  },
+  "film_persuasion_arithmetic": "21+18+19+15=73/100",
+  "persuasion_threshold_85_reached": false,
+  "decision": "maybe; revise before release as a competitive hackathon film",
+  "timestamp_evidence_summary": [
+    {
+      "timestamp": "0:00",
+      "evidence": "Fictional Arjun scenario; family-pressure headline, audience label, correction flow card, prepared/no-model disclosure."
+    },
+    {
+      "timestamp": "0:10",
+      "evidence": "Prepared local chat; screen says no model connected."
+    },
+    {
+      "timestamp": "0:25",
+      "evidence": "Editable interpretation and changed wording; captions describe Arjun correcting the issue."
+    },
+    {
+      "timestamp": "0:35-1:10",
+      "evidence": "Historical fictional thread across days; no reply promised; no live people/moderation."
+    },
+    {
+      "timestamp": "1:10-1:40",
+      "evidence": "Group sharing draft shows exact alias, audience, question, excluded private context, unchecked consent, and cancel."
+    },
+    {
+      "timestamp": "1:50",
+      "evidence": "Professional page says no verified provider is available."
+    },
+    {
+      "timestamp": "2:55",
+      "evidence": "Prepared local draft; nothing sent without consent; Arjun can leave."
+    }
+  ]
+}

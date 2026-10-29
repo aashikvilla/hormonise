@@ -1,0 +1,69 @@
+{
+  "iteration": "v13",
+  "parent_iteration": "v12",
+  "parent_candidate_sha256": "2ba10b598cbb3cc047d05bd1c5535640cb08398516bd16c47c6ae0656b4fb871",
+  "candidate_commit_sha": "638242d1d6d410636a8fa17130c8e0827e47b108",
+  "candidate": "demo-iterations/v13/demo.mp4",
+  "candidate_sha256": "dd21e18a055cf80bca4ee60b0f62620d6e82025b10639985bfb64a722d691d47",
+  "duration_seconds": 178.766667,
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "duration_seconds": 178.766667,
+    "frames": 5363
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_seconds": 178.752,
+    "av_delta_seconds": 0.014667,
+    "last_speech_seconds": 176.969
+  },
+  "captions": {
+    "path": "demo-iterations/v13/captions.srt",
+    "sha256": "02aada6ef28ab0b6dbfb8cf927b67cc8de49c2725f111ef29ff35bf7e608901d",
+    "cue_count": 41,
+    "last_cue_end_seconds": 177.58,
+    "burned_in": true
+  },
+  "narration": {
+    "path": "demo-iterations/v13/narration.txt",
+    "sha256": "f1ad863f3cdde736c0b9d4f737bd710f69f2d443390e646eafcfe617e9c6e426",
+    "voice": "synthetic Flite",
+    "model_connected": false
+  },
+  "capture": {
+    "path": "demo-iterations/v13/capture/react-capture.webm",
+    "sha256": "a19ea3b7671cd7b2cac26ea835ee856e40156fae2af58d0591caf708710102b3",
+    "duration_seconds": 183.44,
+    "resolution": "1600x900",
+    "fps": 25,
+    "timeline": "demo-iterations/v13/capture/timeline.json",
+    "timeline_sha256": "192c7910e159072e24b00fbaf8c46d0921345c88ec996f2f2189b7130d8be2a0"
+  },
+  "scripts": {
+    "capture": "demo-iterations/v13/capture/capture-film.mjs",
+    "render": "demo-iterations/v13/capture/render-film.py",
+    "render_sha256": "b88bcfe7e2db665fb7438ea396110783175ecec85e97971f1700f37b4264ebb0"
+  },
+  "verification": "demo-iterations/v13/verification.md",
+  "visual_evidence": [
+    "demo-iterations/v13/verification/contact.png",
+    "demo-iterations/v13/verification/contact-960.png"
+  ],
+  "acceptance": {
+    "lint": "passed",
+    "typecheck": "passed",
+    "unit": "27/27 passed",
+    "e2e": "32/32 desktop and mobile passed",
+    "build": "passed",
+    "capture_smoke": "20/20 marked states passed",
+    "full_decode": "passed",
+    "visual_review": "passed"
+  },
+  "source_code_changes": false,
+  "scope": "Frontend-only fictional preview; no live Meta, AI, community, human moderator, provider, or message integrations."
+}

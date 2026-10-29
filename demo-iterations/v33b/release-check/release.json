@@ -1,0 +1,79 @@
+{
+  "candidate": "/workspace/hormonise/demo-iterations/v33b/demo.mp4",
+  "sha256": "b180025740cca42ce4a2a8117ae213c7a7f2a8c5856621c7482cdb99751b846b",
+  "decision": "HOLD",
+  "hold_defects": [
+    {
+      "id": "UI-960",
+      "severity": "release hold",
+      "evidence": "At 960x540 (frame45_960.jpg, source t=45s), narration subtitle remains readable but the recorded application body text and controls are reduced to small, marginal text. The main UI is difficult to read at normal 960x540 viewing size."
+    }
+  ],
+  "checks": {
+    "identity": {
+      "pass": true,
+      "sha256": "b180025740cca42ce4a2a8117ae213c7a7f2a8c5856621c7482cdb99751b846b"
+    },
+    "streams": {
+      "video": {
+        "codec": "h264",
+        "profile": "High",
+        "width": 1920,
+        "height": 1080,
+        "pixel_format": "yuv420p",
+        "r_frame_rate": "25/1",
+        "frame_count": 2190,
+        "duration_seconds": 87.6,
+        "start_seconds": 0.0
+      },
+      "audio": {
+        "codec": "aac",
+        "profile": "LC",
+        "sample_rate_hz": 48000,
+        "channels": 1,
+        "duration_seconds": 87.61,
+        "start_seconds": 0.0
+      },
+      "audio_minus_video_duration_seconds": 0.01,
+      "format_duration_seconds": 87.61,
+      "format_size_bytes": 11185486
+    },
+    "full_decode": {
+      "pass": true,
+      "exit_code": 0,
+      "stderr": ""
+    },
+    "audio_level": {
+      "volumedetect_log": "audio_volumedetect.log",
+      "mean_volume_dbfs": -19.5,
+      "peak_dbfs": -2.0,
+      "clipping_observed": false
+    },
+    "caption_sync": {
+      "status": "not fully certifiable from candidate file",
+      "evidence": "No subtitle stream is present; narration captions are burned into the image. Sampled caption/scene wording is semantically aligned. Audio and video stream durations differ by 0.010 s. No numeric caption-to-speech offset can be derived from this file alone."
+    },
+    "readability": {
+      "1920x1080": "Pass: frame44.jpg and cap45.jpg show the screen text and captions at readable full resolution.",
+      "960x540": "Partial: narration captions and top disclaimer are legible; application body text/control labels are marginal at normal view size (frame44_960.jpg, frame45_960.jpg)."
+    },
+    "truthfulness": {
+      "fictional_prepared": "Pass: persistent top banner says FICTIONAL PREPARED DEMO; visible UI uses prepared/local-example labels.",
+      "no_model": "Pass: banner and visible local example say NO MODEL CONNECTED.",
+      "no_live": "Pass: persistent banner says NO LIVE COMMUNITY; the community material is labeled fictional/prepared.",
+      "consent": "Pass: request-preparation screen shows consent checkbox unchecked; caption says consent remains unchecked.",
+      "no_send": "Pass: flow cancels and keeps draft; later screen and final card state private reflection stays private/nothing sent. No completion/send confirmation is shown."
+    }
+  },
+  "artifacts": [
+    "ffprobe.json",
+    "decode.log",
+    "audio_volumedetect.log",
+    "contact_5s.jpg",
+    "end_scenes.jpg",
+    "frame44.jpg",
+    "frame44_960.jpg",
+    "cap45.jpg",
+    "frame45_960.jpg"
+  ]
+}

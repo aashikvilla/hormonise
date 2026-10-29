@@ -1,0 +1,47 @@
+{
+  "iteration": "v33b",
+  "status": "frozen corrected technical render; independently blind-reviewed; release HOLD",
+  "candidate": "demo-iterations/v33b/demo.mp4",
+  "candidateSha256": "b180025740cca42ce4a2a8117ae213c7a7f2a8c5856621c7482cdb99751b846b",
+  "copiedFrom": "demo-iterations/v33/demo.mp4",
+  "copyVerifiedByteForByte": true,
+  "durationSeconds": 87.6,
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "frameRate": "25/1",
+    "frames": 2190,
+    "durationSeconds": 87.6
+  },
+  "audio": {
+    "codec": "aac",
+    "sampleRate": 48000,
+    "channels": 1,
+    "durationSeconds": 87.61
+  },
+  "audioVideoDurationDeltaMs": 10,
+  "sha256File": "demo-iterations/v33b/verification/sha256.txt",
+  "renderScriptReference": "demo-iterations/v33/capture/render-v33.py",
+  "reviewStatus": "unreviewed; v33 review and release reports concern the lost 574d candidate and do not apply to this SHA.",
+  "checksPending": [],
+  "review": {
+    "candidateSha256": "b180025740cca42ce4a2a8117ae213c7a7f2a8c5856621c7482cdb99751b846b",
+    "fixedWeightedScore": 66,
+    "filmPersuasionScore": 69,
+    "decision": "maybe",
+    "confidence": "medium; medium-low for persuasion because AAC playback was inaccessible",
+    "evidenceMode": "video with visible captions; audio inaccessible",
+    "audioAuditioned": false,
+    "reviewFile": "demo-iterations/v33b/cold-review/review.json",
+    "reportFile": "demo-iterations/v33b/cold-review/report.md"
+  },
+  "releaseCheck": {
+    "candidateSha256": "b180025740cca42ce4a2a8117ae213c7a7f2a8c5856621c7482cdb99751b846b",
+    "verdict": "HOLD",
+    "blockingIssue": "At 960x540, application body text and controls are small and marginal at normal viewing size (UI-960).",
+    "audioAuditioned": false,
+    "checkFile": "demo-iterations/v33b/release-check/release.json",
+    "reportFile": "demo-iterations/v33b/release-check/report.md"
+  }
+}

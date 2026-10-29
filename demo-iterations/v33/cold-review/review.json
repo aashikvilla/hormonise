@@ -1,0 +1,117 @@
+{
+  "candidate": "v33 demo.mp4",
+  "review_evidence_mode": "reduced_evidence_video_with_inaccessible_audio",
+  "audio_limitation": "The MP4 contains an audio stream, but audio input was inaccessible to this judge. Scores use visible picture, captions, and on-screen labels only.",
+  "independent_of_previous_rounds": true,
+  "technical_evidence_type": "film-visible prototype evidence",
+  "decision": "maybe",
+  "confidence": "moderate",
+  "scores": {
+    "impact": {
+      "problem_specificity": 8,
+      "human_need_and_outcomes": 8,
+      "adoption_network_benefit": 5,
+      "subtotal": 21,
+      "max": 30
+    },
+    "meta_use": {
+      "correctly_named_model_roles": 3,
+      "necessity_vs_generic_wrapper": 4,
+      "visible_mechanism_reasoning_or_structured_ui": 5,
+      "evidence_or_candid_limitation": 4,
+      "subtotal": 16,
+      "max": 25
+    },
+    "demo": {
+      "hook_and_story": 4,
+      "clarity_and_legibility": 4,
+      "pacing_accessible_audio_subtitles": 3,
+      "memorable_emotional_payoff": 3,
+      "polished_coherent_ui": 3,
+      "subtotal": 17,
+      "max": 25
+    },
+    "technical_depth": {
+      "plausible_full_user_workflow": 6,
+      "controls_permissions_privacy": 5,
+      "architecture_and_failure_handling_as_evidenced": 3,
+      "implementation_evidence": 3,
+      "subtotal": 17,
+      "max": 20
+    }
+  },
+  "total": 71,
+  "total_arithmetic": "21 + 16 + 17 + 17 = 71",
+  "film_persuasion_score": 72,
+  "film_persuasion_dimensions": {
+    "first_15_second_clarity": {
+      "score": 17,
+      "max": 25,
+      "evidence": [
+        {
+          "timestamp": "0:00",
+          "observation": "Opening says \u2018I can ask for time before deciding,\u2019 offering a promise without identifying audience or product."
+        },
+        {
+          "timestamp": "0:10-0:15",
+          "observation": "Family dilemma and private reflection become visible, but intended audience and differentiation remain implicit."
+        }
+      ],
+      "confidence": "moderate"
+    },
+    "human_journey_and_payoff": {
+      "score": 20,
+      "max": 25,
+      "evidence": [
+        {
+          "timestamp": "0:10-0:16",
+          "observation": "Arjun says he cannot tell his family what he wants without feeling ungrateful."
+        },
+        {
+          "timestamp": "0:40-0:50",
+          "observation": "Arjun corrects the interpretation and states that he wants time to decide; no actual decision or response is shown."
+        }
+      ],
+      "confidence": "moderate"
+    },
+    "differentiation_and_role_value": {
+      "score": 18,
+      "max": 25,
+      "evidence": [
+        {
+          "timestamp": "0:25-0:50",
+          "observation": "The structured \u2018A thought to check\u2019 panel marks uncertainty and offers correction controls."
+        },
+        {
+          "timestamp": "about 1:05",
+          "observation": "Caption assigns Muse Spark a planned role organizing themes; no model call is shown."
+        }
+      ],
+      "confidence": "moderate"
+    },
+    "cinematic_and_narrative_craft": {
+      "score": 17,
+      "max": 25,
+      "evidence": [
+        {
+          "timestamp": "0:00 and 0:40-0:50",
+          "observation": "Outcome-first opening and user correction form a simple narrative arc."
+        },
+        {
+          "timestamp": "0:00-1:27",
+          "observation": "High-contrast captions remain visible, while repeated static UI screens limit emotional and visual range."
+        }
+      ],
+      "confidence": "moderate-low"
+    }
+  },
+  "film_persuasion_arithmetic": "17 + 20 + 18 + 17 = 72",
+  "reaches_85_persuasion": false,
+  "timestamps_are_video_relative": true,
+  "authenticity_summary": "Persistent labels state fictional prepared demo, no model connected, and no live community. Assistant responses, community content, and preview are prepared examples. The film does not substantiate a live model call or live social activity.",
+  "report_path": "/tmp/harmonise-v33-blind/report.md",
+  "archive_status": "score-only historical record; reviewed candidate bytes unavailable",
+  "reviewed_candidate_sha256": "574d97628262a472a66aba2b47b54d0f527d199713012f5ee0c5d76332d24dd7",
+  "candidate_artifact_available": false,
+  "score_applies_to": "lost 574d candidate only; does not apply to current demo.mp4 or v33b"
+}

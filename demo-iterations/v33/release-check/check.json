@@ -1,0 +1,92 @@
+{
+  "candidate": "/workspace/hormonise/demo-iterations/v33/demo.mp4",
+  "verdict": "hold",
+  "blocking_defects": [
+    {
+      "id": "NO_SEND_CLAIM_CONFLICTS_WITH_SEND_UI",
+      "severity": "blocker",
+      "file": "/workspace/hormonise/demo-iterations/v33/demo.mp4",
+      "evidence_times_seconds": [
+        10,
+        20,
+        86
+      ],
+      "details": "Around 10-20 s, the video depicts typed personal text, an Enter to send hint, an enabled Send button, and a prepared reply. The closing card around 86 s claims that nothing is sent. The visible interaction is not reconciled as local/prepared, undermining the absolute no-send claim."
+    }
+  ],
+  "checks": {
+    "container_format": {
+      "status": "pass",
+      "value": "MP4"
+    },
+    "video": {
+      "status": "pass",
+      "codec": "H.264",
+      "width": 1920,
+      "height": 1080,
+      "fps": 25,
+      "duration_seconds": 87.16,
+      "frames": 2190
+    },
+    "audio": {
+      "status": "pass",
+      "codec": "AAC",
+      "sample_rate_hz": 48000,
+      "channels": 1,
+      "duration_seconds": 87.61,
+      "mean_volume_dbfs": -19.5,
+      "peak_dbfs": -2.0,
+      "tail_silence_starts_seconds": 84.86,
+      "note": "Audio extends about 0.45 s beyond video; extra tail is silent."
+    },
+    "full_decode": {
+      "status": "pass",
+      "method": "ffmpeg decode to null completed without errors"
+    },
+    "audio_caption_sync": {
+      "status": "limited_pass",
+      "note": "No apparent broad timing drift; exact spoken-word synchronization not independently transcribed."
+    },
+    "captions": {
+      "status": "pass",
+      "note": "Burned-in captions sampled across scenes; readable at native and 960x540 output sizes."
+    },
+    "essential_ui_readability": {
+      "status": "pass_with_limit",
+      "note": "Headings and controls remain readable at 960x540; dense page copy is small."
+    },
+    "timeline_and_core_scenes": {
+      "status": "pass",
+      "scenes": [
+        "fictional Arjun scenario",
+        "prepared chat/reflection",
+        "illustrative community/story material",
+        "private-choice closing"
+      ]
+    },
+    "fictional_prepared_claims": {
+      "status": "pass",
+      "evidence": "Persistent fictional/prepared labels and explicit fictional scenario/story labels."
+    },
+    "not_live_claims": {
+      "status": "pass",
+      "evidence": "Persistent no-live-community banner; community says no live activity."
+    },
+    "no_model_claim": {
+      "status": "pass_with_caveat",
+      "evidence": "No model connected is persistent; Muse Spark mention is labeled planned and says no model is connected."
+    },
+    "consent_claim": {
+      "status": "pass_with_caveat",
+      "evidence": "Caption says consent remains unchecked; no submitted consent is shown."
+    },
+    "no_send_claim": {
+      "status": "fail",
+      "evidence": "Closing says nothing is sent, while preceding chat depicts a Send control and a resulting prepared response."
+    }
+  },
+  "archive_status": "historical path-only release result; exact checked bytes unavailable",
+  "candidate_sha256": null,
+  "candidate_binding": "The checker recorded a reused filesystem path only; this HOLD cannot be bound to any candidate SHA.",
+  "reported_timing_note": "The source report states 87.16 s video and 87.61 s audio, while 2,190 frames at 25 fps imply 87.60 s video. The 450 ms tail is retained as reported and is not verified against exact bytes."
+}
