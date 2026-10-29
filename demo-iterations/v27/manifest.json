@@ -1,0 +1,125 @@
+{
+  "iteration": "v27",
+  "parent_iteration": "v25",
+  "source_code_changes": true,
+  "candidate": "demo-iterations/v27/demo.mp4",
+  "candidate_sha256": "587c27876a43c2b50d11e94fd37c5a16614eff63e68e4cdcbab4cf1a1c04717f",
+  "duration_seconds": 154.567,
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "frames": 4637,
+    "duration_seconds": 154.566667
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_seconds": 154.567,
+    "av_delta_seconds": 0.000333,
+    "integrated_loudness_lufs": -17.9,
+    "true_peak_dbfs": -1.9,
+    "longest_detected_silence_seconds": 3.639
+  },
+  "source_capture": {
+    "path": "demo-iterations/v27/capture/video/v27-real-product-session.webm",
+    "sha256": "121b23bfd9124b9c97a10ba70dedd80051b0d71c27cf9cf809b5be64a94d23ff",
+    "duration_seconds": 155.24,
+    "viewport": "1600x900",
+    "interaction": "Fresh Playwright recording of actual local product flow."
+  },
+  "captions": {
+    "path": "demo-iterations/v27/capture/captions.srt",
+    "sha256": "83c55a1cabd40b4f203c6ad1eb97e0f77d4240786f0a266ad6c3a794ee3dbb69",
+    "cue_count": 26,
+    "burned_in": true
+  },
+  "narration": {
+    "path": "demo-iterations/v27/capture/narration.txt",
+    "sha256": "1bca9e5f96a0c277de3ee05ce73fa9092cacf12e32056bf60ca6c2b29e4544d4",
+    "voice": "FFmpeg Flite rms synthetic",
+    "model_connected": false,
+    "opening": "Concise spoken summaries; full dilemma and audience promise are in burned captions."
+  },
+  "checks": {
+    "full_decode": "passed",
+    "freeze_over_5_seconds": "none detected",
+    "audio_levels": "passed; -17.9 LUFS integrated, -1.9 dBFS true peak",
+    "av_sync": "video/audio duration delta 0.000333 seconds",
+    "silence": "no ending silence; longest detected gap 3.639 seconds",
+    "screen_readability": "reviewed at 1920x1080 and 960x540; question action is clear of caption band",
+    "changed_reflection": "You want time to decide what you want, without someone choosing stay or leave for you.",
+    "changed_reflection_visible": true,
+    "theme_reached_discovery": true,
+    "ravi_prepared_provenance": true,
+    "ravi_difference": "WHERE YOUR LIVES DIFFER\nWhat may not carry over\nRavi had an existing trusted friend, which Arjun has not said he has.\n\nStill unknown: Whether Ravi's marriage continued or ended\n\nStill unknown: Whether the same approach would help Arjun",
+    "exact_group_question": "Could I take time to decide before answering?",
+    "outreach_consent_unchecked_and_disabled": true,
+    "private_takeaway": "Arjun chose this in the preview session only: “I can ask for time before deciding.”",
+    "contribution_consent_unchecked_and_disabled": true,
+    "local_only_confirmation": "Added to this fictional preview group. Nothing was sent to any real group or person.",
+    "final_state": "FICTIONAL · PREPARED LOCAL PREVIEW\nArjun keeps the next step in his hands.\nKept privately in this preview\n\nI can ask for time before deciding.\n\nFor this preview session only · not shared\nAdded to fictional local preview\n\nOne helpful thing for Dev · Family Expectations group · QuietRiver\n\nPrivate context excluded\n\n“I asked for time to think before replying. I am still working out what I want.”\n\nNothing is sent to a real group or person.\n\nConsent added this text to the fictional preview only. No real audience received it.",
+    "backend_or_api": "none; contribution uses client state only."
+  },
+  "visual_evidence": [
+    "demo-iterations/v27/verification/release/frame-01-opener-1920.png",
+    "demo-iterations/v27/verification/release/frame-01-opener-960.png",
+    "demo-iterations/v27/verification/release/frame-02-audience-1920.png",
+    "demo-iterations/v27/verification/release/frame-02-audience-960.png",
+    "demo-iterations/v27/verification/release/frame-05-muse-role-1920.png",
+    "demo-iterations/v27/verification/release/frame-05-muse-role-960.png",
+    "demo-iterations/v27/verification/release/frame-09-corrected-reflection-1920.png",
+    "demo-iterations/v27/verification/release/frame-09-corrected-reflection-960.png",
+    "demo-iterations/v27/verification/release/frame-15-ravi-1920.png",
+    "demo-iterations/v27/verification/release/frame-15-ravi-960.png",
+    "demo-iterations/v27/verification/release/frame-20-question-review-1920.png",
+    "demo-iterations/v27/verification/release/frame-20-question-review-960.png",
+    "demo-iterations/v27/verification/release/frame-22-no-reply-1920.png",
+    "demo-iterations/v27/verification/release/frame-22-no-reply-960.png",
+    "demo-iterations/v27/verification/release/frame-26-local-preview-confirmation-1920.png",
+    "demo-iterations/v27/verification/release/frame-26-local-preview-confirmation-960.png"
+  ],
+  "release_evidence": {
+    "report": "demo-iterations/v27/verification/release/release_report.md",
+    "verification": "demo-iterations/v27/verification/release/verification.md",
+    "media_summary": "demo-iterations/v27/verification/release/media-summary.json",
+    "ffprobe": "demo-iterations/v27/verification/release/ffprobe.json",
+    "decode_log": "demo-iterations/v27/verification/release/decode.log",
+    "audio_levels": "demo-iterations/v27/verification/release/audio-levels.txt",
+    "silence_detection": "demo-iterations/v27/verification/release/silence-detection.txt",
+    "freeze_detection": "demo-iterations/v27/verification/release/freezedetect.log",
+    "capture_marks": "demo-iterations/v27/capture/capture-marks.json"
+  },
+  "scripts": {
+    "capture": {
+      "path": "demo-iterations/v27/capture/capture-v27.mjs",
+      "sha256": "14f81876c78fa36ae7a80ea760232dc4bafed4f4eec3dc8cd1b7a2cea2dd0077"
+    },
+    "render": {
+      "path": "demo-iterations/v27/capture/render-v27.py",
+      "sha256": "b6901b16e91cf93314eacc598ee664666a103179852dda9fd394962125a904cc"
+    }
+  },
+  "cold_review": {
+    "report": "demo-iterations/v27/cold-review/report.md",
+    "decision": "maybe",
+    "fixed_weighted_score": 71,
+    "film_persuasion_score": 72,
+    "film_persuasion_components": {
+      "first_15_second_clarity": 18,
+      "human_journey_and_payoff": 20,
+      "differentiation_and_role_value": 16,
+      "cinematic_and_narrative_craft": 18
+    },
+    "evidence_mode": "independent_video_only_with_visible_captions_audio_inaccessible",
+    "confidence": "medium",
+    "persuasion_confidence": "medium-low",
+    "independent_of_previous_rounds": true,
+    "known_weaknesses": "demo-iterations/v27/known-weaknesses.md",
+    "v28_priorities": "demo-iterations/v27/v28-priorities.md"
+  },
+  "product_source_commit": "e7e8cbe3c6b94f41324f030b7bb21aaf96f25af0",
+  "verification_report": "demo-iterations/v27/verification/report.md"
+}

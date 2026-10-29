@@ -1,0 +1,14 @@
+{
+  "iteration": "v27",
+  "source": "demo-iterations/v27/capture/video/v27-real-product-session.webm",
+  "sourceSeconds": 155.24,
+  "startupTrimSeconds": 0.6670000000000016,
+  "durationSeconds": 154.567,
+  "resolution": "1920x1080",
+  "fps": 30,
+  "sceneCount": 26,
+  "captionCueCount": 26,
+  "captionSafeArea": "Reserved 130px lower strip; product view is cropped to 1600x792 and scaled to 1920x950 so captions stay clear of UI controls.",
+  "picture": "Real React product session captured through Playwright; gentle 12.5-second crop drift; no fabricated states.",
+  "narration": "FFmpeg Flite rms synthetic voice; fictional example narration."
+}
