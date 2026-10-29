@@ -1,0 +1,43 @@
+{
+  "version": "v04",
+  "candidate": "demo-iterations/v04/demo.mp4",
+  "candidate_commit_sha": null,
+  "based_on": {
+    "v03_manifest_commit": "4082635019151efa975a3f55ae95a6beb3628a66",
+    "v03_film_commit": "698731572f70e1a6a71df54c2173e0e4ce124189",
+    "v03_candidate": "demo-iterations/v03/demo.mp4",
+    "v03_candidate_sha256": "3abb112e5bdd75f821167ad5da3b069a7cccb1968ee6f1e34708285179bd017c",
+    "source_react_capture": "demo-iterations/v01/capture/react-capture.webm",
+    "source_react_capture_sha256": "520747affd17ab5dd3b5c6df419b6793937372ac146b29e2c22898da704be44c"
+  },
+  "changes": [
+    "Opening: the first frame retains the fictional-preview label and Day 1 React footage. A large, two-line title names Arjun, family pressure, and Harmonise's promise; the illustrative advice contrast remains smaller.",
+    "Ravi beat: a crop from the actual captured React consent screen is enlarged for 10.5 seconds so the group-only/no-private message, exact audience, alias, question, and unchecked checkbox are visible together. The prepared illustrative reply remains in sequence.",
+    "Architecture: enlarged high-contrast panels show both planned model names and roles. The original planned/not-connected disclosure, permissioned-retrieval material, and human-moderator boundary remain visible in the captured architecture screen.",
+    "No UI or source code was changed. Video derives from the committed raw Playwright footage, with only film titles, captions, cropping, scaling, and timing."
+  ],
+  "duration_seconds": 178.0,
+  "resolution": "1920x1080",
+  "frame_rate": 30,
+  "video_codec": "H.264",
+  "audio_codec": "AAC mono 48 kHz",
+  "narration": "Synthetic offline Flite narration. No live Meta model or human voice is used.",
+  "captions": "Burned in and supplied as demo-iterations/v04/captions.srt.",
+  "sha256": "4cb08bbb531dc4b4870421a94d1267cecb89db25f601252335d9036bb044f5d7",
+  "audio_measurement": {
+    "mean_db": -21.2,
+    "peak_db": -4.6
+  },
+  "verification": {
+    "duration": "passed: 178.000 seconds, within 175-179s and under 180s",
+    "ffprobe": "passed: 1920x1080, 30fps H.264, AAC mono 48 kHz",
+    "full_decode": "passed: ffmpeg decode exit 0",
+    "audio": "passed: mean -21.2 dB, peak -4.6 dB",
+    "captions": "SRT cues align with revised opening, Ravi consent and prepared sample, moderation explanation, and planned architecture narration.",
+    "readability": "Reviewed muted full-size frames at 0s, 5s, 10s, 108s, 112s, 117s, 164s and 168s, plus 960x540 frames at 0s, 5s, 108s, 164s and 168s. The hook and consent details are legible at both sizes; the close-up keeps the checkbox and exact audience/payload visible; planned model-role panels are readable at both sizes.",
+    "application_tests": "No application source changed; no app tests were rerun for this film-only edit."
+  },
+  "outstanding_gap": "The committed React recording does not visit the qualified-professional/official-support screen. This pathway is not shown in v04; no provider, official path, or booking claim was invented.",
+  "disclosure": "Fictional interactive preview footage; all people and conversation content are prepared samples. Meta integrations are planned and not connected in this preview.",
+  "review": "No self-score or judge review performed by the builder. Fresh blind judge and release verifier review requested after this commit."
+}
