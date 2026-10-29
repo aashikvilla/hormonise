@@ -2,14 +2,38 @@
   "iteration": "v12",
   "parent_iteration": "v11",
   "parent_candidate_sha256": "d33b54da90c48b2c1ec7c54ef19b5924e651abbeb05e7846943903477edb3836",
-  "candidate_commit_sha": null,
+  "candidate_commit_sha": "c3241beadfba9d4dfbe1dd15beefa0e704604c8b",
   "candidate": "demo-iterations/v12/demo.mp4",
   "candidate_sha256": "2ba10b598cbb3cc047d05bd1c5535640cb08398516bd16c47c6ae0656b4fb871",
   "duration_seconds": 177.633333,
-  "video": {"codec": "h264", "width": 1920, "height": 1080, "fps": "30/1", "duration_seconds": 177.633333, "frames": 5329},
-  "audio": {"codec": "aac", "sample_rate": 48000, "channels": 1, "duration_seconds": 177.621, "av_delta_seconds": 0.012333},
-  "captions": {"path": "demo-iterations/v12/captions.srt", "sha256": "c82556c3a98e8a123de36b26539b912da1c791b70405fb8c3be547a301877199", "cue_count": 39, "last_cue_end_seconds": 177.388, "burned_in": true},
-  "narration": {"path": "demo-iterations/v12/narration.txt", "sha256": "d5a806a3c5b2b8aa1f825c85af7650c99e36a097c66cacf615fc2ee855f9f0bf", "voice": "synthetic Flite", "model_connected": false},
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "duration_seconds": 177.633333,
+    "frames": 5329
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_seconds": 177.621,
+    "av_delta_seconds": 0.012333
+  },
+  "captions": {
+    "path": "demo-iterations/v12/captions.srt",
+    "sha256": "c82556c3a98e8a123de36b26539b912da1c791b70405fb8c3be547a301877199",
+    "cue_count": 39,
+    "last_cue_end_seconds": 177.388,
+    "burned_in": true
+  },
+  "narration": {
+    "path": "demo-iterations/v12/narration.txt",
+    "sha256": "d5a806a3c5b2b8aa1f825c85af7650c99e36a097c66cacf615fc2ee855f9f0bf",
+    "voice": "synthetic Flite",
+    "model_connected": false
+  },
   "capture": {
     "path": "demo-iterations/v12/capture/react-capture.webm",
     "sha256": "ec5ae53a27295f5df116fec390b6d946f6257976dc9b492e06a5a7c8c7b4d822",
@@ -19,9 +43,23 @@
     "timeline": "demo-iterations/v12/capture/timeline.json",
     "timeline_sha256": "d312eb4523d885d6102adac8b7dca8155a2a7c0f15abf1b3cfd338823f906888"
   },
-  "render_script": {"path": "demo-iterations/v12/capture/render-film.py", "sha256": "a6a17dc6ef7ff9bc64618a31e533ab23b434d24a6fa8783b705ba4f1bbb8e006"},
+  "render_script": {
+    "path": "demo-iterations/v12/capture/render-film.py",
+    "sha256": "a6a17dc6ef7ff9bc64618a31e533ab23b434d24a6fa8783b705ba4f1bbb8e006"
+  },
   "verification": "demo-iterations/v12/verification.md",
-  "visual_evidence": ["demo-iterations/v12/verification/contact.png", "demo-iterations/v12/verification/contact-960.png"],
-  "acceptance": {"lint": "passed", "typecheck": "passed", "unit": "27/27 passed", "e2e": "32/32 desktop and mobile passed", "build": "passed", "full_decode": "passed", "media_visual_review": "passed"},
+  "visual_evidence": [
+    "demo-iterations/v12/verification/contact.png",
+    "demo-iterations/v12/verification/contact-960.png"
+  ],
+  "acceptance": {
+    "lint": "passed",
+    "typecheck": "passed",
+    "unit": "27/27 passed",
+    "e2e": "32/32 desktop and mobile passed",
+    "build": "passed",
+    "full_decode": "passed",
+    "media_visual_review": "passed"
+  },
   "scope": "Frontend-only fictional local preview; no live Meta, model, community, human moderator, provider, or message integrations."
 }
