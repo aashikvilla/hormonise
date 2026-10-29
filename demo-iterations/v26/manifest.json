@@ -114,5 +114,6 @@
       "No live model execution or community activity is evidenced."
     ]
   },
-  "known_craft_issue": "Closing preview and caption remain visually static for about 12 seconds."
+  "known_craft_issue": "Closing preview and caption remain visually static for about 12 seconds.",
+  "candidate_archive_commit": "79c9f85b0c7a0faf998201b31c6a3f5290896e70"
 }
