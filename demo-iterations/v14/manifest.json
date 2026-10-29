@@ -1,0 +1,79 @@
+{
+  "iteration": "v14",
+  "parent_iteration": "v13",
+  "parent_candidate_sha256": "dd21e18a055cf80bca4ee60b0f62620d6e82025b10639985bfb64a722d691d47",
+  "candidate_commit_sha": null,
+  "candidate": "demo-iterations/v14/demo.mp4",
+  "candidate_sha256": "281753a0b2372b2ae3431b30cfdc9f3159ae53105765217b8ccfdecc16acf84a",
+  "duration_seconds": 177.933333,
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "duration_seconds": 177.933333,
+    "frames": 5338
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_seconds": 177.92,
+    "av_delta_seconds": 0.013333,
+    "last_speech_seconds": 177.58
+  },
+  "captions": {
+    "path": "demo-iterations/v14/captions.srt",
+    "sha256": "6c5427c5ba00f45bf4650a3479a5fdbb600217589eba3812ae77e9041cf186c6",
+    "cue_count": 42,
+    "last_cue_end_seconds": 177.58,
+    "burned_in": true,
+    "overlapping_cues": 0
+  },
+  "narration": {
+    "path": "demo-iterations/v14/narration.txt",
+    "sha256": "c6cc80faaa60e54edc8cff07fb186bd7652a6809f2f66fd8a873c31b57e17bc5",
+    "voice": "synthetic Flite",
+    "model_connected": false
+  },
+  "capture": {
+    "path": "demo-iterations/v14/capture/react-capture.webm",
+    "sha256": "42a8e0ba357e13c2b607fee76acfabfde089619df95c8aec0b16112aeba418cb",
+    "duration_seconds": 190.36,
+    "resolution": "1600x900",
+    "fps": 25,
+    "timeline": "demo-iterations/v14/capture/timeline.json",
+    "timeline_sha256": "fc4d7d42f57c5d8406bd2a067845ef19ad9c1f2492df5054dc6f0a8f2cd55c6c"
+  },
+  "scripts": {
+    "capture": "demo-iterations/v14/capture/capture-film.mjs",
+    "capture_sha256": "f431e73ccf3ba3395f08cabd0de992807520d7bd99d32f25b146a8a10b020f3f",
+    "render": "demo-iterations/v14/capture/render-film.py",
+    "render_sha256": "6245186e5290d4d4f0a00dad5d44fe59901f8c01aff1cdf4e18120f2a996008b"
+  },
+  "verification": "demo-iterations/v14/verification.md",
+  "verification_sha256": "7560cd204d6f0724f3fd9f996fafb87c4e9bef830a47f59d30e1f9b87859e1a6",
+  "visual_evidence": [
+    {
+      "path": "demo-iterations/v14/verification/contact.jpg",
+      "sha256": "a1637f5454abe616a6f90472ea3e93f0c2d334c182ec32fd8f57b6e72154261a"
+    },
+    {
+      "path": "demo-iterations/v14/verification/contact-960.jpg",
+      "sha256": "c621dff26a9e8b8b003bbe3ed0fdac69aed28ab05b5184bf1a4725b63b13ae6d"
+    }
+  ],
+  "acceptance": {
+    "lint": "passed",
+    "typecheck": "passed",
+    "unit": "27/27 passed",
+    "e2e": "32/32 desktop and mobile passed",
+    "build": "passed",
+    "capture_smoke": "18/18 scene markers passed",
+    "full_decode": "passed",
+    "caption_overlap": "0",
+    "visual_review": "passed"
+  },
+  "source_code_changes": false,
+  "scope": "Fictional frontend-only preview. No live Meta, AI, community, moderation, provider, human, or message integrations."
+}
