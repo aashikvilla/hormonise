@@ -1,0 +1,170 @@
+{
+  "scenes": [
+    {
+      "name": "01-hook",
+      "startSeconds": 0,
+      "endSeconds": 7.009,
+      "caption": "“I can’t tell my family what I want without feeling ungrateful.”\nA fictional prepared scenario."
+    },
+    {
+      "name": "02-private-choice",
+      "startSeconds": 7.009,
+      "endSeconds": 12.016,
+      "caption": "He chooses a private first step.\nNo one else sees this reflection."
+    },
+    {
+      "name": "03-own-words",
+      "startSeconds": 12.017,
+      "endSeconds": 18.023,
+      "caption": "Arjun puts the family pressure\ninto his own words."
+    },
+    {
+      "name": "04-prepared-reflection",
+      "startSeconds": 18.023,
+      "endSeconds": 25.037,
+      "caption": "Prepared local example.\nNo model is connected."
+    },
+    {
+      "name": "05-tentative-meaning",
+      "startSeconds": 25.037,
+      "endSeconds": 31.04,
+      "caption": "A possible meaning is offered\nas something he can check."
+    },
+    {
+      "name": "06-reject",
+      "startSeconds": 31.04,
+      "endSeconds": 36.05,
+      "caption": "He says “Not quite.”\nThe first interpretation does not stand."
+    },
+    {
+      "name": "07-correction",
+      "startSeconds": 36.05,
+      "endSeconds": 43.052,
+      "caption": "He corrects it: he needs time\nto decide for himself."
+    },
+    {
+      "name": "08-changed-result",
+      "startSeconds": 43.052,
+      "endSeconds": 51.056,
+      "caption": "The editable reflection changes\nto include his correction."
+    },
+    {
+      "name": "09-confirmed-theme",
+      "startSeconds": 51.056,
+      "endSeconds": 57.069,
+      "caption": "He confirms the theme himself.\nThe product does not decide what is true."
+    },
+    {
+      "name": "10-choice-to-explore",
+      "startSeconds": 57.07,
+      "endSeconds": 63.075,
+      "caption": "Only now does he choose\nto hear other experiences."
+    },
+    {
+      "name": "11-correction-changes-results",
+      "startSeconds": 63.075,
+      "endSeconds": 70.079,
+      "caption": "He sets aside broad legal results.\nFamily context stays in view."
+    },
+    {
+      "name": "12-enter-community",
+      "startSeconds": 70.079,
+      "endSeconds": 75.082,
+      "caption": "He opens the family expectations\ncommunity preview."
+    },
+    {
+      "name": "13-fiction-label",
+      "startSeconds": 75.082,
+      "endSeconds": 80.084,
+      "caption": "The community example is prepared\nand fictional, not live."
+    },
+    {
+      "name": "14-peer-perspective",
+      "startSeconds": 80.084,
+      "endSeconds": 87.089,
+      "caption": "Ravi names a different path: a trusted friend\nhelped him speak with family."
+    },
+    {
+      "name": "15-shared-pressure",
+      "startSeconds": 87.089,
+      "endSeconds": 93.093,
+      "caption": "They share family pressure,\nbut the circumstances differ."
+    },
+    {
+      "name": "16-different-support",
+      "startSeconds": 93.093,
+      "endSeconds": 100.097,
+      "caption": "Ravi had someone he trusted.\nArjun has not said he does."
+    },
+    {
+      "name": "17-group-only",
+      "startSeconds": 100.097,
+      "endSeconds": 106.101,
+      "caption": "If Arjun asks, Ravi accepts questions\nin the group only, never by DM."
+    },
+    {
+      "name": "18-edited-question",
+      "startSeconds": 106.101,
+      "endSeconds": 113.103,
+      "caption": "He edits the question\nto ask for time before answering."
+    },
+    {
+      "name": "19-consent-boundary",
+      "startSeconds": 113.103,
+      "endSeconds": 120.105,
+      "caption": "Group and alias are shown.\nPrivate reflection is excluded."
+    },
+    {
+      "name": "20-cancel",
+      "startSeconds": 120.105,
+      "endSeconds": 125.108,
+      "caption": "He cancels.\nNothing is sent; the draft remains his."
+    },
+    {
+      "name": "21-no-reply-yet",
+      "startSeconds": 125.108,
+      "endSeconds": 132.112,
+      "caption": "A later prepared thread has no reply yet.\nA response is not promised."
+    },
+    {
+      "name": "22-private-takeaway",
+      "startSeconds": 132.112,
+      "endSeconds": 138.114,
+      "caption": "Arjun keeps one takeaway privately\nfor this preview session."
+    },
+    {
+      "name": "23-bounded-offer",
+      "startSeconds": 138.114,
+      "endSeconds": 144.119,
+      "caption": "He may offer one bounded thing\nthat helped to Dev’s example group."
+    },
+    {
+      "name": "24-edit-and-review",
+      "startSeconds": 144.119,
+      "endSeconds": 152.122,
+      "caption": "He edits the exact contribution.\nConsent stays unchecked."
+    },
+    {
+      "name": "25-choice-end-state",
+      "startSeconds": 152.122,
+      "endSeconds": 160.127,
+      "caption": "Private takeaway kept.\nOptional group contribution remains unposted."
+    }
+  ],
+  "checks": {
+    "changedReflection": "You want time to decide what you want, without someone choosing stay or leave for you.",
+    "changedReflectionVisible": true,
+    "themeReachedDiscovery": true,
+    "rejectedBaseline": true,
+    "raviProvenance": "Illustrative experience · Ravi\nRavi\n\nAt first I asked everyone what I should do about my relationship. I got completely different answers. Some were kind, some felt like instructions. I stopped asking for a verdict and asked one trusted friend to listen while I worked out what mattered to me. I was still uncertain afterward, but I could hear my own thinking again.\n\nOne person's account, not a recommendation for your decision.",
+    "difference": "WHERE YOUR LIVES DIFFER\nWhat may not carry over\nRavi had an existing trusted friend, which Arjun has not said he has.\n\nStill unknown: Whether Ravi's marriage continued or ended\n\nStill unknown: Whether the same approach would help Arjun",
+    "questionPreview": "Could I take time to decide before answering?",
+    "consentUnchecked": true,
+    "takeaway": "Arjun chose this in the preview session only: “I can ask for time before deciding.”",
+    "offerConsentUnchecked": true,
+    "finalChoice": "FICTIONAL · PREPARED LOCAL PREVIEW\nArjun keeps the next step in his hands.\nKept privately in this preview\n\nI can ask for time before deciding.\n\nFor this preview session only · not shared\nOptional group draft · unsent\n\nOne helpful thing for Dev · Family Expectations group · QuietRiver\n\nPrivate context excluded\n\n“I asked for time to think before replying. I am still working out what I want.”\n\nNothing is sent.\n\nFictional local draft · consent unchecked · post disabled. No send action is connected in this preview."
+  },
+  "captureViewport": "1600x900",
+  "productRoute": "http://127.0.0.1:3033/",
+  "interaction": "Actual Playwright interactions against the running fictional product preview."
+}

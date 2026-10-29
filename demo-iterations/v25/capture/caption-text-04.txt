@@ -1,0 +1,2 @@
+Prepared local example.
+No model is connected.

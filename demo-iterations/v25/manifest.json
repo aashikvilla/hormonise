@@ -1,0 +1,120 @@
+{
+  "iteration": "v25",
+  "parent_iteration": "v24",
+  "product_source_commit": "5fd3c7062b4287af3eebd65b7a24cd0304613f08",
+  "source_code_changes": false,
+  "candidate": "demo-iterations/v25/demo.mp4",
+  "candidate_sha256": "e68563c689848f21b5bc92618f19a1891d987f38c2bc58a4ce04fb4bd28acd96",
+  "source_capture": {
+    "path": "demo-iterations/v25/capture/video/v25-real-product-session.webm",
+    "sha256": "41b5369e6fe778b49da4dc2949820b8f50cf4cd01b94c718f1faf117e998dd23"
+  },
+  "duration_seconds": 160.033333,
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "duration_seconds": 160.033333,
+    "frames": 4801
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_seconds": 160.033,
+    "av_delta_seconds": 0.000333,
+    "integrated_loudness_lufs": -18.1,
+    "true_peak_dbfs": -2.0
+  },
+  "captions": {
+    "path": "demo-iterations/v25/capture/captions.srt",
+    "sha256": "2a36f3c0c5d6ed65725467eac8b07302ed3d790c8fc4657dc1872e22714124dc",
+    "cue_count": 25,
+    "burned_in": true
+  },
+  "narration": {
+    "path": "demo-iterations/v25/capture/narration.txt",
+    "sha256": "93ac30121bd9da2c37a8d8e0b6da13bc4e3e88c9187e1a3c45a9ce547b39a422",
+    "voice": "FFmpeg Flite rms",
+    "model_connected": false
+  },
+  "capture": {
+    "path": "demo-iterations/v25/capture/video/v25-real-product-session.webm",
+    "duration_seconds": 161.36,
+    "startup_trim_seconds": 1.326667,
+    "viewport": "1600x900",
+    "interaction": "Actual Playwright interactions on the local product preview",
+    "marks": "demo-iterations/v25/capture/capture-marks.json"
+  },
+  "checks": {
+    "full_decode": "passed",
+    "freeze_over_5_seconds": "none detected by FFmpeg freezedetect",
+    "audio_levels": "passed; integrated -18.1 LUFS, true peak -2.0 dBFS",
+    "screen_readability": "reviewed at 1920x1080 and 960x540; captions in reserved lower band",
+    "changed_reflection_visible": true,
+    "corrected_theme_reached_discovery": true,
+    "broad_results_changed": true,
+    "Ravi_prepared_provenance": "passed",
+    "difference_context": "WHERE YOUR LIVES DIFFER\nWhat may not carry over\nRavi had an existing trusted friend, which Arjun has not said he has.\n\nStill unknown: Whether Ravi's marriage continued or ended\n\nStill unknown: Whether the same approach would help Arjun",
+    "exact_group_question_preview": "Could I take time to decide before answering?",
+    "outreach_consent_unchecked_and_disabled": true,
+    "optional_contribution_unchecked_and_disabled": true,
+    "final_choice": "FICTIONAL \u00b7 PREPARED LOCAL PREVIEW\nArjun keeps the next step in his hands.\nKept privately in this preview\n\nI can ask for time before deciding.\n\nFor this preview session only \u00b7 not shared\nOptional group draft \u00b7 unsent\n\nOne helpful thing for Dev \u00b7 Family Expectations group \u00b7 QuietRiver\n\nPrivate context excluded\n\n\u201cI asked for time to think before replying. I am still working out what I want.\u201d\n\nNothing is sent.\n\nFictional local draft \u00b7 consent unchecked \u00b7 post disabled. No send action is connected in this preview."
+  },
+  "visual_evidence": [
+    "demo-iterations/v25/verification/release/contact-1920.jpg",
+    "demo-iterations/v25/verification/release/contact-960.jpg"
+  ],
+  "scripts": {
+    "capture": {
+      "path": "demo-iterations/v25/capture/capture-v25.mjs",
+      "sha256": "7a37fd5ddb913dfbc8231b5c661f82be090ba2be9d5dcc4c093e3b370259edf4"
+    },
+    "render": {
+      "path": "demo-iterations/v25/capture/render-v25.py",
+      "sha256": "2fda93b397355073e75a59b5b92d2216baa1ce77e82358f76cc80c9193dcf815"
+    }
+  },
+  "release_evidence": {
+    "checks": "demo-iterations/v25/verification/release/verification.md",
+    "report": "demo-iterations/v25/verification/release/release_report.md",
+    "media_summary": "demo-iterations/v25/verification/release/media-summary.json",
+    "ffprobe": "demo-iterations/v25/verification/release/ffprobe.json",
+    "decode_log": "demo-iterations/v25/verification/release/decode.log",
+    "audio_levels": "demo-iterations/v25/verification/release/audio-levels.txt",
+    "freeze_detection": "demo-iterations/v25/verification/release/freezedetect.log",
+    "capture_marks": "demo-iterations/v25/capture/capture-marks.json"
+  },
+  "archive_or_commit": "candidate/evidence committed locally; no push",
+  "archive_status": "locally archived; no push",
+  "independent_release_audio": {
+    "mean_db": -19.3,
+    "peak_dbfs": -2.0,
+    "notes": "Long pause 4.425 s at 46.77\u201351.19; approximately 3 s silence at end."
+  },
+  "cold_review": {
+    "report": "demo-iterations/v25/cold-review/report.md",
+    "review_json": "demo-iterations/v25/cold-review/review.json",
+    "decision": "maybe",
+    "fixed_weighted_score": 72,
+    "film_persuasion_score": 79,
+    "film_persuasion_components": {
+      "first_15_second_clarity": 19,
+      "human_journey_and_payoff": 21,
+      "differentiation_and_role_value": 18,
+      "cinematic_and_narrative_craft": 21
+    },
+    "evidence_mode": "video_picture_and_embedded_captions_audio_unheard",
+    "technical_evidence_type": "film-visible prototype evidence",
+    "confidence": "medium",
+    "independent_of_previous_rounds": true,
+    "known_weaknesses": [
+      "No Meta model execution or live community activity is evidenced.",
+      "Opening audience and product differentiation could be clearer.",
+      "The ending has no human exchange and remains unresolved.",
+      "Some interface text is small.",
+      "Audio could not be heard by the reviewer."
+    ]
+  }
+}

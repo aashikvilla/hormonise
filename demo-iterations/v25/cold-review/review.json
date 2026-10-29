@@ -1,0 +1,80 @@
+{
+  "project": "Harmonise",
+  "decision": "maybe",
+  "review_evidence_mode": "video_picture_and_embedded_captions_audio_unheard",
+  "technical_evidence_type": "film-visible prototype evidence",
+  "independent_of_previous_rounds": true,
+  "scores": {
+    "impact": 23,
+    "meta_use": 13,
+    "demo": 18,
+    "technical_depth": 18
+  },
+  "subscores": {
+    "impact": {
+      "problem_specificity_depth": 8,
+      "human_need_believable_outcomes": 8,
+      "adoption_network_benefit": 7
+    },
+    "meta_use": {
+      "named_model_roles": 0,
+      "necessity_not_generic_wrapper": 4,
+      "visible_mechanism_reasoning_structured_ui": 5,
+      "evidence_or_candid_limitation": 4
+    },
+    "demo": {
+      "hook_story": 5,
+      "clarity_legibility": 5,
+      "pacing_accessible_audio_subtitles": 3,
+      "emotional_payoff": 3,
+      "polished_coherent_ui": 2
+    },
+    "technical_depth": {
+      "plausible_user_workflow": 5,
+      "controls_permissions_privacy": 5,
+      "architecture_failure_handling": 4,
+      "implementation_evidence": 4
+    }
+  },
+  "total": 72,
+  "confidence": "medium",
+  "uncertainty": "Audio could not be heard. The film clearly identifies a fictional prepared local prototype and does not evidence model execution or live community activity.",
+  "film_persuasion_dimensions": {
+    "first_15_second_clarity": {
+      "score": 19,
+      "evidence": [
+        {"timestamp": "0:00", "observation": "Names family-pressure dilemma and labels it a fictional prepared scenario."},
+        {"timestamp": "0:05", "observation": "States a private-first promise, but audience and differentiation remain broad."}
+      ],
+      "confidence": "medium"
+    },
+    "human_journey_and_payoff": {
+      "score": 21,
+      "evidence": [
+        {"timestamp": "0:15-0:35", "observation": "Arjun rejects a possible meaning, corrects it, and confirms the revised theme."},
+        {"timestamp": "2:20-2:38", "observation": "Keeps a private takeaway and reviews an optional group draft that remains unposted."}
+      ],
+      "confidence": "medium-high"
+    },
+    "differentiation_and_role_value": {
+      "score": 18,
+      "evidence": [
+        {"timestamp": "0:40-1:00", "observation": "Private reflection connects to a topical example group and a group-only question."},
+        {"timestamp": "2:20-2:38", "observation": "Shows bounded optional contribution; model and peer activity are explicitly not live."}
+      ],
+      "confidence": "medium"
+    },
+    "cinematic_and_narrative_craft": {
+      "score": 21,
+      "evidence": [
+        {"timestamp": "0:00-2:38", "observation": "Embedded high-contrast captions guide a coherent private-to-community journey."},
+        {"timestamp": "2:35-2:38", "observation": "Final consent state and no-send outcome are clear, though the ending stays unresolved."}
+      ],
+      "confidence": "medium"
+    }
+  },
+  "film_persuasion_score": 79,
+  "film_persuasion_arithmetic": "19 + 21 + 18 + 21 = 79/100",
+  "audio_limitation": "AAC audio stream exists, but audio was not accessible to hear in this review. Judgments rely on picture and embedded captions; no narration, music, or sound claims are made.",
+  "report_path": "/tmp/harmonise-v25-blind/report.md"
+}
