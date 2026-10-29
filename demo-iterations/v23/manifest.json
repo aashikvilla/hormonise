@@ -65,5 +65,6 @@
     "verification/frame-052s-960.jpg": "ea778c714ea9a9675d7742b0db51a8f14e4b81b9e8b4faf8a09b72830c23a0fd",
     "verification/frame-064s-960.jpg": "8244050f8725191407b98ff8c0d1ac5f80e21a82cb683ec1789b9f09f1bcb51e",
     "verification/frame-080s-960.jpg": "f40816e17998cf3f55ea4fba60f158f4f3d501b69f8578794c9c9b05e4606a0a"
-  }
+  },
+  "commit_sha": "b0d9e7e1602f1a5b4fe978a0ab048bbedea99286"
 }
