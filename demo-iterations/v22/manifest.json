@@ -1,0 +1,59 @@
+{
+  "version": "v22",
+  "status": "finalized",
+  "render": "demo.mp4",
+  "durationSeconds": 178.0,
+  "picture": {
+    "width": 1920,
+    "height": 1080,
+    "frameRate": "30/1",
+    "codec": "h264",
+    "fadeOut": {
+      "startSeconds": 176.0,
+      "durationSeconds": 2.0
+    }
+  },
+  "audio": {
+    "codec": "aac",
+    "sampleRateHz": 48000,
+    "channels": 2,
+    "durationSeconds": 178.0,
+    "startSeconds": 0.0,
+    "source": "FFmpeg Flite local kal voice",
+    "classification": "synthetic narration; not human performance or model output",
+    "speechCueCount": 17,
+    "lastSpeechEndSeconds": 174.846,
+    "measuredMeanDbfs": -27.0,
+    "measuredPeakDbfs": -4.0,
+    "music": false
+  },
+  "captions": {
+    "file": "captions.srt",
+    "cueCount": 17,
+    "ordered": true,
+    "overlaps": 0,
+    "maxLinesPerCue": 2,
+    "lastCueEndSeconds": 175.096,
+    "alignedToNarration": true
+  },
+  "continuousTake": {
+    "file": "capture/continuous-take.mp4",
+    "durationSeconds": 62.345,
+    "frameCount": 507,
+    "averageSampleRateFps": 8.132,
+    "markCount": 6,
+    "verifiedReflection": "You want time to decide what you want, without someone choosing stay or leave for you."
+  },
+  "verification": {
+    "report": "verification.md",
+    "fullDecode": "passed",
+    "streamStartDeltaSeconds": 0.0,
+    "framesInspectedAt960x540": [0, 14, 28, 38, 50, 55, 61, 74, 83, 91, 98, 110, 127, 140, 157, 169, 174, 176, 177],
+    "coldReview": "not performed"
+  },
+  "sha256": {
+    "demo.mp4": "59e71e2f32903a3e366744ac7473eeb0060acd1f8aca369cc269ad7cc3673cab",
+    "captions.srt": "920fbd41ac0c384dc60e62636e7011fc49e658bef6ea183338ee73c8379bb229",
+    "capture/continuous-take.mp4": "54a0e0338c933fb10ee3ac9e0f3973bae09e8241b156d06570500c66ad1a9039"
+  }
+}

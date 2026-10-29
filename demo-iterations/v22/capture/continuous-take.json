@@ -1,0 +1,32 @@
+{
+  "durationSeconds": 62.345,
+  "frameCount": 507,
+  "framesPerSecond": 8.132,
+  "marks": [
+    {
+      "name": "01-empty-input",
+      "seconds": 1.318
+    },
+    {
+      "name": "02-words-entered",
+      "seconds": 13.937
+    },
+    {
+      "name": "03-possible-reading",
+      "seconds": 20.599
+    },
+    {
+      "name": "04-not-quite",
+      "seconds": 27.737
+    },
+    {
+      "name": "05-correction-entered",
+      "seconds": 37.81
+    },
+    {
+      "name": "06-changed-reflection",
+      "seconds": 44.272
+    }
+  ],
+  "verifiedReflection": "You want time to decide what you want, without someone choosing stay or leave for you."
+}
