@@ -1,0 +1,8 @@
+{
+  "thresholdDbfs": -48,
+  "windowMs": 20,
+  "lastAudibleRelativeToTailSeconds": 10.58,
+  "tailBeginsAtSeconds": 79.8,
+  "measuredLastAudibleSeconds": 90.38,
+  "method": "decoded AAC to PCM; 20ms RMS windows; trailing windows below -48 dBFS treated as silence"
+}

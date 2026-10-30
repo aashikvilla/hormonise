@@ -1,0 +1,34 @@
+{
+  "candidate": "candidate.mp4",
+  "candidateSha256": "889060565ca987216376f5d649f2eb83da290aafe2dcc540649aebf51415fd2f",
+  "technicalDecision": "READY for independent review",
+  "builderSubjectiveDecision": "HOLD",
+  "durationSeconds": 91.8,
+  "video": "H.264 1920\u00d71080 30 fps",
+  "audio": "AAC mono 48 kHz",
+  "fullDecodeSucceeded": true,
+  "pairedCutFramesExtracted": {
+    "1920x1080": 11,
+    "960x540": 11
+  },
+  "captionAndSourceAudit": "cue-source-audit.json",
+  "captionCount": 24,
+  "allRetainedCaptionsVerbatim": true,
+  "audioTail": {
+    "lastAboveMinus48dBfsSeconds": 90.38,
+    "pictureEndSeconds": 91.8,
+    "postVoiceHoldSeconds": 1.42,
+    "method": "Decoded AAC to PCM; 20 ms RMS windows; -48 dBFS threshold."
+  },
+  "subjectiveAudioListening": "Not completed: ffplay reported no ALSA card/Pulse device.",
+  "actualMaybeLaterSelectedStateVisible": true,
+  "visiblePointerActionCaptured": false,
+  "coldReview": "pending",
+  "protectedPriorVersions": {
+    "demo-iterations/v13/demo.mp4": "dd21e18a055cf80bca4ee60b0f62620d6e82025b10639985bfb64a722d691d47",
+    "demo-iterations/v35/demo.mp4": "27c4fc952bd8fb876afe533f374e3f4bc4c60e2e5ab5d95e00c382d0f56e79d5",
+    "demo-iterations/v36/demo.mp4": "808f3d3bf00dbc03f500870401d4671c06d3e842c746bef472e6bab7c4ff4b1c",
+    "demo-iterations/v37/demo.mp4": "9281740447ec8ddd8df5ecd943c423a6a3a2de164e49416d78541a91c3c73f05",
+    "demo-iterations/v39/candidate.mp4": "64ce4ee005347da552b84f41bd26b5db816aacc74a257506f19fcb70c4f70c34"
+  }
+}

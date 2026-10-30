@@ -1,0 +1,249 @@
+{
+  "sourceNarration": "demo-iterations/v13/demo.mp4, audio track only",
+  "sourceCaptions": "demo-iterations/v13/captions.srt",
+  "retainedCueCount": 24,
+  "allCaptionStringsExact": true,
+  "allAudioWindowsOverlapMatchingV13Cue": true,
+  "cues": [
+    {
+      "caption": "I can\u2019t tell my family what I want without feeling ungrateful.",
+      "v13CaptionCue": 1,
+      "sourceInSeconds": 0.0,
+      "sourceOutSeconds": 4.0,
+      "v13CaptionStartSeconds": 0.0,
+      "v13CaptionEndSeconds": 4.0,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "Private reflection you can correct before exploring peer experiences.",
+      "v13CaptionCue": 2,
+      "sourceInSeconds": 4.2,
+      "sourceOutSeconds": 9.0,
+      "v13CaptionStartSeconds": 4.2,
+      "v13CaptionEndSeconds": 9.0,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "Planned AI organizes themes; peer stories are optional.",
+      "v13CaptionCue": 3,
+      "sourceInSeconds": 9.2,
+      "sourceOutSeconds": 13.76,
+      "v13CaptionStartSeconds": 9.2,
+      "v13CaptionEndSeconds": 13.76,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "Prepared preview. No model.",
+      "v13CaptionCue": 4,
+      "sourceInSeconds": 14.0,
+      "sourceOutSeconds": 16.3,
+      "v13CaptionStartSeconds": 14.0,
+      "v13CaptionEndSeconds": 16.3,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "A local example offers a possibility, not an answer.",
+      "v13CaptionCue": 5,
+      "sourceInSeconds": 16.5,
+      "sourceOutSeconds": 20.6,
+      "v13CaptionStartSeconds": 16.5,
+      "v13CaptionEndSeconds": 20.6,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "Arjun says, Not quite.",
+      "v13CaptionCue": 6,
+      "sourceInSeconds": 20.8,
+      "sourceOutSeconds": 23.2,
+      "v13CaptionStartSeconds": 20.8,
+      "v13CaptionEndSeconds": 23.2,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "He changes the words: it is his parents, and he wants time.",
+      "v13CaptionCue": 7,
+      "sourceInSeconds": 23.4,
+      "sourceOutSeconds": 27.605,
+      "v13CaptionStartSeconds": 23.4,
+      "v13CaptionEndSeconds": 27.605,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "Now the editable reflection changes with what he said.",
+      "v13CaptionCue": 8,
+      "sourceInSeconds": 28.0,
+      "sourceOutSeconds": 31.4,
+      "v13CaptionStartSeconds": 28.0,
+      "v13CaptionEndSeconds": 31.4,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "He wants time to decide, without advice to stay or leave.",
+      "v13CaptionCue": 9,
+      "sourceInSeconds": 31.6,
+      "sourceOutSeconds": 35.75,
+      "v13CaptionStartSeconds": 31.6,
+      "v13CaptionEndSeconds": 35.75,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "Day four: one member wants time to choose.",
+      "v13CaptionCue": 11,
+      "sourceInSeconds": 42.0,
+      "sourceOutSeconds": 45.425,
+      "v13CaptionStartSeconds": 42.0,
+      "v13CaptionEndSeconds": 45.425,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "Day nine. The host says, I can listen; I can\u2019t decide for you.",
+      "v13CaptionCue": 13,
+      "sourceInSeconds": 50.5,
+      "sourceOutSeconds": 54.8,
+      "v13CaptionStartSeconds": 50.5,
+      "v13CaptionEndSeconds": 54.8,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "Fictional historical examples, prepared and not live.",
+      "v13CaptionCue": 14,
+      "sourceInSeconds": 55.0,
+      "sourceOutSeconds": 59.0,
+      "v13CaptionStartSeconds": 55.0,
+      "v13CaptionEndSeconds": 59.0,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "Group only; no private messages.",
+      "v13CaptionCue": 17,
+      "sourceInSeconds": 67.5,
+      "sourceOutSeconds": 70.61,
+      "v13CaptionStartSeconds": 67.5,
+      "v13CaptionEndSeconds": 70.59,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "The alias and group audience stay visible.",
+      "v13CaptionCue": 19,
+      "sourceInSeconds": 76.2,
+      "sourceOutSeconds": 79.39,
+      "v13CaptionStartSeconds": 76.2,
+      "v13CaptionEndSeconds": 79.39,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "Private conversation and context are excluded.",
+      "v13CaptionCue": 20,
+      "sourceInSeconds": 79.9,
+      "sourceOutSeconds": 83.56,
+      "v13CaptionStartSeconds": 79.9,
+      "v13CaptionEndSeconds": 83.56,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "Consent is unchecked. Continue stays disabled.",
+      "v13CaptionCue": 21,
+      "sourceInSeconds": 84.0,
+      "sourceOutSeconds": 88.0,
+      "v13CaptionStartSeconds": 84.0,
+      "v13CaptionEndSeconds": 88.0,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "Nothing is sent from this preview.",
+      "v13CaptionCue": 22,
+      "sourceInSeconds": 88.2,
+      "sourceOutSeconds": 90.9,
+      "v13CaptionStartSeconds": 88.2,
+      "v13CaptionEndSeconds": 90.9,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "No provider is verified or bookable here.",
+      "v13CaptionCue": 23,
+      "sourceInSeconds": 92.0,
+      "sourceOutSeconds": 95.11,
+      "v13CaptionStartSeconds": 92.0,
+      "v13CaptionEndSeconds": 95.11,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "He keeps time to decide privately.",
+      "v13CaptionCue": 25,
+      "sourceInSeconds": 100.0,
+      "sourceOutSeconds": 102.89,
+      "v13CaptionStartSeconds": 100.0,
+      "v13CaptionEndSeconds": 102.89,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "He could leave without sharing anything.",
+      "v13CaptionCue": 26,
+      "sourceInSeconds": 104.5,
+      "sourceOutSeconds": 107.55,
+      "v13CaptionStartSeconds": 104.5,
+      "v13CaptionEndSeconds": 107.55,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "Maybe later keeps that choice open.",
+      "v13CaptionCue": 27,
+      "sourceInSeconds": 109.0,
+      "sourceOutSeconds": 112.11,
+      "v13CaptionStartSeconds": 109.0,
+      "v13CaptionEndSeconds": 112.11,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "Private reflection stays out of the group draft.",
+      "v13CaptionCue": 28,
+      "sourceInSeconds": 113.5,
+      "sourceOutSeconds": 116.88,
+      "v13CaptionStartSeconds": 113.5,
+      "v13CaptionEndSeconds": 116.875,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "Arjun keeps the next step in his hands.",
+      "v13CaptionCue": 38,
+      "sourceInSeconds": 158.5,
+      "sourceOutSeconds": 161.805,
+      "v13CaptionStartSeconds": 158.5,
+      "v13CaptionEndSeconds": 161.82,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    },
+    {
+      "caption": "Nothing is sent without consent. Arjun can leave it here.",
+      "v13CaptionCue": 41,
+      "sourceInSeconds": 173.6,
+      "sourceOutSeconds": 177.58,
+      "v13CaptionStartSeconds": 173.6,
+      "v13CaptionEndSeconds": 177.58,
+      "captionTextExact": true,
+      "audioWindowOverlapsMatchingCaption": true
+    }
+  ]
+}

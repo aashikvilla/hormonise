@@ -1,0 +1,76 @@
+{
+  "candidate": "/workspace/hormonise/demo-iterations/v40/candidate.mp4",
+  "sha256": "889060565ca987216376f5d649f2eb83da290aafe2dcc540649aebf51415fd2f",
+  "review_evidence_mode": "reduced_evidence_video_audio_inaccessible",
+  "technical_evidence_type": "film_visible_prototype_evidence",
+  "independent_of_previous_rounds": true,
+  "decision": "maybe",
+  "confidence": "moderate",
+  "scores": {
+    "impact": {
+      "problem_specificity_depth": 8,
+      "human_need_believable_outcomes": 7,
+      "adoption_network_benefit": 4,
+      "subtotal": 19,
+      "max": 30,
+      "evidence": ["0:00 identifies adults facing family pressure and the fear of appearing ungrateful.", "0:00–0:08 promises private reflection and optional sharing; no real adoption or network activity is shown."]
+    },
+    "meta_use": {
+      "correctly_named_model_roles": 6,
+      "necessity": 5,
+      "visible_mechanism_reasoning_structured_ui": 5,
+      "evidence_or_candid_limitation": 4,
+      "subtotal": 20,
+      "max": 25,
+      "evidence": ["0:08 and 0:16 identify Muse Spark as planned/not connected and say it could suggest a theme.", "0:16–0:36 shows an editable reflection and correction path, but no model call or output is substantiated."]
+    },
+    "demo": {
+      "hook_story": 4,
+      "clarity_legibility": 4,
+      "pacing_accessibility": 2,
+      "emotional_payoff": 3,
+      "polished_coherent_ui": 2,
+      "subtotal": 15,
+      "max": 25,
+      "evidence": ["0:00 gives a specific problem; the 0:16 and 0:56 UI is text dense at film scale.", "0:24–0:36 provides the strongest story turn; the audio track was not accessible for judging delivery or mix."]
+    },
+    "technical_depth": {
+      "plausible_full_workflow": 5,
+      "controls_permissions_privacy": 5,
+      "architecture_failure_handling": 3,
+      "implementation_evidence": 4,
+      "subtotal": 17,
+      "max": 20,
+      "evidence": ["0:16–0:36 presents correction; 0:56–1:06 previews exact text and audience, with consent unchecked and send action disabled.", "0:56–1:12 discloses disconnected messaging, fictional examples, and no verified provider; no live integration is claimed."]
+    }
+  },
+  "total": 71,
+  "total_arithmetic": "19 + 20 + 15 + 17 = 71/100",
+  "uncertainty": "Audio is inaccessible. Interaction is edited between prepared states; viewers cannot confirm uninterrupted input-to-output behavior. Fictional content and disconnected services are repeatedly disclosed.",
+  "film_persuasion_score": 72,
+  "film_persuasion_dimensions": {
+    "first_15_second_clarity": {
+      "score": 21,
+      "max": 25,
+      "evidence": ["0:00 names adults facing family pressure and the conflict.", "0:08 states private → correctable → optional prepared perspective and discloses Muse Spark is not connected."]
+    },
+    "human_journey_and_payoff": {
+      "score": 18,
+      "max": 25,
+      "evidence": ["0:20–0:36 gives Arjun a correction path.", "1:20 shows Maybe later selected and the reflection staying private; all participants and outcomes are fictional."]
+    },
+    "differentiation_and_role_value": {
+      "score": 19,
+      "max": 25,
+      "evidence": ["0:16 shows a correctable interpretation and user confirmation.", "0:40–0:52 describes fictional peer and host roles; the model, peers, and host are proposed rather than live."]
+    },
+    "cinematic_and_narrative_craft": {
+      "score": 14,
+      "max": 25,
+      "evidence": ["0:00–1:20 arcs from private concern to an optional next step.", "0:56–1:06 focuses consent clearly, while long static holds and repeated labels slow the film."]
+    }
+  },
+  "film_persuasion_arithmetic": "21 + 18 + 19 + 14 = 72/100",
+  "audio_limitation": "AAC audio is present but inaccessible to this reviewer. No narration or sound claims are inferred; spoken accessibility and audio mix/pacing are unjudged. On-screen labels and explanatory captions are visible.",
+  "report_path": "/tmp/harmonise-v40/report.md"
+}

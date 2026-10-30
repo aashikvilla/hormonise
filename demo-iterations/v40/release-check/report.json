@@ -1,0 +1,57 @@
+{
+  "verdict": "HOLD",
+  "file": "/workspace/hormonise/demo-iterations/v40/candidate.mp4",
+  "scope": "candidate.mp4 only; no source, prior versions, or notes consulted",
+  "expected_sha256": "889060565ca987216376f5d649f2eb83da290aafe2dcc540649aebf51415fd2f",
+  "actual_sha256": "889060565ca987216376f5d649f2eb83da290aafe2dcc540649aebf51415fd2f",
+  "hash_match": true,
+  "file_size_bytes": 4371082,
+  "container": "MP4",
+  "duration_seconds": 91.8,
+  "streams": {
+    "video": {
+      "codec": "H.264 High",
+      "width": 1920,
+      "height": 1080,
+      "pixel_format": "yuv420p",
+      "frame_rate": "30/1",
+      "frame_count": 2754,
+      "progressive": true
+    },
+    "audio": {
+      "codec": "AAC-LC",
+      "sample_rate_hz": 48000,
+      "channels": 1,
+      "duration_seconds": 91.8,
+      "overall_rms_dbfs": -18.545,
+      "peak_dbfs": -4.156
+    },
+    "subtitle_or_caption_streams": 0
+  },
+  "full_decode_passed": true,
+  "full_decode_errors": [],
+  "visual_review": {
+    "sampled_full_sequence_at_seconds": "0, 5, 10, ... , 90",
+    "inspected_resolutions": ["1920x1080", "960x540"],
+    "visible_overlap_or_crop": false,
+    "main_text_readable_at_960x540": true,
+    "final_frame_holds_cleanly": true,
+    "final_black_or_empty_cut": false
+  },
+  "content_claims_visible": {
+    "fictional_example": true,
+    "local_prepared_content": true,
+    "model_planned_but_not_connected": true,
+    "provider_not_verified_or_bookable": true,
+    "private_reflection_excluded": true,
+    "consent_unchecked": true,
+    "nothing_sent": true,
+    "final_choice_maybe_later": true
+  },
+  "audio_heard": false,
+  "audio_track_decodes_and_has_signal": true,
+  "final_silence_seconds_approx": 1.44,
+  "speech_content_verified": false,
+  "audio_cue_alignment_verified": false,
+  "hold_reason": "Audio could not be heard in this environment, and the file has no subtitle stream; spoken content and audio-to-screen synchronization need a human listen/check."
+}

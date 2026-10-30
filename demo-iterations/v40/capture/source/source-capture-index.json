@@ -1,0 +1,55 @@
+{
+  "origin": "Current local frontend only; no model, service, user, or external network calls.",
+  "viewportForFreshCaptures": [
+    1920,
+    1080
+  ],
+  "highResolutionDetailViewport": [
+    768,
+    864
+  ],
+  "highResolutionDeviceScaleFactor": 2,
+  "freshPlaywrightClick": {
+    "trace": "maybe-later-click-trace.zip",
+    "preChoice": "maybe-later-pre-choice.png",
+    "selectedState": "maybe-later-selected.png",
+    "traceSha256": "39bfe94fc90d6adaf68d1b30b80243b00082b34c311f1e72a7eccac8211657be",
+    "action": "Mouse moved to visible Maybe later button and pressed/released; selected-state text appeared.",
+    "visiblePointerInFilm": false
+  },
+  "cdpAttempt": {
+    "capture": "maybe-later-click-raw.webm",
+    "frameMetadata": "maybe-later-screencast-frames.json",
+    "observedFrames": 3,
+    "reasonNotUsed": "CDP emitted only three damage frames over approximately two seconds and no pointer."
+  },
+  "continuousCorrection": {
+    "path": "continuous-correction-raw.webm",
+    "source": "demo-iterations/v37/capture/source/continuous-correction-raw.webm",
+    "sha256": "9022cc2be2f1abdc84e947254da1ac2ee0d5c3abb394571d9b7d3dacd5b2a1c5",
+    "preservedOriginal": true
+  },
+  "importedCurrentLocalUIStillSet": "v38 current frontend screenshots in capture/source; original source files preserved.",
+  "freshDeviceScaleCaptures": [
+    "correction-confirmed-768-dpr2.png",
+    "host-boundary-768-dpr2.png",
+    "maybe-later-selected-768-dpr2.png",
+    "maybe-later-selected-crop-768-dpr2.png",
+    "peer-day4-posts-768-dpr2.png",
+    "provider-unavailable-768-dpr2.png",
+    "share-preview-panel-768-dpr2.png",
+    "correction-confirmed-700-dpr2.png",
+    "host-boundary-700-dpr2.png",
+    "maybe-later-selected-crop-700-dpr2.png",
+    "peer-day4-posts-700-dpr2.png",
+    "provider-unavailable-700-dpr2.png"
+  ],
+  "captureScripts": [
+    "capture-maybe-later.mjs",
+    "capture-highres-details.mjs",
+    "capture-ui-details-768.mjs",
+    "capture-ui-details-700.mjs",
+    "capture-ui-details-1024.mjs",
+    "capture-maybe-later-screencast.mjs"
+  ]
+}

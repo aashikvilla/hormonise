@@ -1,0 +1,307 @@
+{
+  "iteration": "v40",
+  "status": "HOLD — candidate frozen; independent technical release review HOLD pending a human listen; builder subjective HOLD because cursor action is not visible and audio was unavailable to audition.",
+  "candidate": "candidate.mp4",
+  "candidateSha256": "889060565ca987216376f5d649f2eb83da290aafe2dcc540649aebf51415fd2f",
+  "durationSeconds": 91.8,
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "audioSource": "capture/source/v13-audio-source.mp4 (audio only)",
+  "audioSourceSha256": "dd21e18a055cf80bca4ee60b0f62620d6e82025b10639985bfb64a722d691d47",
+  "sourceCorrection": "capture/source/continuous-correction-raw.webm; copied from v39",
+  "sourceCorrectionSha256": "9022cc2be2f1abdc84e947254da1ac2ee0d5c3abb394571d9b7d3dacd5b2a1c5",
+  "maybeLaterCapture": "capture/source/maybe-later-selected-768-dpr2.png; actual selected local frontend state",
+  "clickAttempt": "capture/source/maybe-later-click-raw.webm is 0.1 seconds and does not show interaction; trace and pre/post screenshots retained",
+  "captions": "capture/captions.srt; exact v13 lines",
+  "segments": [
+    {
+      "start": 0,
+      "duration": 6.0,
+      "source": "01-hook.png",
+      "treatment": "pan"
+    },
+    {
+      "start": 6.0,
+      "duration": 8.0,
+      "source": "02-private-first.png",
+      "treatment": "pan"
+    },
+    {
+      "start": 14.0,
+      "duration": 4.0,
+      "source": "03-not-connected.png",
+      "treatment": "still"
+    },
+    {
+      "start": 18.0,
+      "duration": 19.86,
+      "source": "CORRECTION",
+      "treatment": "correction"
+    },
+    {
+      "start": 37.86,
+      "duration": 4.05,
+      "source": "04-peer.png",
+      "treatment": "pan"
+    },
+    {
+      "start": 41.91,
+      "duration": 8.7,
+      "source": "05-host.png",
+      "treatment": "pan"
+    },
+    {
+      "start": 50.61,
+      "duration": 16.6,
+      "source": "06-share-preview.png",
+      "treatment": "readpan"
+    },
+    {
+      "start": 67.21,
+      "duration": 3.3,
+      "source": "07-provider.png",
+      "treatment": "still"
+    },
+    {
+      "start": 70.51,
+      "duration": 6.1,
+      "source": "08-choice.png",
+      "treatment": "pan"
+    },
+    {
+      "start": 76.61,
+      "duration": 15.19,
+      "source": "09-maybe-later-selected.png",
+      "treatment": "pan"
+    }
+  ],
+  "audioCues": [
+    {
+      "outputStart": 0.0,
+      "captionEnd": 4.0,
+      "text": "I can’t tell my family what I want without feeling ungrateful.",
+      "sourceIn": 0.0,
+      "sourceOut": 4.0
+    },
+    {
+      "outputStart": 6.0,
+      "captionEnd": 10.8,
+      "text": "Private reflection you can correct before exploring peer experiences.",
+      "sourceIn": 4.2,
+      "sourceOut": 9.0
+    },
+    {
+      "outputStart": 10.8,
+      "captionEnd": 15.36,
+      "text": "Planned AI organizes themes; peer stories are optional.",
+      "sourceIn": 9.2,
+      "sourceOut": 13.76
+    },
+    {
+      "outputStart": 15.5,
+      "captionEnd": 17.8,
+      "text": "Prepared preview. No model.",
+      "sourceIn": 14.0,
+      "sourceOut": 16.3
+    },
+    {
+      "outputStart": 18.0,
+      "captionEnd": 22.1,
+      "text": "A local example offers a possibility, not an answer.",
+      "sourceIn": 16.5,
+      "sourceOut": 20.6
+    },
+    {
+      "outputStart": 22.2,
+      "captionEnd": 24.6,
+      "text": "Arjun says, Not quite.",
+      "sourceIn": 20.8,
+      "sourceOut": 23.2
+    },
+    {
+      "outputStart": 24.7,
+      "captionEnd": 28.9,
+      "text": "He changes the words: it is his parents, and he wants time.",
+      "sourceIn": 23.4,
+      "sourceOut": 27.605
+    },
+    {
+      "outputStart": 29.0,
+      "captionEnd": 32.4,
+      "text": "Now the editable reflection changes with what he said.",
+      "sourceIn": 28.0,
+      "sourceOut": 31.4
+    },
+    {
+      "outputStart": 32.5,
+      "captionEnd": 36.65,
+      "text": "He wants time to decide, without advice to stay or leave.",
+      "sourceIn": 31.6,
+      "sourceOut": 35.75
+    },
+    {
+      "outputStart": 38.35,
+      "captionEnd": 41.775,
+      "text": "Day four: one member wants time to choose.",
+      "sourceIn": 42.0,
+      "sourceOut": 45.425
+    },
+    {
+      "outputStart": 41.9,
+      "captionEnd": 46.2,
+      "text": "Day nine. The host says, I can listen; I can’t decide for you.",
+      "sourceIn": 50.5,
+      "sourceOut": 54.8
+    },
+    {
+      "outputStart": 46.3,
+      "captionEnd": 50.3,
+      "text": "Fictional historical examples, prepared and not live.",
+      "sourceIn": 55.0,
+      "sourceOut": 59.0
+    },
+    {
+      "outputStart": 50.5,
+      "captionEnd": 53.61,
+      "text": "Group only; no private messages.",
+      "sourceIn": 67.5,
+      "sourceOut": 70.61
+    },
+    {
+      "outputStart": 53.7,
+      "captionEnd": 56.89,
+      "text": "The alias and group audience stay visible.",
+      "sourceIn": 76.2,
+      "sourceOut": 79.39
+    },
+    {
+      "outputStart": 56.9,
+      "captionEnd": 60.56,
+      "text": "Private conversation and context are excluded.",
+      "sourceIn": 79.9,
+      "sourceOut": 83.56
+    },
+    {
+      "outputStart": 60.6,
+      "captionEnd": 64.6,
+      "text": "Consent is unchecked. Continue stays disabled.",
+      "sourceIn": 84.0,
+      "sourceOut": 88.0
+    },
+    {
+      "outputStart": 64.7,
+      "captionEnd": 67.4,
+      "text": "Nothing is sent from this preview.",
+      "sourceIn": 88.2,
+      "sourceOut": 90.9
+    },
+    {
+      "outputStart": 67.5,
+      "captionEnd": 70.61,
+      "text": "No provider is verified or bookable here.",
+      "sourceIn": 92.0,
+      "sourceOut": 95.11
+    },
+    {
+      "outputStart": 70.8,
+      "captionEnd": 73.69,
+      "text": "He keeps time to decide privately.",
+      "sourceIn": 100.0,
+      "sourceOut": 102.89
+    },
+    {
+      "outputStart": 73.8,
+      "captionEnd": 76.85,
+      "text": "He could leave without sharing anything.",
+      "sourceIn": 104.5,
+      "sourceOut": 107.55
+    },
+    {
+      "outputStart": 76.9,
+      "captionEnd": 80.01,
+      "text": "Maybe later keeps that choice open.",
+      "sourceIn": 109.0,
+      "sourceOut": 112.11
+    },
+    {
+      "outputStart": 80.1,
+      "captionEnd": 83.48,
+      "text": "Private reflection stays out of the group draft.",
+      "sourceIn": 113.5,
+      "sourceOut": 116.88
+    },
+    {
+      "outputStart": 83.6,
+      "captionEnd": 86.905,
+      "text": "Arjun keeps the next step in his hands.",
+      "sourceIn": 158.5,
+      "sourceOut": 161.805
+    },
+    {
+      "outputStart": 87.0,
+      "captionEnd": 90.98,
+      "text": "Nothing is sent without consent. Arjun can leave it here.",
+      "sourceIn": 173.6,
+      "sourceOut": 177.58
+    }
+  ],
+  "lastSpokenWordEndSeconds": 90.38,
+  "lastCaptionEndSeconds": 90.98,
+  "pictureEndSeconds": 91.8,
+  "postVoiceHoldSeconds": 1.42,
+  "gates": {
+    "actualMaybeLaterSelectedState": true,
+    "visibleCursorActionInFilm": false,
+    "fullSubjectiveAudioListening": false,
+    "audioPlaybackAttempt": "ffplay could not open ALSA/Pulse audio output; no audio device is exposed in this environment.",
+    "coldReview": false,
+    "allRetainedCaptionsMatchV13Verbatim": true,
+    "allAudioSourceWindowsOverlapTheirV13CaptionCue": true,
+    "fullDecodeSucceeded": true,
+    "priorVersionsPreserved": true,
+    "questionCueRemovedToAvoidStatementMismatch": true,
+    "continuousCorrectionCaptureUsed": true
+  },
+  "priorVersionsPreserved": {
+    "demo-iterations/v13/demo.mp4": "dd21e18a055cf80bca4ee60b0f62620d6e82025b10639985bfb64a722d691d47",
+    "demo-iterations/v35/demo.mp4": "27c4fc952bd8fb876afe533f374e3f4bc4c60e2e5ab5d95e00c382d0f56e79d5",
+    "demo-iterations/v36/demo.mp4": "808f3d3bf00dbc03f500870401d4671c06d3e842c746bef472e6bab7c4ff4b1c",
+    "demo-iterations/v37/demo.mp4": "9281740447ec8ddd8df5ecd943c423a6a3a2de164e49416d78541a91c3c73f05",
+    "demo-iterations/v39/candidate.mp4": "64ce4ee005347da552b84f41bd26b5db816aacc74a257506f19fcb70c4f70c34"
+  },
+  "editorialDecision": "Removed the v13 cue “Arjun edits one question; the exact preview changes.” and its caption because the actual local preview contains a statement, not a question. The exact prepared statement remains visible.",
+  "audioTailCheck": {
+    "lastAboveMinus48dBfsSeconds": 90.38,
+    "pictureEndSeconds": 91.8,
+    "postVoiceHoldSeconds": 1.42,
+    "method": "Decoded AAC to PCM; 20 ms RMS windows; -48 dBFS threshold."
+  },
+  "scores": {
+    "weightedTotal": 71,
+    "filmPersuasion": 72,
+    "decision": "maybe",
+    "confidence": "moderate",
+    "evidenceMode": "video_with_captions_audio_unavailable",
+    "audio": "unavailable to judge",
+    "persuasionConfidence": "moderate-low",
+    "coldReview": "demo-iterations/v40/cold-review/report.md",
+    "coldReviewJson": "demo-iterations/v40/cold-review/review.json"
+  },
+  "releaseCheck": {
+    "status": "HOLD",
+    "report": "demo-iterations/v40/release-check/report.md",
+    "reportJson": "demo-iterations/v40/release-check/report.json",
+    "reason": "Audio could not be heard; spoken content and audio-to-screen synchronization need a human listen/check."
+  },
+  "builderSubjectiveReview": {
+    "status": "HOLD",
+    "reasons": [
+      "Cursor action is not visible in the film.",
+      "Full subjective audio listening was unavailable."
+    ],
+    "selectedState": "Maybe later is visible as selected; a click is not shown."
+  }
+}
