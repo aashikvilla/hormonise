@@ -1,0 +1,179 @@
+{
+  "candidateSha256": "808f3d3bf00dbc03f500870401d4671c06d3e842c746bef472e6bab7c4ff4b1c",
+  "candidateBytes": 9717359,
+  "runtimeSeconds": 126.0,
+  "videoSeconds": 126.0,
+  "audioSeconds": 125.985,
+  "avDeltaSeconds": 0.015000000000000568,
+  "decodeReturnCode": 0,
+  "decodeStderr": "",
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "frames": 3780
+  },
+  "sourceCueAudit": {
+    "timebase": "integer milliseconds",
+    "sourceCueCount": 41,
+    "retainedWholeCueCount": 29,
+    "partialCueCount": 0,
+    "partialCues": [],
+    "stillCues": [
+      {
+        "screen": "demo-iterations/v13/capture/07-day-4-peer-perspective.png",
+        "sourceInMs": 42000,
+        "sourceOutMs": 45425,
+        "caption": "Day four: one member wants time to choose.",
+        "sidecarFound": true
+      },
+      {
+        "screen": "demo-iterations/v13/capture/07-day-4-peer-perspective.png",
+        "sourceInMs": 46500,
+        "sourceOutMs": 50200,
+        "caption": "Another member sees a different part of the situation.",
+        "sidecarFound": true
+      },
+      {
+        "screen": "demo-iterations/v13/capture/08-day-9-host-boundary.png",
+        "sourceInMs": 50500,
+        "sourceOutMs": 54800,
+        "caption": "Day nine. The host says, I can listen; I can\u2019t decide for you.",
+        "sidecarFound": true
+      },
+      {
+        "screen": "demo-iterations/v13/capture/10-day-16-dev-unanswered.png",
+        "sourceInMs": 59200,
+        "sourceOutMs": 62800,
+        "caption": "Day sixteen: Dev\u2019s question still has no replies.",
+        "sidecarFound": true
+      },
+      {
+        "screen": "demo-iterations/v13/capture/14-selected-private-takeaway.png",
+        "sourceInMs": 118000,
+        "sourceOutMs": 121360,
+        "caption": "Arjun chooses one bounded thing that helped.",
+        "sidecarFound": true
+      }
+    ]
+  },
+  "criticalFrameSamples": [
+    {
+      "landmark": "hook",
+      "1920x1080": true,
+      "960x540": true,
+      "dimensionsPass": true
+    },
+    {
+      "landmark": "not-quite",
+      "1920x1080": true,
+      "960x540": true,
+      "dimensionsPass": true
+    },
+    {
+      "landmark": "changed-reflection",
+      "1920x1080": true,
+      "960x540": true,
+      "dimensionsPass": true
+    },
+    {
+      "landmark": "day4-first",
+      "1920x1080": true,
+      "960x540": true,
+      "dimensionsPass": true
+    },
+    {
+      "landmark": "day4-second",
+      "1920x1080": true,
+      "960x540": true,
+      "dimensionsPass": true
+    },
+    {
+      "landmark": "day9",
+      "1920x1080": true,
+      "960x540": true,
+      "dimensionsPass": true
+    },
+    {
+      "landmark": "day16",
+      "1920x1080": true,
+      "960x540": true,
+      "dimensionsPass": true
+    },
+    {
+      "landmark": "consent-preview",
+      "1920x1080": true,
+      "960x540": true,
+      "dimensionsPass": true
+    },
+    {
+      "landmark": "maybe-later-return",
+      "1920x1080": true,
+      "960x540": true,
+      "dimensionsPass": true
+    },
+    {
+      "landmark": "provider",
+      "1920x1080": true,
+      "960x540": true,
+      "dimensionsPass": true
+    },
+    {
+      "landmark": "private-takeaway",
+      "1920x1080": true,
+      "960x540": true,
+      "dimensionsPass": true
+    },
+    {
+      "landmark": "private-takeaway-video",
+      "1920x1080": true,
+      "960x540": true,
+      "dimensionsPass": true
+    },
+    {
+      "landmark": "optional-draft",
+      "1920x1080": true,
+      "960x540": true,
+      "dimensionsPass": true
+    },
+    {
+      "landmark": "paired-close",
+      "1920x1080": true,
+      "960x540": true,
+      "dimensionsPass": true
+    },
+    {
+      "landmark": "final-choice",
+      "1920x1080": true,
+      "960x540": true,
+      "dimensionsPass": true
+    }
+  ],
+  "priorCandidateHashes": {
+    "v13": true,
+    "v34": true,
+    "v35": true
+  },
+  "visualReview": {
+    "noDuplicateUiBands": true,
+    "consentFramesUseIntactSource": true,
+    "day4Day9Day16UseExactCapturedStills": true,
+    "privateTakeawayProviderMismatchFixed": true,
+    "basis": "Reviewed all listed 1920x1080 and 960x540 frames; stills have one fitted captured UI plane plus one separate bottom caption band. Retained screen video has no crop/composite."
+  },
+  "checks": {
+    "runtime120to145": true,
+    "candidateUnder180": true,
+    "fullDecode": true,
+    "video1920x1080": true,
+    "video30fps": true,
+    "frameCount3780": true,
+    "avDeltaUnder50ms": true,
+    "noPartialRetainedSourceCue": true,
+    "stillCueCaptionsPresent": true,
+    "criticalFramesAtBothSizes": true,
+    "priorCandidatesUnchanged": true
+  },
+  "allPass": true
+}

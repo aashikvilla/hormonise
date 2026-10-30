@@ -1,0 +1,155 @@
+{
+  "iteration": "v36",
+  "master": "demo-iterations/v13/demo.mp4",
+  "masterSha256": "dd21e18a055cf80bca4ee60b0f62620d6e82025b10639985bfb64a722d691d47",
+  "candidate": "demo-iterations/v36/demo.mp4",
+  "candidateSha256": "808f3d3bf00dbc03f500870401d4671c06d3e842c746bef472e6bab7c4ff4b1c",
+  "retainedSourceRanges": [
+    {
+      "inFrame": 0,
+      "outFrameExclusive": 1073,
+      "durationSeconds": 35.766666666666666,
+      "treatment": "video",
+      "sourceInSeconds": 0.0,
+      "sourceOutSeconds": 35.766667,
+      "audio": "original v13 AAC segment; complete original cues retained"
+    },
+    {
+      "inFrame": 0,
+      "outFrameExclusive": 214,
+      "durationSeconds": 7.133333333333334,
+      "treatment": "still",
+      "capturedStill": "demo-iterations/v13/capture/07-day-4-peer-perspective.png",
+      "audioCues": [
+        {
+          "sourceInSeconds": 42.0,
+          "sourceOutSeconds": 45.425,
+          "caption": "Day four: one member wants time to choose."
+        },
+        {
+          "sourceInSeconds": 46.5,
+          "sourceOutSeconds": 50.2,
+          "caption": "Another member sees a different part of the situation."
+        }
+      ],
+      "audioTreatment": "original matching narration clips concatenated without unrelated source audio; padded with silence only for remaining still duration"
+    },
+    {
+      "inFrame": 0,
+      "outFrameExclusive": 142,
+      "durationSeconds": 4.733333333333333,
+      "treatment": "still",
+      "capturedStill": "demo-iterations/v13/capture/08-day-9-host-boundary.png",
+      "audioCues": [
+        {
+          "sourceInSeconds": 50.5,
+          "sourceOutSeconds": 54.8,
+          "caption": "Day nine. The host says, I can listen; I can\u2019t decide for you."
+        }
+      ],
+      "audioTreatment": "original matching narration clips concatenated without unrelated source audio; padded with silence only for remaining still duration"
+    },
+    {
+      "inFrame": 0,
+      "outFrameExclusive": 162,
+      "durationSeconds": 5.4,
+      "treatment": "still",
+      "capturedStill": "demo-iterations/v13/capture/10-day-16-dev-unanswered.png",
+      "audioCues": [
+        {
+          "sourceInSeconds": 59.2,
+          "sourceOutSeconds": 62.8,
+          "caption": "Day sixteen: Dev\u2019s question still has no replies."
+        }
+      ],
+      "audioTreatment": "original matching narration clips concatenated without unrelated source audio; padded with silence only for remaining still duration"
+    },
+    {
+      "inFrame": 2397,
+      "outFrameExclusive": 3130,
+      "durationSeconds": 24.433333333333334,
+      "treatment": "video",
+      "sourceInSeconds": 79.9,
+      "sourceOutSeconds": 104.333,
+      "audio": "original v13 AAC segment; complete original cues retained"
+    },
+    {
+      "inFrame": 3130,
+      "outFrameExclusive": 3270,
+      "durationSeconds": 4.666666666666667,
+      "treatment": "video",
+      "sourceInSeconds": 104.333,
+      "sourceOutSeconds": 109.0,
+      "audio": "original v13 AAC segment; complete original cues retained"
+    },
+    {
+      "inFrame": 0,
+      "outFrameExclusive": 135,
+      "durationSeconds": 4.5,
+      "treatment": "still",
+      "capturedStill": "demo-iterations/v13/capture/14-selected-private-takeaway.png",
+      "audioCues": [
+        {
+          "sourceInSeconds": 118.0,
+          "sourceOutSeconds": 121.36,
+          "caption": "Arjun chooses one bounded thing that helped."
+        }
+      ],
+      "audioTreatment": "original matching narration clips concatenated without unrelated source audio; padded with silence only for remaining still duration"
+    },
+    {
+      "inFrame": 3642,
+      "outFrameExclusive": 3945,
+      "durationSeconds": 10.1,
+      "treatment": "video",
+      "sourceInSeconds": 121.4,
+      "sourceOutSeconds": 131.5,
+      "audio": "original v13 AAC segment; complete original cues retained"
+    },
+    {
+      "inFrame": 4215,
+      "outFrameExclusive": 4755,
+      "durationSeconds": 18.0,
+      "treatment": "video",
+      "sourceInSeconds": 140.5,
+      "sourceOutSeconds": 158.5,
+      "audio": "original v13 AAC segment; complete original cues retained"
+    },
+    {
+      "inFrame": 5025,
+      "outFrameExclusive": 5363,
+      "durationSeconds": 11.266666666666667,
+      "treatment": "video",
+      "sourceInSeconds": 167.5,
+      "sourceOutSeconds": 178.767,
+      "audio": "original v13 AAC segment; complete original cues retained"
+    }
+  ],
+  "rangeSumSeconds": 126.0,
+  "targetSeconds": 126.0,
+  "renderedFrames": 3780,
+  "renderedSeconds": 126.0,
+  "stillCaptionTreatment": {
+    "canvas": [
+      1920,
+      1080
+    ],
+    "screenFit": [
+      1728,
+      972
+    ],
+    "screenPosition": [
+      96,
+      0
+    ],
+    "captionBand": [
+      0,
+      972,
+      1920,
+      108
+    ],
+    "method": "clean editorial inset; exact captured still remains one image plane"
+  },
+  "imageTreatment": "No crop/reframe applied to retained video. Consent and post screens use original intact source frames.",
+  "truthBoundary": "Only v13 captured pixels, complete v13 narration/caption cues, and visible prepared UI; no new activity, replies, users, outcomes, provider availability, or model claims."
+}

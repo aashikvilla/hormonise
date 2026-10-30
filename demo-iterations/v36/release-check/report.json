@@ -1,0 +1,37 @@
+{
+  "status": "READY",
+  "file": "/workspace/hormonise/demo-iterations/v36/demo.mp4",
+  "expected_sha256": "808f3d3bf00dbc03f500870401d4671c06d3e842c746bef472e6bab7c4ff4b1c",
+  "actual_sha256": "808f3d3bf00dbc03f500870401d4671c06d3e842c746bef472e6bab7c4ff4b1c",
+  "identity": "MATCH",
+  "media": {
+    "container": "MP4",
+    "duration_seconds": 126.0,
+    "video": {
+      "codec": "H.264 High",
+      "resolution": "1920x1080",
+      "frame_rate": "30 fps",
+      "frames": 3780,
+      "full_decode": "PASS; ffmpeg decoded the complete file without reported errors"
+    },
+    "audio": {
+      "codec": "AAC-LC",
+      "sample_rate_hz": 48000,
+      "channels": 1,
+      "duration_seconds": 125.985,
+      "video_audio_duration_difference_seconds": 0.015,
+      "sync_assessment": "Stream starts both at 0.000 s; duration difference is 15 ms, with no timestamp offset evident."
+    }
+  },
+  "visual_review": {
+    "burned_in_captions": "Present throughout sampled narration; large white text on translucent dark background, legible at 1920x1080. Captions are occasionally overlaid on the lower screen area but do not obscure the key consent state in the final view.",
+    "duplicate_bands_crops_artifacts": "No obvious duplicate-image bands, accidental crop, or decode/display artifact in contact sheet and sampled frames at 15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, and 124 seconds. Full-width dark green bars at section transitions carry readable narrative text and appear intentional.",
+    "truthful_claims_and_screen_states": "Visible UI consistently labels the interaction as prepared/local/illustrative with no model or live person connected. The group form says no direct message is sent and private conversation is excluded. At 55–75 s the consent checkbox is visibly unchecked; at 124 s the final state explicitly says consent is unchecked, posting is disabled, and no send action is connected.",
+    "consent": "PASS; final preview preserves private reflection separately and displays the optional draft with unchecked consent and disabled posting. No contradictory sent/posted state observed.",
+    "visible_screen_states": "PASS; the private reflection, editable group question, fictional historical thread, optional draft, and final unsent preview are shown clearly in sampled frames."
+  },
+  "limitations": [
+    "Visual review used a 5-second contact sheet and selected full-resolution frames, not a frame-by-frame editorial review.",
+    "Audio stream presence, timestamps, duration, and full decode were checked; speech content was not independently transcribed."
+  ]
+}

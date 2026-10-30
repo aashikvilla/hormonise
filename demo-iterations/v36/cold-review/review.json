@@ -1,0 +1,125 @@
+{
+  "candidate": "Harmonise v36",
+  "video": "/workspace/hormonise/demo-iterations/v36/demo.mp4",
+  "video_sha256": "808f3d3bf00dbc03f500870401d4671c06d3e842c746bef472e6bab7c4ff4b1c",
+  "duration_seconds": 126,
+  "review_evidence_mode": "video_with_captions_audio_inaccessible",
+  "audio_limitation": "An audio stream is present, but it was not accessible to hear in this review. Judgments use visible captions and on-screen text only; voice, music, mix, and synchronization are unjudged.",
+  "technical_evidence_type": "film_visible_prototype_evidence",
+  "independent_of_previous_rounds": true,
+  "decision": "maybe",
+  "confidence": "medium",
+  "uncertainty": {
+    "weighted_total_points": 5,
+    "film_persuasion_points": 6,
+    "drivers": [
+      "The interaction is presented in prepared states; no user or cursor is visible operating it continuously.",
+      "All people and social content are identified as fictional or prepared, so outcomes and network activity cannot be validated from this film.",
+      "Audio delivery could not be assessed; readable captions were available."
+    ]
+  },
+  "scores": {
+    "impact": {
+      "specificity_and_depth_of_problem": 8,
+      "convincing_human_need_and_believable_outcomes": 7,
+      "practical_adoption_and_network_benefit": 6,
+      "subtotal": 21,
+      "maximum": 30,
+      "evidence": [
+        {"timestamp": "0:00", "observation": "Specific family-pressure problem, adult audience, and private-correction proposition; story labeled fictional."},
+        {"timestamp": "0:36-0:56", "observation": "Peer/community roles are illustrated with prepared historical examples, not live use."}
+      ]
+    },
+    "meta_use": {
+      "correctly_named_model_roles": 3,
+      "compelling_necessity": 6,
+      "visible_mechanism_reasoning_or_structured_ui": 5,
+      "convincing_evidence_or_candid_limitation": 4,
+      "subtotal": 18,
+      "maximum": 25,
+      "evidence": [
+        {"timestamp": "0:00-0:30", "observation": "Muse Spark and optional voice transcription are described as planned; the private reflection is correctable, but the preview says no model is connected."},
+        {"timestamp": "0:21-0:30", "observation": "Structured 'Have I got this right?' card offers correction and edit-in-my-words controls; no model execution is shown."}
+      ]
+    },
+    "demo": {
+      "hook_and_story": 5,
+      "clarity_and_legibility": 5,
+      "pacing_and_accessible_audio_subtitles": 3,
+      "memorable_emotional_payoff": 3,
+      "polished_coherent_ui": 2,
+      "subtotal": 18,
+      "maximum": 25,
+      "evidence": [
+        {"timestamp": "0:00", "observation": "Strong human hook and clearly labeled audience; legible headline and caption."},
+        {"timestamp": "1:30-2:06", "observation": "Long screen-based sequence resolves with a privacy-preserving choice; captions readable, audio inaccessible."}
+      ]
+    },
+    "technical_depth": {
+      "plausible_full_user_workflow": 5,
+      "controls_permissions_and_privacy": 5,
+      "architecture_and_failure_handling_as_evidenced": 3,
+      "implementation_evidence": 3,
+      "subtotal": 16,
+      "maximum": 20,
+      "evidence": [
+        {"timestamp": "about 1:00-1:20", "observation": "Exact group/alias/question preview and explicit exclusion of private conversation; nothing is sent in preview."},
+        {"timestamp": "about 1:30-2:06", "observation": "Optional editable draft, unchecked consent, disabled posting, and final no-send state are visible. Prototype states are shown, but no live service or continuous user operation is established."},
+        {"timestamp": "about 1:08-1:28", "observation": "Professional support page states no verified provider/directory or appointment function is connected."}
+      ]
+    }
+  },
+  "total": {
+    "value": 73,
+    "maximum": 100,
+    "arithmetic": "Impact 21 + Meta use 18 + Demo 18 + Technical depth 16 = 73"
+  },
+  "film_persuasion_score": {
+    "dimensions": {
+      "first_15_second_clarity": {
+        "score": 22,
+        "maximum": 25,
+        "evidence": [
+          {"timestamp": "0:00", "observation": "Headline directly names the family-pressure problem."},
+          {"timestamp": "0:00-0:15", "observation": "Adult audience and private, correctable reflection before peer exploration are visible; AI differentiation remains unclear."}
+        ]
+      },
+      "human_journey_and_payoff": {
+        "score": 20,
+        "maximum": 25,
+        "evidence": [
+          {"timestamp": "0:21-0:30", "observation": "Arjun rejects a possible reading and supplies his own correction."},
+          {"timestamp": "about 1:30-2:06", "observation": "Private, share-one-thing, and maybe-later paths preserve choice; the final draft remains unsent."}
+        ]
+      },
+      "differentiation_and_role_value": {
+        "score": 19,
+        "maximum": 25,
+        "evidence": [
+          {"timestamp": "0:00-0:30", "observation": "Planned Muse Spark reflection, user correction, and optional voice transcription are described; the screen says no model is connected."},
+          {"timestamp": "0:36-0:56", "observation": "Prepared peer and host roles distinguish the proposed community; no live community is connected."}
+        ]
+      },
+      "cinematic_and_narrative_craft": {
+        "score": 18,
+        "maximum": 25,
+        "evidence": [
+          {"timestamp": "0:00", "observation": "Clear narrative question and readable caption establish the story."},
+          {"timestamp": "about 1:30-2:06", "observation": "Meaningful privacy ending, but long static UI views reduce cinematic energy; audio inaccessible."}
+        ]
+      }
+    },
+    "value": 79,
+    "maximum": 100,
+    "arithmetic": "22 + 20 + 19 + 18 = 79",
+    "confidence": "medium"
+  },
+  "timestamped_weaknesses": [
+    {"timestamp": "0:00-0:15", "issue": "AI differentiation and which features are live remain unclear despite the strong opening; the preview is labeled no model connected.", "fix": "Keep the human hook, add one concise promise and persistent prepared-preview disclosure."},
+    {"timestamp": "0:14-0:30", "issue": "Correction is shown as staged screens, with no continuous visible user operation or live model call.", "fix": "Show one uninterrupted user edit and state update, labeled as local prepared prototype behavior."},
+    {"timestamp": "0:36-0:56", "issue": "Dense prepared community examples cannot establish live participation or network outcomes.", "fix": "Show one contrasting peer response and host boundary with an explicit prepared-content label."},
+    {"timestamp": "about 1:00-1:28", "issue": "Sharing and support screens consume time and interrupt the central human story.", "fix": "Compress to a single exact audience preview and a brief provider limitation card."},
+    {"timestamp": "about 1:30-2:06", "issue": "Ending holds on forms and does not land a strong human moment.", "fix": "End on a clear private or maybe-later choice and the unsent state."}
+  ],
+  "report_path": "/tmp/harmonise-v36-blind/report.md"
+}
