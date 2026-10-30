@@ -1,0 +1,240 @@
+{
+  "audioSource": "capture/source/v13-audio-source.mp4 (audio only)",
+  "audioSourceSha256": "dd21e18a055cf80bca4ee60b0f62620d6e82025b10639985bfb64a722d691d47",
+  "captionSource": "demo-iterations/v13/captions.srt",
+  "correctionSource": "capture/source/continuous-correction-raw.webm",
+  "correctionSourceSha256": "9022cc2be2f1abdc84e947254da1ac2ee0d5c3abb394571d9b7d3dacd5b2a1c5",
+  "cues": [
+    {
+      "outputStart": 0.0,
+      "captionEnd": 4.0,
+      "text": "I can\u2019t tell my family what I want without feeling ungrateful.",
+      "sourceIn": 0.0,
+      "sourceOut": 4.0,
+      "v13CaptionNumber": 1,
+      "v13CaptionStart": "00:00:00,000",
+      "v13CaptionEnd": "00:00:04,000",
+      "captionMatchesV13Verbatim": true
+    },
+    {
+      "outputStart": 4.2,
+      "captionEnd": 9.0,
+      "text": "Private reflection you can correct before exploring peer experiences.",
+      "sourceIn": 4.2,
+      "sourceOut": 9.0,
+      "v13CaptionNumber": 2,
+      "v13CaptionStart": "00:00:04,200",
+      "v13CaptionEnd": "00:00:09,000",
+      "captionMatchesV13Verbatim": true
+    },
+    {
+      "outputStart": 9.0,
+      "captionEnd": 13.1,
+      "text": "A local example offers a possibility, not an answer.",
+      "sourceIn": 16.5,
+      "sourceOut": 20.6,
+      "v13CaptionNumber": 5,
+      "v13CaptionStart": "00:00:16,500",
+      "v13CaptionEnd": "00:00:20,600",
+      "captionMatchesV13Verbatim": true
+    },
+    {
+      "outputStart": 13.2,
+      "captionEnd": 15.6,
+      "text": "Arjun says, Not quite.",
+      "sourceIn": 20.8,
+      "sourceOut": 23.2,
+      "v13CaptionNumber": 6,
+      "v13CaptionStart": "00:00:20,800",
+      "v13CaptionEnd": "00:00:23,200",
+      "captionMatchesV13Verbatim": true
+    },
+    {
+      "outputStart": 15.7,
+      "captionEnd": 19.9,
+      "text": "He changes the words: it is his parents, and he wants time.",
+      "sourceIn": 23.4,
+      "sourceOut": 27.605,
+      "v13CaptionNumber": 7,
+      "v13CaptionStart": "00:00:23,400",
+      "v13CaptionEnd": "00:00:27,605",
+      "captionMatchesV13Verbatim": true
+    },
+    {
+      "outputStart": 20.0,
+      "captionEnd": 23.4,
+      "text": "Now the editable reflection changes with what he said.",
+      "sourceIn": 28.0,
+      "sourceOut": 31.4,
+      "v13CaptionNumber": 8,
+      "v13CaptionStart": "00:00:28,000",
+      "v13CaptionEnd": "00:00:31,400",
+      "captionMatchesV13Verbatim": true
+    },
+    {
+      "outputStart": 23.5,
+      "captionEnd": 27.65,
+      "text": "He wants time to decide, without advice to stay or leave.",
+      "sourceIn": 31.6,
+      "sourceOut": 35.75,
+      "v13CaptionNumber": 9,
+      "v13CaptionStart": "00:00:31,600",
+      "v13CaptionEnd": "00:00:35,750",
+      "captionMatchesV13Verbatim": true
+    },
+    {
+      "outputStart": 28.96,
+      "captionEnd": 32.385,
+      "text": "Day four: one member wants time to choose.",
+      "sourceIn": 42.0,
+      "sourceOut": 45.425,
+      "v13CaptionNumber": 11,
+      "v13CaptionStart": "00:00:42,000",
+      "v13CaptionEnd": "00:00:45,425",
+      "captionMatchesV13Verbatim": true
+    },
+    {
+      "outputStart": 33.16,
+      "captionEnd": 37.46,
+      "text": "Day nine. The host says, I can listen; I can\u2019t decide for you.",
+      "sourceIn": 50.5,
+      "sourceOut": 54.8,
+      "v13CaptionNumber": 13,
+      "v13CaptionStart": "00:00:50,500",
+      "v13CaptionEnd": "00:00:54,800",
+      "captionMatchesV13Verbatim": true
+    },
+    {
+      "outputStart": 37.56,
+      "captionEnd": 41.56,
+      "text": "Fictional historical examples, prepared and not live.",
+      "sourceIn": 55.0,
+      "sourceOut": 59.0,
+      "v13CaptionNumber": 14,
+      "v13CaptionStart": "00:00:55,000",
+      "v13CaptionEnd": "00:00:59,000",
+      "captionMatchesV13Verbatim": true
+    },
+    {
+      "outputStart": 41.86,
+      "captionEnd": 44.97,
+      "text": "Group only; no private messages.",
+      "sourceIn": 67.5,
+      "sourceOut": 70.61,
+      "v13CaptionNumber": 17,
+      "v13CaptionStart": "00:01:07,500",
+      "v13CaptionEnd": "00:01:10,590",
+      "captionMatchesV13Verbatim": true
+    },
+    {
+      "outputStart": 45.07,
+      "captionEnd": 48.26,
+      "text": "The alias and group audience stay visible.",
+      "sourceIn": 76.2,
+      "sourceOut": 79.39,
+      "v13CaptionNumber": 19,
+      "v13CaptionStart": "00:01:16,200",
+      "v13CaptionEnd": "00:01:19,390",
+      "captionMatchesV13Verbatim": true
+    },
+    {
+      "outputStart": 48.36,
+      "captionEnd": 52.02,
+      "text": "Private conversation and context are excluded.",
+      "sourceIn": 79.9,
+      "sourceOut": 83.56,
+      "v13CaptionNumber": 20,
+      "v13CaptionStart": "00:01:19,900",
+      "v13CaptionEnd": "00:01:23,560",
+      "captionMatchesV13Verbatim": true
+    },
+    {
+      "outputStart": 52.12,
+      "captionEnd": 56.12,
+      "text": "Consent is unchecked. Continue stays disabled.",
+      "sourceIn": 84.0,
+      "sourceOut": 88.0,
+      "v13CaptionNumber": 21,
+      "v13CaptionStart": "00:01:24,000",
+      "v13CaptionEnd": "00:01:28,000",
+      "captionMatchesV13Verbatim": true
+    },
+    {
+      "outputStart": 56.22,
+      "captionEnd": 58.92,
+      "text": "Nothing is sent from this preview.",
+      "sourceIn": 88.2,
+      "sourceOut": 90.9,
+      "v13CaptionNumber": 22,
+      "v13CaptionStart": "00:01:28,200",
+      "v13CaptionEnd": "00:01:30,900",
+      "captionMatchesV13Verbatim": true
+    },
+    {
+      "outputStart": 59.1,
+      "captionEnd": 62.0,
+      "text": "He keeps time to decide privately.",
+      "sourceIn": 100.0,
+      "sourceOut": 102.89,
+      "v13CaptionNumber": 25,
+      "v13CaptionStart": "00:01:40,000",
+      "v13CaptionEnd": "00:01:42,890",
+      "captionMatchesV13Verbatim": true
+    },
+    {
+      "outputStart": 62.1,
+      "captionEnd": 65.15,
+      "text": "He could leave without sharing anything.",
+      "sourceIn": 104.5,
+      "sourceOut": 107.55,
+      "v13CaptionNumber": 26,
+      "v13CaptionStart": "00:01:44,500",
+      "v13CaptionEnd": "00:01:47,550",
+      "captionMatchesV13Verbatim": true
+    },
+    {
+      "outputStart": 65.25,
+      "captionEnd": 68.36,
+      "text": "Maybe later keeps that choice open.",
+      "sourceIn": 109.0,
+      "sourceOut": 112.11,
+      "v13CaptionNumber": 27,
+      "v13CaptionStart": "00:01:49,000",
+      "v13CaptionEnd": "00:01:52,110",
+      "captionMatchesV13Verbatim": true
+    },
+    {
+      "outputStart": 68.46,
+      "captionEnd": 71.84,
+      "text": "Private reflection stays out of the group draft.",
+      "sourceIn": 113.5,
+      "sourceOut": 116.88,
+      "v13CaptionNumber": 28,
+      "v13CaptionStart": "00:01:53,500",
+      "v13CaptionEnd": "00:01:56,875",
+      "captionMatchesV13Verbatim": true
+    },
+    {
+      "outputStart": 72.0,
+      "captionEnd": 75.305,
+      "text": "Arjun keeps the next step in his hands.",
+      "sourceIn": 158.5,
+      "sourceOut": 161.805,
+      "v13CaptionNumber": 38,
+      "v13CaptionStart": "00:02:38,500",
+      "v13CaptionEnd": "00:02:41,820",
+      "captionMatchesV13Verbatim": true
+    },
+    {
+      "outputStart": 75.4,
+      "captionEnd": 79.38,
+      "text": "Nothing is sent without consent. Arjun can leave it here.",
+      "sourceIn": 173.6,
+      "sourceOut": 177.58,
+      "v13CaptionNumber": 41,
+      "v13CaptionStart": "00:02:53,600",
+      "v13CaptionEnd": "00:02:57,580",
+      "captionMatchesV13Verbatim": true
+    }
+  ]
+}

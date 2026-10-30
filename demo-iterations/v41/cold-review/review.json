@@ -1,0 +1,84 @@
+{
+  "asset": "/workspace/hormonise/demo-iterations/v41/candidate.mp4",
+  "review_scope": "Blind review of exported film only; no repository or collateral inspected.",
+  "duration_seconds": 80.6,
+  "media_observation": {
+    "picture": "Accessible and reviewed at 1920x1080.",
+    "audio_stream": "AAC mono stream is present, but audio was inaccessible for listening in the review environment. No spoken content is inferred from captions."
+  },
+  "rubric": {
+    "impact": {
+      "score": 18,
+      "max": 30,
+      "subscores": {
+        "problem_specificity": {"score": 7, "max": 10},
+        "human_need_and_outcomes": {"score": 7, "max": 10},
+        "adoption_network_benefit": {"score": 4, "max": 10}
+      }
+    },
+    "meta_ai_role_value": {
+      "score": 12,
+      "max": 25,
+      "subscores": {
+        "named_model_role": {"score": 4, "max": 7},
+        "necessity_vs_generic_wrapper": {"score": 2, "max": 8},
+        "visible_mechanism": {"score": 2, "max": 6},
+        "evidence_and_limitations": {"score": 4, "max": 4}
+      }
+    },
+    "demo_story": {
+      "score": 17,
+      "max": 25,
+      "subscores": {
+        "hook_story": {"score": 5, "max": 6},
+        "clarity_legibility": {"score": 4, "max": 6},
+        "pacing_accessibility": {"score": 3, "max": 5},
+        "emotional_payoff": {"score": 3, "max": 5},
+        "visual_ui_coherence": {"score": 2, "max": 3}
+      }
+    },
+    "technical_depth_visible_in_film": {
+      "score": 14,
+      "max": 20,
+      "subscores": {
+        "workflow": {"score": 4, "max": 6},
+        "privacy_controls": {"score": 5, "max": 5},
+        "architecture_failure_handling_claims_visible": {"score": 4, "max": 5},
+        "prototype_evidence": {"score": 1, "max": 4}
+      }
+    },
+    "weighted_total": {"score": 61, "max": 100}
+  },
+  "film_persuasion": {
+    "score": 51,
+    "max": 100,
+    "subscores": {
+      "first_15_second_clarity": {"score": 19, "max": 25},
+      "human_journey_payoff": {"score": 14, "max": 25},
+      "differentiation_and_role_value": {"score": 10, "max": 25},
+      "cinematic_narrative_craft": {"score": 8, "max": 25}
+    }
+  },
+  "timeline": [
+    {"time": "00:00-00:08", "observation": "Fictional prepared scenario; family-pressure hook; private reflection proposition and entry points."},
+    {"time": "00:08-00:18", "observation": "Private reflection screen; user input and prepared/no-model labels."},
+    {"time": "00:18-00:29", "observation": "Editable tentative reflection; Muse Spark named as a possible theme suggester; no model connected."},
+    {"time": "00:29-00:40", "observation": "Prepared fictional peer example and host modeling listening rather than deciding."},
+    {"time": "00:40-00:55", "observation": "Group-only draft preview, editable text, excluded private context, review checkbox, unchecked consent and disabled continuation."},
+    {"time": "00:55-01:10", "observation": "Local preview disclosure and optional private/share/defer next-step choices."},
+    {"time": "01:10-01:20.6", "observation": "Repeated assurance that nothing is sent without consent and user may leave it private."}
+  ],
+  "attribution_authenticity": "Muse Spark is named, but no Meta AI branding, model call, live output, or provenance is visible. The film clearly labels the example as prepared and no-model-connected, which supports honesty but limits demonstration claims.",
+  "recommendation": "Revise before using as evidence of a Meta AI-powered product or functioning community experience. It works as a concept film for a non-directive, consent-led reflection flow.",
+  "confidence": {
+    "picture_based_judgments": "medium-high",
+    "audio_craft": "low; inaccessible for listening"
+  },
+  "prioritized_fixes": [
+    "Show an explicitly labeled connected model run, including user correction and confirmed wording; substantiate attribution.",
+    "Follow one person to a concrete self-chosen next step and brief aftermath.",
+    "Make the real peer network and moderation contribution concrete without implying unevidenced adoption.",
+    "Tighten repeated screen holds; enlarge key details and guide attention through the consent and edit actions.",
+    "Show correction/recovery for a bad interpretation and clarify data boundaries, retention/deletion, and non-sharing behavior."
+  ]
+}

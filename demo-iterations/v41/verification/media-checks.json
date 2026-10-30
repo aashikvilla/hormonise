@@ -1,0 +1,165 @@
+{
+  "candidateSha256": "51e24ec262293e8e02434cfff14c72452af51221b41f7f43e40a7c8c2d7c510b",
+  "durationSeconds": 80.6,
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "startTime": 0.0,
+    "durationSeconds": 80.6
+  },
+  "audio": {
+    "codec": "aac",
+    "sampleRate": 48000,
+    "channels": 1,
+    "startTime": 0.0,
+    "durationSeconds": 80.6
+  },
+  "fullDecode": "passed",
+  "audioLastAboveMinus48dBfsSeconds": 78.78,
+  "postVoiceHoldSeconds": 1.82,
+  "lastCaptionEndSeconds": 79.38,
+  "captions": {
+    "count": 21,
+    "allTextMatchesV13": true,
+    "cueAudioPresentAboveMinus48dBfs": true
+  },
+  "cueChecks": [
+    {
+      "text": "I can\u2019t tell my family what I want without feeling ungrateful.",
+      "hasAudioAboveMinus48dBfs": true,
+      "peakDbfs": -11.2
+    },
+    {
+      "text": "Private reflection you can correct before exploring peer experiences.",
+      "hasAudioAboveMinus48dBfs": true,
+      "peakDbfs": -9.6
+    },
+    {
+      "text": "A local example offers a possibility, not an answer.",
+      "hasAudioAboveMinus48dBfs": true,
+      "peakDbfs": -10.4
+    },
+    {
+      "text": "Arjun says, Not quite.",
+      "hasAudioAboveMinus48dBfs": true,
+      "peakDbfs": -9.2
+    },
+    {
+      "text": "He changes the words: it is his parents, and he wants time.",
+      "hasAudioAboveMinus48dBfs": true,
+      "peakDbfs": -9.6
+    },
+    {
+      "text": "Now the editable reflection changes with what he said.",
+      "hasAudioAboveMinus48dBfs": true,
+      "peakDbfs": -10.9
+    },
+    {
+      "text": "He wants time to decide, without advice to stay or leave.",
+      "hasAudioAboveMinus48dBfs": true,
+      "peakDbfs": -9.9
+    },
+    {
+      "text": "Day four: one member wants time to choose.",
+      "hasAudioAboveMinus48dBfs": true,
+      "peakDbfs": -13.0
+    },
+    {
+      "text": "Day nine. The host says, I can listen; I can\u2019t decide for you.",
+      "hasAudioAboveMinus48dBfs": true,
+      "peakDbfs": -11.0
+    },
+    {
+      "text": "Fictional historical examples, prepared and not live.",
+      "hasAudioAboveMinus48dBfs": true,
+      "peakDbfs": -9.6
+    },
+    {
+      "text": "Group only; no private messages.",
+      "hasAudioAboveMinus48dBfs": true,
+      "peakDbfs": -11.6
+    },
+    {
+      "text": "The alias and group audience stay visible.",
+      "hasAudioAboveMinus48dBfs": true,
+      "peakDbfs": -11.7
+    },
+    {
+      "text": "Private conversation and context are excluded.",
+      "hasAudioAboveMinus48dBfs": true,
+      "peakDbfs": -10.1
+    },
+    {
+      "text": "Consent is unchecked. Continue stays disabled.",
+      "hasAudioAboveMinus48dBfs": true,
+      "peakDbfs": -7.9
+    },
+    {
+      "text": "Nothing is sent from this preview.",
+      "hasAudioAboveMinus48dBfs": true,
+      "peakDbfs": -9.6
+    },
+    {
+      "text": "He keeps time to decide privately.",
+      "hasAudioAboveMinus48dBfs": true,
+      "peakDbfs": -9.5
+    },
+    {
+      "text": "He could leave without sharing anything.",
+      "hasAudioAboveMinus48dBfs": true,
+      "peakDbfs": -11.0
+    },
+    {
+      "text": "Maybe later keeps that choice open.",
+      "hasAudioAboveMinus48dBfs": true,
+      "peakDbfs": -11.9
+    },
+    {
+      "text": "Private reflection stays out of the group draft.",
+      "hasAudioAboveMinus48dBfs": true,
+      "peakDbfs": -8.5
+    },
+    {
+      "text": "Arjun keeps the next step in his hands.",
+      "hasAudioAboveMinus48dBfs": true,
+      "peakDbfs": -9.9
+    },
+    {
+      "text": "Nothing is sent without consent. Arjun can leave it here.",
+      "hasAudioAboveMinus48dBfs": true,
+      "peakDbfs": -9.6
+    }
+  ],
+  "sampledAt1920And960": [
+    "2",
+    "7",
+    "12",
+    "15_7",
+    "20",
+    "30",
+    "36",
+    "44",
+    "49",
+    "54",
+    "57",
+    "73",
+    "79"
+  ],
+  "visualReview": {
+    "opening": true,
+    "productPromise": true,
+    "correctionEditEventAtOutput15.7s": true,
+    "correctionChangedReflectionAtOutput20s": true,
+    "peer": true,
+    "host": true,
+    "consentScopeAndState": true,
+    "privateTakeawayAndPreviewStatus": true
+  },
+  "audioAudition": "not completed; no audio output device is exposed in this environment",
+  "notes": [
+    "Audio excerpts are unfiltered source windows from the retained v13 narration track.",
+    "Captions are exact v13 cue strings retimed to the matching source excerpts."
+  ]
+}

@@ -1,0 +1,279 @@
+{
+  "iteration": "v41",
+  "status": "REVISE — blind review completed; release status pending independent fresh recheck.",
+  "title": "I need time to decide",
+  "candidate": "candidate.mp4",
+  "candidateSha256": "51e24ec262293e8e02434cfff14c72452af51221b41f7f43e40a7c8c2d7c510b",
+  "durationSeconds": 80.6,
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "audioSource": "capture/source/v13-audio-source.mp4 (audio only)",
+  "audioSourceSha256": "dd21e18a055cf80bca4ee60b0f62620d6e82025b10639985bfb64a722d691d47",
+  "correctionSource": "capture/source/continuous-correction-raw.webm",
+  "correctionSourceSha256": "9022cc2be2f1abdc84e947254da1ac2ee0d5c3abb394571d9b7d3dacd5b2a1c5",
+  "sourceStillHashes": {
+    "entry-screen.png": "a5a760a50c994ab755a73d760e4a599383a53d048936bf69fd61f1f2bbac9a61",
+    "peer-day4-posts-700-dpr2.png": "54b2899a8435e618079f15c068c7e28ea5ccf59e09f3eb6ba44da06efc110b31",
+    "host-boundary-768-dpr2.png": "cab3896f411b9c8b0b282e684b8a9fdf5a07a4a465318c1f454f00be6cb24c27",
+    "share-preview-panel-768-dpr2.png": "64799922bb65ab65e1e0b5b3bb26d930a8e89de63e5b96135cc361ff07d3c10d",
+    "private-takeaway-confirmed.png": "09e08ff56ea80dfb12601660f61743575cf35b52e5f6e515979dfce8ebeb5fa3"
+  },
+  "segments": [
+    {
+      "start": 0.0,
+      "duration": 4.2,
+      "source": "01-family-pressure.png",
+      "treatment": "still"
+    },
+    {
+      "start": 4.2,
+      "duration": 4.8,
+      "source": "02-product-promise.png",
+      "treatment": "still"
+    },
+    {
+      "start": 9.0,
+      "duration": 19.86,
+      "source": "CORRECTION",
+      "treatment": "correction"
+    },
+    {
+      "start": 28.86,
+      "duration": 4.1,
+      "source": "03-peer-perspective.png",
+      "treatment": "still"
+    },
+    {
+      "start": 32.96,
+      "duration": 8.8,
+      "source": "04-host-boundary.png",
+      "treatment": "still"
+    },
+    {
+      "start": 41.76,
+      "duration": 17.2,
+      "source": "PRIVACY",
+      "treatment": "privacy"
+    },
+    {
+      "start": 58.96,
+      "duration": 21.64,
+      "source": "05-private-takeaway.png",
+      "treatment": "close"
+    }
+  ],
+  "audioCues": [
+    {
+      "outputStart": 0.0,
+      "captionEnd": 4.0,
+      "text": "I can’t tell my family what I want without feeling ungrateful.",
+      "sourceIn": 0.0,
+      "sourceOut": 4.0
+    },
+    {
+      "outputStart": 4.2,
+      "captionEnd": 9.0,
+      "text": "Private reflection you can correct before exploring peer experiences.",
+      "sourceIn": 4.2,
+      "sourceOut": 9.0
+    },
+    {
+      "outputStart": 9.0,
+      "captionEnd": 13.1,
+      "text": "A local example offers a possibility, not an answer.",
+      "sourceIn": 16.5,
+      "sourceOut": 20.6
+    },
+    {
+      "outputStart": 13.2,
+      "captionEnd": 15.6,
+      "text": "Arjun says, Not quite.",
+      "sourceIn": 20.8,
+      "sourceOut": 23.2
+    },
+    {
+      "outputStart": 15.7,
+      "captionEnd": 19.9,
+      "text": "He changes the words: it is his parents, and he wants time.",
+      "sourceIn": 23.4,
+      "sourceOut": 27.605
+    },
+    {
+      "outputStart": 20.0,
+      "captionEnd": 23.4,
+      "text": "Now the editable reflection changes with what he said.",
+      "sourceIn": 28.0,
+      "sourceOut": 31.4
+    },
+    {
+      "outputStart": 23.5,
+      "captionEnd": 27.65,
+      "text": "He wants time to decide, without advice to stay or leave.",
+      "sourceIn": 31.6,
+      "sourceOut": 35.75
+    },
+    {
+      "outputStart": 28.96,
+      "captionEnd": 32.385,
+      "text": "Day four: one member wants time to choose.",
+      "sourceIn": 42.0,
+      "sourceOut": 45.425
+    },
+    {
+      "outputStart": 33.16,
+      "captionEnd": 37.46,
+      "text": "Day nine. The host says, I can listen; I can’t decide for you.",
+      "sourceIn": 50.5,
+      "sourceOut": 54.8
+    },
+    {
+      "outputStart": 37.56,
+      "captionEnd": 41.56,
+      "text": "Fictional historical examples, prepared and not live.",
+      "sourceIn": 55.0,
+      "sourceOut": 59.0
+    },
+    {
+      "outputStart": 41.86,
+      "captionEnd": 44.97,
+      "text": "Group only; no private messages.",
+      "sourceIn": 67.5,
+      "sourceOut": 70.61
+    },
+    {
+      "outputStart": 45.07,
+      "captionEnd": 48.26,
+      "text": "The alias and group audience stay visible.",
+      "sourceIn": 76.2,
+      "sourceOut": 79.39
+    },
+    {
+      "outputStart": 48.36,
+      "captionEnd": 52.02,
+      "text": "Private conversation and context are excluded.",
+      "sourceIn": 79.9,
+      "sourceOut": 83.56
+    },
+    {
+      "outputStart": 52.12,
+      "captionEnd": 56.12,
+      "text": "Consent is unchecked. Continue stays disabled.",
+      "sourceIn": 84.0,
+      "sourceOut": 88.0
+    },
+    {
+      "outputStart": 56.22,
+      "captionEnd": 58.92,
+      "text": "Nothing is sent from this preview.",
+      "sourceIn": 88.2,
+      "sourceOut": 90.9
+    },
+    {
+      "outputStart": 59.1,
+      "captionEnd": 62.0,
+      "text": "He keeps time to decide privately.",
+      "sourceIn": 100.0,
+      "sourceOut": 102.89
+    },
+    {
+      "outputStart": 62.1,
+      "captionEnd": 65.15,
+      "text": "He could leave without sharing anything.",
+      "sourceIn": 104.5,
+      "sourceOut": 107.55
+    },
+    {
+      "outputStart": 65.25,
+      "captionEnd": 68.36,
+      "text": "Maybe later keeps that choice open.",
+      "sourceIn": 109.0,
+      "sourceOut": 112.11
+    },
+    {
+      "outputStart": 68.46,
+      "captionEnd": 71.84,
+      "text": "Private reflection stays out of the group draft.",
+      "sourceIn": 113.5,
+      "sourceOut": 116.88
+    },
+    {
+      "outputStart": 72.0,
+      "captionEnd": 75.305,
+      "text": "Arjun keeps the next step in his hands.",
+      "sourceIn": 158.5,
+      "sourceOut": 161.805
+    },
+    {
+      "outputStart": 75.4,
+      "captionEnd": 79.38,
+      "text": "Nothing is sent without consent. Arjun can leave it here.",
+      "sourceIn": 173.6,
+      "sourceOut": 177.58
+    }
+  ],
+  "captions": "capture/captions.srt; all retained spoken lines match v13 verbatim",
+  "timelineNotes": [
+    "Opening family-pressure line and product promise use actual entry-screen crops.",
+    "Correction is one continuous normal-speed crop from source 0.5–20.36 seconds.",
+    "Peer and host are actual prepared local captures; provenance stays adjacent.",
+    "Consent beat continuously reframes one exact local share-preview capture.",
+    "Final image is the actual preview-session private-takeaway state; no click is shown."
+  ],
+  "gates": {
+    "openingPromiseByNineSeconds": true,
+    "continuousCorrectionAtNormalSpeed": true,
+    "cursorOrTypingAdded": false,
+    "peerAndHostPreparedNotLiveLabels": true,
+    "singleNoSendConsentBranch": true,
+    "privatePreviewOnlyTakeaway": true,
+    "syntheticNarrationOrPeople": false,
+    "fullDecodeAndFrameReview": "passed",
+    "fullDecode": "passed",
+    "audioVideoDurationSync": "passed; both streams start at 0 and run 80.6s",
+    "captionsExactV13": true,
+    "cueAudioPresence": "all cue windows contain source audio above -48 dBFS",
+    "captionBandSeparatedFromUI": true,
+    "correctionInteractionAt960": "visible in continuous take; edit field sampled at 15.7s, changed reflection at 20s",
+    "frameReviewAt1920And960": "passed for opening, correction, peer/host, privacy branch, and close",
+    "audioAudition": "not completed; no output device is exposed in environment"
+  },
+  "correctionCrop": {
+    "sourceInSeconds": 0.5,
+    "sourceOutSeconds": 20.36,
+    "sourceCrop": "1140x660 at x=240; y moves from 210 to 270 during continuous take",
+    "continuous": true,
+    "speed": "normal",
+    "editEventSampleOutputSeconds": 15.7,
+    "changedReflectionSampleOutputSeconds": 20.0
+  },
+  "pictureEndSeconds": 80.6,
+  "lastCaptionEndSeconds": 79.38,
+  "lastVoiceAboveMinus48dBfsSeconds": 78.78,
+  "postVoiceHoldSeconds": 1.82,
+  "sourceMap": "capture/source-map.json",
+  "mediaChecks": "verification/media-checks.json",
+  "contactSheets": [
+    "verification/contact-sheet-1920.jpg",
+    "verification/contact-sheet-960.jpg"
+  ],
+  "blindReview": {
+    "reviewerSource": "independent blind cold review of exported film only",
+    "reviewScope": "video-only with visible captions; audio stream present but inaccessible for listening",
+    "weightedScore": 61,
+    "weightedScoreMax": 100,
+    "filmPersuasionScore": 51,
+    "filmPersuasionScoreMax": 100,
+    "decision": "revise",
+    "reviewReport": "cold-review/report.md",
+    "scorecard": "cold-review/review.json",
+    "scoreHistoryCaveat": "Weighted rubric and film-persuasion scores are separate scales from separate judges; scores are noncausal and are not directly comparable as evidence of iteration effect."
+  },
+  "releaseStatus": {
+    "status": "pending independent fresh recheck",
+    "evidencePath": "/tmp/harmonise-v41-release-final/",
+    "note": "This directory contains fresh review frames only; no independent release decision is archived yet."
+  }
+}
