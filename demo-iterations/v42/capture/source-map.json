@@ -1,0 +1,263 @@
+{
+  "segments": [
+    {
+      "name": "opening-screen",
+      "kind": "still",
+      "file": "entry-opening.png",
+      "duration": 2,
+      "outputStart": 0
+    },
+    {
+      "name": "opening-transition",
+      "kind": "video",
+      "src": "react-capture.webm",
+      "in": 1.184,
+      "duration": 7,
+      "label": "Fictional prepared walkthrough · frontend only · no model connected",
+      "outputStart": 2
+    },
+    {
+      "name": "correction",
+      "kind": "video",
+      "src": "continuous-correction-raw.webm",
+      "in": 0.5,
+      "duration": 19.86,
+      "label": "Prepared example · no model connected",
+      "outputStart": 9
+    },
+    {
+      "name": "muse-role",
+      "kind": "still",
+      "file": "proposed-muse-role.png",
+      "duration": 10.0,
+      "outputStart": 28.86
+    },
+    {
+      "name": "muse-limits",
+      "kind": "still",
+      "file": "proposed-role-limits.png",
+      "duration": 9.64,
+      "outputStart": 38.86
+    },
+    {
+      "name": "peer-transition",
+      "kind": "video",
+      "src": "react-capture.webm",
+      "in": 48.624,
+      "duration": 20,
+      "label": "Prepared fictional thread · not live",
+      "outputStart": 48.5
+    },
+    {
+      "name": "draft-transition",
+      "kind": "video",
+      "src": "react-capture.webm",
+      "in": 141.145,
+      "duration": 18.5,
+      "label": "Prepared fictional group draft · no post shown",
+      "outputStart": 68.5
+    },
+    {
+      "name": "preview-audience",
+      "kind": "still",
+      "file": "preview-audience.png",
+      "duration": 11,
+      "outputStart": 87.0
+    },
+    {
+      "name": "preview-consent",
+      "kind": "still",
+      "file": "preview-consent.png",
+      "duration": 11,
+      "outputStart": 98.0
+    },
+    {
+      "name": "private-transition",
+      "kind": "video",
+      "src": "react-capture.webm",
+      "in": 132.915,
+      "duration": 8.2,
+      "label": "Prepared preview session · private choice",
+      "outputStart": 109.0
+    },
+    {
+      "name": "private-consequence",
+      "kind": "still",
+      "file": "private-context.png",
+      "duration": 10.8,
+      "outputStart": 117.2
+    },
+    {
+      "name": "private-ending-wide",
+      "kind": "still",
+      "file": "private-choice-wide.png",
+      "duration": 11,
+      "outputStart": 128.0
+    },
+    {
+      "name": "private-ending-close",
+      "kind": "still",
+      "file": "private-choice-close.png",
+      "duration": 12,
+      "outputStart": 139.0
+    }
+  ],
+  "audioCues": [
+    {
+      "outputStart": 0,
+      "outputEnd": 4,
+      "text": "I can’t tell my family what I want without feeling ungrateful.",
+      "sourceIn": 0,
+      "sourceOut": 4
+    },
+    {
+      "outputStart": 4.2,
+      "outputEnd": 9,
+      "text": "Private reflection you can correct before exploring peer experiences.",
+      "sourceIn": 4.2,
+      "sourceOut": 9
+    },
+    {
+      "outputStart": 9,
+      "outputEnd": 13.1,
+      "text": "A local example offers a possibility, not an answer.",
+      "sourceIn": 16.5,
+      "sourceOut": 20.6
+    },
+    {
+      "outputStart": 13.2,
+      "outputEnd": 15.6,
+      "text": "Arjun says, Not quite.",
+      "sourceIn": 20.8,
+      "sourceOut": 23.2
+    },
+    {
+      "outputStart": 15.7,
+      "outputEnd": 19.9,
+      "text": "He changes the words: it is his parents, and he wants time.",
+      "sourceIn": 23.4,
+      "sourceOut": 27.605
+    },
+    {
+      "outputStart": 20,
+      "outputEnd": 23.4,
+      "text": "Now the editable reflection changes with what he said.",
+      "sourceIn": 28,
+      "sourceOut": 31.4
+    },
+    {
+      "outputStart": 23.5,
+      "outputEnd": 27.65,
+      "text": "He wants time to decide, without advice to stay or leave.",
+      "sourceIn": 31.6,
+      "sourceOut": 35.75
+    },
+    {
+      "outputStart": 30,
+      "outputEnd": 35.5,
+      "text": "Planned Muse Spark may organize themes to review, never decide what is true.",
+      "sourceIn": 36.3,
+      "sourceOut": 41.795
+    },
+    {
+      "outputStart": 48.5,
+      "outputEnd": 51.925,
+      "text": "Day four: one member wants time to choose.",
+      "sourceIn": 42,
+      "sourceOut": 45.425
+    },
+    {
+      "outputStart": 52.5,
+      "outputEnd": 56.2,
+      "text": "Another member sees a different part of the situation.",
+      "sourceIn": 46.5,
+      "sourceOut": 50.2
+    },
+    {
+      "outputStart": 56.5,
+      "outputEnd": 60.8,
+      "text": "Day nine. The host says, I can listen; I can’t decide for you.",
+      "sourceIn": 50.5,
+      "sourceOut": 54.8
+    },
+    {
+      "outputStart": 61,
+      "outputEnd": 65,
+      "text": "Fictional historical examples, prepared and not live.",
+      "sourceIn": 55,
+      "sourceOut": 59
+    },
+    {
+      "outputStart": 73.7,
+      "outputEnd": 76.89,
+      "text": "The alias and group audience stay visible.",
+      "sourceIn": 76.2,
+      "sourceOut": 79.39
+    },
+    {
+      "outputStart": 77,
+      "outputEnd": 80.66,
+      "text": "Private conversation and context are excluded.",
+      "sourceIn": 79.9,
+      "sourceOut": 83.56
+    },
+    {
+      "outputStart": 81.1,
+      "outputEnd": 85.1,
+      "text": "Consent is unchecked. Continue stays disabled.",
+      "sourceIn": 84,
+      "sourceOut": 88
+    },
+    {
+      "outputStart": 85.3,
+      "outputEnd": 88,
+      "text": "Nothing is sent from this preview.",
+      "sourceIn": 88.2,
+      "sourceOut": 90.9
+    },
+    {
+      "outputStart": 109,
+      "outputEnd": 111.89,
+      "text": "He keeps time to decide privately.",
+      "sourceIn": 100,
+      "sourceOut": 102.89
+    },
+    {
+      "outputStart": 112.2,
+      "outputEnd": 115.25,
+      "text": "He could leave without sharing anything.",
+      "sourceIn": 104.5,
+      "sourceOut": 107.55
+    },
+    {
+      "outputStart": 115.7,
+      "outputEnd": 118.81,
+      "text": "Maybe later keeps that choice open.",
+      "sourceIn": 109,
+      "sourceOut": 112.11
+    },
+    {
+      "outputStart": 119.2,
+      "outputEnd": 122.58,
+      "text": "Private reflection stays out of the group draft.",
+      "sourceIn": 113.5,
+      "sourceOut": 116.88
+    },
+    {
+      "outputStart": 133,
+      "outputEnd": 136.305,
+      "text": "Arjun keeps the next step in his hands.",
+      "sourceIn": 158.5,
+      "sourceOut": 161.805
+    },
+    {
+      "outputStart": 146,
+      "outputEnd": 150,
+      "text": "Nothing is sent without consent. Arjun can leave it here.",
+      "sourceIn": 173.6,
+      "sourceOut": 177.58
+    }
+  ],
+  "captionFile": "capture/captions.srt; retained spoken lines are verbatim from v13",
+  "audioSource": "capture/source/v13-audio-source.mp4; excerpts only"
+}

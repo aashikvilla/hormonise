@@ -1,0 +1,242 @@
+{
+  "ffprobe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1080,
+        "closed_captions": 0,
+        "film_grain": 0,
+        "has_b_frames": 2,
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 1,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/15360",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 2316288,
+        "duration": "150.800000",
+        "bit_rate": "248022",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "4524",
+        "extradata_size": 47,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc61.19.101 libx264"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "48000",
+        "channels": 1,
+        "channel_layout": "mono",
+        "bits_per_sample": 0,
+        "initial_padding": 0,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/48000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 7237632,
+        "duration": "150.784000",
+        "bit_rate": "83564",
+        "nb_frames": "7069",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ],
+    "format": {
+      "filename": "/workspace/hormonise/demo-iterations/v42/candidate.mp4",
+      "nb_streams": 2,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "150.800000",
+      "size": "6418050",
+      "bit_rate": "340480",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf61.7.103"
+      }
+    }
+  },
+  "decode": "passed",
+  "captionAudioChecks": {
+    "sampleRate": 48000,
+    "channels": 1,
+    "durationSeconds": 150.784,
+    "captionCount": 22,
+    "captionSourceMatches": true,
+    "captionMismatches": [],
+    "cueRmsDbfs": [
+      [
+        "I can’t tell my family what I want without feeling ungrateful.",
+        -17.4
+      ],
+      [
+        "Private reflection you can correct before exploring peer experiences.",
+        -17.7
+      ],
+      [
+        "A local example offers a possibility, not an answer.",
+        -18.0
+      ],
+      [
+        "Arjun says, Not quite.",
+        -19.0
+      ],
+      [
+        "He changes the words: it is his parents, and he wants time.",
+        -19.0
+      ],
+      [
+        "Now the editable reflection changes with what he said.",
+        -17.5
+      ],
+      [
+        "He wants time to decide, without advice to stay or leave.",
+        -19.0
+      ],
+      [
+        "Planned Muse Spark may organize themes to review, never decide what is true.",
+        -17.8
+      ],
+      [
+        "Day four: one member wants time to choose.",
+        -18.9
+      ],
+      [
+        "Another member sees a different part of the situation.",
+        -16.8
+      ],
+      [
+        "Day nine. The host says, I can listen; I can’t decide for you.",
+        -18.0
+      ],
+      [
+        "Fictional historical examples, prepared and not live.",
+        -18.1
+      ],
+      [
+        "The alias and group audience stay visible.",
+        -18.4
+      ],
+      [
+        "Private conversation and context are excluded.",
+        -18.4
+      ],
+      [
+        "Consent is unchecked. Continue stays disabled.",
+        -18.0
+      ],
+      [
+        "Nothing is sent from this preview.",
+        -17.4
+      ],
+      [
+        "He keeps time to decide privately.",
+        -19.4
+      ],
+      [
+        "He could leave without sharing anything.",
+        -17.4
+      ],
+      [
+        "Maybe later keeps that choice open.",
+        -18.2
+      ],
+      [
+        "Private reflection stays out of the group draft.",
+        -18.8
+      ],
+      [
+        "Arjun keeps the next step in his hands.",
+        -18.7
+      ],
+      [
+        "Nothing is sent without consent. Arjun can leave it here.",
+        -17.7
+      ]
+    ],
+    "allCueWindowsAboveMinus48Dbfs": true,
+    "lastWindowAboveMinus48Dbfs": 149.3,
+    "pictureDurationSeconds": 150.8,
+    "audioVideoDurationDeltaSeconds": 0.016000000000019554
+  }
+}
