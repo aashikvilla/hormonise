@@ -1,0 +1,23 @@
+{
+  "decision": "READY",
+  "file": "/workspace/hormonise/demo-iterations/v39/candidate.mp4",
+  "expected_sha256": "64ce4ee005347da552b84f41bd26b5db816aacc74a257506f19fcb70c4f70c34",
+  "observed_sha256": "64ce4ee005347da552b84f41bd26b5db816aacc74a257506f19fcb70c4f70c34",
+  "decode": "full ffmpeg decode succeeded without errors",
+  "video": {"codec": "h264", "width": 1920, "height": 1080, "fps": 30, "duration_seconds": 93.966667},
+  "audio": {"codec": "aac", "channels": 1, "sample_rate_hz": 48000, "duration_seconds": 93.952, "tail_silence_seconds": 3.983, "speech_heard_or_transcribed": false},
+  "visual_review": {
+    "960x540_readability": "captions and key interface text legible",
+    "1920x1080_readability": "captions and key interface text legible",
+    "band_occlusion": "none observed; caption bands do not overlap main UI",
+    "minor_crop": "around 20 s top of a prompt card is clipped at viewport edge; fragment 'feeling lately?'",
+    "fictional_claims_visible": true,
+    "no_model_or_service_claims_visible": true,
+    "privacy_and_exclusion_claims_visible": true,
+    "consent_unchecked_and_continue_disabled_visible": true,
+    "no_send_claims_visible": true,
+    "cursor_action_visible": false,
+    "cursor_absence_blocks_technical_release": false
+  },
+  "notes": "Audio speech could not be heard/transcribed; spoken claims remain unverified. Visual claim review only."
+}

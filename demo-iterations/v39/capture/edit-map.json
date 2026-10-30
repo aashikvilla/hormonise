@@ -1,0 +1,262 @@
+{
+  "iteration": "v39",
+  "candidate": "demo-iterations/v39/candidate.mp4",
+  "targetDurationSeconds": 94,
+  "outputDurationSeconds": 93.966667,
+  "fps": 30,
+  "canvas": [
+    1920,
+    1080
+  ],
+  "composition": "All app pixels remain unobstructed. Static/app regions are placed inside a centered close crop with a blank top disclosure margin and a blank bottom caption margin. Captions have no band.",
+  "scenes": [
+    {
+      "name": "opening",
+      "start": 0.0,
+      "duration": 6.0,
+      "source": "capture/generated/01-opening.png",
+      "treatment": "Actual entry-screen crop; fictional Arjun dilemma label stays in the app UI."
+    },
+    {
+      "name": "private-reflection",
+      "start": 6.0,
+      "duration": 10.0,
+      "source": "capture/generated/02-private-reflection.png",
+      "treatment": "Actual updated-reflection frontend crop; promise and planned/not-connected disclosure use only blank top margin."
+    },
+    {
+      "name": "continuous-correction",
+      "start": 16.0,
+      "duration": 22.0,
+      "source": "capture/source/continuous-correction-raw.webm",
+      "sourceIn": 0.5,
+      "sourceOut": 20.36,
+      "crop": [
+        300,
+        220,
+        960,
+        570
+      ],
+      "outputAppRect": [
+        223,
+        90,
+        1474,
+        875
+      ],
+      "treatment": "One uninterrupted v37 local frontend recording at normal speed; final selected state held to fit."
+    },
+    {
+      "name": "prepared-peer-perspective",
+      "start": 38.0,
+      "duration": 5.0,
+      "source": "capture/generated/03-peer-perspective.png",
+      "treatment": "Actual prepared Day 4 post capture; label sits in blank top margin."
+    },
+    {
+      "name": "host-boundary",
+      "start": 43.0,
+      "duration": 8.5,
+      "source": "capture/generated/04-host-boundary.png",
+      "treatment": "Actual host-boundary element crop; fictional/no-live disclosure sits above app content."
+    },
+    {
+      "name": "share-audience",
+      "start": 51.5,
+      "duration": 4.0,
+      "source": "capture/generated/05-share-audience.png",
+      "treatment": "Actual local share preview crop, same state as following adjacent crops."
+    },
+    {
+      "name": "share-draft",
+      "start": 55.5,
+      "duration": 3.3,
+      "source": "capture/generated/06-share-draft.png",
+      "treatment": "Adjacent crop of exact same local preview state; draft remains as captured."
+    },
+    {
+      "name": "share-consent",
+      "start": 58.8,
+      "duration": 4.2,
+      "source": "capture/generated/07-share-consent.png",
+      "treatment": "Adjacent crop of same state; consent unchecked and disabled control visible."
+    },
+    {
+      "name": "share-unsent",
+      "start": 63.0,
+      "duration": 6.5,
+      "source": "capture/generated/08-share-unsent.png",
+      "treatment": "Adjacent crop of same state; no state change or send action."
+    },
+    {
+      "name": "provider-availability",
+      "start": 69.5,
+      "duration": 4.0,
+      "source": "capture/generated/09-provider.png",
+      "treatment": "Actual unavailable-provider element crop."
+    },
+    {
+      "name": "maybe-later-selected",
+      "start": 73.5,
+      "duration": 20.466667,
+      "source": "capture/generated/10-maybe-later-selected.png",
+      "treatment": "Actual selected local state from the current frontend; the visual film does not show a cursor or click."
+    }
+  ],
+  "audioSource": "demo-iterations/v13/demo.mp4 audio only",
+  "audioSourceSha256": "dd21e18a055cf80bca4ee60b0f62620d6e82025b10639985bfb64a722d691d47",
+  "audioSegments": [
+    {
+      "outputStart": 0.0,
+      "captionEnd": 4.0,
+      "text": "I can\u2019t tell my family what I want without feeling ungrateful.",
+      "sourceIn": 0.0,
+      "sourceOut": 4.0
+    },
+    {
+      "outputStart": 6.0,
+      "captionEnd": 10.8,
+      "text": "Private reflection you can correct before exploring peer experiences.",
+      "sourceIn": 4.2,
+      "sourceOut": 9.0
+    },
+    {
+      "outputStart": 10.8,
+      "captionEnd": 16.1,
+      "text": "Planned Muse Spark may organize themes to review, never decide what is true.",
+      "sourceIn": 36.3,
+      "sourceOut": 41.795
+    },
+    {
+      "outputStart": 16.2,
+      "captionEnd": 20.3,
+      "text": "A local example offers a possibility, not an answer.",
+      "sourceIn": 16.5,
+      "sourceOut": 20.6
+    },
+    {
+      "outputStart": 20.4,
+      "captionEnd": 22.8,
+      "text": "Arjun says, Not quite.",
+      "sourceIn": 20.8,
+      "sourceOut": 23.2
+    },
+    {
+      "outputStart": 23.0,
+      "captionEnd": 27.2,
+      "text": "He changes the words: it is his parents, and he wants time.",
+      "sourceIn": 23.4,
+      "sourceOut": 27.605
+    },
+    {
+      "outputStart": 27.5,
+      "captionEnd": 31.0,
+      "text": "Now the editable reflection changes with what he said.",
+      "sourceIn": 28.0,
+      "sourceOut": 31.4
+    },
+    {
+      "outputStart": 31.2,
+      "captionEnd": 35.4,
+      "text": "He wants time to decide, without advice to stay or leave.",
+      "sourceIn": 31.6,
+      "sourceOut": 35.75
+    },
+    {
+      "outputStart": 38.0,
+      "captionEnd": 41.425,
+      "text": "Day four: one member wants time to choose.",
+      "sourceIn": 42.0,
+      "sourceOut": 45.425
+    },
+    {
+      "outputStart": 43.0,
+      "captionEnd": 47.3,
+      "text": "Day nine. The host says, I can listen; I can\u2019t decide for you.",
+      "sourceIn": 50.5,
+      "sourceOut": 54.8
+    },
+    {
+      "outputStart": 47.5,
+      "captionEnd": 51.5,
+      "text": "Fictional historical examples, prepared and not live.",
+      "sourceIn": 55.0,
+      "sourceOut": 59.0
+    },
+    {
+      "outputStart": 51.5,
+      "captionEnd": 55.65,
+      "text": "Arjun edits one question; the exact preview changes.",
+      "sourceIn": 71.5,
+      "sourceOut": 75.65
+    },
+    {
+      "outputStart": 55.7,
+      "captionEnd": 58.89,
+      "text": "The alias and group audience stay visible.",
+      "sourceIn": 76.2,
+      "sourceOut": 79.39
+    },
+    {
+      "outputStart": 58.9,
+      "captionEnd": 62.56,
+      "text": "Private conversation and context are excluded.",
+      "sourceIn": 79.9,
+      "sourceOut": 83.56
+    },
+    {
+      "outputStart": 62.6,
+      "captionEnd": 66.6,
+      "text": "Consent is unchecked. Continue stays disabled.",
+      "sourceIn": 84.0,
+      "sourceOut": 88.0
+    },
+    {
+      "outputStart": 66.7,
+      "captionEnd": 69.4,
+      "text": "Nothing is sent from this preview.",
+      "sourceIn": 88.2,
+      "sourceOut": 90.9
+    },
+    {
+      "outputStart": 69.7,
+      "captionEnd": 72.81,
+      "text": "No provider is verified or bookable here.",
+      "sourceIn": 92.0,
+      "sourceOut": 95.11
+    },
+    {
+      "outputStart": 73.5,
+      "captionEnd": 76.39,
+      "text": "He keeps time to decide privately.",
+      "sourceIn": 96.0,
+      "sourceOut": 98.89
+    },
+    {
+      "outputStart": 77.0,
+      "captionEnd": 80.05,
+      "text": "He could leave without sharing anything.",
+      "sourceIn": 100.8,
+      "sourceOut": 103.85
+    },
+    {
+      "outputStart": 81.0,
+      "captionEnd": 84.11,
+      "text": "Maybe later keeps that choice open.",
+      "sourceIn": 109.0,
+      "sourceOut": 112.11
+    },
+    {
+      "outputStart": 86.6,
+      "captionEnd": 89.98,
+      "text": "Nothing is sent without consent. Arjun can leave it here.",
+      "sourceIn": 173.6,
+      "sourceOut": 176.98
+    }
+  ],
+  "captions": "capture/captions.srt; exact retained v13 caption strings, retimed only",
+  "finalSpokenEndSeconds": 89.975,
+  "finalPictureEndSeconds": 93.966667,
+  "postVoiceHoldSeconds": 3.992,
+  "maybeLaterCapture": "Actual local Playwright click in trace and pre/post screenshots; no visible pointer footage was obtained and final picture uses captured selected state.",
+  "status": "HOLD \u2014 cursor action visibility and full subjective audio listening remain release gates."
+}

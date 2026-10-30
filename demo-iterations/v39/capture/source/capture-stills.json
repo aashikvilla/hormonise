@@ -1,0 +1,30 @@
+{
+  "origin": "http://127.0.0.1:3033",
+  "viewport": [
+    1920,
+    1080
+  ],
+  "fixture": "local prepared content",
+  "modelConnected": false,
+  "screens": [
+    "entry-screen",
+    "discovery-screen",
+    "peer-one-day4",
+    "peer-two-day9",
+    "peer-one-day4-posts",
+    "peer-two-day9-host",
+    "share-day16-no-replies",
+    "share-preview-panel",
+    "share-preview-draft-focus",
+    "share-preview-consent-focus",
+    "maybe-later-selected",
+    "final-private-and-unsent",
+    "provider-no-verified"
+  ],
+  "operations": [
+    "real UI clicks and text entry followed by local state updates",
+    "share consent remained unchecked; disabled action not activated",
+    "no service/API requests were made"
+  ],
+  "capture": "Playwright screenshots from current local app"
+}

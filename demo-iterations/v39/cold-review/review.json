@@ -1,0 +1,72 @@
+{
+  "candidate": "/workspace/hormonise/demo-iterations/v39/candidate.mp4",
+  "candidate_sha256": "64ce4ee005347da552b84f41bd26b5db816aacc74a257506f19fcb70c4f70c34",
+  "review_evidence_mode": "video_visual_only_audio_present_but_inaccessible",
+  "technical_evidence_type": "film_visible_prototype_evidence",
+  "independent_of_previous_rounds": true,
+  "verdict": "maybe",
+  "confidence": 0.72,
+  "scores": {
+    "impact": {
+      "problem_specificity": {"score": 7, "max": 10, "evidence": "0:00–0:05: specific family-pressure dilemma and adult audience."},
+      "human_need_and_outcomes": {"score": 6, "max": 10, "evidence": "0:00–0:05 emotional barrier; 1:20–1:34 private, optional next step, but outcomes are prepared."},
+      "adoption_network_benefit": {"score": 5, "max": 10, "evidence": "0:36–0:50 describes peer listening, while all members are fictional and no live community is shown."},
+      "total": 18,
+      "max": 30
+    },
+    "meta_use": {
+      "correctly_named_model_roles": {"score": 2, "max": 7, "evidence": "0:06–0:12 names planned Muse Spark and theme organization; no model connected."},
+      "necessity": {"score": 5, "max": 8, "evidence": "0:06–0:12 proposes organizing ambiguous feelings while leaving interpretation to user."},
+      "visible_mechanism": {"score": 5, "max": 6, "evidence": "0:06–0:15 visible thought-check, tentative interpretation, correction and edit controls."},
+      "evidence_or_limitation": {"score": 4, "max": 4, "evidence": "Repeated labels say prepared local text and no model connected."},
+      "total": 16,
+      "max": 25
+    },
+    "demo": {
+      "hook_and_story": {"score": 4, "max": 6, "evidence": "0:00 strong opening dilemma; story remains a fictional prepared example."},
+      "clarity_and_legibility": {"score": 5, "max": 6, "evidence": "0:00 and 0:06 large headers and readable UI; repeated detail slows comprehension."},
+      "pacing_accessible_audio_subtitles": {"score": 3, "max": 5, "evidence": "On-screen descriptive captions appear throughout; audio is inaccessible, and repeated holds are slow."},
+      "emotional_payoff": {"score": 3, "max": 5, "evidence": "1:20–1:34 private 'Maybe later' outcome is agency-preserving but modest."},
+      "polished_coherent_ui": {"score": 3, "max": 3, "evidence": "0:00–1:34 consistent calm visual system and coherent cards."},
+      "total": 18,
+      "max": 25
+    },
+    "technical_depth": {
+      "plausible_workflow": {"score": 5, "max": 6, "evidence": "0:00–0:33 private reflection and correction; 0:54–1:34 sharing or private exit."},
+      "controls_permissions_privacy": {"score": 5, "max": 5, "evidence": "0:54–1:12 exact text, exclusions, unchecked consent, disabled continuation; nothing sent."},
+      "architecture_failure_handling": {"score": 4, "max": 5, "evidence": "0:54–1:18 no message service and no verified provider are stated candidly."},
+      "implementation_evidence": {"score": 3, "max": 4, "evidence": "0:06–0:15 correction/edit; 0:54–1:34 consent-gated and recoverable private branch, all prepared."},
+      "total": 17,
+      "max": 20
+    }
+  },
+  "total": 69,
+  "film_persuasion_score": 69,
+  "film_persuasion": {
+    "first_15_second_clarity": {
+      "score": 19,
+      "max": 25,
+      "evidence": ["0:00–0:05 names family-pressure problem and adults as audience.", "0:06–0:12 describes private reflection and planned, disconnected Muse Spark role."]
+    },
+    "human_journey_and_payoff": {
+      "score": 18,
+      "max": 25,
+      "evidence": ["0:18–0:33 user's wording can change the reflection.", "1:20–1:34 'Maybe later' keeps the takeaway private; scenario is fictional/prepared."]
+    },
+    "differentiation_and_role_value": {
+      "score": 17,
+      "max": 25,
+      "evidence": ["0:06–0:12 proposed Muse Spark may organize themes, not decide what is true.", "0:36–0:50 fictional peers and host are framed as listeners, not decision-makers; none are live."]
+    },
+    "cinematic_and_narrative_craft": {
+      "score": 15,
+      "max": 25,
+      "evidence": ["0:00 opening line is immediately legible.", "1:20–1:34 repeats a static choice screen and lingers on the close."]
+    },
+    "total": 69,
+    "confidence": 0.62,
+    "audio_limitation": "An audio stream is present, but listening or transcription was inaccessible. No narration, music or mix claims are made; pacing/accessibility is judged from visual timing and embedded on-screen captions only."
+  },
+  "uncertainty": ["Audio track could not be heard or transcribed.", "No live model execution, live community activity, or actual outcome is shown; claims about them cannot be assessed."],
+  "report": "/tmp/harmonise-v39-blind/report.md"
+}

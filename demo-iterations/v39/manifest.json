@@ -1,0 +1,81 @@
+{
+  "iteration": "v39",
+  "status": "HOLD — candidate only; technical verification READY; builder subjective release HOLD; not final",
+  "candidate": "demo-iterations/v39/candidate.mp4",
+  "candidateSha256": "64ce4ee005347da552b84f41bd26b5db816aacc74a257506f19fcb70c4f70c34",
+  "durationSeconds": 93.966667,
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "frames": 2819
+  },
+  "audio": {
+    "codec": "aac",
+    "sampleRate": "48000",
+    "channels": 1,
+    "streamDurationSeconds": 93.952,
+    "lastSpokenWordEndSeconds": 89.975,
+    "pictureEndSeconds": 93.966667,
+    "postVoiceHoldSeconds": 3.992
+  },
+  "sourceCorrection": "demo-iterations/v39/capture/source/continuous-correction-raw.webm",
+  "sourceCorrectionSha256": "9022cc2be2f1abdc84e947254da1ac2ee0d5c3abb394571d9b7d3dacd5b2a1c5",
+  "maybeLaterTrace": "demo-iterations/v39/capture/source/maybe-later-click-trace.zip",
+  "maybeLaterStateCapture": "demo-iterations/v39/capture/source/maybe-later-selected-dpr2.png",
+  "captionFile": "demo-iterations/v39/capture/captions.srt",
+  "narration": "demo-iterations/v39/narration.txt",
+  "editMap": "demo-iterations/v39/capture/edit-map.json",
+  "renderScript": "demo-iterations/v39/capture/render-v39.py",
+  "framePreparationScript": "demo-iterations/v39/capture/prepare-frames-v39.py",
+  "verification": "demo-iterations/v39/verification/report.md",
+  "mediaChecks": "demo-iterations/v39/verification/media-checks.json",
+  "releaseCheck": "demo-iterations/v39/release-check/report.md",
+  "priorVideoHashesPreserved": {
+    "demo-iterations/v13/demo.mp4": true,
+    "demo-iterations/v35/demo.mp4": true,
+    "demo-iterations/v36/demo.mp4": true,
+    "demo-iterations/v37/demo.mp4": true
+  },
+  "releaseGates": {
+    "continuousCorrection": true,
+    "maybeLaterActualClickCapturedInPlaywrightTrace": true,
+    "visibleCursorActionInFilm": false,
+    "fullSubjectiveAudioListeningCompleted": false,
+    "coldAudienceStudyConducted": false
+  },
+  "audienceGate": "Blind cold review complete; verdict maybe; builder subjective release HOLD; not final",
+  "scores": {
+    "weightedTotal": 69,
+    "filmPersuasion": 69,
+    "decision": "maybe",
+    "confidence": "medium",
+    "evidenceMode": "video with captions; audio inaccessible",
+    "audio": "Audio present but inaccessible for subjective listening; audio-dependent judgments unverified",
+    "persuasionConfidence": "medium-low",
+    "coldReview": "demo-iterations/v39/cold-review/report.md",
+    "coldReviewJson": "demo-iterations/v39/cold-review/review.json"
+  },
+  "releaseAssessments": {
+    "technicalVerifier": {
+      "decision": "READY",
+      "report": "demo-iterations/v39/release-check/report.md",
+      "reportJson": "demo-iterations/v39/release-check/report.json",
+      "findings": [
+        "Full decode succeeded; no overlay or caption-band occlusion was observed; captions and key UI text are readable at 960x540 and 1920x1080.",
+        "A minor prompt-card crop appears around 20 seconds.",
+        "Audio decoding succeeded, but speech was not heard or transcribed."
+      ]
+    },
+    "builderSubjective": {
+      "decision": "HOLD",
+      "holdReasons": [
+        "No cursor footage is visible in the rendered film.",
+        "Full subjective audio listening was not completed because audio was inaccessible."
+      ],
+      "qualification": "The Maybe later click is trace-backed in demo-iterations/v39/capture/source/maybe-later-click-trace.zip even though no cursor action appears in the film.",
+      "final": false
+    }
+  }
+}

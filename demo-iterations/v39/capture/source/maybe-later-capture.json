@@ -1,0 +1,14 @@
+{
+  "origin": "http://127.0.0.1:3033/demo?path=talk",
+  "viewport": [
+    1920,
+    1080
+  ],
+  "fixture": "local prepared content",
+  "action": "Playwright moved pointer to the visible Maybe later button and performed mouse down/up; app displayed selected state",
+  "checkboxUnchecked": true,
+  "sharingDisabled": true,
+  "noNetworkCalls": true,
+  "capture": "Playwright interaction trace plus actual pre/post local frontend screenshots; video encoder unavailable in the installed Playwright package",
+  "trace": "maybe-later-click-trace.zip"
+}

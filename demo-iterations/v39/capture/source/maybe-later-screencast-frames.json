@@ -1,0 +1,27 @@
+{
+  "frames": 3,
+  "dimensions": [
+    1920,
+    1080
+  ],
+  "framesMetadata": [
+    {
+      "frame": 0,
+      "timestamp": 1793323149.090241,
+      "deviceWidth": 1920,
+      "deviceHeight": 1080
+    },
+    {
+      "frame": 1,
+      "timestamp": 1793323149.126343,
+      "deviceWidth": 1920,
+      "deviceHeight": 1080
+    },
+    {
+      "frame": 2,
+      "timestamp": 1793323151.097784,
+      "deviceWidth": 1920,
+      "deviceHeight": 1080
+    }
+  ]
+}

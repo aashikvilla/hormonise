@@ -1,0 +1,284 @@
+{
+  "candidate": "demo-iterations/v39/candidate.mp4",
+  "durationSeconds": 93.966667,
+  "video": {
+    "index": 0,
+    "codec_name": "h264",
+    "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+    "profile": "High",
+    "codec_type": "video",
+    "codec_tag_string": "avc1",
+    "codec_tag": "0x31637661",
+    "width": 1920,
+    "height": 1080,
+    "coded_width": 1920,
+    "coded_height": 1080,
+    "closed_captions": 0,
+    "film_grain": 0,
+    "has_b_frames": 2,
+    "sample_aspect_ratio": "1:1",
+    "display_aspect_ratio": "16:9",
+    "pix_fmt": "yuv420p",
+    "level": 40,
+    "chroma_location": "left",
+    "field_order": "progressive",
+    "refs": 1,
+    "is_avc": "true",
+    "nal_length_size": "4",
+    "id": "0x1",
+    "r_frame_rate": "30/1",
+    "avg_frame_rate": "30/1",
+    "time_base": "1/15360",
+    "start_pts": 0,
+    "start_time": "0.000000",
+    "duration_ts": 1443328,
+    "duration": "93.966667",
+    "bit_rate": "235729",
+    "bits_per_raw_sample": "8",
+    "nb_frames": "2819",
+    "extradata_size": 48,
+    "disposition": {
+      "default": 1,
+      "dub": 0,
+      "original": 0,
+      "comment": 0,
+      "lyrics": 0,
+      "karaoke": 0,
+      "forced": 0,
+      "hearing_impaired": 0,
+      "visual_impaired": 0,
+      "clean_effects": 0,
+      "attached_pic": 0,
+      "timed_thumbnails": 0,
+      "non_diegetic": 0,
+      "captions": 0,
+      "descriptions": 0,
+      "metadata": 0,
+      "dependent": 0,
+      "still_image": 0,
+      "multilayer": 0
+    },
+    "tags": {
+      "language": "und",
+      "handler_name": "VideoHandler",
+      "vendor_id": "[0][0][0][0]",
+      "encoder": "Lavc61.19.101 libx264"
+    }
+  },
+  "audio": {
+    "index": 1,
+    "codec_name": "aac",
+    "codec_long_name": "AAC (Advanced Audio Coding)",
+    "profile": "LC",
+    "codec_type": "audio",
+    "codec_tag_string": "mp4a",
+    "codec_tag": "0x6134706d",
+    "sample_fmt": "fltp",
+    "sample_rate": "48000",
+    "channels": 1,
+    "channel_layout": "mono",
+    "bits_per_sample": 0,
+    "initial_padding": 0,
+    "id": "0x2",
+    "r_frame_rate": "0/0",
+    "avg_frame_rate": "0/0",
+    "time_base": "1/48000",
+    "start_pts": 0,
+    "start_time": "0.000000",
+    "duration_ts": 4509696,
+    "duration": "93.952000",
+    "bit_rate": "125790",
+    "nb_frames": "4405",
+    "extradata_size": 5,
+    "disposition": {
+      "default": 1,
+      "dub": 0,
+      "original": 0,
+      "comment": 0,
+      "lyrics": 0,
+      "karaoke": 0,
+      "forced": 0,
+      "hearing_impaired": 0,
+      "visual_impaired": 0,
+      "clean_effects": 0,
+      "attached_pic": 0,
+      "timed_thumbnails": 0,
+      "non_diegetic": 0,
+      "captions": 0,
+      "descriptions": 0,
+      "metadata": 0,
+      "dependent": 0,
+      "still_image": 0,
+      "multilayer": 0
+    },
+    "tags": {
+      "language": "und",
+      "handler_name": "SoundHandler",
+      "vendor_id": "[0][0][0][0]"
+    }
+  },
+  "checks": {
+    "fullDecode": true,
+    "duration90to100": true,
+    "video1920x1080": true,
+    "video30fps": true,
+    "videoFrames": 2819,
+    "captionsAllExactV13": true,
+    "captionCueCount": 21,
+    "captionMaxTwoLines": true,
+    "reviewFrames1920And960": 60,
+    "v38FormerFailurePositionsReviewed": [
+      "18s",
+      "27s"
+    ],
+    "continuousCorrectionSourceHash": "9022cc2be2f1abdc84e947254da1ac2ee0d5c3abb394571d9b7d3dacd5b2a1c5",
+    "priorMastersUnchanged": {
+      "demo-iterations/v13/demo.mp4": true,
+      "demo-iterations/v35/demo.mp4": true,
+      "demo-iterations/v36/demo.mp4": true,
+      "demo-iterations/v37/demo.mp4": true
+    },
+    "candidateSha256": "64ce4ee005347da552b84f41bd26b5db816aacc74a257506f19fcb70c4f70c34",
+    "audioStreamDurationSeconds": 93.952,
+    "finalWordEndSeconds": 89.975,
+    "finalPictureEndSeconds": 93.966667,
+    "postVoiceHoldSeconds": 3.992,
+    "maybeLaterClickVisibleInFilm": false,
+    "maybeLaterClickActuallyPerformedAndTraced": true
+  },
+  "captionCueAudit": [
+    {
+      "start": 0.0,
+      "end": 4.0,
+      "text": "I can\u2019t tell my family what I want without feeling ungrateful.",
+      "exactV13": true
+    },
+    {
+      "start": 6.0,
+      "end": 10.8,
+      "text": "Private reflection you can correct before exploring peer experiences.",
+      "exactV13": true
+    },
+    {
+      "start": 10.8,
+      "end": 16.1,
+      "text": "Planned Muse Spark may organize themes to review, never decide what is true.",
+      "exactV13": true
+    },
+    {
+      "start": 16.2,
+      "end": 20.3,
+      "text": "A local example offers a possibility, not an answer.",
+      "exactV13": true
+    },
+    {
+      "start": 20.4,
+      "end": 22.8,
+      "text": "Arjun says, Not quite.",
+      "exactV13": true
+    },
+    {
+      "start": 23.0,
+      "end": 27.2,
+      "text": "He changes the words: it is his parents, and he wants time.",
+      "exactV13": true
+    },
+    {
+      "start": 27.5,
+      "end": 31.0,
+      "text": "Now the editable reflection changes with what he said.",
+      "exactV13": true
+    },
+    {
+      "start": 31.2,
+      "end": 35.4,
+      "text": "He wants time to decide, without advice to stay or leave.",
+      "exactV13": true
+    },
+    {
+      "start": 38.0,
+      "end": 41.425,
+      "text": "Day four: one member wants time to choose.",
+      "exactV13": true
+    },
+    {
+      "start": 43.0,
+      "end": 47.3,
+      "text": "Day nine. The host says, I can listen; I can\u2019t decide for you.",
+      "exactV13": true
+    },
+    {
+      "start": 47.5,
+      "end": 51.5,
+      "text": "Fictional historical examples, prepared and not live.",
+      "exactV13": true
+    },
+    {
+      "start": 51.5,
+      "end": 55.65,
+      "text": "Arjun edits one question; the exact preview changes.",
+      "exactV13": true
+    },
+    {
+      "start": 55.7,
+      "end": 58.89,
+      "text": "The alias and group audience stay visible.",
+      "exactV13": true
+    },
+    {
+      "start": 58.9,
+      "end": 62.56,
+      "text": "Private conversation and context are excluded.",
+      "exactV13": true
+    },
+    {
+      "start": 62.6,
+      "end": 66.6,
+      "text": "Consent is unchecked. Continue stays disabled.",
+      "exactV13": true
+    },
+    {
+      "start": 66.7,
+      "end": 69.4,
+      "text": "Nothing is sent from this preview.",
+      "exactV13": true
+    },
+    {
+      "start": 69.7,
+      "end": 72.81,
+      "text": "No provider is verified or bookable here.",
+      "exactV13": true
+    },
+    {
+      "start": 73.5,
+      "end": 76.39,
+      "text": "He keeps time to decide privately.",
+      "exactV13": true
+    },
+    {
+      "start": 77.0,
+      "end": 80.05,
+      "text": "He could leave without sharing anything.",
+      "exactV13": true
+    },
+    {
+      "start": 81.0,
+      "end": 84.11,
+      "text": "Maybe later keeps that choice open.",
+      "exactV13": true
+    },
+    {
+      "start": 86.6,
+      "end": 89.98,
+      "text": "Nothing is sent without consent. Arjun can leave it here.",
+      "exactV13": true
+    }
+  ],
+  "missingFromV13": [],
+  "sourceFiles": {
+    "continuousCorrectionSha256": "9022cc2be2f1abdc84e947254da1ac2ee0d5c3abb394571d9b7d3dacd5b2a1c5",
+    "maybeLaterTraceSha256": "39bfe94fc90d6adaf68d1b30b80243b00082b34c311f1e72a7eccac8211657be",
+    "maybeLaterScreencastSha256": "24e853afa4098b89864308280a959c9bdebe673a87f12b5bb858ff23053e992d"
+  },
+  "candidateSha256": "64ce4ee005347da552b84f41bd26b5db816aacc74a257506f19fcb70c4f70c34"
+}
