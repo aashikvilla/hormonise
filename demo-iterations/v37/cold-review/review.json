@@ -1,0 +1,93 @@
+{
+  "candidate": "/workspace/hormonise/demo-iterations/v37/demo.mp4",
+  "sha256": "9281740447ec8ddd8df5ecd943c423a6a3a2de164e49416d78541a91c3c73f05",
+  "reviewed_at": "2026-10-30T00:44:57Z",
+  "review_evidence_mode": "video_with_captions_audio_unavailable",
+  "independent_of_previous_rounds": true,
+  "decision": "maybe",
+  "scores": {
+    "impact": {
+      "problem_specificity": 7,
+      "human_need_and_believable_outcomes": 7,
+      "practical_adoption_and_network_benefit": 4,
+      "subtotal": 18,
+      "maximum": 30
+    },
+    "meta_use": {
+      "correctly_named_model_roles": 1,
+      "compelling_necessity": 4,
+      "visible_mechanism_reasoning_or_structured_ui": 4,
+      "convincing_evidence_or_candid_limitation": 4,
+      "subtotal": 13,
+      "maximum": 25
+    },
+    "demo": {
+      "hook_and_story": 5,
+      "clarity_and_legibility": 4,
+      "pacing_accessible_audio_and_subtitles": 3,
+      "memorable_emotional_payoff": 3,
+      "polished_coherent_ui": 2,
+      "subtotal": 17,
+      "maximum": 25
+    },
+    "technical_depth": {
+      "plausible_full_user_workflow": 5,
+      "controls_permissions_and_privacy": 5,
+      "architecture_and_failure_handling_as_evidenced": 3,
+      "implementation_evidence": 3,
+      "implementation_evidence_basis": "film-visible prototype interaction only",
+      "subtotal": 16,
+      "maximum": 20
+    }
+  },
+  "total": 64,
+  "total_arithmetic": "18 + 13 + 17 + 16 = 64",
+  "confidence": "moderate",
+  "uncertainty": "Audio stream exists but could not be listened to; captions and visible prototype screens are assessable. Prepared fictional examples do not establish live model or community behavior.",
+  "film_persuasion_dimensions": {
+    "first_15_second_clarity": {
+      "score": 19,
+      "maximum": 25,
+      "evidence": [
+        {"timestamp": "00:00-00:06", "description": "First-person dilemma: cannot tell family what I want without feeling ungrateful."},
+        {"timestamp": "00:07-00:14", "description": "Promise is private reflection, correction, then optional sharing; screen discloses local prototype and no model connected."}
+      ]
+    },
+    "human_journey_and_payoff": {
+      "score": 19,
+      "maximum": 25,
+      "evidence": [
+        {"timestamp": "00:18-00:34", "description": "Arjun corrects the prepared reflection in his own words."},
+        {"timestamp": "01:10-01:29", "description": "Maybe-later path keeps the reflection private and ends with nothing sent."}
+      ]
+    },
+    "differentiation_and_role_value": {
+      "score": 16,
+      "maximum": 25,
+      "evidence": [
+        {"timestamp": "00:46-00:57", "description": "Prepared peer perspectives are distinguished from a fictional human host who listens without deciding."},
+        {"timestamp": "00:07-00:17", "description": "No model connection is disclosed; AI role and value are therefore proposed, not demonstrated."}
+      ]
+    },
+    "cinematic_and_narrative_craft": {
+      "score": 16,
+      "maximum": 25,
+      "evidence": [
+        {"timestamp": "00:00-00:06", "description": "Minimal title card and visible captions deliver a clear emotional hook."},
+        {"timestamp": "00:58-01:29", "description": "Static interface shots repeat; full-frame UI text is small in several views."}
+      ]
+    },
+    "total": 70,
+    "arithmetic": "19 + 19 + 16 + 16 = 70",
+    "confidence": "moderate-low",
+    "audio_limitation": "AAC audio stream present, but audio could not be heard. Captions were visible; voice delivery, music, and sound mix were not assessed."
+  },
+  "authenticity": {
+    "model_execution_shown": false,
+    "model_execution_note": "Film explicitly says local prototype / no model connected and prepared examples only.",
+    "social_activity_live": false,
+    "integration_claims": "No live integration evidenced.",
+    "content_status": "Scenario, peer perspectives, and human host are identified as fictional/prepared."
+  },
+  "report_path": "/tmp/harmonise-v37-blind/report.md"
+}

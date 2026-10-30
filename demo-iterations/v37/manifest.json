@@ -1,0 +1,69 @@
+{
+  "iteration": "v37",
+  "status": "candidate; mechanical checks pass; cold review maybe; technical release READY",
+  "candidate": "demo-iterations/v37/demo.mp4",
+  "candidateSha256": "9281740447ec8ddd8df5ecd943c423a6a3a2de164e49416d78541a91c3c73f05",
+  "durationSeconds": 89.966667,
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "frames": "2699",
+    "durationSeconds": 89.966667
+  },
+  "audio": {
+    "codec": "aac",
+    "sampleRate": "48000",
+    "channels": 1,
+    "durationSeconds": 89.962
+  },
+  "renderScript": "demo-iterations/v37/capture/render-v37.py",
+  "frameScript": "demo-iterations/v37/capture/prepare-frames-v37.py",
+  "captureScripts": [
+    "demo-iterations/v37/capture/capture-interaction.mjs",
+    "demo-iterations/v37/capture/capture-film-stills.mjs"
+  ],
+  "sourceCapture": "demo-iterations/v37/capture/source/continuous-correction-raw.webm",
+  "editMap": "demo-iterations/v37/capture/edit-map.json",
+  "captions": "demo-iterations/v37/capture/captions.srt",
+  "narration": "demo-iterations/v37/capture/narration.txt",
+  "verification": "demo-iterations/v37/verification/report.md",
+  "priorMastersProtected": true,
+  "narrationDisclosure": "Existing selected v13 VO only; no new VO/TTS or professional voice claim.",
+  "verificationChecks": "demo-iterations/v37/verification/media-checks.json",
+  "verificationScreenshots": "demo-iterations/v37/verification/",
+  "checks": {
+    "fullDecode": true,
+    "runtime88to95": true,
+    "video1920x1080": true,
+    "video30fps": true,
+    "frameCountWithinOneOf2700": true,
+    "audioNarrationPresent": true,
+    "captionCuesAllVerbatimFromV13": true,
+    "captionAtMostTwoLines": true,
+    "priorMp4HashesUnchanged": true,
+    "continuousInteractionCapturedAt1920x1080": true,
+    "continuousSourceAtLeast20Seconds": true,
+    "humanAudienceReleaseGates": "not tested; 5-first-viewer recall/truth gates remain pending",
+    "allMechanicalChecksPass": true
+  },
+  "narrationAudioSha256": "1235d269f155b9ec7dc4750851cebe51581570fb437897ebac97ea074cb713fc",
+  "narrationAudioFile": "demo-iterations/v37/capture/narration-v37.wav",
+  "scores": {
+    "weightedTotal": 64,
+    "filmPersuasion": 70,
+    "decision": "maybe",
+    "confidence": "moderate",
+    "evidenceMode": "video_with_captions_audio_unavailable",
+    "audio": "unavailable to judge",
+    "persuasionConfidence": "moderate-low",
+    "coldReview": "demo-iterations/v37/cold-review/report.md",
+    "coldReviewJson": "demo-iterations/v37/cold-review/review.json"
+  },
+  "releaseCheck": {
+    "status": "READY",
+    "report": "demo-iterations/v37/release-check/report.md",
+    "reportJson": "demo-iterations/v37/release-check/report.json"
+  }
+}

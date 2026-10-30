@@ -1,0 +1,28 @@
+{
+  "verdict": "READY",
+  "file": "/workspace/hormonise/demo-iterations/v37/demo.mp4",
+  "expected_sha256": "9281740447ec8ddd8df5ecd943c423a6a3a2de164e49416d78541a91c3c73f05",
+  "actual_sha256": "9281740447ec8ddd8df5ecd943c423a6a3a2de164e49416d78541a91c3c73f05",
+  "hash_match": true,
+  "duration_seconds": 89.966667,
+  "duration_limit_seconds": 180,
+  "video": {"codec": "h264", "width": 1920, "height": 1080, "fps": 30, "start_seconds": 0, "duration_seconds": 89.966667},
+  "audio": {"codec": "aac", "sample_rate_hz": 48000, "channels": 1, "start_seconds": 0, "duration_seconds": 89.962},
+  "av_duration_delta_ms": 4.667,
+  "full_decode": "passed; ffmpeg reported no decode errors",
+  "visual_review": {
+    "sampling": "one frame per 3 seconds",
+    "captions_screens": "readable in sampled frames; within frame bounds",
+    "blank_or_corrupt_frames": "none observed; no black intervals detected",
+    "duplicate_content": "repeated static scenes are consistent with explanatory presentation cards; no accidental duplicate/corrupt frame observed",
+    "disclosures": [
+      "fictional scenario and prepared examples",
+      "local prototype / no model connected",
+      "private conversation and context excluded",
+      "consent unchecked; continue disabled",
+      "no verified or bookable provider",
+      "nothing sent without consent; person can leave"
+    ],
+    "limitation": "Not a real-time listen-through; audio was checked for decode, level, and duration, not transcribed against narration."
+  }
+}

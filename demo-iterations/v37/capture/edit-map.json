@@ -1,0 +1,193 @@
+{
+  "iteration": "v37",
+  "candidate": "demo-iterations/v37/demo.mp4",
+  "candidateSha256": "9281740447ec8ddd8df5ecd943c423a6a3a2de164e49416d78541a91c3c73f05",
+  "durationSeconds": 90.0,
+  "fps": 30,
+  "frameCount": 2700,
+  "canvas": [
+    1920,
+    1080
+  ],
+  "sourceUIInteraction": "demo-iterations/v37/capture/source/continuous-correction-raw.webm",
+  "sourceUIInteractionSha256": "9022cc2be2f1abdc84e947254da1ac2ee0d5c3abb394571d9b7d3dacd5b2a1c5",
+  "sourceUIInteractionDimensions": [
+    1920,
+    1080
+  ],
+  "sourceTakeSeconds": 20.36,
+  "cutInteractionSeconds": [
+    0.5,
+    20.36
+  ],
+  "cutInteractionFrames": 596,
+  "continuity": "One uninterrupted Playwright-recorded take after the page is loaded. It includes the initial typed words and Send, then real click Not quite, correction typing, Send, editable reflection changed by typed input, and Yes, that\u2019s closer confirmation. No post-generated cursor, text, or UI transition.",
+  "scenes": [
+    {
+      "name": "opening",
+      "source": "01-opening-fictional-quote.png",
+      "start": 0.0,
+      "duration": 6.0,
+      "treatment": "designed fictional quote card"
+    },
+    {
+      "name": "product",
+      "source": "02-product-promise.png",
+      "start": 6.0,
+      "duration": 8.0,
+      "treatment": "current frontend entry screen crop"
+    },
+    {
+      "name": "correction",
+      "source": "continuous-correction-raw.webm",
+      "start": 14.0,
+      "duration": 19.8666667,
+      "treatment": "continuous 1920x1080 UI screen recording; loaded state begins at source 0.50s and retains the full correction sequence"
+    },
+    {
+      "name": "perspectives",
+      "source": "03-peer-perspectives.png",
+      "start": 33.8666667,
+      "duration": 8.9,
+      "treatment": "two explicitly prepared fictional perspective cards"
+    },
+    {
+      "name": "moderator",
+      "source": "04-moderator-boundary.png",
+      "start": 42.7666667,
+      "duration": 5.1,
+      "treatment": "current frontend moderator-boundary capture"
+    },
+    {
+      "name": "share-audience",
+      "source": "05-share-audience.png",
+      "start": 47.8666667,
+      "duration": 5.0,
+      "treatment": "exact current frontend preview; consent unchecked"
+    },
+    {
+      "name": "share-draft-focus",
+      "source": "06-share-draft-focus.png",
+      "start": 52.8666667,
+      "duration": 4.2,
+      "treatment": "current frontend share-preview textbox focus screenshot"
+    },
+    {
+      "name": "share-consent-focus",
+      "source": "07-share-consent-focus.png",
+      "start": 57.0666667,
+      "duration": 4.0,
+      "treatment": "current frontend share-preview checkbox focus screenshot; not selected"
+    },
+    {
+      "name": "share-unsent",
+      "source": "05-share-audience.png",
+      "start": 61.0666667,
+      "duration": 2.8,
+      "treatment": "exact current frontend preview; nothing sent"
+    },
+    {
+      "name": "provider",
+      "source": "08-no-verified-provider.png",
+      "start": 63.8666667,
+      "duration": 7.0,
+      "treatment": "current frontend support availability screen"
+    },
+    {
+      "name": "maybe-later",
+      "source": "09-maybe-later-selected.png",
+      "start": 70.8666667,
+      "duration": 8.0,
+      "treatment": "current frontend Maybe later selection; private reflection retained"
+    },
+    {
+      "name": "ending",
+      "source": "10-final-private-unsent.png",
+      "start": 78.8666667,
+      "duration": 11.1333333,
+      "treatment": "current frontend private takeaway and unsent draft summary"
+    }
+  ],
+  "audioSource": "demo-iterations/v13/demo.mp4 audio stream, extracted to capture/source/v13-narration-source.wav",
+  "audioSourceSha256": "3709a0f16f02c64032b5705bb2bfff2f62add6e54b596fc52b86bc56241153a3",
+  "audioSegments": [
+    {
+      "outputStart": 0.0,
+      "sourceIn": 0.0,
+      "sourceOut": 4.0,
+      "source": "v13 existing narration audio"
+    },
+    {
+      "outputStart": 6.0,
+      "sourceIn": 4.2,
+      "sourceOut": 9.0,
+      "source": "v13 existing narration audio"
+    },
+    {
+      "outputStart": 11.5,
+      "sourceIn": 14.0,
+      "sourceOut": 16.3,
+      "source": "v13 existing narration audio"
+    },
+    {
+      "outputStart": 14.0,
+      "sourceIn": 16.5,
+      "sourceOut": 35.75,
+      "source": "v13 existing narration audio"
+    },
+    {
+      "outputStart": 34.0,
+      "sourceIn": 35.767,
+      "sourceOut": 47.2,
+      "source": "v13 existing narration audio"
+    },
+    {
+      "outputStart": 53.033,
+      "sourceIn": 53.033,
+      "sourceOut": 64.033,
+      "source": "v13 existing narration audio"
+    },
+    {
+      "outputStart": 65.133,
+      "sourceIn": 65.133,
+      "sourceOut": 68.243,
+      "source": "v13 existing narration audio"
+    },
+    {
+      "outputStart": 71.5,
+      "sourceIn": 73.133,
+      "sourceOut": 76.023,
+      "source": "v13 existing narration audio"
+    },
+    {
+      "outputStart": 75.3,
+      "sourceIn": 77.634,
+      "sourceOut": 80.684,
+      "source": "v13 existing narration audio"
+    },
+    {
+      "outputStart": 79.7,
+      "sourceIn": 112.733,
+      "sourceOut": 116.068,
+      "source": "v13 existing narration audio"
+    },
+    {
+      "outputStart": 84.2,
+      "sourceIn": 120.833,
+      "sourceOut": 124.813,
+      "source": "v13 existing narration audio"
+    }
+  ],
+  "captions": "capture/captions.srt; each speech line is a verbatim v13 caption cue with only output timing changed; no new speech was authored.",
+  "captionCueCount": 19,
+  "captionBurn": "Caption master uses a dedicated dark band. No caption covers the interaction UI.",
+  "narrationStatus": "Reused selected v13 narration cues. No new VO recorded; no human/voice actor claim. Local TTS unavailable.",
+  "fictionality": "Scenario, peer cards, and local UI examples are prepared fiction; no model, live member/moderator, provider directory, messaging service, or send is connected.",
+  "priorMasterSha256": {
+    "demo-iterations/v13/demo.mp4": "dd21e18a055cf80bca4ee60b0f62620d6e82025b10639985bfb64a722d691d47",
+    "demo-iterations/v35/demo.mp4": "27c4fc952bd8fb876afe533f374e3f4bc4c60e2e5ab5d95e00c382d0f56e79d5",
+    "demo-iterations/v36/demo.mp4": "808f3d3bf00dbc03f500870401d4671c06d3e842c746bef472e6bab7c4ff4b1c"
+  },
+  "narrationAudioSha256": "1235d269f155b9ec7dc4750851cebe51581570fb437897ebac97ea074cb713fc",
+  "narrationAudioFile": "demo-iterations/v37/capture/narration-v37.wav"
+}

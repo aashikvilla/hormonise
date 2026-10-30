@@ -1,0 +1,25 @@
+HARMONISE v37 — NARRATION SCRIPT / AUDIO CUE LIST
+
+Narration source: selected existing voice cues from demo-iterations/v13/demo.mp4. No new voice performance or TTS was made for v37. The same cue wording is reproduced verbatim in capture/captions.srt and burned into the film. Speaker identity or professional human VO is not claimed.
+
+00:00–00:04  I can’t tell my family what I want without feeling ungrateful.
+00:06–00:10.8  Private reflection you can correct before exploring peer experiences.
+00:11.5–00:13.8  Prepared preview. No model.
+00:14–00:18.1  A local example offers a possibility, not an answer.
+00:18.3–00:20.7  Arjun says, Not quite.
+00:20.9–00:25.105  He changes the words: it is his parents, and he wants time.
+00:25.5–00:28.9  Now the editable reflection changes with what he said.
+00:29.1–00:33.25  He wants time to decide, without advice to stay or leave.
+00:34–00:37.425  Day four: one member wants time to choose.
+00:37.425–00:41.125  Another member sees a different part of the situation.
+00:41.133–00:45.433  Day nine. The host says, I can listen; I can’t decide for you.
+00:53.033–00:56.693  Private conversation and context are excluded.
+00:57.133–01:01.133  Consent is unchecked. Continue stays disabled.
+01:01.333–01:04.033  Nothing is sent from this preview.
+01:05.133–01:08.243  No provider is verified or bookable here.
+01:11.5–01:14.39  He keeps time to decide privately.
+01:15.3–01:18.35  He could leave without sharing anything.
+01:19.7–01:23.035  The prepared example shows no real people or outcome.
+01:24.2–01:28.18  Nothing is sent without consent. Arjun can leave it here.
+
+The opening card, promise line, disclosure labels, two fictional peer cards, and end card are on-screen text, not new spoken lines.
