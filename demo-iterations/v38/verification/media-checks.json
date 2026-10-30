@@ -1,0 +1,192 @@
+{
+  "candidateSha256": "a0321bc96dbd39675b9c72381ac9e23f0a8da2f52ff9774eb59096d4070589a8",
+  "sourceCaptureSha256": "9022cc2be2f1abdc84e947254da1ac2ee0d5c3abb394571d9b7d3dacd5b2a1c5",
+  "runtimeSeconds": 99.0,
+  "video": {
+    "codec": "h264",
+    "size": [
+      1920,
+      1080
+    ],
+    "fps": "30/1",
+    "frames": 2970
+  },
+  "audio": {
+    "codec": "aac",
+    "sampleRate": "48000",
+    "channels": 1,
+    "durationSeconds": 99.0
+  },
+  "captionCueCount": 20,
+  "captionSourceAudit": [
+    {
+      "start": 0.0,
+      "end": 4.0,
+      "text": "I can\u2019t tell my family what I want without feeling ungrateful.",
+      "exactV13": true
+    },
+    {
+      "start": 6.0,
+      "end": 10.8,
+      "text": "Private reflection you can correct before exploring peer experiences.",
+      "exactV13": true
+    },
+    {
+      "start": 10.8,
+      "end": 16.1,
+      "text": "Planned Muse Spark may organize themes to review, never decide what is true.",
+      "exactV13": true
+    },
+    {
+      "start": 16.2,
+      "end": 20.3,
+      "text": "A local example offers a possibility, not an answer.",
+      "exactV13": true
+    },
+    {
+      "start": 20.4,
+      "end": 22.8,
+      "text": "Arjun says, Not quite.",
+      "exactV13": true
+    },
+    {
+      "start": 23.0,
+      "end": 27.2,
+      "text": "He changes the words: it is his parents, and he wants time.",
+      "exactV13": true
+    },
+    {
+      "start": 27.5,
+      "end": 31.0,
+      "text": "Now the editable reflection changes with what he said.",
+      "exactV13": true
+    },
+    {
+      "start": 31.2,
+      "end": 35.4,
+      "text": "He wants time to decide, without advice to stay or leave.",
+      "exactV13": true
+    },
+    {
+      "start": 36.0,
+      "end": 39.425,
+      "text": "Day four: one member wants time to choose.",
+      "exactV13": true
+    },
+    {
+      "start": 43.0,
+      "end": 47.3,
+      "text": "Day nine. The host says, I can listen; I can\u2019t decide for you.",
+      "exactV13": true
+    },
+    {
+      "start": 49.0,
+      "end": 53.0,
+      "text": "Fictional historical examples, prepared and not live.",
+      "exactV13": true
+    },
+    {
+      "start": 53.0,
+      "end": 57.15,
+      "text": "Arjun edits one question; the exact preview changes.",
+      "exactV13": true
+    },
+    {
+      "start": 58.0,
+      "end": 61.19,
+      "text": "The alias and group audience stay visible.",
+      "exactV13": true
+    },
+    {
+      "start": 61.0,
+      "end": 64.66,
+      "text": "Private conversation and context are excluded.",
+      "exactV13": true
+    },
+    {
+      "start": 65.0,
+      "end": 69.0,
+      "text": "Consent is unchecked. Continue stays disabled.",
+      "exactV13": true
+    },
+    {
+      "start": 69.2,
+      "end": 71.9,
+      "text": "Nothing is sent from this preview.",
+      "exactV13": true
+    },
+    {
+      "start": 72.0,
+      "end": 75.11,
+      "text": "No provider is verified or bookable here.",
+      "exactV13": true
+    },
+    {
+      "start": 77.0,
+      "end": 79.89,
+      "text": "He keeps time to decide privately.",
+      "exactV13": true
+    },
+    {
+      "start": 80.0,
+      "end": 83.05,
+      "text": "He could leave without sharing anything.",
+      "exactV13": true
+    },
+    {
+      "start": 84.0,
+      "end": 87.98,
+      "text": "Nothing is sent without consent. Arjun can leave it here.",
+      "exactV13": true
+    }
+  ],
+  "captionCuesMissingFromV13": [],
+  "reviewFramesSeconds": {
+    "opening": 2,
+    "product-muse-role": 12,
+    "product-end": 15.9,
+    "product-role-14s": 14,
+    "product-role-15s": 15,
+    "interaction-start": 16.25,
+    "interaction-next": 17.2,
+    "interaction-18s-equivalent": 18,
+    "interaction-corrected": 27.2,
+    "interaction-complete": 33,
+    "peer": 39,
+    "host-boundary": 47,
+    "share-audience": 55,
+    "share-draft": 61,
+    "share-consent": 67,
+    "provider": 74,
+    "maybe-later-start": 80,
+    "final-choice": 92,
+    "last-frame": 98
+  },
+  "interactionStartVisualVariance": [
+    242.0944993491367,
+    242.10073430631894,
+    244.49024415436014
+  ],
+  "priorVideoHashesUnchanged": {
+    "demo-iterations/v13/demo.mp4": true,
+    "demo-iterations/v35/demo.mp4": true,
+    "demo-iterations/v36/demo.mp4": true,
+    "demo-iterations/v37/demo.mp4": true
+  },
+  "checks": {
+    "fullDecode": true,
+    "runtime90to105": true,
+    "video1920x1080": true,
+    "video30fps": true,
+    "audioPresent": true,
+    "captionsAllExactV13": true,
+    "captionMaxTwoLines": true,
+    "interactionStartNonblank": true,
+    "interaction15sEquivalentReview": true,
+    "sourceInteraction20s": true,
+    "allPriorVideosV13V35V36V37Unchanged": true,
+    "960And1920ScreenshotsCaptured": 38,
+    "finalFrameIsMaybeLater": true
+  },
+  "firstTimeAudienceGates": "not tested; cold-viewer recall and model-truth gates pending"
+}

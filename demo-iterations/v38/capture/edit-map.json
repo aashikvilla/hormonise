@@ -1,0 +1,95 @@
+{
+  "iteration": "v38",
+  "candidate": "demo-iterations/v38/demo.mp4",
+  "candidateSha256": "a0321bc96dbd39675b9c72381ac9e23f0a8da2f52ff9774eb59096d4070589a8",
+  "durationSeconds": 99,
+  "fps": 30,
+  "canvas": [
+    1920,
+    1080
+  ],
+  "sourceUIInteraction": "demo-iterations/v38/capture/source/continuous-correction-raw.webm",
+  "sourceUIInteractionSha256": "9022cc2be2f1abdc84e947254da1ac2ee0d5c3abb394571d9b7d3dacd5b2a1c5",
+  "sourceTakeSeconds": 20.36,
+  "cutInteractionSeconds": [
+    0.5,
+    20.36
+  ],
+  "cutInteractionDurationSeconds": 19.8,
+  "continuity": "Single uninterrupted v37 Playwright capture starting on loaded content; keeps actual clicks, correction typing, save, reflection update and confirmation. Final two source frames trimmed to fit the edit.",
+  "scenes": [
+    {
+      "name": "opening",
+      "start": 0,
+      "duration": 6,
+      "source": "actual entry-screen crop"
+    },
+    {
+      "name": "reflection-model-role",
+      "start": 6,
+      "duration": 10.2,
+      "source": "actual proposed reflection state plus planned/unconnected disclosure"
+    },
+    {
+      "name": "correction",
+      "start": 16.2,
+      "duration": 19.8,
+      "source": "continuous-correction-raw.webm, loaded source 0.5s through 20.36s"
+    },
+    {
+      "name": "peer-perspective",
+      "start": 36,
+      "duration": 7,
+      "source": "prepared exact editorial card"
+    },
+    {
+      "name": "host-boundary",
+      "start": 43,
+      "duration": 10,
+      "source": "actual frontend host boundary"
+    },
+    {
+      "name": "share-audience",
+      "start": 53,
+      "duration": 5,
+      "source": "actual preview screenshot, consent unchecked"
+    },
+    {
+      "name": "share-draft",
+      "start": 58,
+      "duration": 6,
+      "source": "actual draft focus screenshot"
+    },
+    {
+      "name": "share-consent",
+      "start": 64,
+      "duration": 8,
+      "source": "actual consent focus screenshot; unchecked and disabled"
+    },
+    {
+      "name": "provider-caveat",
+      "start": 72,
+      "duration": 5,
+      "source": "availability notice"
+    },
+    {
+      "name": "maybe-later-ending",
+      "start": 77,
+      "duration": 22,
+      "source": "actual Maybe later selected state, holds through last frame"
+    }
+  ],
+  "audioSource": "demo-iterations/v13/demo.mp4",
+  "audioSegments": "Exact v13 source intervals stored alongside cue list in render-v38.py",
+  "captions": "capture/captions.srt; exact v13 caption text with retimed cues",
+  "captionCount": 20,
+  "priorMp4Sha256": {
+    "demo-iterations/v13/demo.mp4": "dd21e18a055cf80bca4ee60b0f62620d6e82025b10639985bfb64a722d691d47",
+    "demo-iterations/v35/demo.mp4": "27c4fc952bd8fb876afe533f374e3f4bc4c60e2e5ab5d95e00c382d0f56e79d5",
+    "demo-iterations/v36/demo.mp4": "808f3d3bf00dbc03f500870401d4671c06d3e842c746bef472e6bab7c4ff4b1c",
+    "demo-iterations/v37/demo.mp4": "9281740447ec8ddd8df5ecd943c423a6a3a2de164e49416d78541a91c3c73f05"
+  },
+  "sourceInteractionNoModel": true,
+  "consentUnchecked": true,
+  "noServiceConnected": true
+}

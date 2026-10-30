@@ -1,0 +1,49 @@
+{
+  "artifact": "/workspace/hormonise/demo-iterations/v38/demo.mp4",
+  "status": "HOLD",
+  "identity": {
+    "expected_sha256": "a0321bc96dbd39675b9c72381ac9e23f0a8da2f52ff9774eb59096d4070589a8",
+    "actual_sha256": "a0321bc96dbd39675b9c72381ac9e23f0a8da2f52ff9774eb59096d4070589a8",
+    "match": true,
+    "bytes": 3962843
+  },
+  "media": {
+    "duration_seconds": 99.0,
+    "video": "H.264, 1920x1080, 30/1 fps, 2970 frames",
+    "audio": "AAC, mono, 48 kHz, 99.0 seconds",
+    "full_decode": "PASS; ffmpeg decoded both streams to completion without errors"
+  },
+  "visual_review": {
+    "sample_times_seconds": [0, 9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 98],
+    "resolutions_reviewed": ["960x540", "1920x1080"],
+    "captions": "Burned-in narrative captions are present and readable at sampled points at both reviewed sizes; sampled captions do not cover key text in the focused 54s and 81s frames.",
+    "disclosure": "Visible labels distinguish Planned - Muse Spark role from local/prepared text with no model connected; no live model connection is claimed.",
+    "fictionality": "Arjun, Dev, the Family Expectations group, and the community role are explicitly labeled fictional/prepared examples.",
+    "consent_and_send_state": "Consent is visibly unchecked and continue is described as disabled; the preview says nothing is sent to a real group or person.",
+    "final_choice": "The ending shows Maybe later selected, the private reflection remaining private, and that Arjun could leave without sharing.",
+    "layout_findings": [
+      "At 18s/960x540, the top status strip cuts into the page heading ('You can start anywhere.').",
+      "At 27s/960x540, the bottom caption band covers the lower part of the application card; this is also visible at full 1920x1080 scale.",
+      "The focused 54s and 81s frames are legible at 960x540 and 1920x1080, with no apparent text-to-text overlap."
+    ]
+  },
+  "audio_review": {
+    "track_present_and_decodable": true,
+    "duration_matches_video": true,
+    "independent_transcription_or_listening_check": false,
+    "sync_verified": false,
+    "evidence": "Audio energy is present; ffmpeg silence detection reports a trailing silent interval from about 85.49s to 99.0s. No independent listening/transcription tool was available, so speech content and audio-caption synchronization were not verified."
+  },
+  "hold_reasons": [
+    "The top and bottom overlay bands obscure application content in sampled frames at 18s and 27s.",
+    "Audio-caption sync and spoken content could not be independently verified; the audio has about 13.5 seconds of trailing silence."
+  ],
+  "evidence_files": [
+    "/tmp/harmonise-v38-release/contact.jpg",
+    "/tmp/harmonise-v38-release/frames/18-960.jpg",
+    "/tmp/harmonise-v38-release/frames/27-960.jpg",
+    "/tmp/harmonise-v38-release/frames/54-960.jpg",
+    "/tmp/harmonise-v38-release/frames/54-1920.jpg",
+    "/tmp/harmonise-v38-release/frames/81-960.jpg"
+  ]
+}

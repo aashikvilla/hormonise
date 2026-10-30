@@ -1,0 +1,253 @@
+{
+  "candidate": "/workspace/hormonise/demo-iterations/v38/demo.mp4",
+  "sha256": "a0321bc96dbd39675b9c72381ac9e23f0a8da2f52ff9774eb59096d4070589a8",
+  "review_evidence_mode": "video_with_captions_audio_inaccessible",
+  "audio_limitation": "The MP4 contains AAC audio, but audio playback was inaccessible to the reviewer. Scores use visible captions and interface text only; audio-dependent judgments have reduced confidence.",
+  "independent_of_previous_rounds": true,
+  "technical_evidence_type": "film_visible_prototype_evidence",
+  "decision": "maybe",
+  "scores": {
+    "impact": {
+      "problem_specificity_depth": {
+        "score": 8,
+        "max": 10,
+        "evidence": [
+          "00:00\u201300:06: Headline identifies family pressure and fear of seeming ungrateful."
+        ]
+      },
+      "human_need_believable_outcomes": {
+        "score": 7,
+        "max": 10,
+        "evidence": [
+          "00:27\u201300:38: Arjun corrects a tentative reflection.",
+          "01:25\u201301:39: Private exit is offered, but no lived outcome is shown."
+        ]
+      },
+      "adoption_network_benefit": {
+        "score": 4,
+        "max": 10,
+        "evidence": [
+          "00:38\u201300:58: Prepared peer/host examples suggest a community role, but explicitly show no live members or moderator."
+        ]
+      },
+      "subtotal": 19,
+      "max": 30
+    },
+    "meta_use": {
+      "correctly_named_model_roles": {
+        "score": 4,
+        "max": 7,
+        "evidence": [
+          "00:27\u201300:38: Planned Muse Spark may suggest a theme; Arjun decides whether it fits."
+        ]
+      },
+      "necessity_not_generic_wrapper": {
+        "score": 6,
+        "max": 8,
+        "evidence": [
+          "00:27\u201300:38: A correctable reflection is positioned to support personal agency rather than prescribe an answer."
+        ]
+      },
+      "visible_mechanism_reasoning_structured_ui": {
+        "score": 5,
+        "max": 6,
+        "evidence": [
+          "00:15\u201300:38: Structured reflection, tentative interpretation, correction choices, and editable words are visible."
+        ]
+      },
+      "evidence_or_candid_limitation": {
+        "score": 4,
+        "max": 4,
+        "evidence": [
+          "00:00\u201301:39: Film repeatedly labels content prepared/fictional, says no model connected, and shows no live service."
+        ]
+      },
+      "subtotal": 19,
+      "max": 25
+    },
+    "demo": {
+      "hook_story": {
+        "score": 5,
+        "max": 6,
+        "evidence": [
+          "00:00: Clear emotional problem hook."
+        ]
+      },
+      "clarity_legibility": {
+        "score": 4,
+        "max": 6,
+        "evidence": [
+          "00:06\u201300:15: Audience and promise are stated; most full-screen interface text is legible.",
+          "00:18 and 00:27: Persistent top status band overlays page content and obscures some interface text."
+        ]
+      },
+      "pacing_accessibility_audio_subtitles": {
+        "score": 3,
+        "max": 5,
+        "evidence": [
+          "00:00\u201301:39: Large visible caption band, but static screens persist and audio could not be heard."
+        ]
+      },
+      "emotional_payoff": {
+        "score": 4,
+        "max": 5,
+        "evidence": [
+          "01:25\u201301:39: Private retention or leaving is treated as a valid result; outcome remains fictional."
+        ]
+      },
+      "polished_coherent_ui": {
+        "score": 2,
+        "max": 3,
+        "evidence": [
+          "00:00\u201301:39: Consistent palette and components, though similar static layouts reduce momentum."
+        ]
+      },
+      "subtotal": 18,
+      "max": 25
+    },
+    "technical_depth": {
+      "plausible_full_user_workflow": {
+        "score": 5,
+        "max": 6,
+        "evidence": [
+          "00:15\u201301:39: Private reflection to correction, exact draft preview, consent gate, and private exit are shown."
+        ]
+      },
+      "controls_permissions_privacy": {
+        "score": 5,
+        "max": 5,
+        "evidence": [
+          "00:58\u201301:18: Exact text/audience, excluded private context, unchecked consent, disabled control, and no-send status are visible."
+        ]
+      },
+      "architecture_failure_handling_as_evidenced": {
+        "score": 4,
+        "max": 5,
+        "evidence": [
+          "01:10\u201301:25: Flow stays disabled and states no provider is verified or bookable."
+        ]
+      },
+      "implementation_evidence": {
+        "score": 4,
+        "max": 4,
+        "evidence": [
+          "00:27\u201300:38: User correction/edit is visible.",
+          "00:58\u201301:18: Consent/review state is visible.",
+          "01:25\u201301:39: Private fallback is visible."
+        ]
+      },
+      "subtotal": 18,
+      "max": 20
+    }
+  },
+  "total": 74,
+  "total_arithmetic": "19 + 19 + 18 + 18 = 74 / 100",
+  "weighted_confidence": "medium",
+  "weighted_uncertainty": "Real-world adoption and behavior are not demonstrated; audio was inaccessible. The score credits visible prototype behavior only.",
+  "film_persuasion_dimensions": {
+    "first_15_second_clarity": {
+      "score": 22,
+      "max": 25,
+      "evidence": [
+        "00:00\u201300:06: Specific emotional problem is immediately stated.",
+        "00:06\u201300:15: Audience and private/correctable/share-choice promise appear."
+      ]
+    },
+    "human_journey_and_payoff": {
+      "score": 20,
+      "max": 25,
+      "evidence": [
+        "00:27\u201300:38: Arjun rejects and edits an interpretation.",
+        "01:25\u201301:39: He can keep the takeaway private or choose Maybe later; journey remains fictional."
+      ]
+    },
+    "differentiation_and_role_value": {
+      "score": 19,
+      "max": 25,
+      "evidence": [
+        "00:27\u201300:38: Product centers on a correctable reflection.",
+        "00:38\u201300:58: Human listening role is proposed; planned Muse Spark is labeled unconnected."
+      ]
+    },
+    "cinematic_and_narrative_craft": {
+      "score": 18,
+      "max": 25,
+      "evidence": [
+        "00:00\u201301:39: Consistent calm visual language and readable caption band.",
+        "00:15\u201301:39: Similar static screens persist; audio inaccessible.",
+        "00:18 and 00:27: Top status band overlaps interface text; similar static layouts persist."
+      ]
+    }
+  },
+  "film_persuasion_score": 79,
+  "film_persuasion_arithmetic": "22 + 20 + 19 + 18 = 79 / 100",
+  "film_persuasion_confidence": "medium-low",
+  "weaknesses": [
+    {
+      "timestamp": "00:00\u201300:15",
+      "issue": "Opening explains a promise before demonstrating the correction mechanism."
+    },
+    {
+      "timestamp": "00:27\u201300:38",
+      "issue": "The before/after text change is not emphasized enough to make causality immediate."
+    },
+    {
+      "timestamp": "00:38\u201300:58",
+      "issue": "Peer and host roles are prepared fictional examples, not a live community."
+    },
+    {
+      "timestamp": "00:58\u201301:18",
+      "issue": "Consent is shown as an unchecked disabled form, without a subsequent decision branch."
+    },
+    {
+      "timestamp": "01:18\u201301:39",
+      "issue": "No provider is bookable and the ending has no lived consequence or family resolution."
+    },
+    {
+      "timestamp": "00:00\u201301:39",
+      "issue": "Audio could not be heard, limiting narration, sound mix, and pacing assessment."
+    },
+    {
+      "timestamp": "00:18 and 00:27",
+      "issue": "Persistent top status band overlays webpage content and partially obscures interface text."
+    }
+  ],
+  "fix_tickets": [
+    {
+      "timestamp": "00:00\u201300:15",
+      "current_issue": "Differentiation arrives as a promise.",
+      "replacement": "Show a clearly fictional tentative reflection followed by user correction; retain privacy as caption.",
+      "expected_result": "The core mechanism is clear sooner.",
+      "later_film_verification": "Ask a cold viewer to describe the mechanism after 15 seconds."
+    },
+    {
+      "timestamp": "00:27\u201300:38",
+      "current_issue": "Before/after change is easy to miss.",
+      "replacement": "Show old and updated reflections side by side, highlight changed words, and keep the status band clear of page text.",
+      "expected_result": "Correction reads causally without visual overlap.",
+      "later_film_verification": "Ask viewers what changed and what followed."
+    },
+    {
+      "timestamp": "00:38\u201300:58",
+      "current_issue": "Peer and host roles are text-only proposals.",
+      "replacement": "Retain fictional label, condense boundary card, and mark human role as proposed.",
+      "expected_result": "Role value is clear without implying live members.",
+      "later_film_verification": "Check that viewers distinguish prepared sample from live community."
+    },
+    {
+      "timestamp": "00:58\u201301:18",
+      "current_issue": "Consent appears as a disabled form rather than a decision branch.",
+      "replacement": "Show review of exact text and audience, unchecked consent, disabled control, and return to private reflection.",
+      "expected_result": "No-send state is easy to understand.",
+      "later_film_verification": "Ask what is excluded and why nothing transmits."
+    },
+    {
+      "timestamp": "01:18\u201301:39",
+      "current_issue": "Ending lacks concrete consequence.",
+      "replacement": "Tighten provider limitation, then end on the private takeaway and a clear exit.",
+      "expected_result": "Memorable agency-centered payoff.",
+      "later_film_verification": "Ask what Arjun gains and what remains unresolved."
+    }
+  ],
+  "release_recommendation": "Advance only to prototype validation; do not present this film as evidence of a live service. Keep model, community, provider, and messaging roles labeled proposed or unavailable."
+}

@@ -1,0 +1,67 @@
+{
+  "iteration": "v38",
+  "status": "candidate; mechanical checks pass; cold review maybe; release HOLD",
+  "candidate": "demo-iterations/v38/demo.mp4",
+  "candidateSha256": "a0321bc96dbd39675b9c72381ac9e23f0a8da2f52ff9774eb59096d4070589a8",
+  "durationSeconds": 99.0,
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "frames": "2970"
+  },
+  "audio": {
+    "codec": "aac",
+    "sampleRate": "48000",
+    "channels": 1
+  },
+  "renderScript": "demo-iterations/v38/capture/render-v38.py",
+  "frameScript": "demo-iterations/v38/capture/prepare-frames-v38.py",
+  "sourceCapture": "demo-iterations/v38/capture/source/continuous-correction-raw.webm",
+  "sourceCaptureSha256": "9022cc2be2f1abdc84e947254da1ac2ee0d5c3abb394571d9b7d3dacd5b2a1c5",
+  "captions": "demo-iterations/v38/capture/captions.srt",
+  "verification": "demo-iterations/v38/verification/report.md",
+  "verificationChecks": "demo-iterations/v38/verification/media-checks.json",
+  "screenshots": "demo-iterations/v38/verification/",
+  "priorMastersProtected": true,
+  "checks": {
+    "fullDecode": true,
+    "runtime90to105": true,
+    "video1920x1080": true,
+    "video30fps": true,
+    "audioPresent": true,
+    "captionsAllExactV13": true,
+    "captionMaxTwoLines": true,
+    "interactionStartNonblank": true,
+    "interaction15sEquivalentReview": true,
+    "sourceInteraction20s": true,
+    "allPriorVideosV13V35V36V37Unchanged": true,
+    "960And1920ScreenshotsCaptured": 38,
+    "finalFrameIsMaybeLater": true
+  },
+  "audienceGate": "cold review complete; decision maybe; release HOLD",
+  "editMap": "demo-iterations/v38/capture/edit-map.json",
+  "narration": "demo-iterations/v38/capture/narration.txt",
+  "sourceMediaHashes": "demo-iterations/v38/verification/source-media-sha256.txt",
+  "scores": {
+    "weightedTotal": 74,
+    "filmPersuasion": 79,
+    "decision": "maybe",
+    "confidence": "medium",
+    "evidenceMode": "video_with_captions_audio_inaccessible",
+    "audio": "inaccessible to reviewer; audio-dependent judgments unverified",
+    "persuasionConfidence": "medium-low",
+    "coldReview": "demo-iterations/v38/cold-review/report.md",
+    "coldReviewJson": "demo-iterations/v38/cold-review/review.json"
+  },
+  "releaseCheck": {
+    "status": "HOLD",
+    "report": "demo-iterations/v38/release-check/report.md",
+    "reportJson": "demo-iterations/v38/release-check/report.json",
+    "holdReasons": [
+      "At 18s, the top status band obscures the page heading; at 27s, the lower caption band obscures the application card.",
+      "Audio-caption synchronization and spoken content could not be independently verified because audio was inaccessible; about 13.5 seconds of trailing silence was detected."
+    ]
+  }
+}
