@@ -272,8 +272,12 @@
     "scoreHistoryCaveat": "Weighted rubric and film-persuasion scores are separate scales from separate judges; scores are noncausal and are not directly comparable as evidence of iteration effect."
   },
   "releaseStatus": {
-    "status": "pending independent fresh recheck",
-    "evidencePath": "/tmp/harmonise-v41-release-final/",
-    "note": "This directory contains fresh review frames only; no independent release decision is archived yet."
+    "status": "HOLD",
+    "reason": "Audio could not be auditioned; narration, music, and perceptual synchronization remain unverified.",
+    "visualReview": "passed sampled visual review; no visual blocker found.",
+    "mediaChecks": "A/V streams have matching 80.6s duration and start at 0; audio signal is non-silent (mean -18.5 dBFS, peak -4.2 dBFS). Technical stream timing and signal presence are verified; human listening remains pending.",
+    "reviewerSource": "independent fresh release review of exported candidate only",
+    "report": "release-check/report.txt",
+    "scorecard": "release-check/report.json"
   }
 }

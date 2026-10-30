@@ -1,0 +1,37 @@
+{
+  "verdict": "HOLD",
+  "verdict_reason": "Audio track exists and has measurable signal, but it could not be auditioned; narration, music, and synchronization remain unverified.",
+  "scope": "Only /workspace/hormonise/demo-iterations/v41/candidate.mp4 was inspected.",
+  "media": {
+    "duration_seconds": 80.6,
+    "size_bytes": 4543852,
+    "video": {"codec": "h264", "width": 1920, "height": 1080, "fps": 30},
+    "audio": {"codec": "aac", "duration_seconds": 80.6, "mean_volume_dbfs": -18.5, "peak_volume_dbfs": -4.2, "auditioned": false},
+    "sha256": "51e24ec262293e8e02434cfff14c72452af51221b41f7f43e40a7c8c2d7c510b"
+  },
+  "visual_review": {
+    "sampled_timestamps_seconds": [0, 14, 28, 42, 56, 70, 79],
+    "also_reviewed": "5-second contact sheet",
+    "film_quality": "Coherent progression, crisp screen captures; no obvious corruption, abrupt black gaps, or unintended overlays in sampled material.",
+    "caption_readability": "Legible at full resolution, high contrast, and clearly placed relative to main text.",
+    "truth_boundaries": [
+      "Fictional scenario",
+      "Prepared local example",
+      "no model connected",
+      "fictional member",
+      "no message service connected",
+      "Nothing is sent to a real group or person",
+      "consent unchecked and continuation disabled"
+    ],
+    "visible_examples": [
+      {"time_seconds": 14, "example": "User corrects a proposed interpretation."},
+      {"time_seconds": 28, "example": "User's confirmed wording remains editable."},
+      {"time_seconds": 42, "example": "Prepared draft is labelled for group only."},
+      {"time_seconds": 56, "example": "Consent is unchecked; continuation is disabled."},
+      {"time_seconds": 70, "example": "Optional takeaway is framed as private."},
+      {"time_seconds": 79, "example": "No-send boundary and option to leave are explicit."}
+    ]
+  },
+  "limitations": ["Audio could not be listened to or transcribed in this environment."],
+  "visual_blocker_found": false
+}

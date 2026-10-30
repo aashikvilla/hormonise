@@ -1,0 +1,11 @@
+HOLD — visual review is clear; audio still needs a human listen-through.
+
+Scope: inspected only /workspace/hormonise/demo-iterations/v41/candidate.mp4. No source, manifest, other films, code, reports, or scorecards were consulted.
+
+Objective media checks: 80.600 s; H.264 video, 1920×1080 at 30 fps; AAC audio, same 80.600 s duration; file size 4,543,852 bytes. SHA-256: 51e24ec262293e8e02434cfff14c72452af51221b41f7f43e40a7c8c2d7c510b. Audio has non-silent signal (mean -18.5 dBFS, peak -4.2 dBFS). I could not listen to or transcribe the soundtrack in this review environment, so narration, music, and synchronization remain unverified.
+
+Visual review: sampled the opening and frames at 14, 28, 42, 56, 70, and 79 seconds, plus a 5-second contact sheet. The sequence reads as a coherent progression from a private reflection, through correction and confirmation, into a fictional group draft and an optional private takeaway. Type is crisp and comfortably readable in the sampled full-resolution frames; captions remain legible, with strong contrast and placement clear of the main text. Screen captures are static and clean, with no obvious corruption, abrupt black gaps, or unintended overlays in the sampled material.
+
+Truth boundaries visible in-frame include “Fictional scenario,” “Prepared local example,” “no model connected,” “fictional member,” “no message service connected,” “Nothing is sent to a real group or person,” and the unchecked-consent / disabled-continuation state. Sample frames at 14 s show the user correcting the system’s proposed interpretation; 28 s shows the user’s editable confirmed wording; 42 s shows a local draft labelled for the group only; 56 s shows consent unchecked and continuation disabled; 70–79 s show the optional private takeaway and explicit no-send boundary. These visible examples do not imply a live send.
+
+Disposition: HOLD only because the audio track could not be auditioned. No visual release blocker found in the sampled frames.
